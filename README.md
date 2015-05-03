@@ -1,2 +1,2 @@
 # LEDSCodeDSL
-Criação da DSL para o LEDSCode
+Criação de uma DSL para o LEDSCode
