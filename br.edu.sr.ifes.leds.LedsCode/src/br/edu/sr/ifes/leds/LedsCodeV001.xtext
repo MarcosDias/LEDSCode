@@ -1,0 +1,86 @@
+grammar br.edu.sr.ifes.leds.LedsCodeV001 with org.eclipse.xtext.common.Terminals
+
+generate ledsCodeV001 "http://www.edu.br/sr/ifes/leds/LedsCodeV001"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+LedsCodeDSL:
+	application=Application|(ModuleAplication)+;
+
+Application:
+	'app''{'
+		nameApplication=NameApplication
+		//version=VersionApplication
+		language=Language
+		framework=Framework
+		orm=ORM
+		database=DataBase
+		
+		ModuleAplication
+	'}'
+;
+
+ModuleAplication:
+	'module''{''}'
+;
+
+NameApplication:
+	'name''='name=UNQUOTED_STRING
+;
+
+
+/*VersionApplication:
+	'version''='VersionValue
+;
+
+VersionValue:
+	VERSION_ONE_DIGITE | VERSION_TWO_DIGITE | VERSION_THREE_DIGITE
+;*/
+
+Language:
+	'language' Dictionary
+;
+
+Framework:
+	'framework' Dictionary
+;
+
+ORM:
+	'orm' Dictionary
+;
+
+DataBase:
+	'database' Dictionary
+;
+
+Dictionary:
+	'{' elements+=KeyValue (',' elements+=KeyValue)* '}'
+;
+
+KeyValue:
+	key=ID ':' value=STRING
+;
+
+/*
+terminal VERSION_ONE_DIGITE: ('0'..'9')+;
+terminal VERSION_TWO_DIGITE: VERSION_ONE_DIGITE.VERSION_ONE_DIGITE;
+terminal VERSION_THREE_DIGITE: VERSION_TWO_DIGITE.VERSION_ONE_DIGITE;
+ */
+
+//https://www.eclipse.org/forums/index.php/t/944715/
+terminal INT returns ecore::EInt: ('0'..'9')+;
+
+terminal UNQUOTED_STRING:
+('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal STRING:
+'"' ('\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\' | '"'))* '"' |
+"'" ('\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\' | "'"))* "'";
+
+terminal OL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS:
+(' ' | '\t' | '\r' | '\n')+;
+

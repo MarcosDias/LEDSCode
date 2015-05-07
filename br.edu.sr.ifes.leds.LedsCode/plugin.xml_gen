@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.edu.br/sr/ifes/leds/LedsCodeV001" 
+       class = "br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package"
+       genModel = "model/generated/LedsCodeV001.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="br.edu.sr.ifes.leds.LedsCode.sdk"
+	label="LedsCodeV001 SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="br.edu.sr.ifes.leds.LedsCode"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="br.edu.sr.ifes.leds.LedsCode.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>
