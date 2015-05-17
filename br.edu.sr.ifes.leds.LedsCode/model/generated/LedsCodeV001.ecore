@@ -3,33 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ledsCodeV001" nsURI="http://www.edu.br/sr/ifes/leds/LedsCodeV001"
     nsPrefix="ledsCodeV001">
   <eClassifiers xsi:type="ecore:EClass" name="LedsCodeDSL">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="application" eType="#//Application"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Application">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameApplication" eType="#//NameApplication"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="language" eType="#//Language"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="framework" eType="#//Framework"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="orm" eType="#//ORM" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="database" eType="#//DataBase"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NameApplication">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Language"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Framework"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ORM"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Dictionary" eSuperTypes="#//Language #//Framework #//ORM #//DataBase">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//KeyValue" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="project" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

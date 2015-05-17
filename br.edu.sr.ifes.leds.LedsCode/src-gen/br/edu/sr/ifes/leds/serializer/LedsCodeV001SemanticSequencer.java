@@ -3,12 +3,8 @@
  */
 package br.edu.sr.ifes.leds.serializer;
 
-import br.edu.sr.ifes.leds.ledsCodeV001.Application;
-import br.edu.sr.ifes.leds.ledsCodeV001.Dictionary;
-import br.edu.sr.ifes.leds.ledsCodeV001.KeyValue;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
-import br.edu.sr.ifes.leds.ledsCodeV001.NameApplication;
 import br.edu.sr.ifes.leds.services.LedsCodeV001GrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -33,20 +29,8 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == LedsCodeV001Package.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case LedsCodeV001Package.APPLICATION:
-				sequence_Application(context, (Application) semanticObject); 
-				return; 
-			case LedsCodeV001Package.DICTIONARY:
-				sequence_Dictionary(context, (Dictionary) semanticObject); 
-				return; 
-			case LedsCodeV001Package.KEY_VALUE:
-				sequence_KeyValue(context, (KeyValue) semanticObject); 
-				return; 
 			case LedsCodeV001Package.LEDS_CODE_DSL:
 				sequence_LedsCodeDSL(context, (LedsCodeDSL) semanticObject); 
-				return; 
-			case LedsCodeV001Package.NAME_APPLICATION:
-				sequence_NameApplication(context, (NameApplication) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -54,81 +38,16 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (nameApplication=NameApplication language=Language framework=Framework orm=ORM database=DataBase)
-	 */
-	protected void sequence_Application(EObject context, Application semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.APPLICATION__NAME_APPLICATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.APPLICATION__NAME_APPLICATION));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.APPLICATION__LANGUAGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.APPLICATION__LANGUAGE));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.APPLICATION__FRAMEWORK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.APPLICATION__FRAMEWORK));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.APPLICATION__ORM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.APPLICATION__ORM));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.APPLICATION__DATABASE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.APPLICATION__DATABASE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getApplicationAccess().getNameApplicationNameApplicationParserRuleCall_2_0(), semanticObject.getNameApplication());
-		feeder.accept(grammarAccess.getApplicationAccess().getLanguageLanguageParserRuleCall_3_0(), semanticObject.getLanguage());
-		feeder.accept(grammarAccess.getApplicationAccess().getFrameworkFrameworkParserRuleCall_4_0(), semanticObject.getFramework());
-		feeder.accept(grammarAccess.getApplicationAccess().getOrmORMParserRuleCall_5_0(), semanticObject.getOrm());
-		feeder.accept(grammarAccess.getApplicationAccess().getDatabaseDataBaseParserRuleCall_6_0(), semanticObject.getDatabase());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (elements+=KeyValue elements+=KeyValue*)
-	 */
-	protected void sequence_Dictionary(EObject context, Dictionary semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (key=ID value=STRING)
-	 */
-	protected void sequence_KeyValue(EObject context, KeyValue semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.KEY_VALUE__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.KEY_VALUE__KEY));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.KEY_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.KEY_VALUE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getKeyValueAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getKeyValueAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     application=Application?
+	 *     project=Project
 	 */
 	protected void sequence_LedsCodeDSL(EObject context, LedsCodeDSL semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=UNQUOTED_STRING
-	 */
-	protected void sequence_NameApplication(EObject context, NameApplication semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.NAME_APPLICATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.NAME_APPLICATION__NAME));
+			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.LEDS_CODE_DSL__PROJECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.LEDS_CODE_DSL__PROJECT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNameApplicationAccess().getNameUNQUOTED_STRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLedsCodeDSLAccess().getProjectProjectParserRuleCall_0(), semanticObject.getProject());
 		feeder.finish();
 	}
 }

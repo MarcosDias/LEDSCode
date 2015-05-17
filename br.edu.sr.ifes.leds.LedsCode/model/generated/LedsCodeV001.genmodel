@@ -8,28 +8,7 @@
   <genPackages prefix="LedsCodeV001" basePackage="br.edu.sr.ifes.leds" disposableProviderFactory="true"
       fileExtensions="leds" ecorePackage="LedsCodeV001.ecore#/">
     <genClasses ecoreClass="LedsCodeV001.ecore#//LedsCodeDSL">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//LedsCodeDSL/application"/>
-    </genClasses>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//Application">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Application/nameApplication"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Application/language"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Application/framework"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Application/orm"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Application/database"/>
-    </genClasses>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//NameApplication">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//NameApplication/name"/>
-    </genClasses>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//Language"/>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//Framework"/>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//ORM"/>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//DataBase"/>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//Dictionary">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Dictionary/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//KeyValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//KeyValue/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//KeyValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//LedsCodeDSL/project"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -11,8 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -20,31 +18,17 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class LedsCodeV001SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LedsCodeV001GrammarAccess grammarAccess;
-	protected AbstractElementAlias match_LedsCodeDSL_ModuleAplicationParserRuleCall_1_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LedsCodeV001GrammarAccess) access;
-		match_LedsCodeDSL_ModuleAplicationParserRuleCall_1_p = new TokenAlias(true, false, grammarAccess.getLedsCodeDSLAccess().getModuleAplicationParserRuleCall_1());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getModuleAplicationRule())
-			return getModuleAplicationToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * ModuleAplication:
-	 * 	'module''{''}'
-	 * ;
-	 */
-	protected String getModuleAplicationToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "module{}";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -52,21 +36,8 @@ public class LedsCodeV001SyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_LedsCodeDSL_ModuleAplicationParserRuleCall_1_p.equals(syntax))
-				emit_LedsCodeDSL_ModuleAplicationParserRuleCall_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     ModuleAplication+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 */
-	protected void emit_LedsCodeDSL_ModuleAplicationParserRuleCall_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

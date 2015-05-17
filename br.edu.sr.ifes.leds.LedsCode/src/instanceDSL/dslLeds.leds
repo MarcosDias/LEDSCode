@@ -1,22 +1,72 @@
+// Para um mesmo projeto temos mais de uma aplicação e para uma mesma aplicação temos mais de uma interface
+
+
 Project Library{
 
-interface {
-	Domain.modulo.service
-	Library.media.LibraryService
+	interface Library  {
+    
+		//Cria as telas da aplicação Library
+		HtmlView Library
+	
+		//Criar um webservice do application Library
+		ResFull Library	
+	}
+
+	interface LibraryService  {
+    
+		//Criar um webservice do application LibraryService
+		ResFull LibraryService	
+	}
+
+
+	Infrastructure {
+
+		basePackage = org.library
+	
+		projectVersion = 0.0.0
+	
+		language {nome: valor, versao:valor}
+	
+		framework {chave: valor, }
+	
+		orm {nome: valor, versao }
+	
+		devdatabase {url: valor, }
+
+	}
+
+
+Application Library{
+    
+    ComposedBy Library.*  (tem acesso a todos os serviços e entidades do dominio .. não tem acesso aos repositórios)
+	ComposedBy Loan.* 
+}
+
+Application LibraryPerson{
+
+    // Tem acesso apenas aos elemento do modulo person
+	ComposedBy Library.Person.*  (tem acesso a todos os serviços e entidades do dominio .. não tem acesso aos repositórios)
 
 }
 
 
-Infrastructure {
 
-	basePackage = org.library
-	
-	versionofProject = 0.0.0
-	language {nome: valor, versao:valor}
-	framework {chave: valor, }
-	orm {nome: valor, versao }
-	devdatabase {url: valor, }
-	proddatabase
+Application LibraryService{
+
+	ComposedBy Library.LibraryService  (tem acesso apenas ao serviço LibraryService)
+
+}
+
+
+Domain Loan {
+
+	import Library.*
+
+	Module X{
+	}
+	Modulo Y {
+	}
+
 
 }
 
@@ -34,7 +84,7 @@ Domain Library {
     
     Entity Library {
       String name key
-      Set<@PhysicalMedia> media
+      Set<PhysicalMedia> media
     
       Repository LibraryRepository {
         Library findLibraryByName(String name) throws LibraryNotFoundException;
@@ -59,16 +109,12 @@ Domain Library {
       Set<MediaCharacter> mediaCharacters
     
       Repository MediaRepository {
-        > @MediaCharacterRepository
-        int getNumberOfMovies(Long libraryId) => AccessObject;
-        List<@Media> findMediaByCharacter(Long libraryId, String characterName);
+
+        List<Media> findMediaByCharacter(String characterName);
         findById;
         save;
         findAll;
-        findByQuery;
-        protected findByKeys(Set<String> keys, String keyPropertyName, Class persistentClass);
-        List<@Media> findMediaByName(Long libraryId, String name);
-        Map<String, @Movie> findMovieByUrlIMDB(Set<String> keys);
+        List<Media> findMediaByName(Long libraryId, String name);
       }
     }
     
@@ -81,7 +127,7 @@ Domain Library {
       !auditable
       String urlIMDB key
       Integer playLength
-      - @Genre category nullable
+      Genre category nullable
     }
     
     enum Genre {
@@ -105,15 +151,12 @@ Domain Library {
     
     Entity Person {
       Date birthDate past
-      - @Gender sex !changeable
-      - @Ssn ssn key
-      - @PersonName name
-    
+      Gender sex !changeable
+      Ssn ssn key
+      
       Repository PersonRepository {
-        List<@Person> findPersonByName(String name) => AccessObject;
+        List<Person> findPersonByName(String name);
         save;
-        save(Collection<@Person> entities);
-        findByQuery;
         findByExample;
         findByKeys;
       }

@@ -65,14 +65,6 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
     switch (eClass.getClassifierID())
     {
       case LedsCodeV001Package.LEDS_CODE_DSL: return createLedsCodeDSL();
-      case LedsCodeV001Package.APPLICATION: return createApplication();
-      case LedsCodeV001Package.NAME_APPLICATION: return createNameApplication();
-      case LedsCodeV001Package.LANGUAGE: return createLanguage();
-      case LedsCodeV001Package.FRAMEWORK: return createFramework();
-      case LedsCodeV001Package.ORM: return createORM();
-      case LedsCodeV001Package.DATA_BASE: return createDataBase();
-      case LedsCodeV001Package.DICTIONARY: return createDictionary();
-      case LedsCodeV001Package.KEY_VALUE: return createKeyValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -87,94 +79,6 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
   {
     LedsCodeDSLImpl ledsCodeDSL = new LedsCodeDSLImpl();
     return ledsCodeDSL;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Application createApplication()
-  {
-    ApplicationImpl application = new ApplicationImpl();
-    return application;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NameApplication createNameApplication()
-  {
-    NameApplicationImpl nameApplication = new NameApplicationImpl();
-    return nameApplication;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Language createLanguage()
-  {
-    LanguageImpl language = new LanguageImpl();
-    return language;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Framework createFramework()
-  {
-    FrameworkImpl framework = new FrameworkImpl();
-    return framework;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ORM createORM()
-  {
-    ORMImpl orm = new ORMImpl();
-    return orm;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public DataBase createDataBase()
-  {
-    DataBaseImpl dataBase = new DataBaseImpl();
-    return dataBase;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Dictionary createDictionary()
-  {
-    DictionaryImpl dictionary = new DictionaryImpl();
-    return dictionary;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public KeyValue createKeyValue()
-  {
-    KeyValueImpl keyValue = new KeyValueImpl();
-    return keyValue;
   }
 
   /**
