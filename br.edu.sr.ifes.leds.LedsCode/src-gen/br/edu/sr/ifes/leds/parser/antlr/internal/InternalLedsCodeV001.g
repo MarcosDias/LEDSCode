@@ -168,7 +168,7 @@ ruleProject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     { 
         afterParserOrEnumRuleCall();
     }
-)?(
+)*(
     { 
         newCompositeNode(grammarAccess.getProjectAccess().getDomainBlockParserRuleCall_6()); 
     }
@@ -179,7 +179,7 @@ ruleProject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     { 
         afterParserOrEnumRuleCall();
     }
-)?
+)*
 	kw='}' 
     {
         $current.merge(kw);

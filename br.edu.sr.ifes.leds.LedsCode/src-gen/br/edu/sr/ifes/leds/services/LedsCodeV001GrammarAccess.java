@@ -47,10 +47,10 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Project:
-		//	"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock? DomainBlock? "}";
+		//	"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock* DomainBlock* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock? DomainBlock? "}"
+		//"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock* DomainBlock* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"project"
@@ -68,10 +68,10 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//InterfaceBlock?
 		public RuleCall getInterfaceBlockParserRuleCall_4() { return cInterfaceBlockParserRuleCall_4; }
 
-		//ApplicationBlock?
+		//ApplicationBlock*
 		public RuleCall getApplicationBlockParserRuleCall_5() { return cApplicationBlockParserRuleCall_5; }
 
-		//DomainBlock?
+		//DomainBlock*
 		public RuleCall getDomainBlockParserRuleCall_6() { return cDomainBlockParserRuleCall_6; }
 
 		//"}"
@@ -1083,7 +1083,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Project:
-	//	"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock? DomainBlock? "}";
+	//	"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock* DomainBlock* "}";
 	public ProjectElements getProjectAccess() {
 		return pProject;
 	}

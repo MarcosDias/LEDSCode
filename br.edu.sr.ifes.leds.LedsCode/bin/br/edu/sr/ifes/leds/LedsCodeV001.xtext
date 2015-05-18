@@ -11,8 +11,8 @@ Project:
 	'project' ID '{'
 		InfrastructureBlock
 		(InterfaceBlock)?
-		(ApplicationBlock)?
-		(DomainBlock)?
+		(ApplicationBlock)*
+		(DomainBlock)*
 	'}'
 ;
 	

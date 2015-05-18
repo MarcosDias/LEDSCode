@@ -1235,7 +1235,7 @@ rule__Project__Group__5__Impl
 :
 (
 { before(grammarAccess.getProjectAccess().getApplicationBlockParserRuleCall_5()); }
-(	ruleApplicationBlock)?
+(	ruleApplicationBlock)*
 { after(grammarAccess.getProjectAccess().getApplicationBlockParserRuleCall_5()); }
 )
 
@@ -1264,7 +1264,7 @@ rule__Project__Group__6__Impl
 :
 (
 { before(grammarAccess.getProjectAccess().getDomainBlockParserRuleCall_6()); }
-(	ruleDomainBlock)?
+(	ruleDomainBlock)*
 { after(grammarAccess.getProjectAccess().getDomainBlockParserRuleCall_6()); }
 )
 

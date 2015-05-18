@@ -258,7 +258,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProject"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:115:1: ruleProject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )? (this_DomainBlock_6= ruleDomainBlock )? kw= '}' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:115:1: ruleProject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )* (this_DomainBlock_6= ruleDomainBlock )* kw= '}' ) ;
     public final AntlrDatatypeRuleToken ruleProject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -276,11 +276,11 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:118:28: ( (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )? (this_DomainBlock_6= ruleDomainBlock )? kw= '}' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:119:1: (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )? (this_DomainBlock_6= ruleDomainBlock )? kw= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:118:28: ( (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )* (this_DomainBlock_6= ruleDomainBlock )* kw= '}' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:119:1: (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )* (this_DomainBlock_6= ruleDomainBlock )* kw= '}' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:119:1: (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )? (this_DomainBlock_6= ruleDomainBlock )? kw= '}' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:120:2: kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )? (this_DomainBlock_6= ruleDomainBlock )? kw= '}'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:119:1: (kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )* (this_DomainBlock_6= ruleDomainBlock )* kw= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:120:2: kw= 'project' this_ID_1= RULE_ID kw= '{' this_InfrastructureBlock_3= ruleInfrastructureBlock (this_InterfaceBlock_4= ruleInterfaceBlock )? (this_ApplicationBlock_5= ruleApplicationBlock )* (this_DomainBlock_6= ruleDomainBlock )* kw= '}'
             {
             kw=(Token)match(input,11,FOLLOW_11_in_ruleProject215); 
 
@@ -344,67 +344,81 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:160:3: (this_ApplicationBlock_5= ruleApplicationBlock )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:160:3: (this_ApplicationBlock_5= ruleApplicationBlock )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==26) ) {
-                alt2=1;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:161:5: this_ApplicationBlock_5= ruleApplicationBlock
-                    {
-                     
-                            newCompositeNode(grammarAccess.getProjectAccess().getApplicationBlockParserRuleCall_5()); 
-                        
-                    pushFollow(FOLLOW_ruleApplicationBlock_in_ruleProject328);
-                    this_ApplicationBlock_5=ruleApplicationBlock();
-
-                    state._fsp--;
+                if ( (LA2_0==26) ) {
+                    alt2=1;
+                }
 
 
-                    		current.merge(this_ApplicationBlock_5);
-                        
-                     
-                            afterParserOrEnumRuleCall();
-                        
+                switch (alt2) {
+            	case 1 :
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:161:5: this_ApplicationBlock_5= ruleApplicationBlock
+            	    {
+            	     
+            	            newCompositeNode(grammarAccess.getProjectAccess().getApplicationBlockParserRuleCall_5()); 
+            	        
+            	    pushFollow(FOLLOW_ruleApplicationBlock_in_ruleProject328);
+            	    this_ApplicationBlock_5=ruleApplicationBlock();
 
-                    }
-                    break;
-
-            }
-
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:171:3: (this_DomainBlock_6= ruleDomainBlock )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==28) ) {
-                alt3=1;
-            }
-            switch (alt3) {
-                case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:172:5: this_DomainBlock_6= ruleDomainBlock
-                    {
-                     
-                            newCompositeNode(grammarAccess.getProjectAccess().getDomainBlockParserRuleCall_6()); 
-                        
-                    pushFollow(FOLLOW_ruleDomainBlock_in_ruleProject358);
-                    this_DomainBlock_6=ruleDomainBlock();
-
-                    state._fsp--;
+            	    state._fsp--;
 
 
-                    		current.merge(this_DomainBlock_6);
-                        
-                     
-                            afterParserOrEnumRuleCall();
-                        
+            	    		current.merge(this_ApplicationBlock_5);
+            	        
+            	     
+            	            afterParserOrEnumRuleCall();
+            	        
 
-                    }
-                    break;
+            	    }
+            	    break;
 
-            }
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:171:3: (this_DomainBlock_6= ruleDomainBlock )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( (LA3_0==28) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:172:5: this_DomainBlock_6= ruleDomainBlock
+            	    {
+            	     
+            	            newCompositeNode(grammarAccess.getProjectAccess().getDomainBlockParserRuleCall_6()); 
+            	        
+            	    pushFollow(FOLLOW_ruleDomainBlock_in_ruleProject358);
+            	    this_DomainBlock_6=ruleDomainBlock();
+
+            	    state._fsp--;
+
+
+            	    		current.merge(this_DomainBlock_6);
+            	        
+            	     
+            	            afterParserOrEnumRuleCall();
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
 
             kw=(Token)match(input,13,FOLLOW_13_in_ruleProject378); 
 
@@ -4031,8 +4045,8 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_12_in_ruleProject248 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_ruleInfrastructureBlock_in_ruleProject270 = new BitSet(new long[]{0x0000000014006000L});
     public static final BitSet FOLLOW_ruleInterfaceBlock_in_ruleProject298 = new BitSet(new long[]{0x0000000014002000L});
-    public static final BitSet FOLLOW_ruleApplicationBlock_in_ruleProject328 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_ruleDomainBlock_in_ruleProject358 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_ruleApplicationBlock_in_ruleProject328 = new BitSet(new long[]{0x0000000014002000L});
+    public static final BitSet FOLLOW_ruleDomainBlock_in_ruleProject358 = new BitSet(new long[]{0x0000000010002000L});
     public static final BitSet FOLLOW_13_in_ruleProject378 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInterfaceBlock_in_entryRuleInterfaceBlock419 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInterfaceBlock430 = new BitSet(new long[]{0x0000000000000002L});
