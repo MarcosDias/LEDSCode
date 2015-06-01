@@ -37,16 +37,26 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getProjectAccess().getAlternatives(), "rule__Project__Alternatives");
+					put(grammarAccess.getProjectAccess().getAlternatives_2_0(), "rule__Project__Alternatives_2_0");
 					put(grammarAccess.getInterfaceBlockAccess().getAlternatives_3_0(), "rule__InterfaceBlock__Alternatives_3_0");
+					put(grammarAccess.getInfrastructureBlockAccess().getAlternatives_2(), "rule__InfrastructureBlock__Alternatives_2");
 					put(grammarAccess.getModuleBlockAccess().getAlternatives_3(), "rule__ModuleBlock__Alternatives_3");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getExtendAccess().getAlternatives(), "rule__Extend__Alternatives");
 					put(grammarAccess.getImplementAccess().getAlternatives(), "rule__Implement__Alternatives");
 					put(grammarAccess.getAccessModifierAccess().getAlternatives(), "rule__AccessModifier__Alternatives");
-					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
+					put(grammarAccess.getProjectAccess().getGroup_0(), "rule__Project__Group_0__0");
+					put(grammarAccess.getProjectAccess().getGroup_2(), "rule__Project__Group_2__0");
 					put(grammarAccess.getInterfaceBlockAccess().getGroup(), "rule__InterfaceBlock__Group__0");
 					put(grammarAccess.getInterfaceBlockAccess().getGroup_3(), "rule__InterfaceBlock__Group_3__0");
 					put(grammarAccess.getInfrastructureBlockAccess().getGroup(), "rule__InfrastructureBlock__Group__0");
+					put(grammarAccess.getInfrastructureBlockAccess().getGroup_2_0(), "rule__InfrastructureBlock__Group_2_0__0");
+					put(grammarAccess.getInfrastructureBlockAccess().getGroup_2_1(), "rule__InfrastructureBlock__Group_2_1__0");
+					put(grammarAccess.getInfrastructureBlockAccess().getGroup_2_2(), "rule__InfrastructureBlock__Group_2_2__0");
+					put(grammarAccess.getInfrastructureBlockAccess().getGroup_2_3(), "rule__InfrastructureBlock__Group_2_3__0");
+					put(grammarAccess.getInfrastructureBlockAccess().getGroup_2_4(), "rule__InfrastructureBlock__Group_2_4__0");
+					put(grammarAccess.getInfrastructureBlockAccess().getGroup_2_5(), "rule__InfrastructureBlock__Group_2_5__0");
 					put(grammarAccess.getDictBlockAccess().getGroup(), "rule__DictBlock__Group__0");
 					put(grammarAccess.getDictBlockAccess().getGroup_1(), "rule__DictBlock__Group_1__0");
 					put(grammarAccess.getDictBlockAccess().getGroup_1_1(), "rule__DictBlock__Group_1_1__0");
@@ -62,6 +72,8 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getRepositoryBlockAccess().getGroup_3(), "rule__RepositoryBlock__Group_3__0");
 					put(grammarAccess.getEnumBlockAccess().getGroup(), "rule__EnumBlock__Group__0");
 					put(grammarAccess.getEnumBlockAccess().getGroup_4(), "rule__EnumBlock__Group_4__0");
+					put(grammarAccess.getMethodParameterAccess().getGroup(), "rule__MethodParameter__Group__0");
+					put(grammarAccess.getMethodParameterAccess().getGroup_2(), "rule__MethodParameter__Group_2__0");
 					put(grammarAccess.getKeyValueAccess().getGroup(), "rule__KeyValue__Group__0");
 					put(grammarAccess.getExtendBlockAccess().getGroup(), "rule__ExtendBlock__Group__0");
 					put(grammarAccess.getImplementBlockAccess().getGroup(), "rule__ImplementBlock__Group__0");

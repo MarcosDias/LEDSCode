@@ -1,10 +1,10 @@
 '#'=12
 '('=57
 ')'=58
-'*'=63
 ','=46
 '-'=11
 '.'=53
+'.*'=63
 ':'=30
 '<'=61
 '='=40
@@ -21,6 +21,7 @@
 'Object'=27
 'RestFull'=14
 'Set'=62
+'String'=15
 'abstract'=54
 'application'=47
 'basePackage'=39
@@ -48,7 +49,6 @@
 'projectVersion'=41
 'repository'=56
 'service'=51
-'string'=15
 '{'=35
 '}'=36
 RULE_ANY_OTHER=10

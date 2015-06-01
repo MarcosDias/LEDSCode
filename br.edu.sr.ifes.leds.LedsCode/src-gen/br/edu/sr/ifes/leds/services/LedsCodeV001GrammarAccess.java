@@ -36,46 +36,58 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ProjectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Project");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cProjectKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final RuleCall cInfrastructureBlockParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cInterfaceBlockParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cApplicationBlockParserRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final RuleCall cDomainBlockParserRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cProjectKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final RuleCall cInfrastructureBlockParserRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
+		private final RuleCall cInterfaceBlockParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
+		private final RuleCall cApplicationBlockParserRuleCall_2_0_0 = (RuleCall)cAlternatives_2_0.eContents().get(0);
+		private final RuleCall cDomainBlockParserRuleCall_2_0_1 = (RuleCall)cAlternatives_2_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		
 		//Project:
-		//	"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock* DomainBlock* "}";
+		//	"project" ID "{" InfrastructureBlock | InterfaceBlock? | (ApplicationBlock | DomainBlock)* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock* DomainBlock* "}"
-		public Group getGroup() { return cGroup; }
+		//"project" ID "{" InfrastructureBlock | InterfaceBlock? | (ApplicationBlock | DomainBlock)* "}"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"project" ID "{" InfrastructureBlock
+		public Group getGroup_0() { return cGroup_0; }
 
 		//"project"
-		public Keyword getProjectKeyword_0() { return cProjectKeyword_0; }
+		public Keyword getProjectKeyword_0_0() { return cProjectKeyword_0_0; }
 
 		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		public RuleCall getIDTerminalRuleCall_0_1() { return cIDTerminalRuleCall_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_0_2() { return cLeftCurlyBracketKeyword_0_2; }
 
 		//InfrastructureBlock
-		public RuleCall getInfrastructureBlockParserRuleCall_3() { return cInfrastructureBlockParserRuleCall_3; }
+		public RuleCall getInfrastructureBlockParserRuleCall_0_3() { return cInfrastructureBlockParserRuleCall_0_3; }
 
 		//InterfaceBlock?
-		public RuleCall getInterfaceBlockParserRuleCall_4() { return cInterfaceBlockParserRuleCall_4; }
+		public RuleCall getInterfaceBlockParserRuleCall_1() { return cInterfaceBlockParserRuleCall_1; }
 
-		//ApplicationBlock*
-		public RuleCall getApplicationBlockParserRuleCall_5() { return cApplicationBlockParserRuleCall_5; }
+		//(ApplicationBlock | DomainBlock)* "}"
+		public Group getGroup_2() { return cGroup_2; }
 
-		//DomainBlock*
-		public RuleCall getDomainBlockParserRuleCall_6() { return cDomainBlockParserRuleCall_6; }
+		//(ApplicationBlock | DomainBlock)*
+		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
+
+		//ApplicationBlock
+		public RuleCall getApplicationBlockParserRuleCall_2_0_0() { return cApplicationBlockParserRuleCall_2_0_0; }
+
+		//DomainBlock
+		public RuleCall getDomainBlockParserRuleCall_2_0_1() { return cDomainBlockParserRuleCall_2_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_2_1() { return cRightCurlyBracketKeyword_2_1; }
 	}
 
 	public class InterfaceBlockElements extends AbstractParserRuleElementFinder {
@@ -131,33 +143,40 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInfrastructureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cBasePackageKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final RuleCall cCompoundNameParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Keyword cProjectVersionKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final RuleCall cCompoundVersionParserRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
-		private final Keyword cLanguageKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cEqualsSignKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final RuleCall cDictBlockParserRuleCall_10 = (RuleCall)cGroup.eContents().get(10);
-		private final Keyword cFrameworkKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cEqualsSignKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final RuleCall cDictBlockParserRuleCall_13 = (RuleCall)cGroup.eContents().get(13);
-		private final Keyword cOrmKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cEqualsSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final RuleCall cDictBlockParserRuleCall_16 = (RuleCall)cGroup.eContents().get(16);
-		private final Keyword cDatabaseKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cEqualsSignKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final RuleCall cDictBlockParserRuleCall_19 = (RuleCall)cGroup.eContents().get(19);
-		private final Keyword cRightCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Keyword cBasePackageKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final RuleCall cCompoundNameParserRuleCall_2_0_2 = (RuleCall)cGroup_2_0.eContents().get(2);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cProjectVersionKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
+		private final RuleCall cCompoundVersionParserRuleCall_2_1_2 = (RuleCall)cGroup_2_1.eContents().get(2);
+		private final Group cGroup_2_2 = (Group)cAlternatives_2.eContents().get(2);
+		private final Keyword cLanguageKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_2_1 = (Keyword)cGroup_2_2.eContents().get(1);
+		private final RuleCall cDictBlockParserRuleCall_2_2_2 = (RuleCall)cGroup_2_2.eContents().get(2);
+		private final Group cGroup_2_3 = (Group)cAlternatives_2.eContents().get(3);
+		private final Keyword cFrameworkKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_3_1 = (Keyword)cGroup_2_3.eContents().get(1);
+		private final RuleCall cDictBlockParserRuleCall_2_3_2 = (RuleCall)cGroup_2_3.eContents().get(2);
+		private final Group cGroup_2_4 = (Group)cAlternatives_2.eContents().get(4);
+		private final Keyword cOrmKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_4_1 = (Keyword)cGroup_2_4.eContents().get(1);
+		private final RuleCall cDictBlockParserRuleCall_2_4_2 = (RuleCall)cGroup_2_4.eContents().get(2);
+		private final Group cGroup_2_5 = (Group)cAlternatives_2.eContents().get(5);
+		private final Keyword cDatabaseKeyword_2_5_0 = (Keyword)cGroup_2_5.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_5_1 = (Keyword)cGroup_2_5.eContents().get(1);
+		private final RuleCall cDictBlockParserRuleCall_2_5_2 = (RuleCall)cGroup_2_5.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//InfrastructureBlock:
-		//	"infrastructure" "{" "basePackage" "=" CompoundName "projectVersion" "=" CompoundVersion "language" "=" DictBlock
-		//	"framework" "=" DictBlock "orm" "=" DictBlock "database" "=" DictBlock "}";
+		//	"infrastructure" "{" ("basePackage" "=" CompoundName | "projectVersion" "=" CompoundVersion | "language" "=" DictBlock
+		//	| "framework" "=" DictBlock | "orm" "=" DictBlock | "database" "=" DictBlock) "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"infrastructure" "{" "basePackage" "=" CompoundName "projectVersion" "=" CompoundVersion "language" "=" DictBlock
-		//"framework" "=" DictBlock "orm" "=" DictBlock "database" "=" DictBlock "}"
+		//"infrastructure" "{" ("basePackage" "=" CompoundName | "projectVersion" "=" CompoundVersion | "language" "=" DictBlock |
+		//"framework" "=" DictBlock | "orm" "=" DictBlock | "database" "=" DictBlock) "}"
 		public Group getGroup() { return cGroup; }
 
 		//"infrastructure"
@@ -166,62 +185,84 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
+		//"basePackage" "=" CompoundName | "projectVersion" "=" CompoundVersion | "language" "=" DictBlock | "framework" "="
+		//DictBlock | "orm" "=" DictBlock | "database" "=" DictBlock
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//"basePackage" "=" CompoundName
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
 		//"basePackage"
-		public Keyword getBasePackageKeyword_2() { return cBasePackageKeyword_2; }
+		public Keyword getBasePackageKeyword_2_0_0() { return cBasePackageKeyword_2_0_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		public Keyword getEqualsSignKeyword_2_0_1() { return cEqualsSignKeyword_2_0_1; }
 
 		//CompoundName
-		public RuleCall getCompoundNameParserRuleCall_4() { return cCompoundNameParserRuleCall_4; }
+		public RuleCall getCompoundNameParserRuleCall_2_0_2() { return cCompoundNameParserRuleCall_2_0_2; }
+
+		//"projectVersion" "=" CompoundVersion
+		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//"projectVersion"
-		public Keyword getProjectVersionKeyword_5() { return cProjectVersionKeyword_5; }
+		public Keyword getProjectVersionKeyword_2_1_0() { return cProjectVersionKeyword_2_1_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		public Keyword getEqualsSignKeyword_2_1_1() { return cEqualsSignKeyword_2_1_1; }
 
 		//CompoundVersion
-		public RuleCall getCompoundVersionParserRuleCall_7() { return cCompoundVersionParserRuleCall_7; }
+		public RuleCall getCompoundVersionParserRuleCall_2_1_2() { return cCompoundVersionParserRuleCall_2_1_2; }
+
+		//"language" "=" DictBlock
+		public Group getGroup_2_2() { return cGroup_2_2; }
 
 		//"language"
-		public Keyword getLanguageKeyword_8() { return cLanguageKeyword_8; }
+		public Keyword getLanguageKeyword_2_2_0() { return cLanguageKeyword_2_2_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_9() { return cEqualsSignKeyword_9; }
+		public Keyword getEqualsSignKeyword_2_2_1() { return cEqualsSignKeyword_2_2_1; }
 
 		//DictBlock
-		public RuleCall getDictBlockParserRuleCall_10() { return cDictBlockParserRuleCall_10; }
+		public RuleCall getDictBlockParserRuleCall_2_2_2() { return cDictBlockParserRuleCall_2_2_2; }
+
+		//"framework" "=" DictBlock
+		public Group getGroup_2_3() { return cGroup_2_3; }
 
 		//"framework"
-		public Keyword getFrameworkKeyword_11() { return cFrameworkKeyword_11; }
+		public Keyword getFrameworkKeyword_2_3_0() { return cFrameworkKeyword_2_3_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_12() { return cEqualsSignKeyword_12; }
+		public Keyword getEqualsSignKeyword_2_3_1() { return cEqualsSignKeyword_2_3_1; }
 
 		//DictBlock
-		public RuleCall getDictBlockParserRuleCall_13() { return cDictBlockParserRuleCall_13; }
+		public RuleCall getDictBlockParserRuleCall_2_3_2() { return cDictBlockParserRuleCall_2_3_2; }
+
+		//"orm" "=" DictBlock
+		public Group getGroup_2_4() { return cGroup_2_4; }
 
 		//"orm"
-		public Keyword getOrmKeyword_14() { return cOrmKeyword_14; }
+		public Keyword getOrmKeyword_2_4_0() { return cOrmKeyword_2_4_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_15() { return cEqualsSignKeyword_15; }
+		public Keyword getEqualsSignKeyword_2_4_1() { return cEqualsSignKeyword_2_4_1; }
 
 		//DictBlock
-		public RuleCall getDictBlockParserRuleCall_16() { return cDictBlockParserRuleCall_16; }
+		public RuleCall getDictBlockParserRuleCall_2_4_2() { return cDictBlockParserRuleCall_2_4_2; }
+
+		//"database" "=" DictBlock
+		public Group getGroup_2_5() { return cGroup_2_5; }
 
 		//"database"
-		public Keyword getDatabaseKeyword_17() { return cDatabaseKeyword_17; }
+		public Keyword getDatabaseKeyword_2_5_0() { return cDatabaseKeyword_2_5_0; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_18() { return cEqualsSignKeyword_18; }
+		public Keyword getEqualsSignKeyword_2_5_1() { return cEqualsSignKeyword_2_5_1; }
 
 		//DictBlock
-		public RuleCall getDictBlockParserRuleCall_19() { return cDictBlockParserRuleCall_19; }
+		public RuleCall getDictBlockParserRuleCall_2_5_2() { return cDictBlockParserRuleCall_2_5_2; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_20() { return cRightCurlyBracketKeyword_20; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class DictBlockElements extends AbstractParserRuleElementFinder {
@@ -236,22 +277,22 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//DictBlock:
-		//	"{" (KeyValue ("," KeyValue))? "}";
+		//	"{" (KeyValue ("," KeyValue)*)? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"{" (KeyValue ("," KeyValue))? "}"
+		//"{" (KeyValue ("," KeyValue)*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
 
-		//(KeyValue ("," KeyValue))?
+		//(KeyValue ("," KeyValue)*)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//KeyValue
 		public RuleCall getKeyValueParserRuleCall_1_0() { return cKeyValueParserRuleCall_1_0; }
 
-		//"," KeyValue
+		//("," KeyValue)*
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//","
@@ -451,10 +492,10 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EntityBlock:
 		//	AccessModifier? "abstract"? "entity" ID ExtendBlock? ImplementBlock? "{" (AccessModifier? DataType ID)*
-		//	RepositoryBlock "}";
+		//	RepositoryBlock? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//AccessModifier? "abstract"? "entity" ID ExtendBlock? ImplementBlock? "{" (AccessModifier? DataType ID)* RepositoryBlock
+		//AccessModifier? "abstract"? "entity" ID ExtendBlock? ImplementBlock? "{" (AccessModifier? DataType ID)* RepositoryBlock?
 		//"}"
 		public Group getGroup() { return cGroup; }
 
@@ -491,7 +532,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_7_2() { return cIDTerminalRuleCall_7_2; }
 
-		//RepositoryBlock
+		//RepositoryBlock?
 		public RuleCall getRepositoryBlockParserRuleCall_8() { return cRepositoryBlockParserRuleCall_8; }
 
 		//"}"
@@ -507,18 +548,17 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final RuleCall cIDTerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final RuleCall cDataTypeParserRuleCall_3_2 = (RuleCall)cGroup_3.eContents().get(2);
-		private final RuleCall cIDTerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
-		private final Keyword cRightParenthesisKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
-		private final Keyword cColonKeyword_3_5 = (Keyword)cGroup_3.eContents().get(5);
-		private final RuleCall cDataTypeParserRuleCall_3_6 = (RuleCall)cGroup_3.eContents().get(6);
+		private final RuleCall cMethodParameterParserRuleCall_3_2 = (RuleCall)cGroup_3.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Keyword cColonKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final RuleCall cDataTypeParserRuleCall_3_5 = (RuleCall)cGroup_3.eContents().get(5);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//RepositoryBlock:
-		//	"repository" ID "{" (ID "(" DataType ID ")" ":" DataType)* "}";
+		//	"repository" ID "{" (ID "(" MethodParameter ")" ":" DataType)* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"repository" ID "{" (ID "(" DataType ID ")" ":" DataType)* "}"
+		//"repository" ID "{" (ID "(" MethodParameter ")" ":" DataType)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"repository"
@@ -530,7 +570,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//(ID "(" DataType ID ")" ":" DataType)*
+		//(ID "(" MethodParameter ")" ":" DataType)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//ID
@@ -539,20 +579,17 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_3_1() { return cLeftParenthesisKeyword_3_1; }
 
-		//DataType
-		public RuleCall getDataTypeParserRuleCall_3_2() { return cDataTypeParserRuleCall_3_2; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_3_3() { return cIDTerminalRuleCall_3_3; }
+		//MethodParameter
+		public RuleCall getMethodParameterParserRuleCall_3_2() { return cMethodParameterParserRuleCall_3_2; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3_4() { return cRightParenthesisKeyword_3_4; }
+		public Keyword getRightParenthesisKeyword_3_3() { return cRightParenthesisKeyword_3_3; }
 
 		//":"
-		public Keyword getColonKeyword_3_5() { return cColonKeyword_3_5; }
+		public Keyword getColonKeyword_3_4() { return cColonKeyword_3_4; }
 
 		//DataType
-		public RuleCall getDataTypeParserRuleCall_3_6() { return cDataTypeParserRuleCall_3_6; }
+		public RuleCall getDataTypeParserRuleCall_3_5() { return cDataTypeParserRuleCall_3_5; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -602,6 +639,120 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
+	public class DataTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDataTypeListParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cDataTypeSetParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCompoundNameParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Keyword cStringKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cIntKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cIntegerKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cLongKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cLongKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cBooleanKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cBooleanKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cDateTimeKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cDoubleKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cDoubleKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cFloatKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cFloatKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cObjectKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		
+		//DataType:
+		//	DataTypeList | DataTypeSet | CompoundName | "String" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" |
+		//	"DateTime" | "double" | "Double" | "float" | "Float" | "Object";
+		@Override public ParserRule getRule() { return rule; }
+
+		//DataTypeList | DataTypeSet | CompoundName | "String" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" |
+		//"DateTime" | "double" | "Double" | "float" | "Float" | "Object"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//DataTypeList
+		public RuleCall getDataTypeListParserRuleCall_0() { return cDataTypeListParserRuleCall_0; }
+
+		//DataTypeSet
+		public RuleCall getDataTypeSetParserRuleCall_1() { return cDataTypeSetParserRuleCall_1; }
+
+		//CompoundName
+		public RuleCall getCompoundNameParserRuleCall_2() { return cCompoundNameParserRuleCall_2; }
+
+		//"String"
+		public Keyword getStringKeyword_3() { return cStringKeyword_3; }
+
+		//"int"
+		public Keyword getIntKeyword_4() { return cIntKeyword_4; }
+
+		//"Integer"
+		public Keyword getIntegerKeyword_5() { return cIntegerKeyword_5; }
+
+		//"long"
+		public Keyword getLongKeyword_6() { return cLongKeyword_6; }
+
+		//"Long"
+		public Keyword getLongKeyword_7() { return cLongKeyword_7; }
+
+		//"boolean"
+		public Keyword getBooleanKeyword_8() { return cBooleanKeyword_8; }
+
+		//"Boolean"
+		public Keyword getBooleanKeyword_9() { return cBooleanKeyword_9; }
+
+		//"DateTime"
+		public Keyword getDateTimeKeyword_10() { return cDateTimeKeyword_10; }
+
+		//"double"
+		public Keyword getDoubleKeyword_11() { return cDoubleKeyword_11; }
+
+		//"Double"
+		public Keyword getDoubleKeyword_12() { return cDoubleKeyword_12; }
+
+		//"float"
+		public Keyword getFloatKeyword_13() { return cFloatKeyword_13; }
+
+		//"Float"
+		public Keyword getFloatKeyword_14() { return cFloatKeyword_14; }
+
+		//"Object"
+		public Keyword getObjectKeyword_15() { return cObjectKeyword_15; }
+	}
+
+	public class MethodParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MethodParameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cDataTypeParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final RuleCall cDataTypeParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		
+		//MethodParameter:
+		//	DataType ID ("," DataType ID)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//DataType ID ("," DataType ID)*
+		public Group getGroup() { return cGroup; }
+
+		//DataType
+		public RuleCall getDataTypeParserRuleCall_0() { return cDataTypeParserRuleCall_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+
+		//("," DataType ID)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//DataType
+		public RuleCall getDataTypeParserRuleCall_2_1() { return cDataTypeParserRuleCall_2_1; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_2_2() { return cIDTerminalRuleCall_2_2; }
+	}
+
 	public class KeyValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "KeyValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -624,84 +775,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getIDTerminalRuleCall_2() { return cIDTerminalRuleCall_2; }
-	}
-
-	public class DataTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cStringKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cIntKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cIntegerKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cLongKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cLongKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cBooleanKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cBooleanKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
-		private final Keyword cDateTimeKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
-		private final Keyword cDoubleKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
-		private final Keyword cDoubleKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
-		private final Keyword cFloatKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
-		private final Keyword cFloatKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
-		private final Keyword cObjectKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
-		private final RuleCall cDataTypeListParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
-		private final RuleCall cDataTypeSetParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
-		private final RuleCall cCompoundNameParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
-		
-		//DataType:
-		//	"string" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" | "DateTime" | "double" | "Double" | "float" |
-		//	"Float" | "Object" | DataTypeList | DataTypeSet | CompoundName;
-		@Override public ParserRule getRule() { return rule; }
-
-		//"string" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" | "DateTime" | "double" | "Double" | "float" |
-		//"Float" | "Object" | DataTypeList | DataTypeSet | CompoundName
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"string"
-		public Keyword getStringKeyword_0() { return cStringKeyword_0; }
-
-		//"int"
-		public Keyword getIntKeyword_1() { return cIntKeyword_1; }
-
-		//"Integer"
-		public Keyword getIntegerKeyword_2() { return cIntegerKeyword_2; }
-
-		//"long"
-		public Keyword getLongKeyword_3() { return cLongKeyword_3; }
-
-		//"Long"
-		public Keyword getLongKeyword_4() { return cLongKeyword_4; }
-
-		//"boolean"
-		public Keyword getBooleanKeyword_5() { return cBooleanKeyword_5; }
-
-		//"Boolean"
-		public Keyword getBooleanKeyword_6() { return cBooleanKeyword_6; }
-
-		//"DateTime"
-		public Keyword getDateTimeKeyword_7() { return cDateTimeKeyword_7; }
-
-		//"double"
-		public Keyword getDoubleKeyword_8() { return cDoubleKeyword_8; }
-
-		//"Double"
-		public Keyword getDoubleKeyword_9() { return cDoubleKeyword_9; }
-
-		//"float"
-		public Keyword getFloatKeyword_10() { return cFloatKeyword_10; }
-
-		//"Float"
-		public Keyword getFloatKeyword_11() { return cFloatKeyword_11; }
-
-		//"Object"
-		public Keyword getObjectKeyword_12() { return cObjectKeyword_12; }
-
-		//DataTypeList
-		public RuleCall getDataTypeListParserRuleCall_13() { return cDataTypeListParserRuleCall_13; }
-
-		//DataTypeSet
-		public RuleCall getDataTypeSetParserRuleCall_14() { return cDataTypeSetParserRuleCall_14; }
-
-		//CompoundName
-		public RuleCall getCompoundNameParserRuleCall_15() { return cCompoundNameParserRuleCall_15; }
 	}
 
 	public class ExtendBlockElements extends AbstractParserRuleElementFinder {
@@ -908,20 +981,20 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImportCompoundName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCompoundNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Keyword cAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cFullStopAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//ImportCompoundName:
-		//	CompoundName "*"?;
+		//	CompoundName ".*"?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//CompoundName "*"?
+		//CompoundName ".*"?
 		public Group getGroup() { return cGroup; }
 
 		//CompoundName
 		public RuleCall getCompoundNameParserRuleCall_0() { return cCompoundNameParserRuleCall_0; }
 
-		//"*"?
-		public Keyword getAsteriskKeyword_1() { return cAsteriskKeyword_1; }
+		//".*"?
+		public Keyword getFullStopAsteriskKeyword_1() { return cFullStopAsteriskKeyword_1; }
 	}
 
 	public class CompoundNameElements extends AbstractParserRuleElementFinder {
@@ -993,8 +1066,9 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	private final EntityBlockElements pEntityBlock;
 	private final RepositoryBlockElements pRepositoryBlock;
 	private final EnumBlockElements pEnumBlock;
-	private final KeyValueElements pKeyValue;
 	private final DataTypeElements pDataType;
+	private final MethodParameterElements pMethodParameter;
+	private final KeyValueElements pKeyValue;
 	private final ExtendBlockElements pExtendBlock;
 	private final ExtendElements pExtend;
 	private final ImplementBlockElements pImplementBlock;
@@ -1029,8 +1103,9 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		this.pEntityBlock = new EntityBlockElements();
 		this.pRepositoryBlock = new RepositoryBlockElements();
 		this.pEnumBlock = new EnumBlockElements();
-		this.pKeyValue = new KeyValueElements();
 		this.pDataType = new DataTypeElements();
+		this.pMethodParameter = new MethodParameterElements();
+		this.pKeyValue = new KeyValueElements();
 		this.pExtendBlock = new ExtendBlockElements();
 		this.pExtend = new ExtendElements();
 		this.pImplementBlock = new ImplementBlockElements();
@@ -1083,7 +1158,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Project:
-	//	"project" ID "{" InfrastructureBlock InterfaceBlock? ApplicationBlock* DomainBlock* "}";
+	//	"project" ID "{" InfrastructureBlock | InterfaceBlock? | (ApplicationBlock | DomainBlock)* "}";
 	public ProjectElements getProjectAccess() {
 		return pProject;
 	}
@@ -1103,8 +1178,8 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InfrastructureBlock:
-	//	"infrastructure" "{" "basePackage" "=" CompoundName "projectVersion" "=" CompoundVersion "language" "=" DictBlock
-	//	"framework" "=" DictBlock "orm" "=" DictBlock "database" "=" DictBlock "}";
+	//	"infrastructure" "{" ("basePackage" "=" CompoundName | "projectVersion" "=" CompoundVersion | "language" "=" DictBlock
+	//	| "framework" "=" DictBlock | "orm" "=" DictBlock | "database" "=" DictBlock) "}";
 	public InfrastructureBlockElements getInfrastructureBlockAccess() {
 		return pInfrastructureBlock;
 	}
@@ -1114,7 +1189,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DictBlock:
-	//	"{" (KeyValue ("," KeyValue))? "}";
+	//	"{" (KeyValue ("," KeyValue)*)? "}";
 	public DictBlockElements getDictBlockAccess() {
 		return pDictBlock;
 	}
@@ -1165,7 +1240,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	//EntityBlock:
 	//	AccessModifier? "abstract"? "entity" ID ExtendBlock? ImplementBlock? "{" (AccessModifier? DataType ID)*
-	//	RepositoryBlock "}";
+	//	RepositoryBlock? "}";
 	public EntityBlockElements getEntityBlockAccess() {
 		return pEntityBlock;
 	}
@@ -1175,7 +1250,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RepositoryBlock:
-	//	"repository" ID "{" (ID "(" DataType ID ")" ":" DataType)* "}";
+	//	"repository" ID "{" (ID "(" MethodParameter ")" ":" DataType)* "}";
 	public RepositoryBlockElements getRepositoryBlockAccess() {
 		return pRepositoryBlock;
 	}
@@ -1194,6 +1269,27 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		return getEnumBlockAccess().getRule();
 	}
 
+	//DataType:
+	//	DataTypeList | DataTypeSet | CompoundName | "String" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" |
+	//	"DateTime" | "double" | "Double" | "float" | "Float" | "Object";
+	public DataTypeElements getDataTypeAccess() {
+		return pDataType;
+	}
+	
+	public ParserRule getDataTypeRule() {
+		return getDataTypeAccess().getRule();
+	}
+
+	//MethodParameter:
+	//	DataType ID ("," DataType ID)*;
+	public MethodParameterElements getMethodParameterAccess() {
+		return pMethodParameter;
+	}
+	
+	public ParserRule getMethodParameterRule() {
+		return getMethodParameterAccess().getRule();
+	}
+
 	//KeyValue:
 	//	ID ":" ID;
 	public KeyValueElements getKeyValueAccess() {
@@ -1202,17 +1298,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getKeyValueRule() {
 		return getKeyValueAccess().getRule();
-	}
-
-	//DataType:
-	//	"string" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" | "DateTime" | "double" | "Double" | "float" |
-	//	"Float" | "Object" | DataTypeList | DataTypeSet | CompoundName;
-	public DataTypeElements getDataTypeAccess() {
-		return pDataType;
-	}
-	
-	public ParserRule getDataTypeRule() {
-		return getDataTypeAccess().getRule();
 	}
 
 	//ExtendBlock:
@@ -1306,7 +1391,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ImportCompoundName:
-	//	CompoundName "*"?;
+	//	CompoundName ".*"?;
 	public ImportCompoundNameElements getImportCompoundNameAccess() {
 		return pImportCompoundName;
 	}

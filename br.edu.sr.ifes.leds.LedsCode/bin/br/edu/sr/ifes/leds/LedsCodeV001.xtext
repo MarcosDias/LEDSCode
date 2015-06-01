@@ -9,10 +9,12 @@ LedsCodeDSL:
 
 Project:
 	'project' ID '{'
-		InfrastructureBlock
-		(InterfaceBlock)?
-		(ApplicationBlock)*
-		(DomainBlock)*
+		InfrastructureBlock | 
+		(InterfaceBlock)? 	| 
+		(
+			ApplicationBlock | DomainBlock
+		)*
+		
 	'}'
 ;
 	
@@ -24,18 +26,18 @@ InterfaceBlock:
 
 InfrastructureBlock:
 	'infrastructure' '{'
-		'basePackage' '=' CompoundName
-		'projectVersion' '=' CompoundVersion
-		'language' '=' DictBlock
-		'framework' '=' DictBlock
-		'orm' '=' DictBlock
-		'database' '=' DictBlock
+		('basePackage' '=' CompoundName |
+		'projectVersion' '=' CompoundVersion | 
+		'language' '=' DictBlock |
+		'framework' '=' DictBlock |
+		'orm' '=' DictBlock |
+		'database' '=' DictBlock )
 	'}'
 ;
 
 DictBlock:
 	'{'
-		(KeyValue (',' KeyValue))?
+		(KeyValue (',' KeyValue)*)?
 	'}'
 ;
 
@@ -67,13 +69,13 @@ EntityBlock:
 	(AccessModifier)? ('abstract')? 'entity' ID (ExtendBlock)? (ImplementBlock)?  '{'
 		((AccessModifier)? DataType ID)*
 		
-		RepositoryBlock
+		RepositoryBlock?
 	'}' 
 ;
 
 RepositoryBlock:
 	'repository' ID '{'
-		(ID'('DataType ID')' ':' DataType)*	
+		(ID'('MethodParameter')' ':' DataType)*	
 	'}'
 ;
 
@@ -83,11 +85,12 @@ EnumBlock:
 	'}'
 ;
 
-KeyValue: ID ':' ID;
 DataType:
-	('string'|'int'|'Integer'|'long'|'Long'|'boolean'|'Boolean'|'DateTime'|
-  	'double'|'Double'|'float'|'Float'|'Object'|DataTypeList|DataTypeSet|CompoundName)
+	(DataTypeList|DataTypeSet|CompoundName|'String'|'int'|'Integer'|'long'|'Long'|'boolean'|'Boolean'|'DateTime'|
+  	'double'|'Double'|'float'|'Float'|'Object')
 ;
+MethodParameter: DataType ID (',' DataType ID)*;
+KeyValue: ID ':' ID;
 ExtendBlock: Extend CompoundName;
 Extend: 'extend'|'ext'|':';
 ImplementBlock: Implement CompoundName (',' CompoundName)*;
@@ -97,6 +100,6 @@ DataTypeSet: 'Set''<'ID'>';
 AccessModifier: (Private|Protected);
 Private:'-';
 Protected:'#';
-ImportCompoundName: CompoundName('*')?;
+ImportCompoundName: CompoundName('.*'?);
 CompoundName: ID('.'ID)*;
 CompoundVersion: INT('.'INT)*;
