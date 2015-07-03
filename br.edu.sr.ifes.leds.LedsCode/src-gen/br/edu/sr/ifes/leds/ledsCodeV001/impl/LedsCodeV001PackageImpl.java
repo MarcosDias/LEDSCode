@@ -2,13 +2,20 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
+import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Factory;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
+import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -26,6 +33,48 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * @generated
    */
   private EClass ledsCodeDSLEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass projectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interfaceBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interfaceApplicationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass infrastructureBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass databaseBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nameVersionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -105,9 +154,299 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLedsCodeDSL_Project()
+  public EReference getLedsCodeDSL_Project()
   {
-    return (EAttribute)ledsCodeDSLEClass.getEStructuralFeatures().get(0);
+    return (EReference)ledsCodeDSLEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getProject()
+  {
+    return projectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProject_Name()
+  {
+    return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProject_InfrastructureBlock()
+  {
+    return (EReference)projectEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProject_InterfaceBlock()
+  {
+    return (EReference)projectEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProject_AppBlock()
+  {
+    return (EAttribute)projectEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProject_DomainBlock()
+  {
+    return (EAttribute)projectEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInterfaceBlock()
+  {
+    return interfaceBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInterfaceBlock_Name()
+  {
+    return (EAttribute)interfaceBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInterfaceBlock_InterfaceApplication()
+  {
+    return (EReference)interfaceBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInterfaceApplication()
+  {
+    return interfaceApplicationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInterfaceApplication_Type()
+  {
+    return (EAttribute)interfaceApplicationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInterfaceApplication_Name()
+  {
+    return (EAttribute)interfaceApplicationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInterfaceApplication_NameApp()
+  {
+    return (EAttribute)interfaceApplicationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInfrastructureBlock()
+  {
+    return infrastructureBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInfrastructureBlock_BasePackage()
+  {
+    return (EAttribute)infrastructureBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInfrastructureBlock_ProjectVersion()
+  {
+    return (EAttribute)infrastructureBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInfrastructureBlock_Language()
+  {
+    return (EReference)infrastructureBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInfrastructureBlock_Framework()
+  {
+    return (EReference)infrastructureBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInfrastructureBlock_Orm()
+  {
+    return (EReference)infrastructureBlockEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInfrastructureBlock_Database()
+  {
+    return (EReference)infrastructureBlockEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDatabaseBlock()
+  {
+    return databaseBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDatabaseBlock_VersionValue()
+  {
+    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDatabaseBlock_NameValue()
+  {
+    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDatabaseBlock_UserValue()
+  {
+    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDatabaseBlock_PassValue()
+  {
+    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDatabaseBlock_HostValue()
+  {
+    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNameVersion()
+  {
+    return nameVersionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNameVersion_NameValue()
+  {
+    return (EAttribute)nameVersionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNameVersion_VersionValue()
+  {
+    return (EAttribute)nameVersionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -141,7 +480,42 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     // Create classes and their features
     ledsCodeDSLEClass = createEClass(LEDS_CODE_DSL);
-    createEAttribute(ledsCodeDSLEClass, LEDS_CODE_DSL__PROJECT);
+    createEReference(ledsCodeDSLEClass, LEDS_CODE_DSL__PROJECT);
+
+    projectEClass = createEClass(PROJECT);
+    createEAttribute(projectEClass, PROJECT__NAME);
+    createEReference(projectEClass, PROJECT__INFRASTRUCTURE_BLOCK);
+    createEReference(projectEClass, PROJECT__INTERFACE_BLOCK);
+    createEAttribute(projectEClass, PROJECT__APP_BLOCK);
+    createEAttribute(projectEClass, PROJECT__DOMAIN_BLOCK);
+
+    interfaceBlockEClass = createEClass(INTERFACE_BLOCK);
+    createEAttribute(interfaceBlockEClass, INTERFACE_BLOCK__NAME);
+    createEReference(interfaceBlockEClass, INTERFACE_BLOCK__INTERFACE_APPLICATION);
+
+    interfaceApplicationEClass = createEClass(INTERFACE_APPLICATION);
+    createEAttribute(interfaceApplicationEClass, INTERFACE_APPLICATION__TYPE);
+    createEAttribute(interfaceApplicationEClass, INTERFACE_APPLICATION__NAME);
+    createEAttribute(interfaceApplicationEClass, INTERFACE_APPLICATION__NAME_APP);
+
+    infrastructureBlockEClass = createEClass(INFRASTRUCTURE_BLOCK);
+    createEAttribute(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__BASE_PACKAGE);
+    createEAttribute(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__PROJECT_VERSION);
+    createEReference(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__LANGUAGE);
+    createEReference(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__FRAMEWORK);
+    createEReference(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__ORM);
+    createEReference(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__DATABASE);
+
+    databaseBlockEClass = createEClass(DATABASE_BLOCK);
+    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__VERSION_VALUE);
+    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__NAME_VALUE);
+    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__USER_VALUE);
+    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__PASS_VALUE);
+    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__HOST_VALUE);
+
+    nameVersionEClass = createEClass(NAME_VERSION);
+    createEAttribute(nameVersionEClass, NAME_VERSION__NAME_VALUE);
+    createEAttribute(nameVersionEClass, NAME_VERSION__VERSION_VALUE);
   }
 
   /**
@@ -176,7 +550,42 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     // Initialize classes and features; add operations and parameters
     initEClass(ledsCodeDSLEClass, LedsCodeDSL.class, "LedsCodeDSL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLedsCodeDSL_Project(), ecorePackage.getEString(), "project", null, 0, 1, LedsCodeDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLedsCodeDSL_Project(), this.getProject(), null, "project", null, 0, -1, LedsCodeDSL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProject_InfrastructureBlock(), this.getInfrastructureBlock(), null, "infrastructureBlock", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProject_InterfaceBlock(), this.getInterfaceBlock(), null, "interfaceBlock", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProject_AppBlock(), ecorePackage.getEString(), "appBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProject_DomainBlock(), ecorePackage.getEString(), "domainBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(interfaceBlockEClass, InterfaceBlock.class, "InterfaceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInterfaceBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, InterfaceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInterfaceBlock_InterfaceApplication(), this.getInterfaceApplication(), null, "interfaceApplication", null, 0, -1, InterfaceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(interfaceApplicationEClass, InterfaceApplication.class, "InterfaceApplication", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInterfaceApplication_Type(), ecorePackage.getEString(), "type", null, 0, 1, InterfaceApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInterfaceApplication_Name(), ecorePackage.getEString(), "name", null, 0, 1, InterfaceApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInterfaceApplication_NameApp(), ecorePackage.getEString(), "nameApp", null, 0, 1, InterfaceApplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(infrastructureBlockEClass, InfrastructureBlock.class, "InfrastructureBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInfrastructureBlock_BasePackage(), ecorePackage.getEString(), "basePackage", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfrastructureBlock_ProjectVersion(), ecorePackage.getEString(), "projectVersion", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfrastructureBlock_Language(), this.getNameVersion(), null, "language", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfrastructureBlock_Framework(), this.getNameVersion(), null, "framework", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfrastructureBlock_Orm(), this.getNameVersion(), null, "orm", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfrastructureBlock_Database(), this.getDatabaseBlock(), null, "database", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(databaseBlockEClass, DatabaseBlock.class, "DatabaseBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDatabaseBlock_VersionValue(), ecorePackage.getEString(), "versionValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabaseBlock_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabaseBlock_UserValue(), ecorePackage.getEString(), "userValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabaseBlock_PassValue(), ecorePackage.getEString(), "passValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabaseBlock_HostValue(), ecorePackage.getEString(), "hostValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nameVersionEClass, NameVersion.class, "NameVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNameVersion_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, NameVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNameVersion_VersionValue(), ecorePackage.getEString(), "versionValue", null, 0, 1, NameVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

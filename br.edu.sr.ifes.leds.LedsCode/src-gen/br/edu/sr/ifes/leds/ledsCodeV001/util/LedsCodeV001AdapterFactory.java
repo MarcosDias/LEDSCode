@@ -80,6 +80,36 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
         return createLedsCodeDSLAdapter();
       }
       @Override
+      public Adapter caseProject(Project object)
+      {
+        return createProjectAdapter();
+      }
+      @Override
+      public Adapter caseInterfaceBlock(InterfaceBlock object)
+      {
+        return createInterfaceBlockAdapter();
+      }
+      @Override
+      public Adapter caseInterfaceApplication(InterfaceApplication object)
+      {
+        return createInterfaceApplicationAdapter();
+      }
+      @Override
+      public Adapter caseInfrastructureBlock(InfrastructureBlock object)
+      {
+        return createInfrastructureBlockAdapter();
+      }
+      @Override
+      public Adapter caseDatabaseBlock(DatabaseBlock object)
+      {
+        return createDatabaseBlockAdapter();
+      }
+      @Override
+      public Adapter caseNameVersion(NameVersion object)
+      {
+        return createNameVersionAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -112,6 +142,96 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLedsCodeDSLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Project <em>Project</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Project
+   * @generated
+   */
+  public Adapter createProjectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock <em>Interface Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock
+   * @generated
+   */
+  public Adapter createInterfaceBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication <em>Interface Application</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication
+   * @generated
+   */
+  public Adapter createInterfaceApplicationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock <em>Infrastructure Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock
+   * @generated
+   */
+  public Adapter createInfrastructureBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock <em>Database Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock
+   * @generated
+   */
+  public Adapter createDatabaseBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.NameVersion <em>Name Version</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.NameVersion
+   * @generated
+   */
+  public Adapter createNameVersionAdapter()
   {
     return null;
   }

@@ -8,7 +8,42 @@
   <genPackages prefix="LedsCodeV001" basePackage="br.edu.sr.ifes.leds" disposableProviderFactory="true"
       fileExtensions="leds" ecorePackage="LedsCodeV001.ecore#/">
     <genClasses ecoreClass="LedsCodeV001.ecore#//LedsCodeDSL">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//LedsCodeDSL/project"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//LedsCodeDSL/project"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Project/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Project/infrastructureBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Project/interfaceBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Project/appBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Project/domainBlock"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//InterfaceBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//InterfaceBlock/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//InterfaceBlock/interfaceApplication"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//InterfaceApplication">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//InterfaceApplication/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//InterfaceApplication/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//InterfaceApplication/nameApp"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//InfrastructureBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//InfrastructureBlock/basePackage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//InfrastructureBlock/projectVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//InfrastructureBlock/language"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//InfrastructureBlock/framework"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//InfrastructureBlock/orm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//InfrastructureBlock/database"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//DatabaseBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//DatabaseBlock/versionValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//DatabaseBlock/nameValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//DatabaseBlock/userValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//DatabaseBlock/passValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//DatabaseBlock/hostValue"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//NameVersion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//NameVersion/nameValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//NameVersion/versionValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

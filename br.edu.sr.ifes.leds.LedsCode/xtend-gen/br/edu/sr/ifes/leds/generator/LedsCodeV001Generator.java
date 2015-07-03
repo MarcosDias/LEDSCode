@@ -3,9 +3,17 @@
  */
 package br.edu.sr.ifes.leds.generator;
 
+import com.google.inject.Inject;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -14,7 +22,19 @@ import org.eclipse.xtext.generator.IGenerator;
  */
 @SuppressWarnings("all")
 public class LedsCodeV001Generator implements IGenerator {
+  @Inject
+  @Extension
+  private IQualifiedNameProvider _iQualifiedNameProvider;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    int _size = IterableExtensions.size(_iterable);
+    InputOutput.<Integer>println(Integer.valueOf(_size));
+    TreeIterator<EObject> _allContents_1 = resource.getAllContents();
+    Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
+    EObject _head = IterableExtensions.<EObject>head(_iterable_1);
+    InputOutput.<EObject>println(_head);
   }
 }

@@ -79,6 +79,48 @@ public class LedsCodeV001Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LedsCodeV001Package.PROJECT:
+      {
+        Project project = (Project)theEObject;
+        T result = caseProject(project);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.INTERFACE_BLOCK:
+      {
+        InterfaceBlock interfaceBlock = (InterfaceBlock)theEObject;
+        T result = caseInterfaceBlock(interfaceBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.INTERFACE_APPLICATION:
+      {
+        InterfaceApplication interfaceApplication = (InterfaceApplication)theEObject;
+        T result = caseInterfaceApplication(interfaceApplication);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.INFRASTRUCTURE_BLOCK:
+      {
+        InfrastructureBlock infrastructureBlock = (InfrastructureBlock)theEObject;
+        T result = caseInfrastructureBlock(infrastructureBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.DATABASE_BLOCK:
+      {
+        DatabaseBlock databaseBlock = (DatabaseBlock)theEObject;
+        T result = caseDatabaseBlock(databaseBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.NAME_VERSION:
+      {
+        NameVersion nameVersion = (NameVersion)theEObject;
+        T result = caseNameVersion(nameVersion);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -95,6 +137,102 @@ public class LedsCodeV001Switch<T> extends Switch<T>
    * @generated
    */
   public T caseLedsCodeDSL(LedsCodeDSL object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Project</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Project</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProject(Project object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interface Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interface Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterfaceBlock(InterfaceBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interface Application</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interface Application</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterfaceApplication(InterfaceApplication object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Infrastructure Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Infrastructure Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInfrastructureBlock(InfrastructureBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Database Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Database Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDatabaseBlock(DatabaseBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Version</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Version</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameVersion(NameVersion object)
   {
     return null;
   }

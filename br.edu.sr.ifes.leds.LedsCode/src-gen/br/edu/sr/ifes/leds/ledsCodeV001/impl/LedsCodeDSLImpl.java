@@ -4,13 +4,21 @@ package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,24 +36,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class LedsCodeDSLImpl extends MinimalEObjectImpl.Container implements LedsCodeDSL
 {
   /**
-   * The default value of the '{@link #getProject() <em>Project</em>}' attribute.
+   * The cached value of the '{@link #getProject() <em>Project</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getProject()
    * @generated
    * @ordered
    */
-  protected static final String PROJECT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getProject() <em>Project</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProject()
-   * @generated
-   * @ordered
-   */
-  protected String project = PROJECT_EDEFAULT;
+  protected EList<Project> project;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,8 +71,12 @@ public class LedsCodeDSLImpl extends MinimalEObjectImpl.Container implements Led
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getProject()
+  public EList<Project> getProject()
   {
+    if (project == null)
+    {
+      project = new EObjectContainmentEList<Project>(Project.class, this, LedsCodeV001Package.LEDS_CODE_DSL__PROJECT);
+    }
     return project;
   }
 
@@ -83,12 +85,15 @@ public class LedsCodeDSLImpl extends MinimalEObjectImpl.Container implements Led
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProject(String newProject)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldProject = project;
-    project = newProject;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.LEDS_CODE_DSL__PROJECT, oldProject, project));
+    switch (featureID)
+    {
+      case LedsCodeV001Package.LEDS_CODE_DSL__PROJECT:
+        return ((InternalEList<?>)getProject()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -112,13 +117,15 @@ public class LedsCodeDSLImpl extends MinimalEObjectImpl.Container implements Led
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case LedsCodeV001Package.LEDS_CODE_DSL__PROJECT:
-        setProject((String)newValue);
+        getProject().clear();
+        getProject().addAll((Collection<? extends Project>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,7 +142,7 @@ public class LedsCodeDSLImpl extends MinimalEObjectImpl.Container implements Led
     switch (featureID)
     {
       case LedsCodeV001Package.LEDS_CODE_DSL__PROJECT:
-        setProject(PROJECT_EDEFAULT);
+        getProject().clear();
         return;
     }
     super.eUnset(featureID);
@@ -152,26 +159,9 @@ public class LedsCodeDSLImpl extends MinimalEObjectImpl.Container implements Led
     switch (featureID)
     {
       case LedsCodeV001Package.LEDS_CODE_DSL__PROJECT:
-        return PROJECT_EDEFAULT == null ? project != null : !PROJECT_EDEFAULT.equals(project);
+        return project != null && !project.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (project: ");
-    result.append(project);
-    result.append(')');
-    return result.toString();
   }
 
 } //LedsCodeDSLImpl

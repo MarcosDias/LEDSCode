@@ -32,6 +32,60 @@ public interface LedsCodeV001Factory extends EFactory
   LedsCodeDSL createLedsCodeDSL();
 
   /**
+   * Returns a new object of class '<em>Project</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Project</em>'.
+   * @generated
+   */
+  Project createProject();
+
+  /**
+   * Returns a new object of class '<em>Interface Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface Block</em>'.
+   * @generated
+   */
+  InterfaceBlock createInterfaceBlock();
+
+  /**
+   * Returns a new object of class '<em>Interface Application</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface Application</em>'.
+   * @generated
+   */
+  InterfaceApplication createInterfaceApplication();
+
+  /**
+   * Returns a new object of class '<em>Infrastructure Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Infrastructure Block</em>'.
+   * @generated
+   */
+  InfrastructureBlock createInfrastructureBlock();
+
+  /**
+   * Returns a new object of class '<em>Database Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Database Block</em>'.
+   * @generated
+   */
+  DatabaseBlock createDatabaseBlock();
+
+  /**
+   * Returns a new object of class '<em>Name Version</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Version</em>'.
+   * @generated
+   */
+  NameVersion createNameVersion();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

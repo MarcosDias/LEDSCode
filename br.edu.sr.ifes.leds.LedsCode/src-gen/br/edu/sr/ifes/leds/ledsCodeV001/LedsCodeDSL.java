@@ -2,6 +2,8 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,29 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface LedsCodeDSL extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Project</b></em>' attribute.
+   * Returns the value of the '<em><b>Project</b></em>' containment reference list.
+   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.Project}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Project</em>' attribute isn't clear,
+   * If the meaning of the '<em>Project</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Project</em>' attribute.
-   * @see #setProject(String)
+   * @return the value of the '<em>Project</em>' containment reference list.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getLedsCodeDSL_Project()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getProject();
-
-  /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL#getProject <em>Project</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Project</em>' attribute.
-   * @see #getProject()
-   * @generated
-   */
-  void setProject(String value);
+  EList<Project> getProject();
 
 } // LedsCodeDSL
