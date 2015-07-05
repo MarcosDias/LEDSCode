@@ -37,7 +37,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int T__66=66;
@@ -53,7 +53,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
     public static final int T__64=64;
     public static final int T__21=21;
     public static final int T__65=65;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -1303,10 +1303,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6605:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6605:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6483:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6483:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6605:11: ( '^' )?
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6483:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1315,7 +1315,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6605:11: '^'
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6483:11: '^'
                     {
                     match('^'); 
 
@@ -1333,7 +1333,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6605:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6483:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1382,10 +1382,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6607:10: ( ( '0' .. '9' )+ )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6607:12: ( '0' .. '9' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6485:10: ( ( '0' .. '9' )+ )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6485:12: ( '0' .. '9' )+
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6607:12: ( '0' .. '9' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6485:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1399,7 +1399,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6607:13: '0' .. '9'
+            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6485:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1431,10 +1431,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1452,10 +1452,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1471,7 +1471,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:21: '\\\\' .
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1479,7 +1479,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1504,10 +1504,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1523,7 +1523,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:54: '\\\\' .
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1531,7 +1531,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6609:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6487:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1574,12 +1574,12 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6611:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6611:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6489:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6489:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6611:24: ( options {greedy=false; } : . )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6489:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1604,7 +1604,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6611:52: .
+            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6489:52: .
             	    {
             	    matchAny(); 
 
@@ -1634,12 +1634,12 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1652,7 +1652,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1672,7 +1672,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                 }
             } while (true);
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:40: ( ( '\\r' )? '\\n' )?
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1681,9 +1681,9 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:41: ( '\\r' )? '\\n'
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:41: ( '\\r' )? '\\n'
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:41: ( '\\r' )?
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1692,7 +1692,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6613:41: '\\r'
+                            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6491:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1724,10 +1724,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6615:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6615:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6493:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6493:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6615:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6493:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1781,8 +1781,8 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6617:16: ( . )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6617:18: .
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6495:16: ( . )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:6495:18: .
             {
             matchAny(); 
 

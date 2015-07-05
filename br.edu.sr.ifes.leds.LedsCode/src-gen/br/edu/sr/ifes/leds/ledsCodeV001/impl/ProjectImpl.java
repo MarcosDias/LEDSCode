@@ -2,6 +2,7 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
@@ -21,6 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +35,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ProjectImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ProjectImpl#getInfrastructureBlock <em>Infrastructure Block</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ProjectImpl#getInterfaceBlock <em>Interface Block</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ProjectImpl#getAppBlock <em>App Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ProjectImpl#getApplicationBlock <em>Application Block</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ProjectImpl#getDomainBlock <em>Domain Block</em>}</li>
  * </ul>
  * </p>
@@ -82,14 +85,14 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   protected InterfaceBlock interfaceBlock;
 
   /**
-   * The cached value of the '{@link #getAppBlock() <em>App Block</em>}' attribute list.
+   * The cached value of the '{@link #getApplicationBlock() <em>Application Block</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAppBlock()
+   * @see #getApplicationBlock()
    * @generated
    * @ordered
    */
-  protected EList<String> appBlock;
+  protected EList<ApplicationBlock> applicationBlock;
 
   /**
    * The cached value of the '{@link #getDomainBlock() <em>Domain Block</em>}' attribute list.
@@ -246,13 +249,13 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getAppBlock()
+  public EList<ApplicationBlock> getApplicationBlock()
   {
-    if (appBlock == null)
+    if (applicationBlock == null)
     {
-      appBlock = new EDataTypeEList<String>(String.class, this, LedsCodeV001Package.PROJECT__APP_BLOCK);
+      applicationBlock = new EObjectContainmentEList<ApplicationBlock>(ApplicationBlock.class, this, LedsCodeV001Package.PROJECT__APPLICATION_BLOCK);
     }
-    return appBlock;
+    return applicationBlock;
   }
 
   /**
@@ -283,6 +286,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
         return basicSetInfrastructureBlock(null, msgs);
       case LedsCodeV001Package.PROJECT__INTERFACE_BLOCK:
         return basicSetInterfaceBlock(null, msgs);
+      case LedsCodeV001Package.PROJECT__APPLICATION_BLOCK:
+        return ((InternalEList<?>)getApplicationBlock()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -303,8 +308,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
         return getInfrastructureBlock();
       case LedsCodeV001Package.PROJECT__INTERFACE_BLOCK:
         return getInterfaceBlock();
-      case LedsCodeV001Package.PROJECT__APP_BLOCK:
-        return getAppBlock();
+      case LedsCodeV001Package.PROJECT__APPLICATION_BLOCK:
+        return getApplicationBlock();
       case LedsCodeV001Package.PROJECT__DOMAIN_BLOCK:
         return getDomainBlock();
     }
@@ -331,9 +336,9 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
       case LedsCodeV001Package.PROJECT__INTERFACE_BLOCK:
         setInterfaceBlock((InterfaceBlock)newValue);
         return;
-      case LedsCodeV001Package.PROJECT__APP_BLOCK:
-        getAppBlock().clear();
-        getAppBlock().addAll((Collection<? extends String>)newValue);
+      case LedsCodeV001Package.PROJECT__APPLICATION_BLOCK:
+        getApplicationBlock().clear();
+        getApplicationBlock().addAll((Collection<? extends ApplicationBlock>)newValue);
         return;
       case LedsCodeV001Package.PROJECT__DOMAIN_BLOCK:
         getDomainBlock().clear();
@@ -362,8 +367,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
       case LedsCodeV001Package.PROJECT__INTERFACE_BLOCK:
         setInterfaceBlock((InterfaceBlock)null);
         return;
-      case LedsCodeV001Package.PROJECT__APP_BLOCK:
-        getAppBlock().clear();
+      case LedsCodeV001Package.PROJECT__APPLICATION_BLOCK:
+        getApplicationBlock().clear();
         return;
       case LedsCodeV001Package.PROJECT__DOMAIN_BLOCK:
         getDomainBlock().clear();
@@ -388,8 +393,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
         return infrastructureBlock != null;
       case LedsCodeV001Package.PROJECT__INTERFACE_BLOCK:
         return interfaceBlock != null;
-      case LedsCodeV001Package.PROJECT__APP_BLOCK:
-        return appBlock != null && !appBlock.isEmpty();
+      case LedsCodeV001Package.PROJECT__APPLICATION_BLOCK:
+        return applicationBlock != null && !applicationBlock.isEmpty();
       case LedsCodeV001Package.PROJECT__DOMAIN_BLOCK:
         return domainBlock != null && !domainBlock.isEmpty();
     }
@@ -409,8 +414,6 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", appBlock: ");
-    result.append(appBlock);
     result.append(", domainBlock: ");
     result.append(domainBlock);
     result.append(')');

@@ -121,6 +121,13 @@ public class LedsCodeV001Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LedsCodeV001Package.APPLICATION_BLOCK:
+      {
+        ApplicationBlock applicationBlock = (ApplicationBlock)theEObject;
+        T result = caseApplicationBlock(applicationBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -233,6 +240,22 @@ public class LedsCodeV001Switch<T> extends Switch<T>
    * @generated
    */
   public T caseNameVersion(NameVersion object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Application Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Application Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseApplicationBlock(ApplicationBlock object)
   {
     return null;
   }

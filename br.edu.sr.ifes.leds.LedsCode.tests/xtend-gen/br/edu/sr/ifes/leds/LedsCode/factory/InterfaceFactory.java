@@ -4,7 +4,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class InterfaceFactory {
-  public static CharSequence completeInterface() {
+  public static CharSequence interfaceBlock() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("interface InterfaceLibrary  {");
     _builder.newLine();

@@ -86,6 +86,15 @@ public interface LedsCodeV001Factory extends EFactory
   NameVersion createNameVersion();
 
   /**
+   * Returns a new object of class '<em>Application Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Application Block</em>'.
+   * @generated
+   */
+  ApplicationBlock createApplicationBlock();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

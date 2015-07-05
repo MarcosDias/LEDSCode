@@ -14,7 +14,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Project/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Project/infrastructureBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Project/interfaceBlock"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Project/appBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Project/applicationBlock"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Project/domainBlock"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//InterfaceBlock">
@@ -44,6 +44,10 @@
     <genClasses ecoreClass="LedsCodeV001.ecore#//NameVersion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//NameVersion/nameValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//NameVersion/versionValue"/>
+    </genClasses>
+    <genClasses ecoreClass="LedsCodeV001.ecore#//ApplicationBlock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ApplicationBlock/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ApplicationBlock/applicationDomain"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

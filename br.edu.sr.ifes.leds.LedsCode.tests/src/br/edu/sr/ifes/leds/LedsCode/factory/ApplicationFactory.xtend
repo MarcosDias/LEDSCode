@@ -1,10 +1,13 @@
 package br.edu.sr.ifes.leds.LedsCode.factory
 
 class ApplicationFactory {
-	def static completeApp(){
+	def static applicationBlock(){
 '''
 application LibraryPersonApp{
-    // Tem acesso apenas aos elemento do modulo person
+	composedBy Library.*
+	composedBy Loan.*
+}
+application LibraryPersonApp2{
 	composedBy Library.Person.*
 }
 '''

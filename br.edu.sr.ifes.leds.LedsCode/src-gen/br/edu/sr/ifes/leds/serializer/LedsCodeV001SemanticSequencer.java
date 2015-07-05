@@ -3,6 +3,7 @@
  */
 package br.edu.sr.ifes.leds.serializer;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
@@ -35,6 +36,9 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == LedsCodeV001Package.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case LedsCodeV001Package.APPLICATION_BLOCK:
+				sequence_ApplicationBlock(context, (ApplicationBlock) semanticObject); 
+				return; 
 			case LedsCodeV001Package.DATABASE_BLOCK:
 				sequence_DatabaseBlock(context, (DatabaseBlock) semanticObject); 
 				return; 
@@ -59,6 +63,15 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     (name=ID applicationDomain+=ImportCompoundName*)
+	 */
+	protected void sequence_ApplicationBlock(EObject context, ApplicationBlock semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -91,8 +104,8 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	/**
 	 * Constraint:
 	 *     (
-	 *         basePackage=CompoundName 
-	 *         projectVersion=CompoundVersion 
+	 *         basePackage=STRING 
+	 *         projectVersion=STRING 
 	 *         language=NameVersion 
 	 *         framework=NameVersion 
 	 *         orm=NameVersion 
@@ -116,8 +129,8 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getBasePackageCompoundNameParserRuleCall_4_0(), semanticObject.getBasePackage());
-		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getProjectVersionCompoundVersionParserRuleCall_7_0(), semanticObject.getProjectVersion());
+		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getBasePackageSTRINGTerminalRuleCall_4_0(), semanticObject.getBasePackage());
+		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getProjectVersionSTRINGTerminalRuleCall_7_0(), semanticObject.getProjectVersion());
 		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getLanguageNameVersionParserRuleCall_11_0(), semanticObject.getLanguage());
 		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getFrameworkNameVersionParserRuleCall_16_0(), semanticObject.getFramework());
 		feeder.accept(grammarAccess.getInfrastructureBlockAccess().getOrmNameVersionParserRuleCall_21_0(), semanticObject.getOrm());
@@ -174,7 +187,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID infrastructureBlock=InfrastructureBlock interfaceBlock=InterfaceBlock? appBlock+=ApplicationBlock* domainBlock+=DomainBlock+)
+	 *     (name=ID infrastructureBlock=InfrastructureBlock interfaceBlock=InterfaceBlock? applicationBlock+=ApplicationBlock* domainBlock+=DomainBlock+)
 	 */
 	protected void sequence_Project(EObject context, Project semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

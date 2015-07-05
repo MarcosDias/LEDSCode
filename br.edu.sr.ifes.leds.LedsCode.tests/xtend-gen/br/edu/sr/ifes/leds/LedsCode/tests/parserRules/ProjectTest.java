@@ -1,7 +1,8 @@
-package br.edu.sr.ifes.leds.LedsCode.tests;
+package br.edu.sr.ifes.leds.LedsCode.tests.parserRules;
 
 import br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory;
 import br.edu.sr.ifes.leds.LedsCodeV001InjectorProvider;
+import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
@@ -22,11 +23,9 @@ import org.junit.runner.RunWith;
 @InjectWith(LedsCodeV001InjectorProvider.class)
 @RunWith(XtextRunner.class)
 @SuppressWarnings("all")
-public class CompleteProjectTest {
+public class ProjectTest {
   @Inject
   private ParseHelper<LedsCodeDSL> parser;
-  
-  private LedsCodeDSL model;
   
   @Test
   public void notNullRules() {
@@ -39,8 +38,8 @@ public class CompleteProjectTest {
     Assert.assertNotNull(_interfaceBlock);
     EList<String> _domainBlock = project.getDomainBlock();
     Assert.assertNotNull(_domainBlock);
-    EList<String> _appBlock = project.getAppBlock();
-    Assert.assertNotNull(_appBlock);
+    EList<ApplicationBlock> _applicationBlock = project.getApplicationBlock();
+    Assert.assertNotNull(_applicationBlock);
   }
   
   public Project parseCompleteProject() {
@@ -48,9 +47,8 @@ public class CompleteProjectTest {
       Project _xblockexpression = null;
       {
         CharSequence _completeProject = ProjectFactory.completeProject();
-        LedsCodeDSL _parse = this.parser.parse(_completeProject);
-        this.model = _parse;
-        TreeIterator<EObject> _eAllContents = this.model.eAllContents();
+        final LedsCodeDSL model = this.parser.parse(_completeProject);
+        TreeIterator<EObject> _eAllContents = model.eAllContents();
         EObject _head = IteratorExtensions.<EObject>head(_eAllContents);
         _xblockexpression = ((Project) _head);
       }

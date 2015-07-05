@@ -11,7 +11,7 @@ Project:
 	'project' name=ID '{'
 		infrastructureBlock=InfrastructureBlock
 		(interfaceBlock=InterfaceBlock)? 
-		(appBlock+=ApplicationBlock)*
+		(applicationBlock+=ApplicationBlock)*
 		(domainBlock+=DomainBlock)+
 		
 	'}'
@@ -30,8 +30,8 @@ InterfaceApplication:
 
 InfrastructureBlock:
 	'infrastructure' '{'
-		'basePackage' '=' basePackage=CompoundName
-		'projectVersion' '=' projectVersion=CompoundVersion
+		'basePackage' '=' basePackage=STRING
+		'projectVersion' '=' projectVersion=STRING
 		'language' '=' '{' language=NameVersion '}'
 		'framework' '=' '{' framework=NameVersion '}'
 		'orm' '=' '{' orm=NameVersion '}'
@@ -59,8 +59,8 @@ NameVersion:
 
 
 ApplicationBlock:
-	'application' ID '{'
-		('composedBy' ImportCompoundName)*	
+	'application' name=ID '{'
+		('composedBy' applicationDomain+=ImportCompoundName)*	
 	'}'
 ;
 
@@ -119,4 +119,3 @@ Private:'-';
 Protected:'#';
 ImportCompoundName: CompoundName('.*'?);
 CompoundName: ID('.'ID)*;
-CompoundVersion: INT('.'INT)*;

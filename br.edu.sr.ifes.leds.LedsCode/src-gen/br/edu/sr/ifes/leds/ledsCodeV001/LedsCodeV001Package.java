@@ -122,13 +122,13 @@ public interface LedsCodeV001Package extends EPackage
   int PROJECT__INTERFACE_BLOCK = 2;
 
   /**
-   * The feature id for the '<em><b>App Block</b></em>' attribute list.
+   * The feature id for the '<em><b>Application Block</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT__APP_BLOCK = 3;
+  int PROJECT__APPLICATION_BLOCK = 3;
 
   /**
    * The feature id for the '<em><b>Domain Block</b></em>' attribute list.
@@ -405,6 +405,43 @@ public interface LedsCodeV001Package extends EPackage
    */
   int NAME_VERSION_FEATURE_COUNT = 2;
 
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ApplicationBlockImpl <em>Application Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ApplicationBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getApplicationBlock()
+   * @generated
+   */
+  int APPLICATION_BLOCK = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_BLOCK__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Application Domain</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_BLOCK__APPLICATION_DOMAIN = 1;
+
+  /**
+   * The number of structural features of the '<em>Application Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_BLOCK_FEATURE_COUNT = 2;
+
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL <em>Leds Code DSL</em>}'.
@@ -471,15 +508,15 @@ public interface LedsCodeV001Package extends EPackage
   EReference getProject_InterfaceBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getAppBlock <em>App Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getApplicationBlock <em>Application Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>App Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Project#getAppBlock()
+   * @return the meta object for the containment reference list '<em>Application Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Project#getApplicationBlock()
    * @see #getProject()
    * @generated
    */
-  EAttribute getProject_AppBlock();
+  EReference getProject_ApplicationBlock();
 
   /**
    * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getDomainBlock <em>Domain Block</em>}'.
@@ -741,6 +778,38 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getNameVersion_VersionValue();
 
   /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock <em>Application Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Application Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock
+   * @generated
+   */
+  EClass getApplicationBlock();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock#getName()
+   * @see #getApplicationBlock()
+   * @generated
+   */
+  EAttribute getApplicationBlock_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock#getApplicationDomain <em>Application Domain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Application Domain</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock#getApplicationDomain()
+   * @see #getApplicationBlock()
+   * @generated
+   */
+  EAttribute getApplicationBlock_ApplicationDomain();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -816,12 +885,12 @@ public interface LedsCodeV001Package extends EPackage
     EReference PROJECT__INTERFACE_BLOCK = eINSTANCE.getProject_InterfaceBlock();
 
     /**
-     * The meta object literal for the '<em><b>App Block</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Application Block</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT__APP_BLOCK = eINSTANCE.getProject_AppBlock();
+    EReference PROJECT__APPLICATION_BLOCK = eINSTANCE.getProject_ApplicationBlock();
 
     /**
      * The meta object literal for the '<em><b>Domain Block</b></em>' attribute list feature.
@@ -1024,6 +1093,32 @@ public interface LedsCodeV001Package extends EPackage
      * @generated
      */
     EAttribute NAME_VERSION__VERSION_VALUE = eINSTANCE.getNameVersion_VersionValue();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ApplicationBlockImpl <em>Application Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ApplicationBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getApplicationBlock()
+     * @generated
+     */
+    EClass APPLICATION_BLOCK = eINSTANCE.getApplicationBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute APPLICATION_BLOCK__NAME = eINSTANCE.getApplicationBlock_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Application Domain</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute APPLICATION_BLOCK__APPLICATION_DOMAIN = eINSTANCE.getApplicationBlock_ApplicationDomain();
 
   }
 

@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getInfrastructureBlock <em>Infrastructure Block</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getInterfaceBlock <em>Interface Block</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getAppBlock <em>App Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getApplicationBlock <em>Application Block</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getDomainBlock <em>Domain Block</em>}</li>
  * </ul>
  * </p>
@@ -107,20 +107,20 @@ public interface Project extends EObject
   void setInterfaceBlock(InterfaceBlock value);
 
   /**
-   * Returns the value of the '<em><b>App Block</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Application Block</b></em>' containment reference list.
+   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>App Block</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Application Block</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>App Block</em>' attribute list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getProject_AppBlock()
-   * @model unique="false"
+   * @return the value of the '<em>Application Block</em>' containment reference list.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getProject_ApplicationBlock()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getAppBlock();
+  EList<ApplicationBlock> getApplicationBlock();
 
   /**
    * Returns the value of the '<em><b>Domain Block</b></em>' attribute list.

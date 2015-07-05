@@ -71,6 +71,7 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
       case LedsCodeV001Package.INFRASTRUCTURE_BLOCK: return createInfrastructureBlock();
       case LedsCodeV001Package.DATABASE_BLOCK: return createDatabaseBlock();
       case LedsCodeV001Package.NAME_VERSION: return createNameVersion();
+      case LedsCodeV001Package.APPLICATION_BLOCK: return createApplicationBlock();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -151,6 +152,17 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
   {
     NameVersionImpl nameVersion = new NameVersionImpl();
     return nameVersion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ApplicationBlock createApplicationBlock()
+  {
+    ApplicationBlockImpl applicationBlock = new ApplicationBlockImpl();
+    return applicationBlock;
   }
 
   /**

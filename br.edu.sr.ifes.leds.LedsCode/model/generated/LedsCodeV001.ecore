@@ -12,8 +12,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceBlock" eType="#//InterfaceBlock"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appBlock" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationBlock" upperBound="-1"
+        eType="#//ApplicationBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainBlock" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -49,5 +49,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="NameVersion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationBlock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicationDomain" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -4,38 +4,50 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class DomainFactory {
-  public static CharSequence completeDomain() {
+  public static CharSequence domainBlock() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("domain Domain {");
     _builder.newLine();
     _builder.append("\t");
-    CharSequence _completeModule = DomainFactory.completeModule();
-    _builder.append(_completeModule, "\t");
+    CharSequence _moduleBlock = DomainFactory.moduleBlock();
+    _builder.append(_moduleBlock, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     return _builder;
   }
   
-  public static CharSequence completeModule() {
+  public static CharSequence moduleBlock() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("module Modulo {");
     _builder.newLine();
     _builder.append("\t");
-    CharSequence _completeService = DomainFactory.completeService();
-    _builder.append(_completeService, "\t");
+    CharSequence _serviceBlock = DomainFactory.serviceBlock();
+    _builder.append(_serviceBlock, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    CharSequence _completeEntity = DomainFactory.completeEntity();
-    _builder.append(_completeEntity, "\t");
+    CharSequence _entityBlock = DomainFactory.entityBlock();
+    _builder.append(_entityBlock, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    CharSequence _enumBlock = DomainFactory.enumBlock();
+    _builder.append(_enumBlock, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("}");
     _builder.newLine();
     return _builder;
   }
   
-  public static CharSequence completeService() {
+  public static CharSequence serviceBlock() {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("service PersonService {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("findPersonByName => PersonRepository.findPersonByName");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
     _builder.append("service LibraryService {");
     _builder.newLine();
     _builder.append("\t");
@@ -56,20 +68,53 @@ public class DomainFactory {
     _builder.append("\t");
     _builder.append("findMediaByName => Media.MediaRepository.findMediaByName");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("findMediaByCharacter => Media.MediaRepository.findMediaByCharacter");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("findPersonByName => PersonService.findPersonByName");
-    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;
   }
   
-  public static CharSequence completeEntity() {
+  public static CharSequence entityBlock() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("entity LibraryEntity {");
+    _builder.append("abstract entity Media {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private String titleb");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private Set<PhysicalMedia> physicalMedia");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private Set<Engagement> engagements");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("private Set<MediaCharacter> mediaCharacters");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("repository MediaRepository {");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("findMediaByCharacter(String characterName) : List<Media>");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("//findById");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("//save");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("//findAll");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("findMediaByName(Long libraryId, String name) : List<Media>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("entity LibraryEntity extends Media{");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("String name //key");
@@ -87,6 +132,32 @@ public class DomainFactory {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public static CharSequence enumBlock() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("enum Gender {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("FEMALE,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("MALE");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("enum Gen {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("F,");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("M");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

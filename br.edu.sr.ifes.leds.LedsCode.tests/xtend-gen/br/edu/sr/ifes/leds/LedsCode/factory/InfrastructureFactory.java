@@ -4,15 +4,15 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class InfrastructureFactory {
-  public static CharSequence completeInfrastructure() {
+  public static CharSequence infrastructureBlock() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("infrastructure{");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("basePackage = org.company.exempla");
+    _builder.append("basePackage = \"org.company.exempla\"");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("projectVersion = 0.0.0");
+    _builder.append("projectVersion = \"0.0.0\"");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("language = {@name: \"Java\", @version: \"8\"}");

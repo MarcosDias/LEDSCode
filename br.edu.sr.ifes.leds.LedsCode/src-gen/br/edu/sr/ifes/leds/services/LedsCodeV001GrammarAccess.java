@@ -45,19 +45,19 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cInfrastructureBlockInfrastructureBlockParserRuleCall_3_0 = (RuleCall)cInfrastructureBlockAssignment_3.eContents().get(0);
 		private final Assignment cInterfaceBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cInterfaceBlockInterfaceBlockParserRuleCall_4_0 = (RuleCall)cInterfaceBlockAssignment_4.eContents().get(0);
-		private final Assignment cAppBlockAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cAppBlockApplicationBlockParserRuleCall_5_0 = (RuleCall)cAppBlockAssignment_5.eContents().get(0);
+		private final Assignment cApplicationBlockAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cApplicationBlockApplicationBlockParserRuleCall_5_0 = (RuleCall)cApplicationBlockAssignment_5.eContents().get(0);
 		private final Assignment cDomainBlockAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cDomainBlockDomainBlockParserRuleCall_6_0 = (RuleCall)cDomainBlockAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Project:
 		//	"project" name=ID "{" infrastructureBlock=InfrastructureBlock interfaceBlock=InterfaceBlock?
-		//	appBlock+=ApplicationBlock* domainBlock+=DomainBlock+ "}";
+		//	applicationBlock+=ApplicationBlock* domainBlock+=DomainBlock+ "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"project" name=ID "{" infrastructureBlock=InfrastructureBlock interfaceBlock=InterfaceBlock? appBlock+=ApplicationBlock*
-		//domainBlock+=DomainBlock+ "}"
+		//"project" name=ID "{" infrastructureBlock=InfrastructureBlock interfaceBlock=InterfaceBlock?
+		//applicationBlock+=ApplicationBlock* domainBlock+=DomainBlock+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//"project"
@@ -84,11 +84,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//InterfaceBlock
 		public RuleCall getInterfaceBlockInterfaceBlockParserRuleCall_4_0() { return cInterfaceBlockInterfaceBlockParserRuleCall_4_0; }
 
-		//appBlock+=ApplicationBlock*
-		public Assignment getAppBlockAssignment_5() { return cAppBlockAssignment_5; }
+		//applicationBlock+=ApplicationBlock*
+		public Assignment getApplicationBlockAssignment_5() { return cApplicationBlockAssignment_5; }
 
 		//ApplicationBlock
-		public RuleCall getAppBlockApplicationBlockParserRuleCall_5_0() { return cAppBlockApplicationBlockParserRuleCall_5_0; }
+		public RuleCall getApplicationBlockApplicationBlockParserRuleCall_5_0() { return cApplicationBlockApplicationBlockParserRuleCall_5_0; }
 
 		//domainBlock+=DomainBlock+
 		public Assignment getDomainBlockAssignment_6() { return cDomainBlockAssignment_6; }
@@ -196,11 +196,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBasePackageKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBasePackageAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBasePackageCompoundNameParserRuleCall_4_0 = (RuleCall)cBasePackageAssignment_4.eContents().get(0);
+		private final RuleCall cBasePackageSTRINGTerminalRuleCall_4_0 = (RuleCall)cBasePackageAssignment_4.eContents().get(0);
 		private final Keyword cProjectVersionKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cProjectVersionAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cProjectVersionCompoundVersionParserRuleCall_7_0 = (RuleCall)cProjectVersionAssignment_7.eContents().get(0);
+		private final RuleCall cProjectVersionSTRINGTerminalRuleCall_7_0 = (RuleCall)cProjectVersionAssignment_7.eContents().get(0);
 		private final Keyword cLanguageKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cEqualsSignKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cLeftCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
@@ -228,14 +228,14 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_28 = (Keyword)cGroup.eContents().get(28);
 		
 		//InfrastructureBlock:
-		//	"infrastructure" "{" "basePackage" "=" basePackage=CompoundName "projectVersion" "=" projectVersion=CompoundVersion
-		//	"language" "=" "{" language=NameVersion "}" "framework" "=" "{" framework=NameVersion "}" "orm" "=" "{"
-		//	orm=NameVersion "}" "database" "=" "{" database=DatabaseBlock "}" "}";
+		//	"infrastructure" "{" "basePackage" "=" basePackage=STRING "projectVersion" "=" projectVersion=STRING "language" "="
+		//	"{" language=NameVersion "}" "framework" "=" "{" framework=NameVersion "}" "orm" "=" "{" orm=NameVersion "}"
+		//	"database" "=" "{" database=DatabaseBlock "}" "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"infrastructure" "{" "basePackage" "=" basePackage=CompoundName "projectVersion" "=" projectVersion=CompoundVersion
-		//"language" "=" "{" language=NameVersion "}" "framework" "=" "{" framework=NameVersion "}" "orm" "=" "{" orm=NameVersion
-		//"}" "database" "=" "{" database=DatabaseBlock "}" "}"
+		//"infrastructure" "{" "basePackage" "=" basePackage=STRING "projectVersion" "=" projectVersion=STRING "language" "=" "{"
+		//language=NameVersion "}" "framework" "=" "{" framework=NameVersion "}" "orm" "=" "{" orm=NameVersion "}" "database" "="
+		//"{" database=DatabaseBlock "}" "}"
 		public Group getGroup() { return cGroup; }
 
 		//"infrastructure"
@@ -250,11 +250,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 
-		//basePackage=CompoundName
+		//basePackage=STRING
 		public Assignment getBasePackageAssignment_4() { return cBasePackageAssignment_4; }
 
-		//CompoundName
-		public RuleCall getBasePackageCompoundNameParserRuleCall_4_0() { return cBasePackageCompoundNameParserRuleCall_4_0; }
+		//STRING
+		public RuleCall getBasePackageSTRINGTerminalRuleCall_4_0() { return cBasePackageSTRINGTerminalRuleCall_4_0; }
 
 		//"projectVersion"
 		public Keyword getProjectVersionKeyword_5() { return cProjectVersionKeyword_5; }
@@ -262,11 +262,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
 
-		//projectVersion=CompoundVersion
+		//projectVersion=STRING
 		public Assignment getProjectVersionAssignment_7() { return cProjectVersionAssignment_7; }
 
-		//CompoundVersion
-		public RuleCall getProjectVersionCompoundVersionParserRuleCall_7_0() { return cProjectVersionCompoundVersionParserRuleCall_7_0; }
+		//STRING
+		public RuleCall getProjectVersionSTRINGTerminalRuleCall_7_0() { return cProjectVersionSTRINGTerminalRuleCall_7_0; }
 
 		//"language"
 		public Keyword getLanguageKeyword_8() { return cLanguageKeyword_8; }
@@ -510,37 +510,45 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ApplicationBlock");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cApplicationKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cComposedByKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final RuleCall cImportCompoundNameParserRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Assignment cApplicationDomainAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cApplicationDomainImportCompoundNameParserRuleCall_3_1_0 = (RuleCall)cApplicationDomainAssignment_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ApplicationBlock:
-		//	"application" ID "{" ("composedBy" ImportCompoundName)* "}";
+		//	"application" name=ID "{" ("composedBy" applicationDomain+=ImportCompoundName)* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"application" ID "{" ("composedBy" ImportCompoundName)* "}"
+		//"application" name=ID "{" ("composedBy" applicationDomain+=ImportCompoundName)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"application"
 		public Keyword getApplicationKeyword_0() { return cApplicationKeyword_0; }
 
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
 		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("composedBy" ImportCompoundName)*
+		//("composedBy" applicationDomain+=ImportCompoundName)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"composedBy"
 		public Keyword getComposedByKeyword_3_0() { return cComposedByKeyword_3_0; }
 
+		//applicationDomain+=ImportCompoundName
+		public Assignment getApplicationDomainAssignment_3_1() { return cApplicationDomainAssignment_3_1; }
+
 		//ImportCompoundName
-		public RuleCall getImportCompoundNameParserRuleCall_3_1() { return cImportCompoundNameParserRuleCall_3_1; }
+		public RuleCall getApplicationDomainImportCompoundNameParserRuleCall_3_1_0() { return cApplicationDomainImportCompoundNameParserRuleCall_3_1_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -1217,34 +1225,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
-
-	public class CompoundVersionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CompoundVersion");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		
-		//CompoundVersion:
-		//	INT ("." INT)*;
-		@Override public ParserRule getRule() { return rule; }
-
-		//INT ("." INT)*
-		public Group getGroup() { return cGroup; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
-
-		//("." INT)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
-	}
 	
 	
 	private final LedsCodeDSLElements pLedsCodeDSL;
@@ -1275,7 +1255,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	private final ProtectedElements pProtected;
 	private final ImportCompoundNameElements pImportCompoundName;
 	private final CompoundNameElements pCompoundName;
-	private final CompoundVersionElements pCompoundVersion;
 	
 	private final Grammar grammar;
 
@@ -1314,7 +1293,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		this.pProtected = new ProtectedElements();
 		this.pImportCompoundName = new ImportCompoundNameElements();
 		this.pCompoundName = new CompoundNameElements();
-		this.pCompoundVersion = new CompoundVersionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1356,7 +1334,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	//Project:
 	//	"project" name=ID "{" infrastructureBlock=InfrastructureBlock interfaceBlock=InterfaceBlock?
-	//	appBlock+=ApplicationBlock* domainBlock+=DomainBlock+ "}";
+	//	applicationBlock+=ApplicationBlock* domainBlock+=DomainBlock+ "}";
 	public ProjectElements getProjectAccess() {
 		return pProject;
 	}
@@ -1386,9 +1364,9 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//InfrastructureBlock:
-	//	"infrastructure" "{" "basePackage" "=" basePackage=CompoundName "projectVersion" "=" projectVersion=CompoundVersion
-	//	"language" "=" "{" language=NameVersion "}" "framework" "=" "{" framework=NameVersion "}" "orm" "=" "{"
-	//	orm=NameVersion "}" "database" "=" "{" database=DatabaseBlock "}" "}";
+	//	"infrastructure" "{" "basePackage" "=" basePackage=STRING "projectVersion" "=" projectVersion=STRING "language" "="
+	//	"{" language=NameVersion "}" "framework" "=" "{" framework=NameVersion "}" "orm" "=" "{" orm=NameVersion "}"
+	//	"database" "=" "{" database=DatabaseBlock "}" "}";
 	public InfrastructureBlockElements getInfrastructureBlockAccess() {
 		return pInfrastructureBlock;
 	}
@@ -1423,7 +1401,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ApplicationBlock:
-	//	"application" ID "{" ("composedBy" ImportCompoundName)* "}";
+	//	"application" name=ID "{" ("composedBy" applicationDomain+=ImportCompoundName)* "}";
 	public ApplicationBlockElements getApplicationBlockAccess() {
 		return pApplicationBlock;
 	}
@@ -1632,16 +1610,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCompoundNameRule() {
 		return getCompoundNameAccess().getRule();
-	}
-
-	//CompoundVersion:
-	//	INT ("." INT)*;
-	public CompoundVersionElements getCompoundVersionAccess() {
-		return pCompoundVersion;
-	}
-	
-	public ParserRule getCompoundVersionRule() {
-		return getCompoundVersionAccess().getRule();
 	}
 
 	//terminal ID:

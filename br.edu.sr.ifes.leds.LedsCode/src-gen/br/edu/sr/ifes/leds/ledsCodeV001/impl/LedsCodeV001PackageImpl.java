@@ -2,6 +2,7 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
@@ -75,6 +76,13 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * @generated
    */
   private EClass nameVersionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass applicationBlockEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -204,9 +212,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProject_AppBlock()
+  public EReference getProject_ApplicationBlock()
   {
-    return (EAttribute)projectEClass.getEStructuralFeatures().get(3);
+    return (EReference)projectEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -454,6 +462,36 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getApplicationBlock()
+  {
+    return applicationBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getApplicationBlock_Name()
+  {
+    return (EAttribute)applicationBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getApplicationBlock_ApplicationDomain()
+  {
+    return (EAttribute)applicationBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LedsCodeV001Factory getLedsCodeV001Factory()
   {
     return (LedsCodeV001Factory)getEFactoryInstance();
@@ -486,7 +524,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEAttribute(projectEClass, PROJECT__NAME);
     createEReference(projectEClass, PROJECT__INFRASTRUCTURE_BLOCK);
     createEReference(projectEClass, PROJECT__INTERFACE_BLOCK);
-    createEAttribute(projectEClass, PROJECT__APP_BLOCK);
+    createEReference(projectEClass, PROJECT__APPLICATION_BLOCK);
     createEAttribute(projectEClass, PROJECT__DOMAIN_BLOCK);
 
     interfaceBlockEClass = createEClass(INTERFACE_BLOCK);
@@ -516,6 +554,10 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     nameVersionEClass = createEClass(NAME_VERSION);
     createEAttribute(nameVersionEClass, NAME_VERSION__NAME_VALUE);
     createEAttribute(nameVersionEClass, NAME_VERSION__VERSION_VALUE);
+
+    applicationBlockEClass = createEClass(APPLICATION_BLOCK);
+    createEAttribute(applicationBlockEClass, APPLICATION_BLOCK__NAME);
+    createEAttribute(applicationBlockEClass, APPLICATION_BLOCK__APPLICATION_DOMAIN);
   }
 
   /**
@@ -556,7 +598,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProject_InfrastructureBlock(), this.getInfrastructureBlock(), null, "infrastructureBlock", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProject_InterfaceBlock(), this.getInterfaceBlock(), null, "interfaceBlock", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProject_AppBlock(), ecorePackage.getEString(), "appBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProject_ApplicationBlock(), this.getApplicationBlock(), null, "applicationBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProject_DomainBlock(), ecorePackage.getEString(), "domainBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interfaceBlockEClass, InterfaceBlock.class, "InterfaceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -586,6 +628,10 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEClass(nameVersionEClass, NameVersion.class, "NameVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNameVersion_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, NameVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNameVersion_VersionValue(), ecorePackage.getEString(), "versionValue", null, 0, 1, NameVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(applicationBlockEClass, ApplicationBlock.class, "ApplicationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getApplicationBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getApplicationBlock_ApplicationDomain(), ecorePackage.getEString(), "applicationDomain", null, 0, -1, ApplicationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

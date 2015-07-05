@@ -110,6 +110,11 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
         return createNameVersionAdapter();
       }
       @Override
+      public Adapter caseApplicationBlock(ApplicationBlock object)
+      {
+        return createApplicationBlockAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -232,6 +237,21 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNameVersionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock <em>Application Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock
+   * @generated
+   */
+  public Adapter createApplicationBlockAdapter()
   {
     return null;
   }

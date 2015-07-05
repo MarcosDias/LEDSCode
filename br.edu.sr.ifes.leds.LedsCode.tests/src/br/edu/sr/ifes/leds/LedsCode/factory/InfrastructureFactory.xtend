@@ -1,11 +1,11 @@
 package br.edu.sr.ifes.leds.LedsCode.factory
 
 class InfrastructureFactory {
-	def static completeInfrastructure(){
+	def static infrastructureBlock(){
 '''
 infrastructure{
-	basePackage = org.company.exempla
-	projectVersion = 0.0.0
+	basePackage = "org.company.exempla"
+	projectVersion = "0.0.0"
 	language = {@name: "Java", @version: "8"}
 	framework = {@name: "SpringRoo", @version: "1.2"}
 	orm = {@name: "Hibernate", @version: "3"}

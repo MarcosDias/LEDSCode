@@ -1,4 +1,4 @@
-package br.edu.sr.ifes.leds.LedsCode.tests
+package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
 
 import br.edu.sr.ifes.leds.LedsCodeV001InjectorProvider
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL
@@ -7,20 +7,19 @@ import com.google.inject.Inject
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+
 import static br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory.completeProject
-import static org.junit.Assert.*
+import static org.junit.Assert.assertEquals
+import static org.junit.Assert.assertNotNull
 
 @InjectWith(LedsCodeV001InjectorProvider)
 @RunWith(XtextRunner)
-class CompleteProjectTest{
+class ProjectTest{
 	
 	@Inject
-  	ParseHelper<LedsCodeDSL>  parser
-	
-	LedsCodeDSL model
+  	ParseHelper<LedsCodeDSL> parser
 		
 	@Test
 	def notNullRules(){
@@ -30,11 +29,13 @@ class CompleteProjectTest{
 	    assertNotNull(project.infrastructureBlock)
 	    assertNotNull(project.interfaceBlock)
 	    assertNotNull(project.domainBlock)
-	    assertNotNull(project.appBlock)
+	    assertNotNull(project.applicationBlock)
 	}
 	
+	// TODO: Testar a ordem aleatoria dos blocos
+	
 	def parseCompleteProject(){
-		model = parser.parse(completeProject())
+		val model = parser.parse(completeProject())
 		model.eAllContents.head as Project
 	}
 }

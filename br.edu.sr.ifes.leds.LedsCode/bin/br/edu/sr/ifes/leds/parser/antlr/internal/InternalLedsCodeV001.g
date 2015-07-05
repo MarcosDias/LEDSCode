@@ -181,16 +181,16 @@ ruleProject returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProjectAccess().getAppBlockApplicationBlockParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getProjectAccess().getApplicationBlockApplicationBlockParserRuleCall_5_0()); 
 	    }
-		lv_appBlock_5_0=ruleApplicationBlock		{
+		lv_applicationBlock_5_0=ruleApplicationBlock		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getProjectRule());
 	        }
        		add(
        			$current, 
-       			"appBlock",
-        		lv_appBlock_5_0, 
+       			"applicationBlock",
+        		lv_applicationBlock_5_0, 
         		"ApplicationBlock");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -417,19 +417,19 @@ ruleInfrastructureBlock returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getInfrastructureBlockAccess().getBasePackageCompoundNameParserRuleCall_4_0()); 
-	    }
-		lv_basePackage_4_0=ruleCompoundName		{
+		lv_basePackage_4_0=RULE_STRING
+		{
+			newLeafNode(lv_basePackage_4_0, grammarAccess.getInfrastructureBlockAccess().getBasePackageSTRINGTerminalRuleCall_4_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInfrastructureBlockRule());
+	            $current = createModelElement(grammarAccess.getInfrastructureBlockRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"basePackage",
         		lv_basePackage_4_0, 
-        		"CompoundName");
-	        afterParserOrEnumRuleCall();
+        		"STRING");
 	    }
 
 )
@@ -443,19 +443,19 @@ ruleInfrastructureBlock returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getInfrastructureBlockAccess().getProjectVersionCompoundVersionParserRuleCall_7_0()); 
-	    }
-		lv_projectVersion_7_0=ruleCompoundVersion		{
+		lv_projectVersion_7_0=RULE_STRING
+		{
+			newLeafNode(lv_projectVersion_7_0, grammarAccess.getInfrastructureBlockAccess().getProjectVersionSTRINGTerminalRuleCall_7_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getInfrastructureBlockRule());
+	            $current = createModelElement(grammarAccess.getInfrastructureBlockRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"projectVersion",
         		lv_projectVersion_7_0, 
-        		"CompoundVersion");
-	        afterParserOrEnumRuleCall();
+        		"STRING");
 	    }
 
 )
@@ -851,63 +851,73 @@ ruleNameVersion returns [EObject current=null]
 
 
 // Entry rule entryRuleApplicationBlock
-entryRuleApplicationBlock returns [String current=null] 
+entryRuleApplicationBlock returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getApplicationBlockRule()); } 
+	{ newCompositeNode(grammarAccess.getApplicationBlockRule()); }
 	 iv_ruleApplicationBlock=ruleApplicationBlock 
-	 { $current=$iv_ruleApplicationBlock.current.getText(); }  
+	 { $current=$iv_ruleApplicationBlock.current; } 
 	 EOF 
 ;
 
 // Rule ApplicationBlock
-ruleApplicationBlock returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleApplicationBlock returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-	kw='application' 
+(	otherlv_0='application' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getApplicationBlockAccess().getApplicationKeyword_0()); 
-    }
-    this_ID_1=RULE_ID    {
-		$current.merge(this_ID_1);
-    }
-
-    { 
-    newLeafNode(this_ID_1, grammarAccess.getApplicationBlockAccess().getIDTerminalRuleCall_1()); 
-    }
-
-	kw='{' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getApplicationBlockAccess().getLeftCurlyBracketKeyword_2()); 
+    	newLeafNode(otherlv_0, grammarAccess.getApplicationBlockAccess().getApplicationKeyword_0());
     }
 (
-	kw='composedBy' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getApplicationBlockAccess().getComposedByKeyword_3_0()); 
-    }
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getApplicationBlockAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getApplicationBlockRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
 
-    { 
-        newCompositeNode(grammarAccess.getApplicationBlockAccess().getImportCompoundNameParserRuleCall_3_1()); 
-    }
-    this_ImportCompoundName_4=ruleImportCompoundName    {
-		$current.merge(this_ImportCompoundName_4);
-    }
-
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)*
-	kw='}' 
+)
+)	otherlv_2='{' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getApplicationBlockAccess().getRightCurlyBracketKeyword_4()); 
+    	newLeafNode(otherlv_2, grammarAccess.getApplicationBlockAccess().getLeftCurlyBracketKeyword_2());
+    }
+(	otherlv_3='composedBy' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getApplicationBlockAccess().getComposedByKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getApplicationBlockAccess().getApplicationDomainImportCompoundNameParserRuleCall_3_1_0()); 
+	    }
+		lv_applicationDomain_4_0=ruleImportCompoundName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getApplicationBlockRule());
+	        }
+       		add(
+       			$current, 
+       			"applicationDomain",
+        		lv_applicationDomain_4_0, 
+        		"ImportCompoundName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_5='}' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getApplicationBlockAccess().getRightCurlyBracketKeyword_4());
     }
 )
-    ;
+;
 
 
 
@@ -2063,47 +2073,6 @@ ruleCompoundName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 
     { 
     newLeafNode(this_ID_2, grammarAccess.getCompoundNameAccess().getIDTerminalRuleCall_1_1()); 
-    }
-)*)
-    ;
-
-
-
-
-
-// Entry rule entryRuleCompoundVersion
-entryRuleCompoundVersion returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getCompoundVersionRule()); } 
-	 iv_ruleCompoundVersion=ruleCompoundVersion 
-	 { $current=$iv_ruleCompoundVersion.current.getText(); }  
-	 EOF 
-;
-
-// Rule CompoundVersion
-ruleCompoundVersion returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_INT_0=RULE_INT    {
-		$current.merge(this_INT_0);
-    }
-
-    { 
-    newLeafNode(this_INT_0, grammarAccess.getCompoundVersionAccess().getINTTerminalRuleCall_0()); 
-    }
-(
-	kw='.' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCompoundVersionAccess().getFullStopKeyword_1_0()); 
-    }
-    this_INT_2=RULE_INT    {
-		$current.merge(this_INT_2);
-    }
-
-    { 
-    newLeafNode(this_INT_2, grammarAccess.getCompoundVersionAccess().getINTTerminalRuleCall_1_1()); 
     }
 )*)
     ;

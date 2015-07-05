@@ -72,13 +72,11 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportCompoundNameAccess().getGroup(), "rule__ImportCompoundName__Group__0");
 					put(grammarAccess.getCompoundNameAccess().getGroup(), "rule__CompoundName__Group__0");
 					put(grammarAccess.getCompoundNameAccess().getGroup_1(), "rule__CompoundName__Group_1__0");
-					put(grammarAccess.getCompoundVersionAccess().getGroup(), "rule__CompoundVersion__Group__0");
-					put(grammarAccess.getCompoundVersionAccess().getGroup_1(), "rule__CompoundVersion__Group_1__0");
 					put(grammarAccess.getLedsCodeDSLAccess().getProjectAssignment(), "rule__LedsCodeDSL__ProjectAssignment");
 					put(grammarAccess.getProjectAccess().getNameAssignment_1(), "rule__Project__NameAssignment_1");
 					put(grammarAccess.getProjectAccess().getInfrastructureBlockAssignment_3(), "rule__Project__InfrastructureBlockAssignment_3");
 					put(grammarAccess.getProjectAccess().getInterfaceBlockAssignment_4(), "rule__Project__InterfaceBlockAssignment_4");
-					put(grammarAccess.getProjectAccess().getAppBlockAssignment_5(), "rule__Project__AppBlockAssignment_5");
+					put(grammarAccess.getProjectAccess().getApplicationBlockAssignment_5(), "rule__Project__ApplicationBlockAssignment_5");
 					put(grammarAccess.getProjectAccess().getDomainBlockAssignment_6(), "rule__Project__DomainBlockAssignment_6");
 					put(grammarAccess.getInterfaceBlockAccess().getNameAssignment_1(), "rule__InterfaceBlock__NameAssignment_1");
 					put(grammarAccess.getInterfaceBlockAccess().getInterfaceApplicationAssignment_3(), "rule__InterfaceBlock__InterfaceApplicationAssignment_3");
@@ -98,6 +96,8 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getDatabaseBlockAccess().getHostValueAssignment_18(), "rule__DatabaseBlock__HostValueAssignment_18");
 					put(grammarAccess.getNameVersionAccess().getNameValueAssignment_2(), "rule__NameVersion__NameValueAssignment_2");
 					put(grammarAccess.getNameVersionAccess().getVersionValueAssignment_6(), "rule__NameVersion__VersionValueAssignment_6");
+					put(grammarAccess.getApplicationBlockAccess().getNameAssignment_1(), "rule__ApplicationBlock__NameAssignment_1");
+					put(grammarAccess.getApplicationBlockAccess().getApplicationDomainAssignment_3_1(), "rule__ApplicationBlock__ApplicationDomainAssignment_3_1");
 				}
 			};
 		}

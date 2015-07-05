@@ -4,12 +4,19 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class ApplicationFactory {
-  public static CharSequence completeApp() {
+  public static CharSequence applicationBlock() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("application LibraryPersonApp{");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("// Tem acesso apenas aos elemento do modulo person");
+    _builder.append("\t");
+    _builder.append("composedBy Library.*");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("composedBy Loan.*");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("application LibraryPersonApp2{");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("composedBy Library.Person.*");
