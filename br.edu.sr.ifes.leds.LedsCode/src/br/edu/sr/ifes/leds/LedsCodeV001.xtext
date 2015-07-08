@@ -35,11 +35,11 @@ InfrastructureBlock:
 		'language' '=' '{' language=NameVersion '}'
 		'framework' '=' '{' framework=NameVersion '}'
 		'orm' '=' '{' orm=NameVersion '}'
-		'database' '=' '{' database=DatabaseBlock '}'
+		'database' '=' '{' database=Database'}'
 	'}'
 ;
 
-DatabaseBlock:
+Database:
 	'@version' ':' versionValue=STRING ',' 
 	'@name' ':' nameValue=STRING ',' 
 	'@user' ':' userValue=STRING ','
@@ -65,40 +65,57 @@ ApplicationBlock:
 ;
 
 DomainBlock:
-	'domain' ID '{'
-		ModuleBlock*
+	'domain' name=ID '{'
+		(module+=Module)*
 	'}'
 ;
 
-ModuleBlock:
-	'module' ID '{'
-		(ServiceBlock|EntityBlock|EnumBlock)*
+Module:
+	'module' name=ID '{'
+		(
+			serviceBlock+=ServiceBlock|
+			entityBlock+=EntityBlock|
+			enumBlock+=EnumBlock
+		)*
 	'}'
 ;
 
 ServiceBlock:
-	'service' ID '{'
-		(ID '=>' CompoundName)*
+	'service' name=ID '{'
+		(serviceFields+=ServiceMethod)*
 	'}'
+;
+
+ServiceMethod:
+	name=ID '=>' methodAcess=CompoundName
 ;
 
 EntityBlock:
-	(AccessModifier)? ('abstract')? 'entity' ID (ExtendBlock)? (ImplementBlock)?  '{'
-		((AccessModifier)? DataType ID)*
+	acessModifier=(AccessModifier)? (isAbstract?='abstract')? 'entity' 
+	name=ID superClasses=ExtendBlock? '{'
+		(attributes+=Attribute)*
 		
-		RepositoryBlock?
+		repository=Repository?
 	'}' 
 ;
 
-RepositoryBlock:
-	'repository' ID '{'
-		(ID'('MethodParameter')' ':' DataType)*	
+Attribute:
+	acessModifier=AccessModifier? type=DataType name=ID
+;
+
+Repository:
+	'repository' name=ID '{'
+		(fields+=RepositoryFields)*	
 	'}'
 ;
 
+RepositoryFields:
+	nameMethod=ID '('methodsParameters=MethodParameter?')' ':' returnType=DataType
+;
+
 EnumBlock:
-	'enum' ID '{'
-		ID (',' ID)*
+	'enum' name=ID '{'
+		values+=ID (',' values+=ID)*
 	'}'
 ;
 
@@ -106,16 +123,14 @@ DataType:
 	(DataTypeList|DataTypeSet|CompoundName|'String'|'int'|'Integer'|'long'|'Long'|'boolean'|'Boolean'|'DateTime'|
   	'double'|'Double'|'float'|'Float'|'Object')
 ;
-MethodParameter: DataType ID (',' DataType ID)*;
-KeyValue: ID ':' ID;
-ExtendBlock: Extend CompoundName;
-Extend: 'extend'|'ext'|':';
-ImplementBlock: Implement CompoundName (',' CompoundName)*;
-Implement: 'implement'|'imp'|'>' ;
-DataTypeList: 'List''<'ID'>';
-DataTypeSet: 'Set''<'ID'>';
-AccessModifier: (Private|Protected);
-Private:'-';
-Protected:'#';
+MethodParameter: typeAndAttr+=TypeAndAttribute (',' typeAndAttr+=TypeAndAttribute)*;
+TypeAndAttribute: type=DataType name=ID;
+ExtendBlock: Extend values+=CompoundName (',' values+=CompoundName)?;
+Extend: ':';
+DataTypeList: 'List''<'DataType'>';
+DataTypeSet: 'Set''<'DataType'>';
+AccessModifier: value=(Private|Protected);
+Private:'-'|'private';
+Protected:'#'|'protected';
 ImportCompoundName: CompoundName('.*'?);
 CompoundName: ID('.'ID)*;

@@ -2,7 +2,7 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
-import br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.Database;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion;
@@ -114,7 +114,7 @@ public class InfrastructureBlockImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected DatabaseBlock database;
+  protected Database database;
 
   /**
    * <!-- begin-user-doc -->
@@ -332,7 +332,7 @@ public class InfrastructureBlockImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public DatabaseBlock getDatabase()
+  public Database getDatabase()
   {
     return database;
   }
@@ -342,9 +342,9 @@ public class InfrastructureBlockImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetDatabase(DatabaseBlock newDatabase, NotificationChain msgs)
+  public NotificationChain basicSetDatabase(Database newDatabase, NotificationChain msgs)
   {
-    DatabaseBlock oldDatabase = database;
+    Database oldDatabase = database;
     database = newDatabase;
     if (eNotificationRequired())
     {
@@ -359,7 +359,7 @@ public class InfrastructureBlockImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDatabase(DatabaseBlock newDatabase)
+  public void setDatabase(Database newDatabase)
   {
     if (newDatabase != database)
     {
@@ -449,7 +449,7 @@ public class InfrastructureBlockImpl extends MinimalEObjectImpl.Container implem
         setOrm((NameVersion)newValue);
         return;
       case LedsCodeV001Package.INFRASTRUCTURE_BLOCK__DATABASE:
-        setDatabase((DatabaseBlock)newValue);
+        setDatabase((Database)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -481,7 +481,7 @@ public class InfrastructureBlockImpl extends MinimalEObjectImpl.Container implem
         setOrm((NameVersion)null);
         return;
       case LedsCodeV001Package.INFRASTRUCTURE_BLOCK__DATABASE:
-        setDatabase((DatabaseBlock)null);
+        setDatabase((Database)null);
         return;
     }
     super.eUnset(featureID);

@@ -68,13 +68,13 @@ public interface LedsCodeV001Factory extends EFactory
   InfrastructureBlock createInfrastructureBlock();
 
   /**
-   * Returns a new object of class '<em>Database Block</em>'.
+   * Returns a new object of class '<em>Database</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Database Block</em>'.
+   * @return a new object of class '<em>Database</em>'.
    * @generated
    */
-  DatabaseBlock createDatabaseBlock();
+  Database createDatabase();
 
   /**
    * Returns a new object of class '<em>Name Version</em>'.
@@ -93,6 +93,123 @@ public interface LedsCodeV001Factory extends EFactory
    * @generated
    */
   ApplicationBlock createApplicationBlock();
+
+  /**
+   * Returns a new object of class '<em>Domain Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Domain Block</em>'.
+   * @generated
+   */
+  DomainBlock createDomainBlock();
+
+  /**
+   * Returns a new object of class '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Module</em>'.
+   * @generated
+   */
+  Module createModule();
+
+  /**
+   * Returns a new object of class '<em>Service Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Service Block</em>'.
+   * @generated
+   */
+  ServiceBlock createServiceBlock();
+
+  /**
+   * Returns a new object of class '<em>Service Method</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Service Method</em>'.
+   * @generated
+   */
+  ServiceMethod createServiceMethod();
+
+  /**
+   * Returns a new object of class '<em>Entity Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Block</em>'.
+   * @generated
+   */
+  EntityBlock createEntityBlock();
+
+  /**
+   * Returns a new object of class '<em>Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute</em>'.
+   * @generated
+   */
+  Attribute createAttribute();
+
+  /**
+   * Returns a new object of class '<em>Repository</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Repository</em>'.
+   * @generated
+   */
+  Repository createRepository();
+
+  /**
+   * Returns a new object of class '<em>Repository Fields</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Repository Fields</em>'.
+   * @generated
+   */
+  RepositoryFields createRepositoryFields();
+
+  /**
+   * Returns a new object of class '<em>Enum Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enum Block</em>'.
+   * @generated
+   */
+  EnumBlock createEnumBlock();
+
+  /**
+   * Returns a new object of class '<em>Method Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Method Parameter</em>'.
+   * @generated
+   */
+  MethodParameter createMethodParameter();
+
+  /**
+   * Returns a new object of class '<em>Type And Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type And Attribute</em>'.
+   * @generated
+   */
+  TypeAndAttribute createTypeAndAttribute();
+
+  /**
+   * Returns a new object of class '<em>Extend Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extend Block</em>'.
+   * @generated
+   */
+  ExtendBlock createExtendBlock();
+
+  /**
+   * Returns a new object of class '<em>Access Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Access Modifier</em>'.
+   * @generated
+   */
+  AccessModifier createAccessModifier();
 
   /**
    * Returns the package supported by this factory.

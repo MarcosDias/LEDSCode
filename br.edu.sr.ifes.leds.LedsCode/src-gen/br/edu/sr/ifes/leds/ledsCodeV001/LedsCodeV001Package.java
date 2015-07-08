@@ -131,7 +131,7 @@ public interface LedsCodeV001Package extends EPackage
   int PROJECT__APPLICATION_BLOCK = 3;
 
   /**
-   * The feature id for the '<em><b>Domain Block</b></em>' attribute list.
+   * The feature id for the '<em><b>Domain Block</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -305,14 +305,14 @@ public interface LedsCodeV001Package extends EPackage
   int INFRASTRUCTURE_BLOCK_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseBlockImpl <em>Database Block</em>}' class.
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl <em>Database</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseBlockImpl
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getDatabaseBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getDatabase()
    * @generated
    */
-  int DATABASE_BLOCK = 5;
+  int DATABASE = 5;
 
   /**
    * The feature id for the '<em><b>Version Value</b></em>' attribute.
@@ -321,7 +321,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int DATABASE_BLOCK__VERSION_VALUE = 0;
+  int DATABASE__VERSION_VALUE = 0;
 
   /**
    * The feature id for the '<em><b>Name Value</b></em>' attribute.
@@ -330,7 +330,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int DATABASE_BLOCK__NAME_VALUE = 1;
+  int DATABASE__NAME_VALUE = 1;
 
   /**
    * The feature id for the '<em><b>User Value</b></em>' attribute.
@@ -339,7 +339,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int DATABASE_BLOCK__USER_VALUE = 2;
+  int DATABASE__USER_VALUE = 2;
 
   /**
    * The feature id for the '<em><b>Pass Value</b></em>' attribute.
@@ -348,7 +348,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int DATABASE_BLOCK__PASS_VALUE = 3;
+  int DATABASE__PASS_VALUE = 3;
 
   /**
    * The feature id for the '<em><b>Host Value</b></em>' attribute.
@@ -357,16 +357,16 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int DATABASE_BLOCK__HOST_VALUE = 4;
+  int DATABASE__HOST_VALUE = 4;
 
   /**
-   * The number of structural features of the '<em>Database Block</em>' class.
+   * The number of structural features of the '<em>Database</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATABASE_BLOCK_FEATURE_COUNT = 5;
+  int DATABASE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.NameVersionImpl <em>Name Version</em>}' class.
@@ -441,6 +441,532 @@ public interface LedsCodeV001Package extends EPackage
    * @ordered
    */
   int APPLICATION_BLOCK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DomainBlockImpl <em>Domain Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.DomainBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getDomainBlock()
+   * @generated
+   */
+  int DOMAIN_BLOCK = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_BLOCK__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Module</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_BLOCK__MODULE = 1;
+
+  /**
+   * The number of structural features of the '<em>Domain Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_BLOCK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl <em>Module</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getModule()
+   * @generated
+   */
+  int MODULE = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Service Block</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__SERVICE_BLOCK = 1;
+
+  /**
+   * The feature id for the '<em><b>Entity Block</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__ENTITY_BLOCK = 2;
+
+  /**
+   * The feature id for the '<em><b>Enum Block</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE__ENUM_BLOCK = 3;
+
+  /**
+   * The number of structural features of the '<em>Module</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODULE_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl <em>Service Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getServiceBlock()
+   * @generated
+   */
+  int SERVICE_BLOCK = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_BLOCK__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Service Fields</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_BLOCK__SERVICE_FIELDS = 1;
+
+  /**
+   * The number of structural features of the '<em>Service Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_BLOCK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceMethodImpl <em>Service Method</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceMethodImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getServiceMethod()
+   * @generated
+   */
+  int SERVICE_METHOD = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_METHOD__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Method Acess</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_METHOD__METHOD_ACESS = 1;
+
+  /**
+   * The number of structural features of the '<em>Service Method</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_METHOD_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl <em>Entity Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getEntityBlock()
+   * @generated
+   */
+  int ENTITY_BLOCK = 12;
+
+  /**
+   * The feature id for the '<em><b>Acess Modifier</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK__ACESS_MODIFIER = 0;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK__IS_ABSTRACT = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK__NAME = 2;
+
+  /**
+   * The feature id for the '<em><b>Super Classes</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK__SUPER_CLASSES = 3;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK__ATTRIBUTES = 4;
+
+  /**
+   * The feature id for the '<em><b>Repository</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK__REPOSITORY = 5;
+
+  /**
+   * The number of structural features of the '<em>Entity Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_BLOCK_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.AttributeImpl <em>Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.AttributeImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getAttribute()
+   * @generated
+   */
+  int ATTRIBUTE = 13;
+
+  /**
+   * The feature id for the '<em><b>Acess Modifier</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__ACESS_MODIFIER = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__TYPE = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__NAME = 2;
+
+  /**
+   * The number of structural features of the '<em>Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl <em>Repository</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getRepository()
+   * @generated
+   */
+  int REPOSITORY = 14;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY__FIELDS = 1;
+
+  /**
+   * The number of structural features of the '<em>Repository</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl <em>Repository Fields</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getRepositoryFields()
+   * @generated
+   */
+  int REPOSITORY_FIELDS = 15;
+
+  /**
+   * The feature id for the '<em><b>Name Method</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY_FIELDS__NAME_METHOD = 0;
+
+  /**
+   * The feature id for the '<em><b>Methods Parameters</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY_FIELDS__METHODS_PARAMETERS = 1;
+
+  /**
+   * The feature id for the '<em><b>Return Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY_FIELDS__RETURN_TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>Repository Fields</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REPOSITORY_FIELDS_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EnumBlockImpl <em>Enum Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.EnumBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getEnumBlock()
+   * @generated
+   */
+  int ENUM_BLOCK = 16;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_BLOCK__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_BLOCK__VALUES = 1;
+
+  /**
+   * The number of structural features of the '<em>Enum Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_BLOCK_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.MethodParameterImpl <em>Method Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.MethodParameterImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getMethodParameter()
+   * @generated
+   */
+  int METHOD_PARAMETER = 17;
+
+  /**
+   * The feature id for the '<em><b>Type And Attr</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAMETER__TYPE_AND_ATTR = 0;
+
+  /**
+   * The number of structural features of the '<em>Method Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD_PARAMETER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.TypeAndAttributeImpl <em>Type And Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.TypeAndAttributeImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getTypeAndAttribute()
+   * @generated
+   */
+  int TYPE_AND_ATTRIBUTE = 18;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_AND_ATTRIBUTE__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_AND_ATTRIBUTE__NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Type And Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_AND_ATTRIBUTE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ExtendBlockImpl <em>Extend Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ExtendBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getExtendBlock()
+   * @generated
+   */
+  int EXTEND_BLOCK = 19;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTEND_BLOCK__VALUES = 0;
+
+  /**
+   * The number of structural features of the '<em>Extend Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTEND_BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl <em>Access Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getAccessModifier()
+   * @generated
+   */
+  int ACCESS_MODIFIER = 20;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCESS_MODIFIER__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Access Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCESS_MODIFIER_FEATURE_COUNT = 1;
 
 
   /**
@@ -519,15 +1045,15 @@ public interface LedsCodeV001Package extends EPackage
   EReference getProject_ApplicationBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getDomainBlock <em>Domain Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Project#getDomainBlock <em>Domain Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Domain Block</em>'.
+   * @return the meta object for the containment reference list '<em>Domain Block</em>'.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.Project#getDomainBlock()
    * @see #getProject()
    * @generated
    */
-  EAttribute getProject_DomainBlock();
+  EReference getProject_DomainBlock();
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock <em>Interface Block</em>}'.
@@ -681,69 +1207,69 @@ public interface LedsCodeV001Package extends EPackage
   EReference getInfrastructureBlock_Database();
 
   /**
-   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock <em>Database Block</em>}'.
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database <em>Database</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Database Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock
+   * @return the meta object for class '<em>Database</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database
    * @generated
    */
-  EClass getDatabaseBlock();
+  EClass getDatabase();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getVersionValue <em>Version Value</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getVersionValue <em>Version Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Version Value</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getVersionValue()
-   * @see #getDatabaseBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database#getVersionValue()
+   * @see #getDatabase()
    * @generated
    */
-  EAttribute getDatabaseBlock_VersionValue();
+  EAttribute getDatabase_VersionValue();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getNameValue <em>Name Value</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getNameValue <em>Name Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name Value</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getNameValue()
-   * @see #getDatabaseBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database#getNameValue()
+   * @see #getDatabase()
    * @generated
    */
-  EAttribute getDatabaseBlock_NameValue();
+  EAttribute getDatabase_NameValue();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getUserValue <em>User Value</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getUserValue <em>User Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>User Value</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getUserValue()
-   * @see #getDatabaseBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database#getUserValue()
+   * @see #getDatabase()
    * @generated
    */
-  EAttribute getDatabaseBlock_UserValue();
+  EAttribute getDatabase_UserValue();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getPassValue <em>Pass Value</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getPassValue <em>Pass Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Pass Value</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getPassValue()
-   * @see #getDatabaseBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database#getPassValue()
+   * @see #getDatabase()
    * @generated
    */
-  EAttribute getDatabaseBlock_PassValue();
+  EAttribute getDatabase_PassValue();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getHostValue <em>Host Value</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getHostValue <em>Host Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Host Value</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock#getHostValue()
-   * @see #getDatabaseBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database#getHostValue()
+   * @see #getDatabase()
    * @generated
    */
-  EAttribute getDatabaseBlock_HostValue();
+  EAttribute getDatabase_HostValue();
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.NameVersion <em>Name Version</em>}'.
@@ -808,6 +1334,477 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    */
   EAttribute getApplicationBlock_ApplicationDomain();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock <em>Domain Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Domain Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
+   * @generated
+   */
+  EClass getDomainBlock();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock#getName()
+   * @see #getDomainBlock()
+   * @generated
+   */
+  EAttribute getDomainBlock_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock#getModule <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Module</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock#getModule()
+   * @see #getDomainBlock()
+   * @generated
+   */
+  EReference getDomainBlock_Module();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Module</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module
+   * @generated
+   */
+  EClass getModule();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getName()
+   * @see #getModule()
+   * @generated
+   */
+  EAttribute getModule_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getServiceBlock <em>Service Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Service Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getServiceBlock()
+   * @see #getModule()
+   * @generated
+   */
+  EReference getModule_ServiceBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getEntityBlock <em>Entity Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entity Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getEntityBlock()
+   * @see #getModule()
+   * @generated
+   */
+  EReference getModule_EntityBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getEnumBlock <em>Enum Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Enum Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getEnumBlock()
+   * @see #getModule()
+   * @generated
+   */
+  EReference getModule_EnumBlock();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock <em>Service Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Service Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
+   * @generated
+   */
+  EClass getServiceBlock();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock#getName()
+   * @see #getServiceBlock()
+   * @generated
+   */
+  EAttribute getServiceBlock_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock#getServiceFields <em>Service Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Service Fields</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock#getServiceFields()
+   * @see #getServiceBlock()
+   * @generated
+   */
+  EReference getServiceBlock_ServiceFields();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod <em>Service Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Service Method</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
+   * @generated
+   */
+  EClass getServiceMethod();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getName()
+   * @see #getServiceMethod()
+   * @generated
+   */
+  EAttribute getServiceMethod_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess <em>Method Acess</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Method Acess</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess()
+   * @see #getServiceMethod()
+   * @generated
+   */
+  EAttribute getServiceMethod_MethodAcess();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock <em>Entity Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
+   * @generated
+   */
+  EClass getEntityBlock();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier <em>Acess Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Acess Modifier</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier()
+   * @see #getEntityBlock()
+   * @generated
+   */
+  EReference getEntityBlock_AcessModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#isIsAbstract <em>Is Abstract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Abstract</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#isIsAbstract()
+   * @see #getEntityBlock()
+   * @generated
+   */
+  EAttribute getEntityBlock_IsAbstract();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getName()
+   * @see #getEntityBlock()
+   * @generated
+   */
+  EAttribute getEntityBlock_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getSuperClasses <em>Super Classes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Super Classes</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getSuperClasses()
+   * @see #getEntityBlock()
+   * @generated
+   */
+  EReference getEntityBlock_SuperClasses();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAttributes()
+   * @see #getEntityBlock()
+   * @generated
+   */
+  EReference getEntityBlock_Attributes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getRepository <em>Repository</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Repository</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getRepository()
+   * @see #getEntityBlock()
+   * @generated
+   */
+  EReference getEntityBlock_Repository();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Attribute</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute
+   * @generated
+   */
+  EClass getAttribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier <em>Acess Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Acess Modifier</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier()
+   * @see #getAttribute()
+   * @generated
+   */
+  EReference getAttribute_AcessModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getType()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getName()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Name();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository <em>Repository</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Repository</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Repository
+   * @generated
+   */
+  EClass getRepository();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Repository#getName()
+   * @see #getRepository()
+   * @generated
+   */
+  EAttribute getRepository_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getFields <em>Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Fields</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Repository#getFields()
+   * @see #getRepository()
+   * @generated
+   */
+  EReference getRepository_Fields();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields <em>Repository Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Repository Fields</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
+   * @generated
+   */
+  EClass getRepositoryFields();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getNameMethod <em>Name Method</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name Method</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getNameMethod()
+   * @see #getRepositoryFields()
+   * @generated
+   */
+  EAttribute getRepositoryFields_NameMethod();
+
+  /**
+   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getMethodsParameters <em>Methods Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Methods Parameters</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getMethodsParameters()
+   * @see #getRepositoryFields()
+   * @generated
+   */
+  EReference getRepositoryFields_MethodsParameters();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getReturnType <em>Return Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Return Type</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getReturnType()
+   * @see #getRepositoryFields()
+   * @generated
+   */
+  EAttribute getRepositoryFields_ReturnType();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock <em>Enum Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Enum Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
+   * @generated
+   */
+  EClass getEnumBlock();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock#getName()
+   * @see #getEnumBlock()
+   * @generated
+   */
+  EAttribute getEnumBlock_Name();
+
+  /**
+   * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock#getValues()
+   * @see #getEnumBlock()
+   * @generated
+   */
+  EAttribute getEnumBlock_Values();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter <em>Method Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Method Parameter</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter
+   * @generated
+   */
+  EClass getMethodParameter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter#getTypeAndAttr <em>Type And Attr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Type And Attr</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter#getTypeAndAttr()
+   * @see #getMethodParameter()
+   * @generated
+   */
+  EReference getMethodParameter_TypeAndAttr();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute <em>Type And Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type And Attribute</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute
+   * @generated
+   */
+  EClass getTypeAndAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute#getType()
+   * @see #getTypeAndAttribute()
+   * @generated
+   */
+  EAttribute getTypeAndAttribute_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute#getName()
+   * @see #getTypeAndAttribute()
+   * @generated
+   */
+  EAttribute getTypeAndAttribute_Name();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock <em>Extend Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Extend Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock
+   * @generated
+   */
+  EClass getExtendBlock();
+
+  /**
+   * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock#getValues()
+   * @see #getExtendBlock()
+   * @generated
+   */
+  EAttribute getExtendBlock_Values();
+
+  /**
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier <em>Access Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Access Modifier</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier
+   * @generated
+   */
+  EClass getAccessModifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier#getValue()
+   * @see #getAccessModifier()
+   * @generated
+   */
+  EAttribute getAccessModifier_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -893,12 +1890,12 @@ public interface LedsCodeV001Package extends EPackage
     EReference PROJECT__APPLICATION_BLOCK = eINSTANCE.getProject_ApplicationBlock();
 
     /**
-     * The meta object literal for the '<em><b>Domain Block</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Domain Block</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROJECT__DOMAIN_BLOCK = eINSTANCE.getProject_DomainBlock();
+    EReference PROJECT__DOMAIN_BLOCK = eINSTANCE.getProject_DomainBlock();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.InterfaceBlockImpl <em>Interface Block</em>}' class.
@@ -1019,14 +2016,14 @@ public interface LedsCodeV001Package extends EPackage
     EReference INFRASTRUCTURE_BLOCK__DATABASE = eINSTANCE.getInfrastructureBlock_Database();
 
     /**
-     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseBlockImpl <em>Database Block</em>}' class.
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl <em>Database</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseBlockImpl
-     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getDatabaseBlock()
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getDatabase()
      * @generated
      */
-    EClass DATABASE_BLOCK = eINSTANCE.getDatabaseBlock();
+    EClass DATABASE = eINSTANCE.getDatabase();
 
     /**
      * The meta object literal for the '<em><b>Version Value</b></em>' attribute feature.
@@ -1034,7 +2031,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATABASE_BLOCK__VERSION_VALUE = eINSTANCE.getDatabaseBlock_VersionValue();
+    EAttribute DATABASE__VERSION_VALUE = eINSTANCE.getDatabase_VersionValue();
 
     /**
      * The meta object literal for the '<em><b>Name Value</b></em>' attribute feature.
@@ -1042,7 +2039,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATABASE_BLOCK__NAME_VALUE = eINSTANCE.getDatabaseBlock_NameValue();
+    EAttribute DATABASE__NAME_VALUE = eINSTANCE.getDatabase_NameValue();
 
     /**
      * The meta object literal for the '<em><b>User Value</b></em>' attribute feature.
@@ -1050,7 +2047,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATABASE_BLOCK__USER_VALUE = eINSTANCE.getDatabaseBlock_UserValue();
+    EAttribute DATABASE__USER_VALUE = eINSTANCE.getDatabase_UserValue();
 
     /**
      * The meta object literal for the '<em><b>Pass Value</b></em>' attribute feature.
@@ -1058,7 +2055,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATABASE_BLOCK__PASS_VALUE = eINSTANCE.getDatabaseBlock_PassValue();
+    EAttribute DATABASE__PASS_VALUE = eINSTANCE.getDatabase_PassValue();
 
     /**
      * The meta object literal for the '<em><b>Host Value</b></em>' attribute feature.
@@ -1066,7 +2063,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATABASE_BLOCK__HOST_VALUE = eINSTANCE.getDatabaseBlock_HostValue();
+    EAttribute DATABASE__HOST_VALUE = eINSTANCE.getDatabase_HostValue();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.NameVersionImpl <em>Name Version</em>}' class.
@@ -1119,6 +2116,384 @@ public interface LedsCodeV001Package extends EPackage
      * @generated
      */
     EAttribute APPLICATION_BLOCK__APPLICATION_DOMAIN = eINSTANCE.getApplicationBlock_ApplicationDomain();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DomainBlockImpl <em>Domain Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.DomainBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getDomainBlock()
+     * @generated
+     */
+    EClass DOMAIN_BLOCK = eINSTANCE.getDomainBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOMAIN_BLOCK__NAME = eINSTANCE.getDomainBlock_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Module</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOMAIN_BLOCK__MODULE = eINSTANCE.getDomainBlock_Module();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl <em>Module</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getModule()
+     * @generated
+     */
+    EClass MODULE = eINSTANCE.getModule();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODULE__NAME = eINSTANCE.getModule_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Service Block</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULE__SERVICE_BLOCK = eINSTANCE.getModule_ServiceBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Entity Block</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULE__ENTITY_BLOCK = eINSTANCE.getModule_EntityBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Enum Block</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODULE__ENUM_BLOCK = eINSTANCE.getModule_EnumBlock();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl <em>Service Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getServiceBlock()
+     * @generated
+     */
+    EClass SERVICE_BLOCK = eINSTANCE.getServiceBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SERVICE_BLOCK__NAME = eINSTANCE.getServiceBlock_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Service Fields</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SERVICE_BLOCK__SERVICE_FIELDS = eINSTANCE.getServiceBlock_ServiceFields();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceMethodImpl <em>Service Method</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceMethodImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getServiceMethod()
+     * @generated
+     */
+    EClass SERVICE_METHOD = eINSTANCE.getServiceMethod();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SERVICE_METHOD__NAME = eINSTANCE.getServiceMethod_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Method Acess</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SERVICE_METHOD__METHOD_ACESS = eINSTANCE.getServiceMethod_MethodAcess();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl <em>Entity Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getEntityBlock()
+     * @generated
+     */
+    EClass ENTITY_BLOCK = eINSTANCE.getEntityBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Acess Modifier</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_BLOCK__ACESS_MODIFIER = eINSTANCE.getEntityBlock_AcessModifier();
+
+    /**
+     * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY_BLOCK__IS_ABSTRACT = eINSTANCE.getEntityBlock_IsAbstract();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY_BLOCK__NAME = eINSTANCE.getEntityBlock_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Super Classes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_BLOCK__SUPER_CLASSES = eINSTANCE.getEntityBlock_SuperClasses();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_BLOCK__ATTRIBUTES = eINSTANCE.getEntityBlock_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>Repository</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_BLOCK__REPOSITORY = eINSTANCE.getEntityBlock_Repository();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.AttributeImpl <em>Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.AttributeImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getAttribute()
+     * @generated
+     */
+    EClass ATTRIBUTE = eINSTANCE.getAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Acess Modifier</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE__ACESS_MODIFIER = eINSTANCE.getAttribute_AcessModifier();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__TYPE = eINSTANCE.getAttribute_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl <em>Repository</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getRepository()
+     * @generated
+     */
+    EClass REPOSITORY = eINSTANCE.getRepository();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REPOSITORY__NAME = eINSTANCE.getRepository_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPOSITORY__FIELDS = eINSTANCE.getRepository_Fields();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl <em>Repository Fields</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getRepositoryFields()
+     * @generated
+     */
+    EClass REPOSITORY_FIELDS = eINSTANCE.getRepositoryFields();
+
+    /**
+     * The meta object literal for the '<em><b>Name Method</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REPOSITORY_FIELDS__NAME_METHOD = eINSTANCE.getRepositoryFields_NameMethod();
+
+    /**
+     * The meta object literal for the '<em><b>Methods Parameters</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REPOSITORY_FIELDS__METHODS_PARAMETERS = eINSTANCE.getRepositoryFields_MethodsParameters();
+
+    /**
+     * The meta object literal for the '<em><b>Return Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REPOSITORY_FIELDS__RETURN_TYPE = eINSTANCE.getRepositoryFields_ReturnType();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EnumBlockImpl <em>Enum Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.EnumBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getEnumBlock()
+     * @generated
+     */
+    EClass ENUM_BLOCK = eINSTANCE.getEnumBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUM_BLOCK__NAME = eINSTANCE.getEnumBlock_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUM_BLOCK__VALUES = eINSTANCE.getEnumBlock_Values();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.MethodParameterImpl <em>Method Parameter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.MethodParameterImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getMethodParameter()
+     * @generated
+     */
+    EClass METHOD_PARAMETER = eINSTANCE.getMethodParameter();
+
+    /**
+     * The meta object literal for the '<em><b>Type And Attr</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METHOD_PARAMETER__TYPE_AND_ATTR = eINSTANCE.getMethodParameter_TypeAndAttr();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.TypeAndAttributeImpl <em>Type And Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.TypeAndAttributeImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getTypeAndAttribute()
+     * @generated
+     */
+    EClass TYPE_AND_ATTRIBUTE = eINSTANCE.getTypeAndAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_AND_ATTRIBUTE__TYPE = eINSTANCE.getTypeAndAttribute_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_AND_ATTRIBUTE__NAME = eINSTANCE.getTypeAndAttribute_Name();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ExtendBlockImpl <em>Extend Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ExtendBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getExtendBlock()
+     * @generated
+     */
+    EClass EXTEND_BLOCK = eINSTANCE.getExtendBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTEND_BLOCK__VALUES = eINSTANCE.getExtendBlock_Values();
+
+    /**
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl <em>Access Modifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getAccessModifier()
+     * @generated
+     */
+    EClass ACCESS_MODIFIER = eINSTANCE.getAccessModifier();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACCESS_MODIFIER__VALUE = eINSTANCE.getAccessModifier_Value();
 
   }
 

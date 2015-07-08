@@ -1,65 +1,55 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules;
 
-import br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory;
-import br.edu.sr.ifes.leds.LedsCodeV001InjectorProvider;
+import br.edu.sr.ifes.leds.LedsCode.tests.parserRules.AbstractTestClass;
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
-import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
-import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.junit4.InjectWith;
-import org.eclipse.xtext.junit4.XtextRunner;
-import org.eclipse.xtext.junit4.util.ParseHelper;
-import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-@InjectWith(LedsCodeV001InjectorProvider.class)
-@RunWith(XtextRunner.class)
 @SuppressWarnings("all")
-public class ApplicationTest {
-  @Inject
-  private ParseHelper<LedsCodeDSL> parser;
+public class ApplicationTest extends AbstractTestClass {
+  private EList<ApplicationBlock> app;
+  
+  private ApplicationBlock singleApp;
+  
+  private String singleAppDomain;
+  
+  @Before
+  public void setUp() {
+    Project _parseProject = this.parseProject();
+    this.project = _parseProject;
+    EList<ApplicationBlock> _applicationBlock = this.project.getApplicationBlock();
+    this.app = _applicationBlock;
+    ApplicationBlock _get = this.app.get(0);
+    this.singleApp = _get;
+    EList<String> _applicationDomain = this.singleApp.getApplicationDomain();
+    String _get_1 = _applicationDomain.get(0);
+    this.singleAppDomain = _get_1;
+  }
+  
+  @Test
+  public void testQtdApplication() {
+    int _size = this.app.size();
+    Assert.assertEquals(2, _size);
+  }
   
   @Test
   public void testApplicationName() {
-    final EList<ApplicationBlock> app = this.parseApplication();
-    for (final ApplicationBlock single : app) {
-      String _name = single.getName();
-      boolean _contains = "LibraryPersonApp LibraryPersonApp2".contains(_name);
-      Assert.assertTrue(_contains);
-    }
+    String _name = this.singleApp.getName();
+    Assert.assertEquals("LibraryPersonApp", _name);
+  }
+  
+  @Test
+  public void testQtdApplicationDomain() {
+    EList<String> _applicationDomain = this.singleApp.getApplicationDomain();
+    int _size = _applicationDomain.size();
+    Assert.assertEquals(2, _size);
   }
   
   @Test
   public void testApplicationDomain() {
-    final EList<ApplicationBlock> app = this.parseApplication();
-    final ApplicationBlock single = app.get(0);
-    EList<String> _applicationDomain = single.getApplicationDomain();
-    for (final String domainApp : _applicationDomain) {
-      boolean _contains = "Library.* Loan.*".contains(domainApp);
-      Assert.assertTrue(_contains);
-    }
-  }
-  
-  public EList<ApplicationBlock> parseApplication() {
-    try {
-      EList<ApplicationBlock> _xblockexpression = null;
-      {
-        CharSequence _completeProject = ProjectFactory.completeProject();
-        final LedsCodeDSL model = this.parser.parse(_completeProject);
-        TreeIterator<EObject> _eAllContents = model.eAllContents();
-        EObject _head = IteratorExtensions.<EObject>head(_eAllContents);
-        final Project project = ((Project) _head);
-        _xblockexpression = project.getApplicationBlock();
-      }
-      return _xblockexpression;
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    Assert.assertEquals("Library.*", this.singleAppDomain);
   }
 }

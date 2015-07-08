@@ -5,3 +5,6 @@
 /.InfrastructureTest.java._trace
 /.ProjectTest.java._trace
 /.ApplicationTest.java._trace
+/.DomainTest.java._trace
+/.InterfaceTest.java._trace
+/.AbstractTestClass.java._trace

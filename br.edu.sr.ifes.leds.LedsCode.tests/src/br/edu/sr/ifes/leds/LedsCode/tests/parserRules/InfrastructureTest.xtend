@@ -1,80 +1,67 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
 
-import br.edu.sr.ifes.leds.LedsCodeV001InjectorProvider
-import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
-import com.google.inject.Inject
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.util.ParseHelper
+import br.edu.sr.ifes.leds.ledsCodeV001.Database
+import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion
+import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
 
 import static org.junit.Assert.*
-import static br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory.completeProject
 
-@InjectWith(LedsCodeV001InjectorProvider)
-@RunWith(XtextRunner)
-class InfrastructureTest {
-	
-	@Inject
-  	ParseHelper<LedsCodeDSL> parser
+class InfrastructureTest extends AbstractTestClass{
   	
   	// TODO: Testar a ordem aleatoria dos blocos
+  	
+  	InfrastructureBlock infra
+	NameVersion lang
+	NameVersion framework
+	NameVersion orm
+	Database db
+  	
+  	@Before
+  	def void setUp(){
+  		project = parseProject()
+  		infra = project.infrastructureBlock
+  		lang = infra.language
+  		framework = infra.framework
+  		orm = infra.orm
+  		db = infra.database
+  	}
 	
 	@Test
 	def testBasePackaga(){
-		val infra = parseCompleteInfrastructura()
-		
 		assertEquals("org.company.exempla", infra.basePackage)
 	}
 	
 	@Test
 	def testProjectVersion(){
-		val infra = parseCompleteInfrastructura()
-		
 		assertEquals("0.0.0", infra.projectVersion)
 	}
 	
 	@Test
 	def testLanguage(){
-		val language = parseCompleteInfrastructura().language
-		
-		assertEquals("Java", language.nameValue)
-		assertEquals("8", language.versionValue)
+		assertEquals("Java", lang.nameValue)
+		assertEquals("8", lang.versionValue)
 	}
 	
 	@Test
 	def testframework(){
-		val framework = parseCompleteInfrastructura().framework
-		
 		assertEquals("SpringRoo", framework.nameValue)
 		assertEquals("1.2", framework.versionValue)
 	}
 	
 	@Test
 	def testOrm(){
-		val orm = parseCompleteInfrastructura().orm
-		
 		assertEquals("Hibernate", orm.nameValue)
 		assertEquals("3", orm.versionValue)
 	}
 	
 	@Test
 	def testDatabase(){
-		val db = parseCompleteInfrastructura().database
-		
 		assertEquals("Postgres", db.nameValue)
 		assertEquals("5", db.versionValue)
 		assertEquals("USER", db.userValue)
 		assertEquals("123456", db.passValue)
 		assertEquals("localhost", db.hostValue)
-	}
-
-	def parseCompleteInfrastructura(){
-		val model = parser.parse(completeProject())
-		val project = model.eAllContents.head as Project
-		
-		project.infrastructureBlock
 	}
 }

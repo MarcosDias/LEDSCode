@@ -107,10 +107,10 @@ public class LedsCodeV001Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LedsCodeV001Package.DATABASE_BLOCK:
+      case LedsCodeV001Package.DATABASE:
       {
-        DatabaseBlock databaseBlock = (DatabaseBlock)theEObject;
-        T result = caseDatabaseBlock(databaseBlock);
+        Database database = (Database)theEObject;
+        T result = caseDatabase(database);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -125,6 +125,97 @@ public class LedsCodeV001Switch<T> extends Switch<T>
       {
         ApplicationBlock applicationBlock = (ApplicationBlock)theEObject;
         T result = caseApplicationBlock(applicationBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.DOMAIN_BLOCK:
+      {
+        DomainBlock domainBlock = (DomainBlock)theEObject;
+        T result = caseDomainBlock(domainBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.MODULE:
+      {
+        Module module = (Module)theEObject;
+        T result = caseModule(module);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.SERVICE_BLOCK:
+      {
+        ServiceBlock serviceBlock = (ServiceBlock)theEObject;
+        T result = caseServiceBlock(serviceBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.SERVICE_METHOD:
+      {
+        ServiceMethod serviceMethod = (ServiceMethod)theEObject;
+        T result = caseServiceMethod(serviceMethod);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.ENTITY_BLOCK:
+      {
+        EntityBlock entityBlock = (EntityBlock)theEObject;
+        T result = caseEntityBlock(entityBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.ATTRIBUTE:
+      {
+        Attribute attribute = (Attribute)theEObject;
+        T result = caseAttribute(attribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.REPOSITORY:
+      {
+        Repository repository = (Repository)theEObject;
+        T result = caseRepository(repository);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.REPOSITORY_FIELDS:
+      {
+        RepositoryFields repositoryFields = (RepositoryFields)theEObject;
+        T result = caseRepositoryFields(repositoryFields);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.ENUM_BLOCK:
+      {
+        EnumBlock enumBlock = (EnumBlock)theEObject;
+        T result = caseEnumBlock(enumBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.METHOD_PARAMETER:
+      {
+        MethodParameter methodParameter = (MethodParameter)theEObject;
+        T result = caseMethodParameter(methodParameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.TYPE_AND_ATTRIBUTE:
+      {
+        TypeAndAttribute typeAndAttribute = (TypeAndAttribute)theEObject;
+        T result = caseTypeAndAttribute(typeAndAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.EXTEND_BLOCK:
+      {
+        ExtendBlock extendBlock = (ExtendBlock)theEObject;
+        T result = caseExtendBlock(extendBlock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LedsCodeV001Package.ACCESS_MODIFIER:
+      {
+        AccessModifier accessModifier = (AccessModifier)theEObject;
+        T result = caseAccessModifier(accessModifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,17 +304,17 @@ public class LedsCodeV001Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Database Block</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Database</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Database Block</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Database</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDatabaseBlock(DatabaseBlock object)
+  public T caseDatabase(Database object)
   {
     return null;
   }
@@ -256,6 +347,214 @@ public class LedsCodeV001Switch<T> extends Switch<T>
    * @generated
    */
   public T caseApplicationBlock(ApplicationBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Domain Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Domain Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDomainBlock(DomainBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseModule(Module object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Service Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Service Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseServiceBlock(ServiceBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Service Method</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Service Method</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseServiceMethod(ServiceMethod object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntityBlock(EntityBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttribute(Attribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Repository</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Repository</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRepository(Repository object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Repository Fields</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Repository Fields</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRepositoryFields(RepositoryFields object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Enum Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Enum Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEnumBlock(EnumBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Method Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Method Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMethodParameter(MethodParameter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type And Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type And Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeAndAttribute(TypeAndAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Extend Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Extend Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExtendBlock(ExtendBlock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Access Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Access Modifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAccessModifier(AccessModifier object)
   {
     return null;
   }

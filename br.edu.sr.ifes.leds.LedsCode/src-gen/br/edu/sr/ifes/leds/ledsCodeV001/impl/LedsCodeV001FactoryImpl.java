@@ -69,9 +69,22 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
       case LedsCodeV001Package.INTERFACE_BLOCK: return createInterfaceBlock();
       case LedsCodeV001Package.INTERFACE_APPLICATION: return createInterfaceApplication();
       case LedsCodeV001Package.INFRASTRUCTURE_BLOCK: return createInfrastructureBlock();
-      case LedsCodeV001Package.DATABASE_BLOCK: return createDatabaseBlock();
+      case LedsCodeV001Package.DATABASE: return createDatabase();
       case LedsCodeV001Package.NAME_VERSION: return createNameVersion();
       case LedsCodeV001Package.APPLICATION_BLOCK: return createApplicationBlock();
+      case LedsCodeV001Package.DOMAIN_BLOCK: return createDomainBlock();
+      case LedsCodeV001Package.MODULE: return createModule();
+      case LedsCodeV001Package.SERVICE_BLOCK: return createServiceBlock();
+      case LedsCodeV001Package.SERVICE_METHOD: return createServiceMethod();
+      case LedsCodeV001Package.ENTITY_BLOCK: return createEntityBlock();
+      case LedsCodeV001Package.ATTRIBUTE: return createAttribute();
+      case LedsCodeV001Package.REPOSITORY: return createRepository();
+      case LedsCodeV001Package.REPOSITORY_FIELDS: return createRepositoryFields();
+      case LedsCodeV001Package.ENUM_BLOCK: return createEnumBlock();
+      case LedsCodeV001Package.METHOD_PARAMETER: return createMethodParameter();
+      case LedsCodeV001Package.TYPE_AND_ATTRIBUTE: return createTypeAndAttribute();
+      case LedsCodeV001Package.EXTEND_BLOCK: return createExtendBlock();
+      case LedsCodeV001Package.ACCESS_MODIFIER: return createAccessModifier();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -137,10 +150,10 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public DatabaseBlock createDatabaseBlock()
+  public Database createDatabase()
   {
-    DatabaseBlockImpl databaseBlock = new DatabaseBlockImpl();
-    return databaseBlock;
+    DatabaseImpl database = new DatabaseImpl();
+    return database;
   }
 
   /**
@@ -163,6 +176,149 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
   {
     ApplicationBlockImpl applicationBlock = new ApplicationBlockImpl();
     return applicationBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DomainBlock createDomainBlock()
+  {
+    DomainBlockImpl domainBlock = new DomainBlockImpl();
+    return domainBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Module createModule()
+  {
+    ModuleImpl module = new ModuleImpl();
+    return module;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ServiceBlock createServiceBlock()
+  {
+    ServiceBlockImpl serviceBlock = new ServiceBlockImpl();
+    return serviceBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ServiceMethod createServiceMethod()
+  {
+    ServiceMethodImpl serviceMethod = new ServiceMethodImpl();
+    return serviceMethod;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntityBlock createEntityBlock()
+  {
+    EntityBlockImpl entityBlock = new EntityBlockImpl();
+    return entityBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Attribute createAttribute()
+  {
+    AttributeImpl attribute = new AttributeImpl();
+    return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Repository createRepository()
+  {
+    RepositoryImpl repository = new RepositoryImpl();
+    return repository;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RepositoryFields createRepositoryFields()
+  {
+    RepositoryFieldsImpl repositoryFields = new RepositoryFieldsImpl();
+    return repositoryFields;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EnumBlock createEnumBlock()
+  {
+    EnumBlockImpl enumBlock = new EnumBlockImpl();
+    return enumBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MethodParameter createMethodParameter()
+  {
+    MethodParameterImpl methodParameter = new MethodParameterImpl();
+    return methodParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypeAndAttribute createTypeAndAttribute()
+  {
+    TypeAndAttributeImpl typeAndAttribute = new TypeAndAttributeImpl();
+    return typeAndAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExtendBlock createExtendBlock()
+  {
+    ExtendBlockImpl extendBlock = new ExtendBlockImpl();
+    return extendBlock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AccessModifier createAccessModifier()
+  {
+    AccessModifierImpl accessModifier = new AccessModifierImpl();
+    return accessModifier;
   }
 
   /**

@@ -123,19 +123,19 @@ public interface Project extends EObject
   EList<ApplicationBlock> getApplicationBlock();
 
   /**
-   * Returns the value of the '<em><b>Domain Block</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Domain Block</b></em>' containment reference list.
+   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Domain Block</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Domain Block</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Domain Block</em>' attribute list.
+   * @return the value of the '<em>Domain Block</em>' containment reference list.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getProject_DomainBlock()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getDomainBlock();
+  EList<DomainBlock> getDomainBlock();
 
 } // Project

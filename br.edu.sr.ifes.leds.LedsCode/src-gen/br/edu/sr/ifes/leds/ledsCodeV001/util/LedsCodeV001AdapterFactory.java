@@ -100,9 +100,9 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
         return createInfrastructureBlockAdapter();
       }
       @Override
-      public Adapter caseDatabaseBlock(DatabaseBlock object)
+      public Adapter caseDatabase(Database object)
       {
-        return createDatabaseBlockAdapter();
+        return createDatabaseAdapter();
       }
       @Override
       public Adapter caseNameVersion(NameVersion object)
@@ -113,6 +113,71 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
       public Adapter caseApplicationBlock(ApplicationBlock object)
       {
         return createApplicationBlockAdapter();
+      }
+      @Override
+      public Adapter caseDomainBlock(DomainBlock object)
+      {
+        return createDomainBlockAdapter();
+      }
+      @Override
+      public Adapter caseModule(Module object)
+      {
+        return createModuleAdapter();
+      }
+      @Override
+      public Adapter caseServiceBlock(ServiceBlock object)
+      {
+        return createServiceBlockAdapter();
+      }
+      @Override
+      public Adapter caseServiceMethod(ServiceMethod object)
+      {
+        return createServiceMethodAdapter();
+      }
+      @Override
+      public Adapter caseEntityBlock(EntityBlock object)
+      {
+        return createEntityBlockAdapter();
+      }
+      @Override
+      public Adapter caseAttribute(Attribute object)
+      {
+        return createAttributeAdapter();
+      }
+      @Override
+      public Adapter caseRepository(Repository object)
+      {
+        return createRepositoryAdapter();
+      }
+      @Override
+      public Adapter caseRepositoryFields(RepositoryFields object)
+      {
+        return createRepositoryFieldsAdapter();
+      }
+      @Override
+      public Adapter caseEnumBlock(EnumBlock object)
+      {
+        return createEnumBlockAdapter();
+      }
+      @Override
+      public Adapter caseMethodParameter(MethodParameter object)
+      {
+        return createMethodParameterAdapter();
+      }
+      @Override
+      public Adapter caseTypeAndAttribute(TypeAndAttribute object)
+      {
+        return createTypeAndAttributeAdapter();
+      }
+      @Override
+      public Adapter caseExtendBlock(ExtendBlock object)
+      {
+        return createExtendBlockAdapter();
+      }
+      @Override
+      public Adapter caseAccessModifier(AccessModifier object)
+      {
+        return createAccessModifierAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -212,16 +277,16 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock <em>Database Block</em>}'.
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database <em>Database</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database
    * @generated
    */
-  public Adapter createDatabaseBlockAdapter()
+  public Adapter createDatabaseAdapter()
   {
     return null;
   }
@@ -252,6 +317,201 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createApplicationBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock <em>Domain Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
+   * @generated
+   */
+  public Adapter createDomainBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module <em>Module</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module
+   * @generated
+   */
+  public Adapter createModuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock <em>Service Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
+   * @generated
+   */
+  public Adapter createServiceBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod <em>Service Method</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
+   * @generated
+   */
+  public Adapter createServiceMethodAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock <em>Entity Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
+   * @generated
+   */
+  public Adapter createEntityBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute
+   * @generated
+   */
+  public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository <em>Repository</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Repository
+   * @generated
+   */
+  public Adapter createRepositoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields <em>Repository Fields</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
+   * @generated
+   */
+  public Adapter createRepositoryFieldsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock <em>Enum Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
+   * @generated
+   */
+  public Adapter createEnumBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter <em>Method Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter
+   * @generated
+   */
+  public Adapter createMethodParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute <em>Type And Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute
+   * @generated
+   */
+  public Adapter createTypeAndAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock <em>Extend Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock
+   * @generated
+   */
+  public Adapter createExtendBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier <em>Access Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier
+   * @generated
+   */
+  public Adapter createAccessModifierAdapter()
   {
     return null;
   }

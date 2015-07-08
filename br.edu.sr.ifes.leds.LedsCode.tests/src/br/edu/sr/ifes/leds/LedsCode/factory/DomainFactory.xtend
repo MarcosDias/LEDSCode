@@ -3,7 +3,10 @@ package br.edu.sr.ifes.leds.LedsCode.factory
 class DomainFactory {
 	def static domainBlock(){
 '''
-domain Domain {
+domain Domain1 {
+	«moduleBlock()»
+}
+domain Domain2 {
 	«moduleBlock()»
 }
 '''
@@ -11,7 +14,7 @@ domain Domain {
 	
 	def static moduleBlock(){
 '''
-module Modulo {
+module Module {
 	«serviceBlock()»
 	«entityBlock()»
 	«enumBlock()»
@@ -21,10 +24,6 @@ module Modulo {
 	
 	def static serviceBlock(){
 '''
-service PersonService {
-	findPersonByName => PersonRepository.findPersonByName
-}
-
 service LibraryService {
 	//nome => entity.repositorio.metodo
 	//nome => service.metodo
@@ -32,28 +31,29 @@ service LibraryService {
 	//nome => domain.module.service.metodo
 	findLibraryByName => Library.LibraryRepository.findLibraryByName
 	findMediaByName => Media.MediaRepository.findMediaByName
+	findMediaByCharacter => Media.MediaRepository.findMediaByCharacter
+	findPersonByName => PersonService.findPersonByName
+}
+
+service PersonService {
+	findPersonByName => PersonRepository.findPersonByName
 }
 '''
 	}
 	
 	def static entityBlock(){
 '''
-abstract entity Media {
+abstract entity Media : SuperClass1, SuperClass2 {
 	private String titleb
-	private Set<PhysicalMedia> physicalMedia
-	private Set<Engagement> engagements
-	private Set<MediaCharacter> mediaCharacters
-
+	- Set<PhysicalMedia> physicalMedia
+	
 	repository MediaRepository {
 	    findMediaByCharacter(String characterName) : List<Media>
-	    //findById
-	    //save
-	    //findAll
 	    findMediaByName(Long libraryId, String name) : List<Media>
   }
 }
 
-entity LibraryEntity extends Media{
+entity LibraryEntity : Media{
 	String name //key
 	Set<PhysicalMedia> media
 	
@@ -72,8 +72,8 @@ enum Gender {
 }
 
 enum Gen {
-	F,
-	M
+	FEM,
+	MA
 }
 '''
 	}

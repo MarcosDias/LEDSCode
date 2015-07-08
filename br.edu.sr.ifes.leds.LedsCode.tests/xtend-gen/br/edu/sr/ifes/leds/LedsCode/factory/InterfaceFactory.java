@@ -12,14 +12,14 @@ public class InterfaceFactory {
     _builder.append("//Cria as telas da aplicação Library");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("HtmlView Interface1 => Domain");
+    _builder.append("HtmlView Interface1 => AppDomain");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
     _builder.append("//Criar um webservice do application Library");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("RestFull Interface2 => Domain");
+    _builder.append("RestFull Interface2 => AppDomain");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

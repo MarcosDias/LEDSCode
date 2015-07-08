@@ -2,16 +2,29 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier;
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
-import br.edu.sr.ifes.leds.ledsCodeV001.DatabaseBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.Attribute;
+import br.edu.sr.ifes.leds.ledsCodeV001.Database;
+import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Factory;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
+import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
+import br.edu.sr.ifes.leds.ledsCodeV001.Module;
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
+import br.edu.sr.ifes.leds.ledsCodeV001.Repository;
+import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
+import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
+import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -68,7 +81,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass databaseBlockEClass = null;
+  private EClass databaseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,6 +96,97 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * @generated
    */
   private EClass applicationBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass domainBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass moduleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass serviceBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass serviceMethodEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entityBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass repositoryEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass repositoryFieldsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass enumBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass methodParameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeAndAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass extendBlockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass accessModifierEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -222,9 +326,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProject_DomainBlock()
+  public EReference getProject_DomainBlock()
   {
-    return (EAttribute)projectEClass.getEStructuralFeatures().get(4);
+    return (EReference)projectEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -372,9 +476,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDatabaseBlock()
+  public EClass getDatabase()
   {
-    return databaseBlockEClass;
+    return databaseEClass;
   }
 
   /**
@@ -382,9 +486,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDatabaseBlock_VersionValue()
+  public EAttribute getDatabase_VersionValue()
   {
-    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)databaseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -392,9 +496,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDatabaseBlock_NameValue()
+  public EAttribute getDatabase_NameValue()
   {
-    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)databaseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -402,9 +506,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDatabaseBlock_UserValue()
+  public EAttribute getDatabase_UserValue()
   {
-    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)databaseEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -412,9 +516,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDatabaseBlock_PassValue()
+  public EAttribute getDatabase_PassValue()
   {
-    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)databaseEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -422,9 +526,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDatabaseBlock_HostValue()
+  public EAttribute getDatabase_HostValue()
   {
-    return (EAttribute)databaseBlockEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)databaseEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -492,6 +596,446 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDomainBlock()
+  {
+    return domainBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDomainBlock_Name()
+  {
+    return (EAttribute)domainBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDomainBlock_Module()
+  {
+    return (EReference)domainBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getModule()
+  {
+    return moduleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getModule_Name()
+  {
+    return (EAttribute)moduleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModule_ServiceBlock()
+  {
+    return (EReference)moduleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModule_EntityBlock()
+  {
+    return (EReference)moduleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModule_EnumBlock()
+  {
+    return (EReference)moduleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getServiceBlock()
+  {
+    return serviceBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getServiceBlock_Name()
+  {
+    return (EAttribute)serviceBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getServiceBlock_ServiceFields()
+  {
+    return (EReference)serviceBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getServiceMethod()
+  {
+    return serviceMethodEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getServiceMethod_Name()
+  {
+    return (EAttribute)serviceMethodEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getServiceMethod_MethodAcess()
+  {
+    return (EAttribute)serviceMethodEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEntityBlock()
+  {
+    return entityBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntityBlock_AcessModifier()
+  {
+    return (EReference)entityBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEntityBlock_IsAbstract()
+  {
+    return (EAttribute)entityBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEntityBlock_Name()
+  {
+    return (EAttribute)entityBlockEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntityBlock_SuperClasses()
+  {
+    return (EReference)entityBlockEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntityBlock_Attributes()
+  {
+    return (EReference)entityBlockEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntityBlock_Repository()
+  {
+    return (EReference)entityBlockEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAttribute()
+  {
+    return attributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAttribute_AcessModifier()
+  {
+    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttribute_Type()
+  {
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAttribute_Name()
+  {
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRepository()
+  {
+    return repositoryEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRepository_Name()
+  {
+    return (EAttribute)repositoryEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRepository_Fields()
+  {
+    return (EReference)repositoryEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRepositoryFields()
+  {
+    return repositoryFieldsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRepositoryFields_NameMethod()
+  {
+    return (EAttribute)repositoryFieldsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRepositoryFields_MethodsParameters()
+  {
+    return (EReference)repositoryFieldsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRepositoryFields_ReturnType()
+  {
+    return (EAttribute)repositoryFieldsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEnumBlock()
+  {
+    return enumBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumBlock_Name()
+  {
+    return (EAttribute)enumBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEnumBlock_Values()
+  {
+    return (EAttribute)enumBlockEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMethodParameter()
+  {
+    return methodParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethodParameter_TypeAndAttr()
+  {
+    return (EReference)methodParameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypeAndAttribute()
+  {
+    return typeAndAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypeAndAttribute_Type()
+  {
+    return (EAttribute)typeAndAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypeAndAttribute_Name()
+  {
+    return (EAttribute)typeAndAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExtendBlock()
+  {
+    return extendBlockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExtendBlock_Values()
+  {
+    return (EAttribute)extendBlockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAccessModifier()
+  {
+    return accessModifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAccessModifier_Value()
+  {
+    return (EAttribute)accessModifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LedsCodeV001Factory getLedsCodeV001Factory()
   {
     return (LedsCodeV001Factory)getEFactoryInstance();
@@ -525,7 +1069,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEReference(projectEClass, PROJECT__INFRASTRUCTURE_BLOCK);
     createEReference(projectEClass, PROJECT__INTERFACE_BLOCK);
     createEReference(projectEClass, PROJECT__APPLICATION_BLOCK);
-    createEAttribute(projectEClass, PROJECT__DOMAIN_BLOCK);
+    createEReference(projectEClass, PROJECT__DOMAIN_BLOCK);
 
     interfaceBlockEClass = createEClass(INTERFACE_BLOCK);
     createEAttribute(interfaceBlockEClass, INTERFACE_BLOCK__NAME);
@@ -544,12 +1088,12 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEReference(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__ORM);
     createEReference(infrastructureBlockEClass, INFRASTRUCTURE_BLOCK__DATABASE);
 
-    databaseBlockEClass = createEClass(DATABASE_BLOCK);
-    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__VERSION_VALUE);
-    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__NAME_VALUE);
-    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__USER_VALUE);
-    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__PASS_VALUE);
-    createEAttribute(databaseBlockEClass, DATABASE_BLOCK__HOST_VALUE);
+    databaseEClass = createEClass(DATABASE);
+    createEAttribute(databaseEClass, DATABASE__VERSION_VALUE);
+    createEAttribute(databaseEClass, DATABASE__NAME_VALUE);
+    createEAttribute(databaseEClass, DATABASE__USER_VALUE);
+    createEAttribute(databaseEClass, DATABASE__PASS_VALUE);
+    createEAttribute(databaseEClass, DATABASE__HOST_VALUE);
 
     nameVersionEClass = createEClass(NAME_VERSION);
     createEAttribute(nameVersionEClass, NAME_VERSION__NAME_VALUE);
@@ -558,6 +1102,63 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     applicationBlockEClass = createEClass(APPLICATION_BLOCK);
     createEAttribute(applicationBlockEClass, APPLICATION_BLOCK__NAME);
     createEAttribute(applicationBlockEClass, APPLICATION_BLOCK__APPLICATION_DOMAIN);
+
+    domainBlockEClass = createEClass(DOMAIN_BLOCK);
+    createEAttribute(domainBlockEClass, DOMAIN_BLOCK__NAME);
+    createEReference(domainBlockEClass, DOMAIN_BLOCK__MODULE);
+
+    moduleEClass = createEClass(MODULE);
+    createEAttribute(moduleEClass, MODULE__NAME);
+    createEReference(moduleEClass, MODULE__SERVICE_BLOCK);
+    createEReference(moduleEClass, MODULE__ENTITY_BLOCK);
+    createEReference(moduleEClass, MODULE__ENUM_BLOCK);
+
+    serviceBlockEClass = createEClass(SERVICE_BLOCK);
+    createEAttribute(serviceBlockEClass, SERVICE_BLOCK__NAME);
+    createEReference(serviceBlockEClass, SERVICE_BLOCK__SERVICE_FIELDS);
+
+    serviceMethodEClass = createEClass(SERVICE_METHOD);
+    createEAttribute(serviceMethodEClass, SERVICE_METHOD__NAME);
+    createEAttribute(serviceMethodEClass, SERVICE_METHOD__METHOD_ACESS);
+
+    entityBlockEClass = createEClass(ENTITY_BLOCK);
+    createEReference(entityBlockEClass, ENTITY_BLOCK__ACESS_MODIFIER);
+    createEAttribute(entityBlockEClass, ENTITY_BLOCK__IS_ABSTRACT);
+    createEAttribute(entityBlockEClass, ENTITY_BLOCK__NAME);
+    createEReference(entityBlockEClass, ENTITY_BLOCK__SUPER_CLASSES);
+    createEReference(entityBlockEClass, ENTITY_BLOCK__ATTRIBUTES);
+    createEReference(entityBlockEClass, ENTITY_BLOCK__REPOSITORY);
+
+    attributeEClass = createEClass(ATTRIBUTE);
+    createEReference(attributeEClass, ATTRIBUTE__ACESS_MODIFIER);
+    createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
+    createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+
+    repositoryEClass = createEClass(REPOSITORY);
+    createEAttribute(repositoryEClass, REPOSITORY__NAME);
+    createEReference(repositoryEClass, REPOSITORY__FIELDS);
+
+    repositoryFieldsEClass = createEClass(REPOSITORY_FIELDS);
+    createEAttribute(repositoryFieldsEClass, REPOSITORY_FIELDS__NAME_METHOD);
+    createEReference(repositoryFieldsEClass, REPOSITORY_FIELDS__METHODS_PARAMETERS);
+    createEAttribute(repositoryFieldsEClass, REPOSITORY_FIELDS__RETURN_TYPE);
+
+    enumBlockEClass = createEClass(ENUM_BLOCK);
+    createEAttribute(enumBlockEClass, ENUM_BLOCK__NAME);
+    createEAttribute(enumBlockEClass, ENUM_BLOCK__VALUES);
+
+    methodParameterEClass = createEClass(METHOD_PARAMETER);
+    createEReference(methodParameterEClass, METHOD_PARAMETER__TYPE_AND_ATTR);
+
+    typeAndAttributeEClass = createEClass(TYPE_AND_ATTRIBUTE);
+    createEAttribute(typeAndAttributeEClass, TYPE_AND_ATTRIBUTE__TYPE);
+    createEAttribute(typeAndAttributeEClass, TYPE_AND_ATTRIBUTE__NAME);
+
+    extendBlockEClass = createEClass(EXTEND_BLOCK);
+    createEAttribute(extendBlockEClass, EXTEND_BLOCK__VALUES);
+
+    accessModifierEClass = createEClass(ACCESS_MODIFIER);
+    createEAttribute(accessModifierEClass, ACCESS_MODIFIER__VALUE);
   }
 
   /**
@@ -599,7 +1200,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEReference(getProject_InfrastructureBlock(), this.getInfrastructureBlock(), null, "infrastructureBlock", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProject_InterfaceBlock(), this.getInterfaceBlock(), null, "interfaceBlock", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProject_ApplicationBlock(), this.getApplicationBlock(), null, "applicationBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProject_DomainBlock(), ecorePackage.getEString(), "domainBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProject_DomainBlock(), this.getDomainBlock(), null, "domainBlock", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interfaceBlockEClass, InterfaceBlock.class, "InterfaceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInterfaceBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, InterfaceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -616,14 +1217,14 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEReference(getInfrastructureBlock_Language(), this.getNameVersion(), null, "language", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfrastructureBlock_Framework(), this.getNameVersion(), null, "framework", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInfrastructureBlock_Orm(), this.getNameVersion(), null, "orm", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInfrastructureBlock_Database(), this.getDatabaseBlock(), null, "database", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfrastructureBlock_Database(), this.getDatabase(), null, "database", null, 0, 1, InfrastructureBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(databaseBlockEClass, DatabaseBlock.class, "DatabaseBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDatabaseBlock_VersionValue(), ecorePackage.getEString(), "versionValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDatabaseBlock_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDatabaseBlock_UserValue(), ecorePackage.getEString(), "userValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDatabaseBlock_PassValue(), ecorePackage.getEString(), "passValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDatabaseBlock_HostValue(), ecorePackage.getEString(), "hostValue", null, 0, 1, DatabaseBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(databaseEClass, Database.class, "Database", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDatabase_VersionValue(), ecorePackage.getEString(), "versionValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabase_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabase_UserValue(), ecorePackage.getEString(), "userValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabase_PassValue(), ecorePackage.getEString(), "passValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabase_HostValue(), ecorePackage.getEString(), "hostValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameVersionEClass, NameVersion.class, "NameVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNameVersion_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, NameVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -632,6 +1233,63 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEClass(applicationBlockEClass, ApplicationBlock.class, "ApplicationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getApplicationBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getApplicationBlock_ApplicationDomain(), ecorePackage.getEString(), "applicationDomain", null, 0, -1, ApplicationBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(domainBlockEClass, DomainBlock.class, "DomainBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDomainBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, DomainBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomainBlock_Module(), this.getModule(), null, "module", null, 0, -1, DomainBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(moduleEClass, Module.class, "Module", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModule_ServiceBlock(), this.getServiceBlock(), null, "serviceBlock", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModule_EntityBlock(), this.getEntityBlock(), null, "entityBlock", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModule_EnumBlock(), this.getEnumBlock(), null, "enumBlock", null, 0, -1, Module.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(serviceBlockEClass, ServiceBlock.class, "ServiceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getServiceBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getServiceBlock_ServiceFields(), this.getServiceMethod(), null, "serviceFields", null, 0, -1, ServiceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(serviceMethodEClass, ServiceMethod.class, "ServiceMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getServiceMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServiceMethod_MethodAcess(), ecorePackage.getEString(), "methodAcess", null, 0, 1, ServiceMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entityBlockEClass, EntityBlock.class, "EntityBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntityBlock_AcessModifier(), this.getAccessModifier(), null, "acessModifier", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntityBlock_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntityBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityBlock_SuperClasses(), this.getExtendBlock(), null, "superClasses", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityBlock_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityBlock_Repository(), this.getRepository(), null, "repository", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAttribute_AcessModifier(), this.getAccessModifier(), null, "acessModifier", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRepository_Name(), ecorePackage.getEString(), "name", null, 0, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRepository_Fields(), this.getRepositoryFields(), null, "fields", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(repositoryFieldsEClass, RepositoryFields.class, "RepositoryFields", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRepositoryFields_NameMethod(), ecorePackage.getEString(), "nameMethod", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRepositoryFields_MethodsParameters(), this.getMethodParameter(), null, "methodsParameters", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRepositoryFields_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(enumBlockEClass, EnumBlock.class, "EnumBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEnumBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEnumBlock_Values(), ecorePackage.getEString(), "values", null, 0, -1, EnumBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(methodParameterEClass, MethodParameter.class, "MethodParameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMethodParameter_TypeAndAttr(), this.getTypeAndAttribute(), null, "typeAndAttr", null, 0, -1, MethodParameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeAndAttributeEClass, TypeAndAttribute.class, "TypeAndAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypeAndAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, TypeAndAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTypeAndAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeAndAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(extendBlockEClass, ExtendBlock.class, "ExtendBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExtendBlock_Values(), ecorePackage.getEString(), "values", null, 0, -1, ExtendBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(accessModifierEClass, AccessModifier.class, "AccessModifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAccessModifier_Value(), ecorePackage.getEString(), "value", null, 0, 1, AccessModifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

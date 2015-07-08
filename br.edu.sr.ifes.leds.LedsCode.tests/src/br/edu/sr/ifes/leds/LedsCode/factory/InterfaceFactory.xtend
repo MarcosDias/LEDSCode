@@ -5,10 +5,10 @@ class InterfaceFactory {
 '''
 interface InterfaceLibrary  {
 	//Cria as telas da aplicação Library
-	HtmlView Interface1 => Domain
+	HtmlView Interface1 => AppDomain
 
 	//Criar um webservice do application Library
-	RestFull Interface2 => Domain
+	RestFull Interface2 => AppDomain
 }
 '''
 	}

@@ -166,12 +166,12 @@ public interface InfrastructureBlock extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Database</em>' containment reference.
-   * @see #setDatabase(DatabaseBlock)
+   * @see #setDatabase(Database)
    * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getInfrastructureBlock_Database()
    * @model containment="true"
    * @generated
    */
-  DatabaseBlock getDatabase();
+  Database getDatabase();
 
   /**
    * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock#getDatabase <em>Database</em>}' containment reference.
@@ -181,6 +181,6 @@ public interface InfrastructureBlock extends EObject
    * @see #getDatabase()
    * @generated
    */
-  void setDatabase(DatabaseBlock value);
+  void setDatabase(Database value);
 
 } // InfrastructureBlock
