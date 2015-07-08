@@ -1,171 +1,135 @@
-// Para um mesmo projeto temos mais de uma aplicação e para uma mesma aplicação temos mais de uma interface
-
-
-Project Library{
-
+project Library{
+	infrastructure{
+		basePackage = "org.company.exempla"
+		projectVersion = "0.0.0"
+		language = {@name: "Java", @version: "8"}
+		framework = {@name: "SpringRoo", @version: "1.2"}
+		orm = {@name: "Hibernate", @version: "3"}
+		database = {@version: "5", @name: "Postgres", @user: "USER", @pass: "123456", @host: "localhost"}
+	}
+	
+	
 	interface Library  {
-    
 		//Cria as telas da aplicação Library
-		HtmlView Library
+		HtmlView Library2 => Library
 	
 		//Criar um webservice do application Library
-		ResFull Library	
+		RestFull Library1 => Library
 	}
-
-	interface LibraryService  {
-    
-		//Criar um webservice do application LibraryService
-		ResFull LibraryService	
+	
+	
+	application Library {
+	    composedBy Library.*
+		composedBy Loan.*
 	}
-
-
-	Infrastructure {
-
-		basePackage = org.library
 	
-		projectVersion = 0.0.0
 	
-		language {nome: valor, versao:valor}
-	
-		framework {chave: valor, }
-	
-		orm {nome: valor, versao }
-	
-		devdatabase {url: valor, }
-
+	application LibraryPerson{
+	    // Tem acesso apenas aos elemento do modulo person
+		composedBy Library.Person.*
 	}
-
-
-Application Library{
-    
-    ComposedBy Library.*  (tem acesso a todos os serviços e entidades do dominio .. não tem acesso aos repositórios)
-	ComposedBy Loan.* 
-}
-
-Application LibraryPerson{
-
-    // Tem acesso apenas aos elemento do modulo person
-	ComposedBy Library.Person.*  (tem acesso a todos os serviços e entidades do dominio .. não tem acesso aos repositórios)
-
-}
-
-
-
-Application LibraryService{
-
-	ComposedBy Library.LibraryService  (tem acesso apenas ao serviço LibraryService)
-
-}
-
-
-Domain Loan {
-
-	import Library.*
-
-	Module X{
+	
+	domain Loan {
+		module X{}
+		module Y {}
 	}
-	Modulo Y {
+	
+	domain Library {
+		module Media {
+			service LibraryService {
+				//nome => entity.repositorio.metodo
+				//nome => service.metodo
+				//nome => module.service.metodo
+				//nome => domain.module.service.metodo
+				findLibraryByName => Library.LibraryRepository.findLibraryByName
+      			findMediaByName => Media.MediaRepository.findMediaByName
+      			findMediaByCharacter => Media.MediaRepository.findMediaByCharacter
+      			findPersonByName => PersonService.findPersonByName
+    		}
+    		
+			entity Library {
+				String name //key
+				Set<PhysicalMedia> media
+				
+				repository LibraryRepository {
+					findLibraryByName(String name) : Library
+				}
+    		}
+    
+		    entity PhysicalMedia {
+		    	//version
+		      String status
+		      String location
+		      Library library //nullable
+		      Set<Media> media
+		    }
+    
+		    service MediaService {
+		      findAll => MediaRepository.findAll
+		    }
+    
+		    abstract entity Media {
+		      String titleb
+		      Set<PhysicalMedia> physicalMedia
+		      Set<Engagement> engagements
+		      Set<MediaCharacter> mediaCharacters
+		    
+		      repository MediaRepository {
+		        findMediaByCharacter(String characterName) : List<Media>
+		        //findById
+		        //save
+		        //findAll
+		        findMediaByName(Long libraryId, String name) : List<Media>
+		      }
+    		}
+    
+		    entity Book : Media, Movie {
+		      //!auditable
+		      String isbn //key length="20"
+		    }
+    
+		    entity Movie : Media {
+		      //!auditable
+		      String urlIMDB //key
+		      Integer playLength
+		      Genre category //nullable
+		    }
+		    
+		    enum Genre {
+		      ACTION,
+		      COMEDY,
+		      DRAMA,
+		      SCI_FI
+		    }
+		    
+		      
+		    service MediaCharacterService {
+		      findAll => MediaCharacterRepository.findAll
+		    }
+		}
+    
+		module person {
+		    service PersonService {
+		      findPersonByName => PersonRepository.findPersonByName
+		    }
+		    
+		    entity Person {
+		      Date birthDate //past
+		      Gender sex //!changeable
+		      Ssn ssn //key
+		      
+		      repository PersonRepository {
+		        findPersonByName(String name): List<Person>
+		        /*save;
+		        findByExample;
+		        findByKeys;*/
+		      }
+	    	}
+	    	
+	    	enum Gender {
+		      FEMALE,//("F"),
+		      MALE//("M")
+		    }
+  		}
 	}
-
-
-}
-
-Domain Library {
-  
-    
-  Module media {
-    
-    Service LibraryService {
-      findLibraryByName => LibraryRepository.findLibraryByName;
-      findMediaByName => MediaRepository.findMediaByName;
-      findMediaByCharacter => MediaRepository.findMediaByCharacter;
-      findPersonByName => PersonService.findPersonByName;
-    }
-    
-    Entity Library {
-      String name key
-      Set<PhysicalMedia> media
-    
-      Repository LibraryRepository {
-        Library findLibraryByName(String name) throws LibraryNotFoundException;
-      }
-    }
-    
-    Entity PhysicalMedia {
-      String status length="3"
-      String location
-      Library library nullable
-      Set<@Media> media
-    }
-    
-    Service MediaService {
-      findAll => MediaRepository.findAll;
-    }
-    
-    abstract Entity Media {
-      String title
-      Set<PhysicalMedia> physicalMedia
-      Set<Engagement> engagements
-      Set<MediaCharacter> mediaCharacters
-    
-      Repository MediaRepository {
-
-        List<Media> findMediaByCharacter(String characterName);
-        findById;
-        save;
-        findAll;
-        List<Media> findMediaByName(Long libraryId, String name);
-      }
-    }
-    
-    Entity Book extends Media {
-      !auditable
-      String isbn key length="20"
-    }
-    
-    Entity Movie extends Media {
-      !auditable
-      String urlIMDB key
-      Integer playLength
-      Genre category nullable
-    }
-    
-    enum Genre {
-      ACTION,
-      COMEDY,
-      DRAMA,
-      SCI_FI
-    }
-    
-      
-    Service MediaCharacterService {
-      findAll => MediaCharacterRepository.findAll;
-    }
-    
-   }
-    
-  Module person {
-    Service PersonService {
-      findPersonByName => PersonRepository.findPersonByName;
-    }
-    
-    Entity Person {
-      Date birthDate past
-      Gender sex !changeable
-      Ssn ssn key
-      
-      Repository PersonRepository {
-        List<Person> findPersonByName(String name);
-        save;
-        findByExample;
-        findByKeys;
-      }
-    }
-    
-    
-    enum Gender {
-      FEMALE("F"),
-      MALE("M")
-    }
-  }
 }
