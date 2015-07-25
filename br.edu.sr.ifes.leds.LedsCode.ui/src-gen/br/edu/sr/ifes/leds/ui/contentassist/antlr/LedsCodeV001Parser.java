@@ -40,7 +40,7 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceApplicationAccess().getTypeAlternatives_0_0(), "rule__InterfaceApplication__TypeAlternatives_0_0");
 					put(grammarAccess.getModuleAccess().getAlternatives_3(), "rule__Module__Alternatives_3");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
-					put(grammarAccess.getAccessModifierAccess().getValueAlternatives_0(), "rule__AccessModifier__ValueAlternatives_0");
+					put(grammarAccess.getAccessModifierAccess().getAlternatives(), "rule__AccessModifier__Alternatives");
 					put(grammarAccess.getPrivateAccess().getAlternatives(), "rule__Private__Alternatives");
 					put(grammarAccess.getProtectedAccess().getAlternatives(), "rule__Protected__Alternatives");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
@@ -93,6 +93,7 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getDatabaseAccess().getUserValueAssignment_10(), "rule__Database__UserValueAssignment_10");
 					put(grammarAccess.getDatabaseAccess().getPassValueAssignment_14(), "rule__Database__PassValueAssignment_14");
 					put(grammarAccess.getDatabaseAccess().getHostValueAssignment_18(), "rule__Database__HostValueAssignment_18");
+					put(grammarAccess.getDatabaseAccess().getEnvValueAssignment_22(), "rule__Database__EnvValueAssignment_22");
 					put(grammarAccess.getNameVersionAccess().getNameValueAssignment_2(), "rule__NameVersion__NameValueAssignment_2");
 					put(grammarAccess.getNameVersionAccess().getVersionValueAssignment_6(), "rule__NameVersion__VersionValueAssignment_6");
 					put(grammarAccess.getApplicationBlockAccess().getNameAssignment_1(), "rule__ApplicationBlock__NameAssignment_1");
@@ -110,14 +111,14 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityBlockAccess().getAcessModifierAssignment_0(), "rule__EntityBlock__AcessModifierAssignment_0");
 					put(grammarAccess.getEntityBlockAccess().getIsAbstractAssignment_1(), "rule__EntityBlock__IsAbstractAssignment_1");
 					put(grammarAccess.getEntityBlockAccess().getNameAssignment_3(), "rule__EntityBlock__NameAssignment_3");
-					put(grammarAccess.getEntityBlockAccess().getSuperClassesAssignment_4(), "rule__EntityBlock__SuperClassesAssignment_4");
+					put(grammarAccess.getEntityBlockAccess().getClassExtendsAssignment_4(), "rule__EntityBlock__ClassExtendsAssignment_4");
 					put(grammarAccess.getEntityBlockAccess().getAttributesAssignment_6(), "rule__EntityBlock__AttributesAssignment_6");
 					put(grammarAccess.getEntityBlockAccess().getRepositoryAssignment_7(), "rule__EntityBlock__RepositoryAssignment_7");
 					put(grammarAccess.getAttributeAccess().getAcessModifierAssignment_0(), "rule__Attribute__AcessModifierAssignment_0");
 					put(grammarAccess.getAttributeAccess().getTypeAssignment_1(), "rule__Attribute__TypeAssignment_1");
 					put(grammarAccess.getAttributeAccess().getNameAssignment_2(), "rule__Attribute__NameAssignment_2");
 					put(grammarAccess.getRepositoryAccess().getNameAssignment_1(), "rule__Repository__NameAssignment_1");
-					put(grammarAccess.getRepositoryAccess().getFieldsAssignment_3(), "rule__Repository__FieldsAssignment_3");
+					put(grammarAccess.getRepositoryAccess().getMethodsAssignment_3(), "rule__Repository__MethodsAssignment_3");
 					put(grammarAccess.getRepositoryFieldsAccess().getNameMethodAssignment_0(), "rule__RepositoryFields__NameMethodAssignment_0");
 					put(grammarAccess.getRepositoryFieldsAccess().getMethodsParametersAssignment_2(), "rule__RepositoryFields__MethodsParametersAssignment_2");
 					put(grammarAccess.getRepositoryFieldsAccess().getReturnTypeAssignment_5(), "rule__RepositoryFields__ReturnTypeAssignment_5");
@@ -130,7 +131,6 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeAndAttributeAccess().getNameAssignment_1(), "rule__TypeAndAttribute__NameAssignment_1");
 					put(grammarAccess.getExtendBlockAccess().getValuesAssignment_1(), "rule__ExtendBlock__ValuesAssignment_1");
 					put(grammarAccess.getExtendBlockAccess().getValuesAssignment_2_1(), "rule__ExtendBlock__ValuesAssignment_2_1");
-					put(grammarAccess.getAccessModifierAccess().getValueAssignment(), "rule__AccessModifier__ValueAssignment");
 				}
 			};
 		}

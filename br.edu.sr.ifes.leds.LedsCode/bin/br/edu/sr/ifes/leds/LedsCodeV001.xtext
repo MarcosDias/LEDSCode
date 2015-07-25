@@ -4,6 +4,10 @@ generate ledsCodeV001 "http://www.edu.br/sr/ifes/leds/LedsCodeV001"
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
+/*
+============== LEDSCode ============== 
+*/
+
 LedsCodeDSL:
 	project+=Project;
 
@@ -44,14 +48,10 @@ Database:
 	'@name' ':' nameValue=STRING ',' 
 	'@user' ':' userValue=STRING ','
 	'@pass' ':' passValue=STRING ','
-	'@host' ':' hostValue=STRING
+	'@host' ':' hostValue=STRING ','
+	'@env' ':' envValue=STRING
 ;
 
-/*
- * É muito provavel que essa regra sofrerá algumas alteracoes no futuro,
- * tendo em vista que ela está sendo usado em 
- * tres locais diferentes e com semanticas diferentes.
- */
 NameVersion:
 	'@name' ':' nameValue=STRING ','
 	'@version' ':' versionValue=STRING
@@ -92,7 +92,7 @@ ServiceMethod:
 
 EntityBlock:
 	acessModifier=(AccessModifier)? (isAbstract?='abstract')? 'entity' 
-	name=ID superClasses=ExtendBlock? '{'
+	name=ID classExtends=ExtendBlock? '{'
 		(attributes+=Attribute)*
 		
 		repository=Repository?
@@ -105,7 +105,7 @@ Attribute:
 
 Repository:
 	'repository' name=ID '{'
-		(fields+=RepositoryFields)*	
+		(methods+=RepositoryFields)*	
 	'}'
 ;
 
@@ -129,7 +129,7 @@ ExtendBlock: Extend values+=CompoundName (',' values+=CompoundName)?;
 Extend: ':';
 DataTypeList: 'List''<'DataType'>';
 DataTypeSet: 'Set''<'DataType'>';
-AccessModifier: value=(Private|Protected);
+AccessModifier: (Private|Protected);
 Private:'-'|'private';
 Protected:'#'|'protected';
 ImportCompoundName: CompoundName('.*'?);

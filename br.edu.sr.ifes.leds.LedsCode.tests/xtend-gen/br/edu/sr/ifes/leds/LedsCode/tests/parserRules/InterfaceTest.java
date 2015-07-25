@@ -1,6 +1,6 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules;
 
-import br.edu.sr.ifes.leds.LedsCode.tests.parserRules.AbstractTestClass;
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
@@ -16,8 +16,8 @@ public class InterfaceTest extends AbstractTestClass {
   @Before
   public void setUp() {
     Project _parseProject = this.parseProject();
-    this.project = _parseProject;
-    InterfaceBlock _interfaceBlock = this.project.getInterfaceBlock();
+    this.projectLang = _parseProject;
+    InterfaceBlock _interfaceBlock = this.projectLang.getInterfaceBlock();
     this.iface = _interfaceBlock;
   }
   

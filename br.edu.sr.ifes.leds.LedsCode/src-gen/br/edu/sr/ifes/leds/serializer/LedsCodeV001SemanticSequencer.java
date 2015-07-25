@@ -3,7 +3,6 @@
  */
 package br.edu.sr.ifes.leds.serializer;
 
-import br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier;
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Attribute;
 import br.edu.sr.ifes.leds.ledsCodeV001.Database;
@@ -49,9 +48,6 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == LedsCodeV001Package.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case LedsCodeV001Package.ACCESS_MODIFIER:
-				sequence_AccessModifier(context, (AccessModifier) semanticObject); 
-				return; 
 			case LedsCodeV001Package.APPLICATION_BLOCK:
 				sequence_ApplicationBlock(context, (ApplicationBlock) semanticObject); 
 				return; 
@@ -118,15 +114,6 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (value=Private | value=Protected)
-	 */
-	protected void sequence_AccessModifier(EObject context, AccessModifier semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (name=ID applicationDomain+=ImportCompoundName*)
 	 */
 	protected void sequence_ApplicationBlock(EObject context, ApplicationBlock semanticObject) {
@@ -145,7 +132,14 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (versionValue=STRING nameValue=STRING userValue=STRING passValue=STRING hostValue=STRING)
+	 *     (
+	 *         versionValue=STRING 
+	 *         nameValue=STRING 
+	 *         userValue=STRING 
+	 *         passValue=STRING 
+	 *         hostValue=STRING 
+	 *         envValue=STRING
+	 *     )
 	 */
 	protected void sequence_Database(EObject context, Database semanticObject) {
 		if(errorAcceptor != null) {
@@ -159,6 +153,8 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__PASS_VALUE));
 			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__HOST_VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__HOST_VALUE));
+			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__ENV_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__ENV_VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
@@ -167,6 +163,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 		feeder.accept(grammarAccess.getDatabaseAccess().getUserValueSTRINGTerminalRuleCall_10_0(), semanticObject.getUserValue());
 		feeder.accept(grammarAccess.getDatabaseAccess().getPassValueSTRINGTerminalRuleCall_14_0(), semanticObject.getPassValue());
 		feeder.accept(grammarAccess.getDatabaseAccess().getHostValueSTRINGTerminalRuleCall_18_0(), semanticObject.getHostValue());
+		feeder.accept(grammarAccess.getDatabaseAccess().getEnvValueSTRINGTerminalRuleCall_22_0(), semanticObject.getEnvValue());
 		feeder.finish();
 	}
 	
@@ -186,7 +183,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         acessModifier=AccessModifier? 
 	 *         isAbstract?='abstract'? 
 	 *         name=ID 
-	 *         superClasses=ExtendBlock? 
+	 *         classExtends=ExtendBlock? 
 	 *         attributes+=Attribute* 
 	 *         repository=Repository?
 	 *     )
@@ -336,7 +333,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID fields+=RepositoryFields*)
+	 *     (name=ID methods+=RepositoryFields*)
 	 */
 	protected void sequence_Repository(EObject context, Repository semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

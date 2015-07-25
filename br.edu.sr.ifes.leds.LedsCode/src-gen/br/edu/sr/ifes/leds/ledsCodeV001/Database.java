@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getUserValue <em>User Value</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getPassValue <em>Pass Value</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getHostValue <em>Host Value</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getEnvValue <em>Env Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -155,5 +156,31 @@ public interface Database extends EObject
    * @generated
    */
   void setHostValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Env Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Env Value</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Env Value</em>' attribute.
+   * @see #setEnvValue(String)
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getDatabase_EnvValue()
+   * @model
+   * @generated
+   */
+  String getEnvValue();
+
+  /**
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getEnvValue <em>Env Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Env Value</em>' attribute.
+   * @see #getEnvValue()
+   * @generated
+   */
+  void setEnvValue(String value);
 
 } // Database

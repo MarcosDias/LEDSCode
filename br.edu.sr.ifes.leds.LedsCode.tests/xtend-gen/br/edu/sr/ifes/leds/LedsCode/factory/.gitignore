@@ -5,3 +5,13 @@
 /.ApplicationFactory.java._trace
 /.InterfaceFactory.java._trace
 /.FactoryBeforeTest.java._trace
+/.ApplicationFactory.xtendbin
+/.DomainFactory.xtendbin
+/.InfrastructureFactory.xtendbin
+/.InterfaceFactory.xtendbin
+/.ProjectFactory.xtendbin
+/ApplicationFactory.java
+/DomainFactory.java
+/InfrastructureFactory.java
+/InterfaceFactory.java
+/ProjectFactory.java

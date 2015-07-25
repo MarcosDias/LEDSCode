@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier <em>Acess Modifier</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getSuperClasses <em>Super Classes</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getClassExtends <em>Class Extends</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getRepository <em>Repository</em>}</li>
  * </ul>
@@ -30,30 +30,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface EntityBlock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Acess Modifier</b></em>' containment reference.
+   * Returns the value of the '<em><b>Acess Modifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Acess Modifier</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Acess Modifier</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Acess Modifier</em>' containment reference.
-   * @see #setAcessModifier(AccessModifier)
+   * @return the value of the '<em>Acess Modifier</em>' attribute.
+   * @see #setAcessModifier(String)
    * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getEntityBlock_AcessModifier()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  AccessModifier getAcessModifier();
+  String getAcessModifier();
 
   /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier <em>Acess Modifier</em>}' containment reference.
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier <em>Acess Modifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Acess Modifier</em>' containment reference.
+   * @param value the new value of the '<em>Acess Modifier</em>' attribute.
    * @see #getAcessModifier()
    * @generated
    */
-  void setAcessModifier(AccessModifier value);
+  void setAcessModifier(String value);
 
   /**
    * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
@@ -108,30 +108,30 @@ public interface EntityBlock extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Super Classes</b></em>' containment reference.
+   * Returns the value of the '<em><b>Class Extends</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Super Classes</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Class Extends</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Super Classes</em>' containment reference.
-   * @see #setSuperClasses(ExtendBlock)
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getEntityBlock_SuperClasses()
+   * @return the value of the '<em>Class Extends</em>' containment reference.
+   * @see #setClassExtends(ExtendBlock)
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getEntityBlock_ClassExtends()
    * @model containment="true"
    * @generated
    */
-  ExtendBlock getSuperClasses();
+  ExtendBlock getClassExtends();
 
   /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getSuperClasses <em>Super Classes</em>}' containment reference.
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getClassExtends <em>Class Extends</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Super Classes</em>' containment reference.
-   * @see #getSuperClasses()
+   * @param value the new value of the '<em>Class Extends</em>' containment reference.
+   * @see #getClassExtends()
    * @generated
    */
-  void setSuperClasses(ExtendBlock value);
+  void setClassExtends(ExtendBlock value);
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.

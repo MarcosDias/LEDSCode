@@ -8,3 +8,13 @@
 /.DomainTest.java._trace
 /.InterfaceTest.java._trace
 /.AbstractTestClass.java._trace
+/.ApplicationTest.xtendbin
+/.DomainTest.xtendbin
+/.InfrastructureTest.xtendbin
+/.InterfaceTest.xtendbin
+/.ProjectTest.xtendbin
+/ApplicationTest.java
+/DomainTest.java
+/InfrastructureTest.java
+/InterfaceTest.java
+/ProjectTest.java

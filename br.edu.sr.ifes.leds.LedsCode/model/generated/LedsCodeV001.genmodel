@@ -40,6 +40,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Database/userValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Database/passValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Database/hostValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Database/envValue"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//NameVersion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//NameVersion/nameValue"/>
@@ -68,21 +69,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ServiceMethod/methodAcess"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//EntityBlock">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//EntityBlock/acessModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//EntityBlock/acessModifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//EntityBlock/isAbstract"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//EntityBlock/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//EntityBlock/superClasses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//EntityBlock/classExtends"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//EntityBlock/attributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//EntityBlock/repository"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//Attribute">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Attribute/acessModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/acessModifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/name"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//Repository">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Repository/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Repository/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Repository/methods"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//RepositoryFields">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//RepositoryFields/nameMethod"/>
@@ -102,9 +103,6 @@
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//ExtendBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ExtendBlock/values"/>
-    </genClasses>
-    <genClasses ecoreClass="LedsCodeV001.ecore#//AccessModifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//AccessModifier/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

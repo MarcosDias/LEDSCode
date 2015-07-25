@@ -360,13 +360,22 @@ public interface LedsCodeV001Package extends EPackage
   int DATABASE__HOST_VALUE = 4;
 
   /**
+   * The feature id for the '<em><b>Env Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATABASE__ENV_VALUE = 5;
+
+  /**
    * The number of structural features of the '<em>Database</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATABASE_FEATURE_COUNT = 5;
+  int DATABASE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.NameVersionImpl <em>Name Version</em>}' class.
@@ -619,7 +628,7 @@ public interface LedsCodeV001Package extends EPackage
   int ENTITY_BLOCK = 12;
 
   /**
-   * The feature id for the '<em><b>Acess Modifier</b></em>' containment reference.
+   * The feature id for the '<em><b>Acess Modifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -646,13 +655,13 @@ public interface LedsCodeV001Package extends EPackage
   int ENTITY_BLOCK__NAME = 2;
 
   /**
-   * The feature id for the '<em><b>Super Classes</b></em>' containment reference.
+   * The feature id for the '<em><b>Class Extends</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_BLOCK__SUPER_CLASSES = 3;
+  int ENTITY_BLOCK__CLASS_EXTENDS = 3;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -692,7 +701,7 @@ public interface LedsCodeV001Package extends EPackage
   int ATTRIBUTE = 13;
 
   /**
-   * The feature id for the '<em><b>Acess Modifier</b></em>' containment reference.
+   * The feature id for the '<em><b>Acess Modifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -747,13 +756,13 @@ public interface LedsCodeV001Package extends EPackage
   int REPOSITORY__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+   * The feature id for the '<em><b>Methods</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REPOSITORY__FIELDS = 1;
+  int REPOSITORY__METHODS = 1;
 
   /**
    * The number of structural features of the '<em>Repository</em>' class.
@@ -939,34 +948,6 @@ public interface LedsCodeV001Package extends EPackage
    * @ordered
    */
   int EXTEND_BLOCK_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl <em>Access Modifier</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getAccessModifier()
-   * @generated
-   */
-  int ACCESS_MODIFIER = 20;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACCESS_MODIFIER__VALUE = 0;
-
-  /**
-   * The number of structural features of the '<em>Access Modifier</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACCESS_MODIFIER_FEATURE_COUNT = 1;
 
 
   /**
@@ -1272,6 +1253,17 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getDatabase_HostValue();
 
   /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Database#getEnvValue <em>Env Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Env Value</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Database#getEnvValue()
+   * @see #getDatabase()
+   * @generated
+   */
+  EAttribute getDatabase_EnvValue();
+
+  /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.NameVersion <em>Name Version</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1496,15 +1488,15 @@ public interface LedsCodeV001Package extends EPackage
   EClass getEntityBlock();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier <em>Acess Modifier</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier <em>Acess Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Acess Modifier</em>'.
+   * @return the meta object for the attribute '<em>Acess Modifier</em>'.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAcessModifier()
    * @see #getEntityBlock()
    * @generated
    */
-  EReference getEntityBlock_AcessModifier();
+  EAttribute getEntityBlock_AcessModifier();
 
   /**
    * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#isIsAbstract <em>Is Abstract</em>}'.
@@ -1529,15 +1521,15 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getEntityBlock_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getSuperClasses <em>Super Classes</em>}'.
+   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getClassExtends <em>Class Extends</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Super Classes</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getSuperClasses()
+   * @return the meta object for the containment reference '<em>Class Extends</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getClassExtends()
    * @see #getEntityBlock()
    * @generated
    */
-  EReference getEntityBlock_SuperClasses();
+  EReference getEntityBlock_ClassExtends();
 
   /**
    * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock#getAttributes <em>Attributes</em>}'.
@@ -1572,15 +1564,15 @@ public interface LedsCodeV001Package extends EPackage
   EClass getAttribute();
 
   /**
-   * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier <em>Acess Modifier</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier <em>Acess Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Acess Modifier</em>'.
+   * @return the meta object for the attribute '<em>Acess Modifier</em>'.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier()
    * @see #getAttribute()
    * @generated
    */
-  EReference getAttribute_AcessModifier();
+  EAttribute getAttribute_AcessModifier();
 
   /**
    * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getType <em>Type</em>}'.
@@ -1626,15 +1618,15 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getRepository_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getFields <em>Fields</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getMethods <em>Methods</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Fields</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Repository#getFields()
+   * @return the meta object for the containment reference list '<em>Methods</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Repository#getMethods()
    * @see #getRepository()
    * @generated
    */
-  EReference getRepository_Fields();
+  EReference getRepository_Methods();
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields <em>Repository Fields</em>}'.
@@ -1784,27 +1776,6 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    */
   EAttribute getExtendBlock_Values();
-
-  /**
-   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier <em>Access Modifier</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Access Modifier</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier
-   * @generated
-   */
-  EClass getAccessModifier();
-
-  /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier#getValue()
-   * @see #getAccessModifier()
-   * @generated
-   */
-  EAttribute getAccessModifier_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2066,6 +2037,14 @@ public interface LedsCodeV001Package extends EPackage
     EAttribute DATABASE__HOST_VALUE = eINSTANCE.getDatabase_HostValue();
 
     /**
+     * The meta object literal for the '<em><b>Env Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATABASE__ENV_VALUE = eINSTANCE.getDatabase_EnvValue();
+
+    /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.NameVersionImpl <em>Name Version</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2248,12 +2227,12 @@ public interface LedsCodeV001Package extends EPackage
     EClass ENTITY_BLOCK = eINSTANCE.getEntityBlock();
 
     /**
-     * The meta object literal for the '<em><b>Acess Modifier</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Acess Modifier</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTITY_BLOCK__ACESS_MODIFIER = eINSTANCE.getEntityBlock_AcessModifier();
+    EAttribute ENTITY_BLOCK__ACESS_MODIFIER = eINSTANCE.getEntityBlock_AcessModifier();
 
     /**
      * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
@@ -2272,12 +2251,12 @@ public interface LedsCodeV001Package extends EPackage
     EAttribute ENTITY_BLOCK__NAME = eINSTANCE.getEntityBlock_Name();
 
     /**
-     * The meta object literal for the '<em><b>Super Classes</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Class Extends</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ENTITY_BLOCK__SUPER_CLASSES = eINSTANCE.getEntityBlock_SuperClasses();
+    EReference ENTITY_BLOCK__CLASS_EXTENDS = eINSTANCE.getEntityBlock_ClassExtends();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
@@ -2306,12 +2285,12 @@ public interface LedsCodeV001Package extends EPackage
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
     /**
-     * The meta object literal for the '<em><b>Acess Modifier</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Acess Modifier</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ATTRIBUTE__ACESS_MODIFIER = eINSTANCE.getAttribute_AcessModifier();
+    EAttribute ATTRIBUTE__ACESS_MODIFIER = eINSTANCE.getAttribute_AcessModifier();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -2348,12 +2327,12 @@ public interface LedsCodeV001Package extends EPackage
     EAttribute REPOSITORY__NAME = eINSTANCE.getRepository_Name();
 
     /**
-     * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REPOSITORY__FIELDS = eINSTANCE.getRepository_Fields();
+    EReference REPOSITORY__METHODS = eINSTANCE.getRepository_Methods();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl <em>Repository Fields</em>}' class.
@@ -2476,24 +2455,6 @@ public interface LedsCodeV001Package extends EPackage
      * @generated
      */
     EAttribute EXTEND_BLOCK__VALUES = eINSTANCE.getExtendBlock_Values();
-
-    /**
-     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl <em>Access Modifier</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.AccessModifierImpl
-     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getAccessModifier()
-     * @generated
-     */
-    EClass ACCESS_MODIFIER = eINSTANCE.getAccessModifier();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACCESS_MODIFIER__VALUE = eINSTANCE.getAccessModifier_Value();
 
   }
 

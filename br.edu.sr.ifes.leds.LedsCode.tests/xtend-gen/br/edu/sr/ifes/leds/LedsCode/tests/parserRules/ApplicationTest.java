@@ -1,6 +1,6 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules;
 
-import br.edu.sr.ifes.leds.LedsCode.tests.parserRules.AbstractTestClass;
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass;
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import org.eclipse.emf.common.util.EList;
@@ -19,8 +19,8 @@ public class ApplicationTest extends AbstractTestClass {
   @Before
   public void setUp() {
     Project _parseProject = this.parseProject();
-    this.project = _parseProject;
-    EList<ApplicationBlock> _applicationBlock = this.project.getApplicationBlock();
+    this.projectLang = _parseProject;
+    EList<ApplicationBlock> _applicationBlock = this.projectLang.getApplicationBlock();
     this.app = _applicationBlock;
     ApplicationBlock _get = this.app.get(0);
     this.singleApp = _get;

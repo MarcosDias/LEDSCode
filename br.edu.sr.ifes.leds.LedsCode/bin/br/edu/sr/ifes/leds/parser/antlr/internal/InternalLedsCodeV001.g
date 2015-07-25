@@ -766,6 +766,36 @@ ruleDatabase returns [EObject current=null]
 	    }
 
 )
+)	otherlv_19=',' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getDatabaseAccess().getCommaKeyword_19());
+    }
+	otherlv_20='@env' 
+    {
+    	newLeafNode(otherlv_20, grammarAccess.getDatabaseAccess().getEnvKeyword_20());
+    }
+	otherlv_21=':' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getDatabaseAccess().getColonKeyword_21());
+    }
+(
+(
+		lv_envValue_22_0=RULE_STRING
+		{
+			newLeafNode(lv_envValue_22_0, grammarAccess.getDatabaseAccess().getEnvValueSTRINGTerminalRuleCall_22_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDatabaseRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"envValue",
+        		lv_envValue_22_0, 
+        		"STRING");
+	    }
+
+)
 ))
 ;
 
@@ -1301,16 +1331,16 @@ ruleEntityBlock returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityBlockAccess().getSuperClassesExtendBlockParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getEntityBlockAccess().getClassExtendsExtendBlockParserRuleCall_4_0()); 
 	    }
-		lv_superClasses_4_0=ruleExtendBlock		{
+		lv_classExtends_4_0=ruleExtendBlock		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityBlockRule());
 	        }
        		set(
        			$current, 
-       			"superClasses",
-        		lv_superClasses_4_0, 
+       			"classExtends",
+        		lv_classExtends_4_0, 
         		"ExtendBlock");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1485,16 +1515,16 @@ ruleRepository returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRepositoryAccess().getFieldsRepositoryFieldsParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getRepositoryAccess().getMethodsRepositoryFieldsParserRuleCall_3_0()); 
 	    }
-		lv_fields_3_0=ruleRepositoryFields		{
+		lv_methods_3_0=ruleRepositoryFields		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRepositoryRule());
 	        }
        		add(
        			$current, 
-       			"fields",
-        		lv_fields_3_0, 
+       			"methods",
+        		lv_methods_3_0, 
         		"RepositoryFields");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2151,57 +2181,44 @@ ruleDataTypeSet returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
 
 
 // Entry rule entryRuleAccessModifier
-entryRuleAccessModifier returns [EObject current=null] 
+entryRuleAccessModifier returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getAccessModifierRule()); }
+	{ newCompositeNode(grammarAccess.getAccessModifierRule()); } 
 	 iv_ruleAccessModifier=ruleAccessModifier 
-	 { $current=$iv_ruleAccessModifier.current; } 
+	 { $current=$iv_ruleAccessModifier.current.getText(); }  
 	 EOF 
 ;
 
 // Rule AccessModifier
-ruleAccessModifier returns [EObject current=null] 
+ruleAccessModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getAccessModifierAccess().getValuePrivateParserRuleCall_0_0()); 
-	    }
-		lv_value_0_1=rulePrivate		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getAccessModifierRule());
-	        }
-       		set(
-       			$current, 
-       			"value",
-        		lv_value_0_1, 
-        		"Private");
-	        afterParserOrEnumRuleCall();
-	    }
+    { 
+        newCompositeNode(grammarAccess.getAccessModifierAccess().getPrivateParserRuleCall_0()); 
+    }
+    this_Private_0=rulePrivate    {
+		$current.merge(this_Private_0);
+    }
 
-    |		{ 
-	        newCompositeNode(grammarAccess.getAccessModifierAccess().getValueProtectedParserRuleCall_0_1()); 
-	    }
-		lv_value_0_2=ruleProtected		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getAccessModifierRule());
-	        }
-       		set(
-       			$current, 
-       			"value",
-        		lv_value_0_2, 
-        		"Protected");
-	        afterParserOrEnumRuleCall();
-	    }
+    { 
+        afterParserOrEnumRuleCall();
+    }
 
-)
+    |
+    { 
+        newCompositeNode(grammarAccess.getAccessModifierAccess().getProtectedParserRuleCall_1()); 
+    }
+    this_Protected_1=ruleProtected    {
+		$current.merge(this_Protected_1);
+    }
 
+    { 
+        afterParserOrEnumRuleCall();
+    }
 )
-)
-;
+    ;
 
 
 

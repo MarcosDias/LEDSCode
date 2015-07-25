@@ -1,10 +1,13 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
 
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
 import br.edu.sr.ifes.leds.ledsCodeV001.Attribute
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.Module
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository
+import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
 import org.eclipse.emf.common.util.EList
@@ -12,8 +15,6 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
-import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
 
 class DomainTest extends AbstractTestClass{
 	
@@ -30,8 +31,8 @@ class DomainTest extends AbstractTestClass{
 	
 	@Before
 	def void setUp(){
-		project = parseProject
-		domain = project.domainBlock
+		projectLang = parseProject
+		domain = projectLang.domainBlock
 		singleDom = domain.get(0)
 		singleModule = singleDom.module.get(0)
 		singleService = singleModule.serviceBlock.get(0)
@@ -39,7 +40,7 @@ class DomainTest extends AbstractTestClass{
 		singleEntity = singleModule.entityBlock.get(0)
 		singleAttr = singleEntity.attributes.get(0)
 		repository = singleEntity.repository
-		fieldRepository = repository.fields.get(0)
+		fieldRepository = repository.methods.get(0)
 		singleEnum = singleModule.enumBlock.get(0)
 	}
 	
@@ -86,7 +87,7 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testQtdEntity(){
-  		assertEquals(2, singleModule.entityBlock.size)
+  		assertEquals(4, singleModule.entityBlock.size)
   	}
   	
   	@Test
@@ -98,12 +99,12 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testQtdInheritanceClass(){
-  		assertEquals(2, singleEntity.superClasses.values.size)
+  		assertEquals(2, singleEntity.classExtends.values.size)
   	}
   	
   	@Test
   	def testInheritanceClass(){
-  		for(superClass : singleEntity.superClasses.values){
+  		for(superClass : singleEntity.classExtends.values){
   			assertTrue(superClass.contains("SuperClass"))
   		}
   	}
@@ -115,7 +116,7 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testAttributes(){
-		assertTrue("private -".contains(singleAttr.acessModifier.value))
+		assertTrue("private -".contains(singleAttr.acessModifier))
 		assertEquals("String", singleAttr.type)
 		assertEquals("titleb", singleAttr.name)
   	}
@@ -127,7 +128,7 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testQtdRepositoryFields(){
-  		assertEquals(2, repository.fields.size)
+  		assertEquals(2, repository.methods.size)
   	}
   	
   	@Test

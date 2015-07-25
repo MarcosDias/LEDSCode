@@ -2,7 +2,6 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
-import br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier;
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Attribute;
 import br.edu.sr.ifes.leds.ledsCodeV001.Database;
@@ -180,13 +179,6 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * @generated
    */
   private EClass extendBlockEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass accessModifierEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -536,6 +528,16 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getDatabase_EnvValue()
+  {
+    return (EAttribute)databaseEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNameVersion()
   {
     return nameVersionEClass;
@@ -746,9 +748,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntityBlock_AcessModifier()
+  public EAttribute getEntityBlock_AcessModifier()
   {
-    return (EReference)entityBlockEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)entityBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -776,7 +778,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntityBlock_SuperClasses()
+  public EReference getEntityBlock_ClassExtends()
   {
     return (EReference)entityBlockEClass.getEStructuralFeatures().get(3);
   }
@@ -816,9 +818,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAttribute_AcessModifier()
+  public EAttribute getAttribute_AcessModifier()
   {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -866,7 +868,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRepository_Fields()
+  public EReference getRepository_Methods()
   {
     return (EReference)repositoryEClass.getEStructuralFeatures().get(1);
   }
@@ -1016,26 +1018,6 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAccessModifier()
-  {
-    return accessModifierEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getAccessModifier_Value()
-  {
-    return (EAttribute)accessModifierEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public LedsCodeV001Factory getLedsCodeV001Factory()
   {
     return (LedsCodeV001Factory)getEFactoryInstance();
@@ -1094,6 +1076,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEAttribute(databaseEClass, DATABASE__USER_VALUE);
     createEAttribute(databaseEClass, DATABASE__PASS_VALUE);
     createEAttribute(databaseEClass, DATABASE__HOST_VALUE);
+    createEAttribute(databaseEClass, DATABASE__ENV_VALUE);
 
     nameVersionEClass = createEClass(NAME_VERSION);
     createEAttribute(nameVersionEClass, NAME_VERSION__NAME_VALUE);
@@ -1122,21 +1105,21 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEAttribute(serviceMethodEClass, SERVICE_METHOD__METHOD_ACESS);
 
     entityBlockEClass = createEClass(ENTITY_BLOCK);
-    createEReference(entityBlockEClass, ENTITY_BLOCK__ACESS_MODIFIER);
+    createEAttribute(entityBlockEClass, ENTITY_BLOCK__ACESS_MODIFIER);
     createEAttribute(entityBlockEClass, ENTITY_BLOCK__IS_ABSTRACT);
     createEAttribute(entityBlockEClass, ENTITY_BLOCK__NAME);
-    createEReference(entityBlockEClass, ENTITY_BLOCK__SUPER_CLASSES);
+    createEReference(entityBlockEClass, ENTITY_BLOCK__CLASS_EXTENDS);
     createEReference(entityBlockEClass, ENTITY_BLOCK__ATTRIBUTES);
     createEReference(entityBlockEClass, ENTITY_BLOCK__REPOSITORY);
 
     attributeEClass = createEClass(ATTRIBUTE);
-    createEReference(attributeEClass, ATTRIBUTE__ACESS_MODIFIER);
+    createEAttribute(attributeEClass, ATTRIBUTE__ACESS_MODIFIER);
     createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 
     repositoryEClass = createEClass(REPOSITORY);
     createEAttribute(repositoryEClass, REPOSITORY__NAME);
-    createEReference(repositoryEClass, REPOSITORY__FIELDS);
+    createEReference(repositoryEClass, REPOSITORY__METHODS);
 
     repositoryFieldsEClass = createEClass(REPOSITORY_FIELDS);
     createEAttribute(repositoryFieldsEClass, REPOSITORY_FIELDS__NAME_METHOD);
@@ -1156,9 +1139,6 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     extendBlockEClass = createEClass(EXTEND_BLOCK);
     createEAttribute(extendBlockEClass, EXTEND_BLOCK__VALUES);
-
-    accessModifierEClass = createEClass(ACCESS_MODIFIER);
-    createEAttribute(accessModifierEClass, ACCESS_MODIFIER__VALUE);
   }
 
   /**
@@ -1225,6 +1205,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEAttribute(getDatabase_UserValue(), ecorePackage.getEString(), "userValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDatabase_PassValue(), ecorePackage.getEString(), "passValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDatabase_HostValue(), ecorePackage.getEString(), "hostValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatabase_EnvValue(), ecorePackage.getEString(), "envValue", null, 0, 1, Database.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(nameVersionEClass, NameVersion.class, "NameVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNameVersion_NameValue(), ecorePackage.getEString(), "nameValue", null, 0, 1, NameVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1253,21 +1234,21 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEAttribute(getServiceMethod_MethodAcess(), ecorePackage.getEString(), "methodAcess", null, 0, 1, ServiceMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityBlockEClass, EntityBlock.class, "EntityBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntityBlock_AcessModifier(), this.getAccessModifier(), null, "acessModifier", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntityBlock_AcessModifier(), ecorePackage.getEString(), "acessModifier", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntityBlock_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntityBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityBlock_SuperClasses(), this.getExtendBlock(), null, "superClasses", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityBlock_ClassExtends(), this.getExtendBlock(), null, "classExtends", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntityBlock_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntityBlock_Repository(), this.getRepository(), null, "repository", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttribute_AcessModifier(), this.getAccessModifier(), null, "acessModifier", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttribute_AcessModifier(), ecorePackage.getEString(), "acessModifier", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRepository_Name(), ecorePackage.getEString(), "name", null, 0, 1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRepository_Fields(), this.getRepositoryFields(), null, "fields", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRepository_Methods(), this.getRepositoryFields(), null, "methods", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(repositoryFieldsEClass, RepositoryFields.class, "RepositoryFields", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRepositoryFields_NameMethod(), ecorePackage.getEString(), "nameMethod", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1287,9 +1268,6 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     initEClass(extendBlockEClass, ExtendBlock.class, "ExtendBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExtendBlock_Values(), ecorePackage.getEString(), "values", null, 0, -1, ExtendBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(accessModifierEClass, AccessModifier.class, "AccessModifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAccessModifier_Value(), ecorePackage.getEString(), "value", null, 0, 1, AccessModifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

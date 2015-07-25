@@ -2,7 +2,6 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
-import br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier;
 import br.edu.sr.ifes.leds.ledsCodeV001.Attribute;
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
@@ -35,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#getAcessModifier <em>Acess Modifier</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#getSuperClasses <em>Super Classes</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#getClassExtends <em>Class Extends</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl#getRepository <em>Repository</em>}</li>
  * </ul>
@@ -46,14 +45,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EntityBlockImpl extends MinimalEObjectImpl.Container implements EntityBlock
 {
   /**
-   * The cached value of the '{@link #getAcessModifier() <em>Acess Modifier</em>}' containment reference.
+   * The default value of the '{@link #getAcessModifier() <em>Acess Modifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAcessModifier()
    * @generated
    * @ordered
    */
-  protected AccessModifier acessModifier;
+  protected static final String ACESS_MODIFIER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAcessModifier() <em>Acess Modifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAcessModifier()
+   * @generated
+   * @ordered
+   */
+  protected String acessModifier = ACESS_MODIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -96,14 +105,14 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSuperClasses() <em>Super Classes</em>}' containment reference.
+   * The cached value of the '{@link #getClassExtends() <em>Class Extends</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSuperClasses()
+   * @see #getClassExtends()
    * @generated
    * @ordered
    */
-  protected ExtendBlock superClasses;
+  protected ExtendBlock classExtends;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -151,7 +160,7 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
    * <!-- end-user-doc -->
    * @generated
    */
-  public AccessModifier getAcessModifier()
+  public String getAcessModifier()
   {
     return acessModifier;
   }
@@ -161,37 +170,12 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAcessModifier(AccessModifier newAcessModifier, NotificationChain msgs)
+  public void setAcessModifier(String newAcessModifier)
   {
-    AccessModifier oldAcessModifier = acessModifier;
+    String oldAcessModifier = acessModifier;
     acessModifier = newAcessModifier;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER, oldAcessModifier, newAcessModifier);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAcessModifier(AccessModifier newAcessModifier)
-  {
-    if (newAcessModifier != acessModifier)
-    {
-      NotificationChain msgs = null;
-      if (acessModifier != null)
-        msgs = ((InternalEObject)acessModifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER, null, msgs);
-      if (newAcessModifier != null)
-        msgs = ((InternalEObject)newAcessModifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER, null, msgs);
-      msgs = basicSetAcessModifier(newAcessModifier, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER, newAcessModifier, newAcessModifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER, oldAcessModifier, acessModifier));
   }
 
   /**
@@ -245,9 +229,9 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExtendBlock getSuperClasses()
+  public ExtendBlock getClassExtends()
   {
-    return superClasses;
+    return classExtends;
   }
 
   /**
@@ -255,13 +239,13 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSuperClasses(ExtendBlock newSuperClasses, NotificationChain msgs)
+  public NotificationChain basicSetClassExtends(ExtendBlock newClassExtends, NotificationChain msgs)
   {
-    ExtendBlock oldSuperClasses = superClasses;
-    superClasses = newSuperClasses;
+    ExtendBlock oldClassExtends = classExtends;
+    classExtends = newClassExtends;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES, oldSuperClasses, newSuperClasses);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS, oldClassExtends, newClassExtends);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -272,20 +256,20 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSuperClasses(ExtendBlock newSuperClasses)
+  public void setClassExtends(ExtendBlock newClassExtends)
   {
-    if (newSuperClasses != superClasses)
+    if (newClassExtends != classExtends)
     {
       NotificationChain msgs = null;
-      if (superClasses != null)
-        msgs = ((InternalEObject)superClasses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES, null, msgs);
-      if (newSuperClasses != null)
-        msgs = ((InternalEObject)newSuperClasses).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES, null, msgs);
-      msgs = basicSetSuperClasses(newSuperClasses, msgs);
+      if (classExtends != null)
+        msgs = ((InternalEObject)classExtends).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS, null, msgs);
+      if (newClassExtends != null)
+        msgs = ((InternalEObject)newClassExtends).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS, null, msgs);
+      msgs = basicSetClassExtends(newClassExtends, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES, newSuperClasses, newSuperClasses));
+      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS, newClassExtends, newClassExtends));
   }
 
   /**
@@ -360,10 +344,8 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER:
-        return basicSetAcessModifier(null, msgs);
-      case LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES:
-        return basicSetSuperClasses(null, msgs);
+      case LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS:
+        return basicSetClassExtends(null, msgs);
       case LedsCodeV001Package.ENTITY_BLOCK__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
       case LedsCodeV001Package.ENTITY_BLOCK__REPOSITORY:
@@ -388,8 +370,8 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
         return isIsAbstract();
       case LedsCodeV001Package.ENTITY_BLOCK__NAME:
         return getName();
-      case LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES:
-        return getSuperClasses();
+      case LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS:
+        return getClassExtends();
       case LedsCodeV001Package.ENTITY_BLOCK__ATTRIBUTES:
         return getAttributes();
       case LedsCodeV001Package.ENTITY_BLOCK__REPOSITORY:
@@ -410,7 +392,7 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
     switch (featureID)
     {
       case LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER:
-        setAcessModifier((AccessModifier)newValue);
+        setAcessModifier((String)newValue);
         return;
       case LedsCodeV001Package.ENTITY_BLOCK__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
@@ -418,8 +400,8 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
       case LedsCodeV001Package.ENTITY_BLOCK__NAME:
         setName((String)newValue);
         return;
-      case LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES:
-        setSuperClasses((ExtendBlock)newValue);
+      case LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS:
+        setClassExtends((ExtendBlock)newValue);
         return;
       case LedsCodeV001Package.ENTITY_BLOCK__ATTRIBUTES:
         getAttributes().clear();
@@ -443,7 +425,7 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
     switch (featureID)
     {
       case LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER:
-        setAcessModifier((AccessModifier)null);
+        setAcessModifier(ACESS_MODIFIER_EDEFAULT);
         return;
       case LedsCodeV001Package.ENTITY_BLOCK__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
@@ -451,8 +433,8 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
       case LedsCodeV001Package.ENTITY_BLOCK__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES:
-        setSuperClasses((ExtendBlock)null);
+      case LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS:
+        setClassExtends((ExtendBlock)null);
         return;
       case LedsCodeV001Package.ENTITY_BLOCK__ATTRIBUTES:
         getAttributes().clear();
@@ -475,13 +457,13 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
     switch (featureID)
     {
       case LedsCodeV001Package.ENTITY_BLOCK__ACESS_MODIFIER:
-        return acessModifier != null;
+        return ACESS_MODIFIER_EDEFAULT == null ? acessModifier != null : !ACESS_MODIFIER_EDEFAULT.equals(acessModifier);
       case LedsCodeV001Package.ENTITY_BLOCK__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case LedsCodeV001Package.ENTITY_BLOCK__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LedsCodeV001Package.ENTITY_BLOCK__SUPER_CLASSES:
-        return superClasses != null;
+      case LedsCodeV001Package.ENTITY_BLOCK__CLASS_EXTENDS:
+        return classExtends != null;
       case LedsCodeV001Package.ENTITY_BLOCK__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
       case LedsCodeV001Package.ENTITY_BLOCK__REPOSITORY:
@@ -501,7 +483,9 @@ public class EntityBlockImpl extends MinimalEObjectImpl.Container implements Ent
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (isAbstract: ");
+    result.append(" (acessModifier: ");
+    result.append(acessModifier);
+    result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", name: ");
     result.append(name);

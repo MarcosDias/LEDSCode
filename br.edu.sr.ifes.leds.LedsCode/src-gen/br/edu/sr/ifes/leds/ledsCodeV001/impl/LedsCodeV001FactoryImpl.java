@@ -84,7 +84,6 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
       case LedsCodeV001Package.METHOD_PARAMETER: return createMethodParameter();
       case LedsCodeV001Package.TYPE_AND_ATTRIBUTE: return createTypeAndAttribute();
       case LedsCodeV001Package.EXTEND_BLOCK: return createExtendBlock();
-      case LedsCodeV001Package.ACCESS_MODIFIER: return createAccessModifier();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -308,17 +307,6 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
   {
     ExtendBlockImpl extendBlock = new ExtendBlockImpl();
     return extendBlock;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AccessModifier createAccessModifier()
-  {
-    AccessModifierImpl accessModifier = new AccessModifierImpl();
-    return accessModifier;
   }
 
   /**

@@ -3,14 +3,12 @@
  */
 package br.edu.sr.ifes.leds.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-
 import com.google.inject.Inject
-import br.edu.sr.ifes.leds.services.LedsCodeV001GrammarAccess.ProjectElements
-import br.edu.sr.ifes.leds.services.LedsCodeV001GrammarAccess.InterfaceBlockElements
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 /**
  * Generates code from your model files on save.
@@ -28,9 +26,11 @@ class LedsCodeV001Generator implements IGenerator {
 //				.map[name]
 //				.join(', '))
 		println(resource.allContents.toIterable.size())
-		println(resource.allContents.toIterable.head)		
-		/*for(e: resource.allContents.toIterable.head {
+		
+		//val p = resource.allContents.toIterable.head as Project 
+		//println(resource.allContents.toIterable.head.toString())		
+		for(e: resource.allContents.toIterable.filter(Project)) {
     		println(e.toString)
-  		}*/
+  		}
 	}
 }

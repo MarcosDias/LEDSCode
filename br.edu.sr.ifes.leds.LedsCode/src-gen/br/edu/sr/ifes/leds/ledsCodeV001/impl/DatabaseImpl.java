@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl#getUserValue <em>User Value</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl#getPassValue <em>Pass Value</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl#getHostValue <em>Host Value</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.DatabaseImpl#getEnvValue <em>Env Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,6 +131,26 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
    * @ordered
    */
   protected String hostValue = HOST_VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getEnvValue() <em>Env Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEnvValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String ENV_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEnvValue() <em>Env Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEnvValue()
+   * @generated
+   * @ordered
+   */
+  protected String envValue = ENV_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -272,6 +293,29 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getEnvValue()
+  {
+    return envValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEnvValue(String newEnvValue)
+  {
+    String oldEnvValue = envValue;
+    envValue = newEnvValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.DATABASE__ENV_VALUE, oldEnvValue, envValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -287,6 +331,8 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
         return getPassValue();
       case LedsCodeV001Package.DATABASE__HOST_VALUE:
         return getHostValue();
+      case LedsCodeV001Package.DATABASE__ENV_VALUE:
+        return getEnvValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -315,6 +361,9 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
         return;
       case LedsCodeV001Package.DATABASE__HOST_VALUE:
         setHostValue((String)newValue);
+        return;
+      case LedsCodeV001Package.DATABASE__ENV_VALUE:
+        setEnvValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -345,6 +394,9 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
       case LedsCodeV001Package.DATABASE__HOST_VALUE:
         setHostValue(HOST_VALUE_EDEFAULT);
         return;
+      case LedsCodeV001Package.DATABASE__ENV_VALUE:
+        setEnvValue(ENV_VALUE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -369,6 +421,8 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
         return PASS_VALUE_EDEFAULT == null ? passValue != null : !PASS_VALUE_EDEFAULT.equals(passValue);
       case LedsCodeV001Package.DATABASE__HOST_VALUE:
         return HOST_VALUE_EDEFAULT == null ? hostValue != null : !HOST_VALUE_EDEFAULT.equals(hostValue);
+      case LedsCodeV001Package.DATABASE__ENV_VALUE:
+        return ENV_VALUE_EDEFAULT == null ? envValue != null : !ENV_VALUE_EDEFAULT.equals(envValue);
     }
     return super.eIsSet(featureID);
   }
@@ -394,6 +448,8 @@ public class DatabaseImpl extends MinimalEObjectImpl.Container implements Databa
     result.append(passValue);
     result.append(", hostValue: ");
     result.append(hostValue);
+    result.append(", envValue: ");
+    result.append(envValue);
     result.append(')');
     return result.toString();
   }

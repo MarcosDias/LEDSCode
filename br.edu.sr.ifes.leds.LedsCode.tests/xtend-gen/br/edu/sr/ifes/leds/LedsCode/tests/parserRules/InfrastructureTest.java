@@ -1,6 +1,6 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules;
 
-import br.edu.sr.ifes.leds.LedsCode.tests.parserRules.AbstractTestClass;
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass;
 import br.edu.sr.ifes.leds.ledsCodeV001.Database;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion;
@@ -24,8 +24,8 @@ public class InfrastructureTest extends AbstractTestClass {
   @Before
   public void setUp() {
     Project _parseProject = this.parseProject();
-    this.project = _parseProject;
-    InfrastructureBlock _infrastructureBlock = this.project.getInfrastructureBlock();
+    this.projectLang = _parseProject;
+    InfrastructureBlock _infrastructureBlock = this.projectLang.getInfrastructureBlock();
     this.infra = _infrastructureBlock;
     NameVersion _language = this.infra.getLanguage();
     this.lang = _language;
@@ -85,5 +85,7 @@ public class InfrastructureTest extends AbstractTestClass {
     Assert.assertEquals("123456", _passValue);
     String _hostValue = this.db.getHostValue();
     Assert.assertEquals("localhost", _hostValue);
+    String _envValue = this.db.getEnvValue();
+    Assert.assertEquals("prod", _envValue);
   }
 }

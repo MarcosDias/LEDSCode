@@ -1,10 +1,9 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
 
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
 import org.junit.Before
 import org.junit.Test
 
-import static br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory.completeProject
 import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertNotNull
 
@@ -12,18 +11,16 @@ class ProjectTest extends AbstractTestClass{
 	
 	@Before
   	def void setUp(){
-  		project = parseProject()
+  		projectLang = parseProject()
   	}
 		
 	@Test
 	def notNullRules(){
-		//val praoject = parseProject()
-		
-		assertEquals("Projeto", project.name)
-	    assertNotNull(project.infrastructureBlock)
-	    assertNotNull(project.interfaceBlock)
-	    assertNotNull(project.domainBlock)
-	    assertNotNull(project.applicationBlock)
+		assertEquals("Projeto", projectLang.name)
+	    assertNotNull(projectLang.infrastructureBlock)
+	    assertNotNull(projectLang.interfaceBlock)
+	    assertNotNull(projectLang.domainBlock)
+	    assertNotNull(projectLang.applicationBlock)
 	}
 	
 	// TODO: Testar a ordem aleatoria dos blocos

@@ -1,20 +1,19 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
 
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
+import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock
 import org.junit.Before
 import org.junit.Test
 
-import static br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory.completeProject
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock
 
 class InterfaceTest extends AbstractTestClass{
 	InterfaceBlock iface
 	
 	@Before
 	def void setUp(){
-		project = parseProject()
-		iface = project.interfaceBlock
+		projectLang = parseProject()
+		iface = projectLang.interfaceBlock
 	}
   	
   	@Test

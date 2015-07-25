@@ -1,5 +1,6 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
 
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
 import br.edu.sr.ifes.leds.ledsCodeV001.Database
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion
@@ -20,8 +21,8 @@ class InfrastructureTest extends AbstractTestClass{
   	
   	@Before
   	def void setUp(){
-  		project = parseProject()
-  		infra = project.infrastructureBlock
+  		projectLang = parseProject()
+  		infra = projectLang.infrastructureBlock
   		lang = infra.language
   		framework = infra.framework
   		orm = infra.orm
@@ -63,5 +64,6 @@ class InfrastructureTest extends AbstractTestClass{
 		assertEquals("USER", db.userValue)
 		assertEquals("123456", db.passValue)
 		assertEquals("localhost", db.hostValue)
+		assertEquals("prod", db.envValue)
 	}
 }

@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Attribute extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Acess Modifier</b></em>' containment reference.
+   * Returns the value of the '<em><b>Acess Modifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Acess Modifier</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Acess Modifier</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Acess Modifier</em>' containment reference.
-   * @see #setAcessModifier(AccessModifier)
+   * @return the value of the '<em>Acess Modifier</em>' attribute.
+   * @see #setAcessModifier(String)
    * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getAttribute_AcessModifier()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  AccessModifier getAcessModifier();
+  String getAcessModifier();
 
   /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier <em>Acess Modifier</em>}' containment reference.
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getAcessModifier <em>Acess Modifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Acess Modifier</em>' containment reference.
+   * @param value the new value of the '<em>Acess Modifier</em>' attribute.
    * @see #getAcessModifier()
    * @generated
    */
-  void setAcessModifier(AccessModifier value);
+  void setAcessModifier(String value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' attribute.

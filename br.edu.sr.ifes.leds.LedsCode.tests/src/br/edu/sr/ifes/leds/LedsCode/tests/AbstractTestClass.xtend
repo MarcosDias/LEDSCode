@@ -1,4 +1,4 @@
-package br.edu.sr.ifes.leds.LedsCode.tests.parserRules
+package br.edu.sr.ifes.leds.LedsCode.tests
 
 import br.edu.sr.ifes.leds.LedsCodeV001InjectorProvider
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL
@@ -10,6 +10,7 @@ import org.eclipse.xtext.junit4.util.ParseHelper
 import org.junit.runner.RunWith
 
 import static br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory.completeProject
+import br.edu.sr.ifes.leds.generator.ProjectConverter
 
 @InjectWith(LedsCodeV001InjectorProvider)
 @RunWith(XtextRunner)
@@ -18,7 +19,8 @@ abstract class AbstractTestClass {
 	@Inject
   	protected ParseHelper<LedsCodeDSL> parser
   	
-  	protected Project project
+  	protected Project projectLang
+  	protected model.mainLayer.Project projectMetaModel
   	
   	def parseProject(){
 		val model = parser.parse(completeProject())

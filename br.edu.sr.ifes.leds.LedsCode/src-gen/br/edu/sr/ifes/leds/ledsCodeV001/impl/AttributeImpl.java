@@ -2,15 +2,12 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
-import br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier;
 import br.edu.sr.ifes.leds.ledsCodeV001.Attribute;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -33,14 +30,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute
 {
   /**
-   * The cached value of the '{@link #getAcessModifier() <em>Acess Modifier</em>}' containment reference.
+   * The default value of the '{@link #getAcessModifier() <em>Acess Modifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAcessModifier()
    * @generated
    * @ordered
    */
-  protected AccessModifier acessModifier;
+  protected static final String ACESS_MODIFIER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAcessModifier() <em>Acess Modifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAcessModifier()
+   * @generated
+   * @ordered
+   */
+  protected String acessModifier = ACESS_MODIFIER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -108,7 +115,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public AccessModifier getAcessModifier()
+  public String getAcessModifier()
   {
     return acessModifier;
   }
@@ -118,37 +125,12 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAcessModifier(AccessModifier newAcessModifier, NotificationChain msgs)
+  public void setAcessModifier(String newAcessModifier)
   {
-    AccessModifier oldAcessModifier = acessModifier;
+    String oldAcessModifier = acessModifier;
     acessModifier = newAcessModifier;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER, oldAcessModifier, newAcessModifier);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAcessModifier(AccessModifier newAcessModifier)
-  {
-    if (newAcessModifier != acessModifier)
-    {
-      NotificationChain msgs = null;
-      if (acessModifier != null)
-        msgs = ((InternalEObject)acessModifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER, null, msgs);
-      if (newAcessModifier != null)
-        msgs = ((InternalEObject)newAcessModifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER, null, msgs);
-      msgs = basicSetAcessModifier(newAcessModifier, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER, newAcessModifier, newAcessModifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER, oldAcessModifier, acessModifier));
   }
 
   /**
@@ -203,22 +185,6 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER:
-        return basicSetAcessModifier(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -244,7 +210,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     switch (featureID)
     {
       case LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER:
-        setAcessModifier((AccessModifier)newValue);
+        setAcessModifier((String)newValue);
         return;
       case LedsCodeV001Package.ATTRIBUTE__TYPE:
         setType((String)newValue);
@@ -267,7 +233,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     switch (featureID)
     {
       case LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER:
-        setAcessModifier((AccessModifier)null);
+        setAcessModifier(ACESS_MODIFIER_EDEFAULT);
         return;
       case LedsCodeV001Package.ATTRIBUTE__TYPE:
         setType(TYPE_EDEFAULT);
@@ -290,7 +256,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     switch (featureID)
     {
       case LedsCodeV001Package.ATTRIBUTE__ACESS_MODIFIER:
-        return acessModifier != null;
+        return ACESS_MODIFIER_EDEFAULT == null ? acessModifier != null : !ACESS_MODIFIER_EDEFAULT.equals(acessModifier);
       case LedsCodeV001Package.ATTRIBUTE__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case LedsCodeV001Package.ATTRIBUTE__NAME:
@@ -310,7 +276,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (type: ");
+    result.append(" (acessModifier: ");
+    result.append(acessModifier);
+    result.append(", type: ");
     result.append(type);
     result.append(", name: ");
     result.append(name);

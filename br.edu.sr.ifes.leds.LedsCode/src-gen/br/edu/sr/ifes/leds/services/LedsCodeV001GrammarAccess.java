@@ -23,7 +23,9 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cProjectAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cProjectProjectParserRuleCall_0 = (RuleCall)cProjectAssignment.eContents().get(0);
 		
-		//LedsCodeDSL:
+		/// *
+		//============== LEDSCode ============== 
+		// * / LedsCodeDSL:
 		//	project+=Project;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -371,14 +373,19 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		private final Assignment cHostValueAssignment_18 = (Assignment)cGroup.eContents().get(18);
 		private final RuleCall cHostValueSTRINGTerminalRuleCall_18_0 = (RuleCall)cHostValueAssignment_18.eContents().get(0);
+		private final Keyword cCommaKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cEnvKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Keyword cColonKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Assignment cEnvValueAssignment_22 = (Assignment)cGroup.eContents().get(22);
+		private final RuleCall cEnvValueSTRINGTerminalRuleCall_22_0 = (RuleCall)cEnvValueAssignment_22.eContents().get(0);
 		
 		//Database:
 		//	"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," "@user" ":" userValue=STRING "," "@pass" ":"
-		//	passValue=STRING "," "@host" ":" hostValue=STRING;
+		//	passValue=STRING "," "@host" ":" hostValue=STRING "," "@env" ":" envValue=STRING;
 		@Override public ParserRule getRule() { return rule; }
 
 		//"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," "@user" ":" userValue=STRING "," "@pass" ":"
-		//passValue=STRING "," "@host" ":" hostValue=STRING
+		//passValue=STRING "," "@host" ":" hostValue=STRING "," "@env" ":" envValue=STRING
 		public Group getGroup() { return cGroup; }
 
 		//"@version"
@@ -452,6 +459,21 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getHostValueSTRINGTerminalRuleCall_18_0() { return cHostValueSTRINGTerminalRuleCall_18_0; }
+
+		//","
+		public Keyword getCommaKeyword_19() { return cCommaKeyword_19; }
+
+		//"@env"
+		public Keyword getEnvKeyword_20() { return cEnvKeyword_20; }
+
+		//":"
+		public Keyword getColonKeyword_21() { return cColonKeyword_21; }
+
+		//envValue=STRING
+		public Assignment getEnvValueAssignment_22() { return cEnvValueAssignment_22; }
+
+		//STRING
+		public RuleCall getEnvValueSTRINGTerminalRuleCall_22_0() { return cEnvValueSTRINGTerminalRuleCall_22_0; }
 	}
 
 	public class NameVersionElements extends AbstractParserRuleElementFinder {
@@ -467,11 +489,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVersionValueAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cVersionValueSTRINGTerminalRuleCall_6_0 = (RuleCall)cVersionValueAssignment_6.eContents().get(0);
 		
-		/// *
-		// * É muito provavel que essa regra sofrerá algumas alteracoes no futuro,
-		// * tendo em vista que ela está sendo usado em 
-		// * tres locais diferentes e com semanticas diferentes.
-		// * / NameVersion:
+		//NameVersion:
 		//	"@name" ":" nameValue=STRING "," "@version" ":" versionValue=STRING;
 		@Override public ParserRule getRule() { return rule; }
 
@@ -736,8 +754,8 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEntityKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Assignment cSuperClassesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSuperClassesExtendBlockParserRuleCall_4_0 = (RuleCall)cSuperClassesAssignment_4.eContents().get(0);
+		private final Assignment cClassExtendsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cClassExtendsExtendBlockParserRuleCall_4_0 = (RuleCall)cClassExtendsAssignment_4.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cAttributesAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cAttributesAttributeParserRuleCall_6_0 = (RuleCall)cAttributesAssignment_6.eContents().get(0);
@@ -746,11 +764,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//EntityBlock:
-		//	acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID superClasses=ExtendBlock? "{"
+		//	acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID classExtends=ExtendBlock? "{"
 		//	attributes+=Attribute* repository=Repository? "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID superClasses=ExtendBlock? "{"
+		//acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID classExtends=ExtendBlock? "{"
 		//attributes+=Attribute* repository=Repository? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -775,11 +793,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 
-		//superClasses=ExtendBlock?
-		public Assignment getSuperClassesAssignment_4() { return cSuperClassesAssignment_4; }
+		//classExtends=ExtendBlock?
+		public Assignment getClassExtendsAssignment_4() { return cClassExtendsAssignment_4; }
 
 		//ExtendBlock
-		public RuleCall getSuperClassesExtendBlockParserRuleCall_4_0() { return cSuperClassesExtendBlockParserRuleCall_4_0; }
+		public RuleCall getClassExtendsExtendBlockParserRuleCall_4_0() { return cClassExtendsExtendBlockParserRuleCall_4_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
@@ -843,15 +861,15 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFieldsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFieldsRepositoryFieldsParserRuleCall_3_0 = (RuleCall)cFieldsAssignment_3.eContents().get(0);
+		private final Assignment cMethodsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMethodsRepositoryFieldsParserRuleCall_3_0 = (RuleCall)cMethodsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Repository:
-		//	"repository" name=ID "{" fields+=RepositoryFields* "}";
+		//	"repository" name=ID "{" methods+=RepositoryFields* "}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//"repository" name=ID "{" fields+=RepositoryFields* "}"
+		//"repository" name=ID "{" methods+=RepositoryFields* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"repository"
@@ -866,11 +884,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//fields+=RepositoryFields*
-		public Assignment getFieldsAssignment_3() { return cFieldsAssignment_3; }
+		//methods+=RepositoryFields*
+		public Assignment getMethodsAssignment_3() { return cMethodsAssignment_3; }
 
 		//RepositoryFields
-		public RuleCall getFieldsRepositoryFieldsParserRuleCall_3_0() { return cFieldsRepositoryFieldsParserRuleCall_3_0; }
+		public RuleCall getMethodsRepositoryFieldsParserRuleCall_3_0() { return cMethodsRepositoryFieldsParserRuleCall_3_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -1232,26 +1250,22 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	public class AccessModifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AccessModifier");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
-		private final RuleCall cValuePrivateParserRuleCall_0_0 = (RuleCall)cValueAlternatives_0.eContents().get(0);
-		private final RuleCall cValueProtectedParserRuleCall_0_1 = (RuleCall)cValueAlternatives_0.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPrivateParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cProtectedParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AccessModifier:
-		//	value=(Private | Protected);
+		//	Private | Protected;
 		@Override public ParserRule getRule() { return rule; }
 
-		//value=(Private | Protected)
-		public Assignment getValueAssignment() { return cValueAssignment; }
-
 		//Private | Protected
-		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Private
-		public RuleCall getValuePrivateParserRuleCall_0_0() { return cValuePrivateParserRuleCall_0_0; }
+		public RuleCall getPrivateParserRuleCall_0() { return cPrivateParserRuleCall_0; }
 
 		//Protected
-		public RuleCall getValueProtectedParserRuleCall_0_1() { return cValueProtectedParserRuleCall_0_1; }
+		public RuleCall getProtectedParserRuleCall_1() { return cProtectedParserRuleCall_1; }
 	}
 
 	public class PrivateElements extends AbstractParserRuleElementFinder {
@@ -1440,7 +1454,9 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//LedsCodeDSL:
+	/// *
+	//============== LEDSCode ============== 
+	// * / LedsCodeDSL:
 	//	project+=Project;
 	public LedsCodeDSLElements getLedsCodeDSLAccess() {
 		return pLedsCodeDSL;
@@ -1495,7 +1511,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	//Database:
 	//	"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," "@user" ":" userValue=STRING "," "@pass" ":"
-	//	passValue=STRING "," "@host" ":" hostValue=STRING;
+	//	passValue=STRING "," "@host" ":" hostValue=STRING "," "@env" ":" envValue=STRING;
 	public DatabaseElements getDatabaseAccess() {
 		return pDatabase;
 	}
@@ -1504,11 +1520,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		return getDatabaseAccess().getRule();
 	}
 
-	/// *
-	// * É muito provavel que essa regra sofrerá algumas alteracoes no futuro,
-	// * tendo em vista que ela está sendo usado em 
-	// * tres locais diferentes e com semanticas diferentes.
-	// * / NameVersion:
+	//NameVersion:
 	//	"@name" ":" nameValue=STRING "," "@version" ":" versionValue=STRING;
 	public NameVersionElements getNameVersionAccess() {
 		return pNameVersion;
@@ -1569,7 +1581,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EntityBlock:
-	//	acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID superClasses=ExtendBlock? "{"
+	//	acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID classExtends=ExtendBlock? "{"
 	//	attributes+=Attribute* repository=Repository? "}";
 	public EntityBlockElements getEntityBlockAccess() {
 		return pEntityBlock;
@@ -1590,7 +1602,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Repository:
-	//	"repository" name=ID "{" fields+=RepositoryFields* "}";
+	//	"repository" name=ID "{" methods+=RepositoryFields* "}";
 	public RepositoryElements getRepositoryAccess() {
 		return pRepository;
 	}
@@ -1691,7 +1703,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AccessModifier:
-	//	value=(Private | Protected);
+	//	Private | Protected;
 	public AccessModifierElements getAccessModifierAccess() {
 		return pAccessModifier;
 	}

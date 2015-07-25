@@ -203,15 +203,6 @@ public interface LedsCodeV001Factory extends EFactory
   ExtendBlock createExtendBlock();
 
   /**
-   * Returns a new object of class '<em>Access Modifier</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Access Modifier</em>'.
-   * @generated
-   */
-  AccessModifier createAccessModifier();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

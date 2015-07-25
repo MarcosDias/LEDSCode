@@ -1,7 +1,6 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.parserRules;
 
-import br.edu.sr.ifes.leds.LedsCode.tests.parserRules.AbstractTestClass;
-import br.edu.sr.ifes.leds.ledsCodeV001.AccessModifier;
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass;
 import br.edu.sr.ifes.leds.ledsCodeV001.Attribute;
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
@@ -45,8 +44,8 @@ public class DomainTest extends AbstractTestClass {
   @Before
   public void setUp() {
     Project _parseProject = this.parseProject();
-    this.project = _parseProject;
-    EList<DomainBlock> _domainBlock = this.project.getDomainBlock();
+    this.projectLang = _parseProject;
+    EList<DomainBlock> _domainBlock = this.projectLang.getDomainBlock();
     this.domain = _domainBlock;
     DomainBlock _get = this.domain.get(0);
     this.singleDom = _get;
@@ -67,8 +66,8 @@ public class DomainTest extends AbstractTestClass {
     this.singleAttr = _get_5;
     Repository _repository = this.singleEntity.getRepository();
     this.repository = _repository;
-    EList<RepositoryFields> _fields = this.repository.getFields();
-    RepositoryFields _get_6 = _fields.get(0);
+    EList<RepositoryFields> _methods = this.repository.getMethods();
+    RepositoryFields _get_6 = _methods.get(0);
     this.fieldRepository = _get_6;
     EList<EnumBlock> _enumBlock = this.singleModule.getEnumBlock();
     EnumBlock _get_7 = _enumBlock.get(0);
@@ -132,7 +131,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdEntity() {
     EList<EntityBlock> _entityBlock = this.singleModule.getEntityBlock();
     int _size = _entityBlock.size();
-    Assert.assertEquals(2, _size);
+    Assert.assertEquals(4, _size);
   }
   
   @Test
@@ -141,22 +140,22 @@ public class DomainTest extends AbstractTestClass {
     Assert.assertEquals("Media", _name);
     boolean _isIsAbstract = this.singleEntity.isIsAbstract();
     Assert.assertTrue(_isIsAbstract);
-    AccessModifier _acessModifier = this.singleEntity.getAcessModifier();
+    String _acessModifier = this.singleEntity.getAcessModifier();
     Assert.assertNull(_acessModifier);
   }
   
   @Test
   public void testQtdInheritanceClass() {
-    ExtendBlock _superClasses = this.singleEntity.getSuperClasses();
-    EList<String> _values = _superClasses.getValues();
+    ExtendBlock _classExtends = this.singleEntity.getClassExtends();
+    EList<String> _values = _classExtends.getValues();
     int _size = _values.size();
     Assert.assertEquals(2, _size);
   }
   
   @Test
   public void testInheritanceClass() {
-    ExtendBlock _superClasses = this.singleEntity.getSuperClasses();
-    EList<String> _values = _superClasses.getValues();
+    ExtendBlock _classExtends = this.singleEntity.getClassExtends();
+    EList<String> _values = _classExtends.getValues();
     for (final String superClass : _values) {
       boolean _contains = superClass.contains("SuperClass");
       Assert.assertTrue(_contains);
@@ -172,9 +171,8 @@ public class DomainTest extends AbstractTestClass {
   
   @Test
   public void testAttributes() {
-    AccessModifier _acessModifier = this.singleAttr.getAcessModifier();
-    String _value = _acessModifier.getValue();
-    boolean _contains = "private -".contains(_value);
+    String _acessModifier = this.singleAttr.getAcessModifier();
+    boolean _contains = "private -".contains(_acessModifier);
     Assert.assertTrue(_contains);
     String _type = this.singleAttr.getType();
     Assert.assertEquals("String", _type);
@@ -190,8 +188,8 @@ public class DomainTest extends AbstractTestClass {
   
   @Test
   public void testQtdRepositoryFields() {
-    EList<RepositoryFields> _fields = this.repository.getFields();
-    int _size = _fields.size();
+    EList<RepositoryFields> _methods = this.repository.getMethods();
+    int _size = _methods.size();
     Assert.assertEquals(2, _size);
   }
   

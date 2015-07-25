@@ -135,6 +135,21 @@ public class DomainFactory {
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
+    _builder.newLine();
+    _builder.append("entity SuperClass1{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("repository Repo{}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("entity SuperClass2{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("repository Repo{}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
     return _builder;
   }
   

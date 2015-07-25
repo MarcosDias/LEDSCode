@@ -3,6 +3,8 @@
  */
 package br.edu.sr.ifes.leds.generator;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +36,10 @@ public class LedsCodeV001Generator implements IGenerator {
     InputOutput.<Integer>println(Integer.valueOf(_size));
     TreeIterator<EObject> _allContents_1 = resource.getAllContents();
     Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
-    EObject _head = IterableExtensions.<EObject>head(_iterable_1);
-    InputOutput.<EObject>println(_head);
+    Iterable<Project> _filter = Iterables.<Project>filter(_iterable_1, Project.class);
+    for (final Project e : _filter) {
+      String _string = e.toString();
+      InputOutput.<String>println(_string);
+    }
   }
 }

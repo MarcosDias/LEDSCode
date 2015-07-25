@@ -61,6 +61,13 @@ entity LibraryEntity : Media{
 		findLibraryByName(String name) : Library
 	}
 }
+
+entity SuperClass1{
+	repository Repo{}
+}
+entity SuperClass2{
+	repository Repo{}
+}
 '''
 	}
 	

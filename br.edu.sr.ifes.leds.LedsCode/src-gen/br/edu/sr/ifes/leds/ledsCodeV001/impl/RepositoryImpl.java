@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,14 +59,14 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+   * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFields()
+   * @see #getMethods()
    * @generated
    * @ordered
    */
-  protected EList<RepositoryFields> fields;
+  protected EList<RepositoryFields> methods;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +117,13 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<RepositoryFields> getFields()
+  public EList<RepositoryFields> getMethods()
   {
-    if (fields == null)
+    if (methods == null)
     {
-      fields = new EObjectContainmentEList<RepositoryFields>(RepositoryFields.class, this, LedsCodeV001Package.REPOSITORY__FIELDS);
+      methods = new EObjectContainmentEList<RepositoryFields>(RepositoryFields.class, this, LedsCodeV001Package.REPOSITORY__METHODS);
     }
-    return fields;
+    return methods;
   }
 
   /**
@@ -136,8 +136,8 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.REPOSITORY__FIELDS:
-        return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
+      case LedsCodeV001Package.REPOSITORY__METHODS:
+        return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -154,8 +154,8 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
     {
       case LedsCodeV001Package.REPOSITORY__NAME:
         return getName();
-      case LedsCodeV001Package.REPOSITORY__FIELDS:
-        return getFields();
+      case LedsCodeV001Package.REPOSITORY__METHODS:
+        return getMethods();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,9 +174,9 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
       case LedsCodeV001Package.REPOSITORY__NAME:
         setName((String)newValue);
         return;
-      case LedsCodeV001Package.REPOSITORY__FIELDS:
-        getFields().clear();
-        getFields().addAll((Collection<? extends RepositoryFields>)newValue);
+      case LedsCodeV001Package.REPOSITORY__METHODS:
+        getMethods().clear();
+        getMethods().addAll((Collection<? extends RepositoryFields>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,8 +195,8 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
       case LedsCodeV001Package.REPOSITORY__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LedsCodeV001Package.REPOSITORY__FIELDS:
-        getFields().clear();
+      case LedsCodeV001Package.REPOSITORY__METHODS:
+        getMethods().clear();
         return;
     }
     super.eUnset(featureID);
@@ -214,8 +214,8 @@ public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repo
     {
       case LedsCodeV001Package.REPOSITORY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LedsCodeV001Package.REPOSITORY__FIELDS:
-        return fields != null && !fields.isEmpty();
+      case LedsCodeV001Package.REPOSITORY__METHODS:
+        return methods != null && !methods.isEmpty();
     }
     return super.eIsSet(featureID);
   }

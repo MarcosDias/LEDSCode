@@ -6,6 +6,7 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
 
 class ApplicationTest extends AbstractTestClass{
 	
@@ -15,8 +16,8 @@ class ApplicationTest extends AbstractTestClass{
 	
 	@Before
 	def void setUp(){
-		project = parseProject()
-		app = project.applicationBlock
+		projectLang = parseProject()
+		app = projectLang.applicationBlock
 		singleApp = app.get(0)
 		singleAppDomain = singleApp.applicationDomain.get(0)
 	}

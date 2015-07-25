@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getFields <em>Fields</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,19 +52,19 @@ public interface Repository extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Methods</b></em>' containment reference list.
    * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Methods</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' containment reference list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getRepository_Fields()
+   * @return the value of the '<em>Methods</em>' containment reference list.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getRepository_Methods()
    * @model containment="true"
    * @generated
    */
-  EList<RepositoryFields> getFields();
+  EList<RepositoryFields> getMethods();
 
 } // Repository
