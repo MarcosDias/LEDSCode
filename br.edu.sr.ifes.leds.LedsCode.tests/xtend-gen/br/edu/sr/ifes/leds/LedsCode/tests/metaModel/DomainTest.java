@@ -7,18 +7,23 @@ import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
 import br.edu.sr.ifes.leds.ledsCodeV001.Module;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository;
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
+import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import model.domainLayer.AccessModifier;
+import model.domainLayer.ClassEnum;
 import model.domainLayer.Domain;
 import model.domainLayer.Entity;
 import model.domainLayer.Method;
+import model.domainLayer.Parameter;
+import model.domainLayer.ReturnType;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.junit.Assert;
@@ -58,6 +63,10 @@ public class DomainTest extends AbstractTestClass {
   private model.domainLayer.Attribute singleAttrMetaModel;
   
   private model.domainLayer.Repository repositoryMetaModel;
+  
+  private Method fieldRepositoryMetaModel;
+  
+  private ClassEnum singleEnumMetaModel;
   
   @Before
   public void setUp() {
@@ -108,6 +117,12 @@ public class DomainTest extends AbstractTestClass {
     this.singleAttrMetaModel = _get_11;
     model.domainLayer.Repository _repository_1 = this.singleEntityMetaModel.getRepository();
     this.repositoryMetaModel = _repository_1;
+    LinkedHashSet<Method> _methods_1 = this.repositoryMetaModel.getMethods();
+    Method _get_12 = ((Method[])Conversions.unwrapArray(_methods_1, Method.class))[0];
+    this.fieldRepositoryMetaModel = _get_12;
+    LinkedHashSet<ClassEnum> _enums = this.singleModuleMetaModel.getEnums();
+    ClassEnum _get_13 = ((ClassEnum[])Conversions.unwrapArray(_enums, ClassEnum.class))[0];
+    this.singleEnumMetaModel = _get_13;
   }
   
   @Test
@@ -254,5 +269,61 @@ public class DomainTest extends AbstractTestClass {
     LinkedHashSet<Method> _methods_1 = this.repositoryMetaModel.getMethods();
     int _size_1 = _methods_1.size();
     Assert.assertEquals(_size, _size_1);
+  }
+  
+  @Test
+  public void testRepositoryFields() {
+    MethodParameter _methodsParameters = this.fieldRepositoryLang.getMethodsParameters();
+    EList<TypeAndAttribute> _typeAndAttr = _methodsParameters.getTypeAndAttr();
+    final TypeAndAttribute methodParameterLang = _typeAndAttr.get(0);
+    LinkedHashSet<Parameter> _parameters = this.fieldRepositoryMetaModel.getParameters();
+    final Parameter methodParameterMetaModel = ((Parameter[])Conversions.unwrapArray(_parameters, Parameter.class))[0];
+    String _nameMethod = this.fieldRepositoryLang.getNameMethod();
+    String _name = this.fieldRepositoryMetaModel.getName();
+    Assert.assertEquals(_nameMethod, _name);
+    String _returnType = this.fieldRepositoryLang.getReturnType();
+    ReturnType _returnMethod = this.fieldRepositoryMetaModel.getReturnMethod();
+    String _genericType = _returnMethod.genericType();
+    Assert.assertEquals(_returnType, _genericType);
+    String _type = methodParameterLang.getType();
+    String _genericType_1 = methodParameterMetaModel.genericType();
+    Assert.assertEquals(_type, _genericType_1);
+    String _name_1 = methodParameterLang.getName();
+    String _name_2 = methodParameterMetaModel.getName();
+    Assert.assertEquals(_name_1, _name_2);
+  }
+  
+  @Test
+  public void testQtdEnums() {
+    EList<EnumBlock> _enumBlock = this.singleModuleLang.getEnumBlock();
+    int _size = _enumBlock.size();
+    LinkedHashSet<ClassEnum> _enums = this.singleModuleMetaModel.getEnums();
+    int _size_1 = _enums.size();
+    Assert.assertEquals(_size, _size_1);
+  }
+  
+  @Test
+  public void testEnumName() {
+    String _name = this.singleEnumLang.getName();
+    String _name_1 = this.singleEnumMetaModel.getName();
+    Assert.assertEquals(_name, _name_1);
+  }
+  
+  @Test
+  public void testQtdValuesEnums() {
+    EList<String> _values = this.singleEnumLang.getValues();
+    int _size = _values.size();
+    LinkedHashSet<String> _values_1 = this.singleEnumMetaModel.getValues();
+    int _size_1 = _values_1.size();
+    Assert.assertEquals(_size, _size_1);
+  }
+  
+  @Test
+  public void testValuesEnum() {
+    EList<String> _values = this.singleEnumLang.getValues();
+    final String valueEnumLang = _values.get(0);
+    LinkedHashSet<String> _values_1 = this.singleEnumMetaModel.getValues();
+    final String valueEnumMetaModel = ((String[])Conversions.unwrapArray(_values_1, String.class))[0];
+    Assert.assertEquals(valueEnumLang, valueEnumMetaModel);
   }
 }

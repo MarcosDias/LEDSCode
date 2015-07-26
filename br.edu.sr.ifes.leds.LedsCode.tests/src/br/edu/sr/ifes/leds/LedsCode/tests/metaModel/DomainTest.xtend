@@ -19,6 +19,8 @@ import br.edu.sr.ifes.leds.generator.ProjectConverter
 import java.util.Set
 import model.domainLayer.Domain
 import model.domainLayer.Entity
+import model.domainLayer.Method
+import model.domainLayer.ClassEnum
 
 class DomainTest extends AbstractTestClass{
 	
@@ -40,6 +42,10 @@ class DomainTest extends AbstractTestClass{
 	model.domainLayer.Attribute singleAttrMetaModel
 	
 	model.domainLayer.Repository repositoryMetaModel
+	
+	Method fieldRepositoryMetaModel
+	
+	ClassEnum singleEnumMetaModel
 	
 	@Before
 	def void setUp(){
@@ -63,6 +69,8 @@ class DomainTest extends AbstractTestClass{
 		singleEntityMetaModel = singleModuleMetaModel.entities.get(0)
 		singleAttrMetaModel = singleEntityMetaModel.attributes.get(0)
 		repositoryMetaModel = singleEntityMetaModel.repository
+		fieldRepositoryMetaModel = repositoryMetaModel.methods.get(0)
+		singleEnumMetaModel = singleModuleMetaModel.enums.get(0)
 	}
 	
 	@Test
@@ -162,34 +170,36 @@ class DomainTest extends AbstractTestClass{
   		assertEquals(repositoryLang.methods.size, repositoryMetaModel.methods.size)
   	}
   	
-  	/*@Test
+  	@Test
   	def testRepositoryFields(){
-  		val methodParameter = fieldRepository.methodsParameters.typeAndAttr.get(0)
+  		val methodParameterLang = fieldRepositoryLang.methodsParameters.typeAndAttr.get(0)
+  		val methodParameterMetaModel = fieldRepositoryMetaModel.parameters.get(0)
   		
-  		assertEquals("findMediaByCharacter", fieldRepository.nameMethod)
-  		assertEquals("List<Media>", fieldRepository.returnType)
-  		assertEquals("String", methodParameter.type)
-  		assertEquals("characterName", methodParameter.name)
+  		assertEquals(fieldRepositoryLang.nameMethod, fieldRepositoryMetaModel.name)
+  		assertEquals(fieldRepositoryLang.returnType, fieldRepositoryMetaModel.returnMethod.genericType())
+  		assertEquals(methodParameterLang.type, methodParameterMetaModel.genericType)
+  		assertEquals(methodParameterLang.name, methodParameterMetaModel.name)
   	}
   	
   	@Test
   	def testQtdEnums(){
-  		assertEquals(2, singleModule.enumBlock.size)
+  		assertEquals(singleModuleLang.enumBlock.size, singleModuleMetaModel.enums.size)
   	}
   	
   	@Test
   	def testEnumName(){
-  		assertEquals("Gender", singleEnum.name)
+  		assertEquals(singleEnumLang.name, singleEnumMetaModel.name)
   	}
   	
   	@Test
   	def testQtdValuesEnums(){
-  		assertEquals(2, singleEnum.values.size)
+  		assertEquals(singleEnumLang.values.size, singleEnumMetaModel.values.size)
   	}
   	
   	@Test
   	def testValuesEnum(){
-  		val valueEnum = singleEnum.values.get(0)
-		assertEquals("FEMALE", valueEnum)  		
-  	}*/	
+  		val valueEnumLang = singleEnumLang.values.get(0)
+  		val valueEnumMetaModel = singleEnumMetaModel.values.get(0)
+		assertEquals(valueEnumLang, valueEnumMetaModel)  		
+  	}	
 }
