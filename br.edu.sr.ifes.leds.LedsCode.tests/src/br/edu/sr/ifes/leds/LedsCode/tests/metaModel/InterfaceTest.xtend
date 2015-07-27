@@ -8,19 +8,26 @@ import org.junit.Test
 
 import static org.junit.Assert.*
 import model.interfaceLayer.Interface
+import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication
 
 class InterfaceTest extends AbstractTestClass{
 	InterfaceBlock ifaceLang
+	InterfaceApplication ifaceFieldLang
 	
 	Interface ifaceMetaModel
+	model.interfaceLayer.InterfaceApplication ifaceFieldMetaModel
+	
+	
 	
 	@Before
 	def void setUp(){
 		projectLang = parseProject()
 		ifaceLang = projectLang.interfaceBlock
+		ifaceFieldLang = ifaceLang.interfaceApplication.get(0)
 		
 		projectMetaModel = new ProjectConverter().convert(projectLang);
 		ifaceMetaModel = projectMetaModel.iface
+		ifaceFieldMetaModel = ifaceMetaModel.interfaceApplication.get(0)
 	}
   	
   	@Test
@@ -28,17 +35,15 @@ class InterfaceTest extends AbstractTestClass{
   		assertEquals(ifaceLang.name, ifaceMetaModel.name)
   	}
   	
-  	/*@Test
+  	@Test
   	def testQtdInterfaceField(){
-  		assertEquals(2, iface.interfaceApplication.size())
+  		assertEquals(ifaceLang.interfaceApplication.size, ifaceMetaModel.interfaceApplication.size)
   	}
   	
   	@Test
   	def testTypeInterfaceFields(){
-  		val ifaceField = iface.interfaceApplication.get(0)
-  			
-  		assertEquals("HtmlView", ifaceField.type)
-  		assertEquals("Interface1", ifaceField.name)
-  		assertEquals("AppDomain", ifaceField.nameApp)
-  	}*/
+  		assertEquals(ifaceFieldLang.type, ifaceFieldMetaModel.type.valor)
+  		assertEquals(ifaceFieldLang.name, ifaceFieldMetaModel.name)
+  		assertEquals(ifaceFieldLang.nameApp, ifaceFieldMetaModel.application.name)
+  	}
 }

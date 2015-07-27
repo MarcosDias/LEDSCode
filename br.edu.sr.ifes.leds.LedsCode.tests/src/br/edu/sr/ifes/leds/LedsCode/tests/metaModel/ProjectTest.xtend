@@ -19,9 +19,9 @@ class ProjectTest extends AbstractTestClass{
   	def testProject(){
   		assertEquals(projectLang.name, projectMetaModel.getName())
   		assertNotNull(projectMetaModel.created)
-	    //assertNotNull(projectMetaModel.domains)
+	    assertNotNull(projectMetaModel.domains)
   		assertNotNull(projectMetaModel.infrastructure)
-	    //assertNotNull(projectMetaModel.iface)
-	    //assertNotNull(projectMetaModel.applications)	
+	    assertNotNull(projectMetaModel.applications)
+	    assertNotNull(projectMetaModel.iface)
   	}
 }

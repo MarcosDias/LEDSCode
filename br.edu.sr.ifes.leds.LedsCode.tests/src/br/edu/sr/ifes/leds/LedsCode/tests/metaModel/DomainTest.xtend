@@ -21,6 +21,8 @@ import model.domainLayer.Domain
 import model.domainLayer.Entity
 import model.domainLayer.Method
 import model.domainLayer.ClassEnum
+import model.domainLayer.Service
+import model.domainLayer.InternalServiceMethod
 
 class DomainTest extends AbstractTestClass{
 	
@@ -40,12 +42,11 @@ class DomainTest extends AbstractTestClass{
 	model.domainLayer.Module singleModuleMetaModel
 	Entity singleEntityMetaModel
 	model.domainLayer.Attribute singleAttrMetaModel
-	
 	model.domainLayer.Repository repositoryMetaModel
-	
 	Method fieldRepositoryMetaModel
-	
 	ClassEnum singleEnumMetaModel
+	Service singleServiceMetaModel
+	InternalServiceMethod fieldSingleServiceMetaModel
 	
 	@Before
 	def void setUp(){
@@ -65,7 +66,8 @@ class DomainTest extends AbstractTestClass{
 		domainMetaModel = projectMetaModel.domains
 		singleDomMetaModel = domainMetaModel.get(0)
 		singleModuleMetaModel = singleDomMetaModel.modules.get(0)
-		//TODO - Servicos
+		singleServiceMetaModel = singleModuleMetaModel.services.get(0)
+		fieldSingleServiceMetaModel = singleServiceMetaModel.methods.get(0) as model.domainLayer.InternalServiceMethod
 		singleEntityMetaModel = singleModuleMetaModel.entities.get(0)
 		singleAttrMetaModel = singleEntityMetaModel.attributes.get(0)
 		repositoryMetaModel = singleEntityMetaModel.repository
@@ -98,26 +100,26 @@ class DomainTest extends AbstractTestClass{
   		assertEquals(singleModuleLang.name, singleModuleMetaModel.name)
   	}
   	
-  	/*@Test
+  	@Test
   	def testQtdServices(){
-  		assertEquals(2, singleModule.serviceBlock.size)
+  		assertEquals(singleModuleLang.serviceBlock.size, singleModuleMetaModel.services.size)
   	}
   	
   	@Test
   	def testServiceName(){
-  		assertEquals("LibraryService", singleService.name)
+  		assertEquals(singleServiceLang.name, singleServiceMetaModel.name)
   	}
   	
   	@Test
   	def testQtdServicesFields(){
-  		assertEquals(4, singleService.serviceFields.size)
+  		assertEquals(singleServiceLang.serviceFields.size, singleServiceMetaModel.methods.size)
   	}
   	
   	@Test
   	def testNameServiceField(){
-		assertEquals("findLibraryByName", fieldSingleService.name)
-		assertEquals("Library.LibraryRepository.findLibraryByName", fieldSingleService.methodAcess)
-  	}*/
+		assertEquals(fieldSingleServiceLang.name, fieldSingleServiceMetaModel.name)
+		assertEquals(fieldSingleServiceLang.methodAcess, fieldSingleServiceMetaModel.methodAcess)
+  	}
   	
   	@Test
   	def testQtdEntity(){

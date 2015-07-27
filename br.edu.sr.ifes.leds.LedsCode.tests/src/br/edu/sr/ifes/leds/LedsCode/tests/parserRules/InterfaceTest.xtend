@@ -32,6 +32,6 @@ class InterfaceTest extends AbstractTestClass{
   			
   		assertEquals("HtmlView", ifaceField.type)
   		assertEquals("Interface1", ifaceField.name)
-  		assertEquals("AppDomain", ifaceField.nameApp)
+  		assertEquals("LibraryPersonApp", ifaceField.nameApp)
   	}
 }

@@ -1,23 +1,25 @@
 package br.edu.sr.ifes.leds.metamodel.domainlayer
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
+import br.edu.sr.ifes.leds.metamodel.util.FindEntity
 import java.util.LinkedHashSet
 import model.domainLayer.AccessModifier
+import model.domainLayer.Attribute
 import model.domainLayer.CollectionType
 import model.domainLayer.Entity
+import model.domainLayer.Method
+import model.domainLayer.Parameter
 import model.domainLayer.PrimaryDateType
 import model.domainLayer.PrimaryDateTypeEnum
+import model.domainLayer.Repository
 import model.domainLayer.ReturnType
 import model.domainLayer.SuperAttribute
 import org.eclipse.emf.common.util.EList
-import model.domainLayer.Attribute
-import model.domainLayer.Repository
-import model.domainLayer.Method
-import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter
-import model.domainLayer.Parameter
 
 class EntityConverter {
+	FindEntity findEntity
 	
 	/**
 	 * Metodo que converte uma lista de entidades provenientes de uma linguagem
@@ -88,9 +90,9 @@ class EntityConverter {
 	 * @param entityLang entidade da linguagem que que serah processada
 	 */
 	private def buildClassExtendsEntities(LinkedHashSet<Entity> listEntityMetaModel, EntityBlock entityLang) {
-		var entityMetaModel = findEntityInMetaModel(listEntityMetaModel, entityLang)
+		var entityMetaModel = findEntity.inMetaModel(listEntityMetaModel, entityLang)
 		for(extendLang: entityLang.classExtends.values){
-			var extendsMetaModel = findEntityInMetaModel(listEntityMetaModel, extendLang)
+			var extendsMetaModel = findEntity.inMetaModel(listEntityMetaModel, extendLang)
 			entityMetaModel.classExtends.add(extendsMetaModel)
 		}
 	}
@@ -105,14 +107,16 @@ class EntityConverter {
 	 */
 	def convertRepository(LinkedHashSet<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang) {
 		for(entityLang: listEntityLang){
-			var entityMetaModel = findEntityInMetaModel(listEntityMetaModel, entityLang)
+			var entityMetaModel = findEntity.inMetaModel(listEntityMetaModel, entityLang)
 			var repositoryMetaModel = new Repository()
-			
-			repositoryMetaModel.name = entityLang.repository.name
-			repositoryMetaModel.methods = convertRepositoriyMethods(
+			if (entityLang.repository !=null){
+				repositoryMetaModel.name = entityLang.repository.name
+					repositoryMetaModel.methods = convertRepositoriyMethods(
 				listEntityMetaModel, entityLang.repository.methods
 			)
 			entityMetaModel.repository = repositoryMetaModel
+			} 
+			
 		}
 	}
 	
@@ -201,7 +205,7 @@ class EntityConverter {
 	 */
 	def convertAttributes(LinkedHashSet<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang) {
 		for(entityLang: listEntityLang){
-			var entityMetaModel = findEntityInMetaModel(listEntityMetaModel, entityLang)
+			var entityMetaModel = findEntity.inMetaModel(listEntityMetaModel, entityLang)
 			entityMetaModel.attributes = new LinkedHashSet<Attribute>
 			
 			for(attrLang: entityLang.attributes){
@@ -233,52 +237,14 @@ class EntityConverter {
 		var primitiveType = PrimaryDateTypeEnum.fromString(type)
 		
 		if(primitiveType == null){
-			genericTypeMetaModel.datetype = findEntityInMetaModel(listEntityMetaModel, type)
+			genericTypeMetaModel.datetype = findEntity.inMetaModel(listEntityMetaModel, type)
 		}
 		else{
 			genericTypeMetaModel.datetype = new PrimaryDateType(primitiveType)
 		}
 	}
 	
-	/**
-	 * Método que busca uma entidade em um metamodelo,caso encontrado, 
-	 * ele é retornado
-	 * @author MarcosDias
-	 * 
-	 * @param listEntityMetaModel Lista de entidades de um metamodelo
-	 * @param entityLang Objeto entidade de uma linguagem que serah buscado em um metamodelo
-	 * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
-	 */
-	def findEntityInMetaModel(LinkedHashSet<Entity> listEntityMetaModel, EntityBlock entityLang) {
-		findEntityInList(listEntityMetaModel, entityLang.name)
-	}
-	
-	/**
-	 * Método que busca uma entidade em um metamodelo,caso encontrado, 
-	 * ele é retornado
-	 * @author MarcosDias
-	 * 
-	 * @param listEntityMetaModel Lista de entidades de um metamodelo
-	 * @param nameEntity Nome da entidade que deseja ser buscada
-	 * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
-	 */
-	def findEntityInMetaModel(LinkedHashSet<Entity> listEntityMetaModel, String nameEntity) {
-		findEntityInList(listEntityMetaModel, nameEntity)
-	}
-	
-	/**
-	 * Metodo generico que busca entitdade em um metamodelo
-	 * @author MarcosDias
-	 * 
-	 * @param listEntityMetaModel Lista de entidades de um metamodelo
-	 * @param nameEntity Nome da entidade que deseja ser buscada
-	 * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
-	 */
-	private def findEntityInList(LinkedHashSet<Entity> listEntityMetaModel, String nameEntity){
-		for(entityMetaModel: listEntityMetaModel){
-			if(entityMetaModel.name.equals(nameEntity)) 
-				return entityMetaModel
-		}
-		null
+	new(){
+		findEntity = new FindEntity
 	}
 }

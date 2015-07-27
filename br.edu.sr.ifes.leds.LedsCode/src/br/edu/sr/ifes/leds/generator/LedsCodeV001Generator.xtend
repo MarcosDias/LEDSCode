@@ -3,12 +3,13 @@
  */
 package br.edu.sr.ifes.leds.generator
 
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import com.google.inject.Inject
+import ctrl.ConvertToYamlController
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.naming.IQualifiedNameProvider
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 /**
  * Generates code from your model files on save.
@@ -27,10 +28,18 @@ class LedsCodeV001Generator implements IGenerator {
 //				.join(', '))
 		println(resource.allContents.toIterable.size())
 		
-		//val p = resource.allContents.toIterable.head as Project 
+
 		//println(resource.allContents.toIterable.head.toString())		
-		for(e: resource.allContents.toIterable.filter(Project)) {
-    		println(e.toString)
-  		}
+		/*for(projectLang: resource.allContents.toIterable.filter(Project)) {
+			var projectMetaModel = new ProjectConverter().convert(projectLang)
+    		println(ConvertToYamlController.convert(projectMetaModel))
+  		}*/
+  		var projectLang = resource.allContents.toIterable.filter(Project).head
+  		var conversor = new ProjectConverter
+  		var metaModelo = conversor.convert(projectLang)
+  		print(metaModelo.name)
+  		println(ConvertToYamlController.convert(metaModelo))
+  		//convert(resource.allContents.toIterable.filter(Project).head)
+  		//print(new ProjectConverter().convert(resource.allContents.toIterable.filter(Project).head).name)
 	}
 }

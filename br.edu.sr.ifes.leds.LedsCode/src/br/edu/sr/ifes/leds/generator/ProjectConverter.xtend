@@ -5,29 +5,42 @@ import br.edu.sr.ifes.leds.metamodel.DomainConverter
 import br.edu.sr.ifes.leds.metamodel.InfrastructureConverter
 import br.edu.sr.ifes.leds.metamodel.InterfaceConverter
 import java.util.Calendar
+import br.edu.sr.ifes.leds.metamodel.AppConverter
 
 class ProjectConverter {
 	
-	model.mainLayer.Project projectMetaModel
-	
-	InfrastructureConverter infraConverter
-	InterfaceConverter ifaceConverter
-	DomainConverter domainConverter	
+	//model.mainLayer.Project projectMetaModel
+	//InfrastructureConverter infraConverter
+	//InterfaceConverter ifaceConverter
+	//DomainConverter domainConverter
+	//AppConverter appConverter
 	
 	def convert(Project projectLang){
+		var projectMetaModel = new model.mainLayer.Project
+		var infraConverter = new InfrastructureConverter
+		var ifaceConverter = new InterfaceConverter
+		var domainConverter = new DomainConverter
+		var appConverter = new AppConverter
+		
 		projectMetaModel.name = projectLang.name
 		projectMetaModel.created = Calendar.instance
 		projectMetaModel.domains = domainConverter.converter(projectLang.domainBlock)
 		projectMetaModel.infrastructure = infraConverter.convert(projectLang.infrastructureBlock)
-		projectMetaModel.iface = ifaceConverter.conveter(projectLang.interfaceBlock)
+		projectMetaModel.applications = appConverter.conveter(
+			projectLang.applicationBlock, projectMetaModel.domains
+		)
+		projectMetaModel.iface = ifaceConverter.conveter(
+			projectLang.interfaceBlock, projectMetaModel.applications
+		)
 		
 		projectMetaModel
 	}
 	
-	new(){
-		projectMetaModel = new model.mainLayer.Project
-		infraConverter = new InfrastructureConverter
+	/*new(){
+		
+		/*infraConverter = new InfrastructureConverter
 		ifaceConverter = new InterfaceConverter
 		domainConverter = new DomainConverter
-	}
+		appConverter = new AppConverter
+	}*/
 }

@@ -26,17 +26,12 @@ module Module {
 '''
 service LibraryService {
 	//nome => entity.repositorio.metodo
-	//nome => service.metodo
-	//nome => module.service.metodo
-	//nome => domain.module.service.metodo
-	findLibraryByName => Library.LibraryRepository.findLibraryByName
-	findMediaByName => Media.MediaRepository.findMediaByName
-	findMediaByCharacter => Media.MediaRepository.findMediaByCharacter
-	findPersonByName => PersonService.findPersonByName
+	findLibraryByName => Media.MediaRepository.findMediaByCharacter
+	findMediaByName => LibraryEntity.LibraryRepository.findLibraryByName
 }
 
 service PersonService {
-	findPersonByName => PersonRepository.findPersonByName
+	findPersonByName => LibraryEntity.LibraryRepository.findLibraryByName
 }
 '''
 	}

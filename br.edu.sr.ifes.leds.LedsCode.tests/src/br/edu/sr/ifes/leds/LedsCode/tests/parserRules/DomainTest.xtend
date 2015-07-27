@@ -76,13 +76,13 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testQtdServicesFields(){
-  		assertEquals(4, singleService.serviceFields.size)
+  		assertEquals(2, singleService.serviceFields.size)
   	}
   	
   	@Test
   	def testNameServiceField(){
 		assertEquals("findLibraryByName", fieldSingleService.name)
-		assertEquals("Library.LibraryRepository.findLibraryByName", fieldSingleService.methodAcess)
+		assertEquals("Media.MediaRepository.findMediaByCharacter", fieldSingleService.methodAcess)
   	}
   	
   	@Test

@@ -52,13 +52,13 @@ class DomainConverter {
 			moduleMetaModel.name = moduleLang.name
 			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock)
 			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock)
-			//moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock)
+			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel.entities)
 			
 			setModulesMetaModule.add(moduleMetaModel)
 		}
 		
 		setModulesMetaModule
-	}	
+	}
 	
 	new(){
 		entityConverter = new EntityConverter
