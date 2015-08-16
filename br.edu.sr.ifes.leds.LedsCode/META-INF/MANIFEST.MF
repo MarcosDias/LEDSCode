@@ -28,3 +28,7 @@ Export-Package: br.edu.sr.ifes.leds,
  br.edu.sr.ifes.leds.scoping,
  br.edu.sr.ifes.leds.generator,
  br.edu.sr.ifes.leds.formatting
+Bundle-ClassPath: jyaml-1.3.jar,
+ lombok-1.12.6.jar,
+ metamodel-1.0-SNAPSHOT.jar,
+ .

@@ -4617,7 +4617,7 @@ rule__EntityBlock__Group__7__Impl
 :
 (
 { before(grammarAccess.getEntityBlockAccess().getRepositoryAssignment_7()); }
-(rule__EntityBlock__RepositoryAssignment_7)?
+(rule__EntityBlock__RepositoryAssignment_7)
 { after(grammarAccess.getEntityBlockAccess().getRepositoryAssignment_7()); }
 )
 

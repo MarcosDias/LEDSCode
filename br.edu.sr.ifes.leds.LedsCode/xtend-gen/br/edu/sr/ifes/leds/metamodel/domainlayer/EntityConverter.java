@@ -5,6 +5,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
+import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
 import com.google.common.base.Objects;
 import java.util.LinkedHashSet;
 import model.domainLayer.AccessModifier;
@@ -22,6 +23,8 @@ import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class EntityConverter {
+  private FindEntity findEntity;
+  
   /**
    * Metodo que converte uma lista de entidades provenientes de uma linguagem
    * em objetos do metamodelo
@@ -109,12 +112,12 @@ public class EntityConverter {
    * @param entityLang entidade da linguagem que que serah processada
    */
   private void buildClassExtendsEntities(final LinkedHashSet<Entity> listEntityMetaModel, final EntityBlock entityLang) {
-    Entity entityMetaModel = this.findEntityInMetaModel(listEntityMetaModel, entityLang);
+    Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, entityLang);
     ExtendBlock _classExtends = entityLang.getClassExtends();
     EList<String> _values = _classExtends.getValues();
     for (final String extendLang : _values) {
       {
-        Entity extendsMetaModel = this.findEntityInMetaModel(listEntityMetaModel, extendLang);
+        Entity extendsMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, extendLang);
         LinkedHashSet<Entity> _classExtends_1 = entityMetaModel.getClassExtends();
         _classExtends_1.add(extendsMetaModel);
       }
@@ -132,16 +135,20 @@ public class EntityConverter {
   public void convertRepository(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang) {
     for (final EntityBlock entityLang : listEntityLang) {
       {
-        Entity entityMetaModel = this.findEntityInMetaModel(listEntityMetaModel, entityLang);
+        Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, entityLang);
         Repository repositoryMetaModel = new Repository();
         br.edu.sr.ifes.leds.ledsCodeV001.Repository _repository = entityLang.getRepository();
-        String _name = _repository.getName();
-        repositoryMetaModel.setName(_name);
-        br.edu.sr.ifes.leds.ledsCodeV001.Repository _repository_1 = entityLang.getRepository();
-        EList<RepositoryFields> _methods = _repository_1.getMethods();
-        LinkedHashSet<Method> _convertRepositoriyMethods = this.convertRepositoriyMethods(listEntityMetaModel, _methods);
-        repositoryMetaModel.setMethods(_convertRepositoriyMethods);
-        entityMetaModel.setRepository(repositoryMetaModel);
+        boolean _notEquals = (!Objects.equal(_repository, null));
+        if (_notEquals) {
+          br.edu.sr.ifes.leds.ledsCodeV001.Repository _repository_1 = entityLang.getRepository();
+          String _name = _repository_1.getName();
+          repositoryMetaModel.setName(_name);
+          br.edu.sr.ifes.leds.ledsCodeV001.Repository _repository_2 = entityLang.getRepository();
+          EList<RepositoryFields> _methods = _repository_2.getMethods();
+          LinkedHashSet<Method> _convertRepositoriyMethods = this.convertRepositoriyMethods(listEntityMetaModel, _methods);
+          repositoryMetaModel.setMethods(_convertRepositoriyMethods);
+          entityMetaModel.setRepository(repositoryMetaModel);
+        }
       }
     }
   }
@@ -262,7 +269,7 @@ public class EntityConverter {
   public void convertAttributes(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang) {
     for (final EntityBlock entityLang : listEntityLang) {
       {
-        Entity entityMetaModel = this.findEntityInMetaModel(listEntityMetaModel, entityLang);
+        Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, entityLang);
         LinkedHashSet<Attribute> _linkedHashSet = new LinkedHashSet<Attribute>();
         entityMetaModel.setAttributes(_linkedHashSet);
         EList<br.edu.sr.ifes.leds.ledsCodeV001.Attribute> _attributes = entityLang.getAttributes();
@@ -296,61 +303,16 @@ public class EntityConverter {
     PrimaryDateTypeEnum primitiveType = PrimaryDateTypeEnum.fromString(type);
     boolean _equals = Objects.equal(primitiveType, null);
     if (_equals) {
-      Entity _findEntityInMetaModel = this.findEntityInMetaModel(listEntityMetaModel, type);
-      genericTypeMetaModel.setDatetype(_findEntityInMetaModel);
+      Entity _inMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, type);
+      genericTypeMetaModel.setDatetype(_inMetaModel);
     } else {
       PrimaryDateType _primaryDateType = new PrimaryDateType(primitiveType);
       genericTypeMetaModel.setDatetype(_primaryDateType);
     }
   }
   
-  /**
-   * Método que busca uma entidade em um metamodelo,caso encontrado,
-   * ele é retornado
-   * @author MarcosDias
-   * 
-   * @param listEntityMetaModel Lista de entidades de um metamodelo
-   * @param entityLang Objeto entidade de uma linguagem que serah buscado em um metamodelo
-   * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
-   */
-  public Entity findEntityInMetaModel(final LinkedHashSet<Entity> listEntityMetaModel, final EntityBlock entityLang) {
-    String _name = entityLang.getName();
-    return this.findEntityInList(listEntityMetaModel, _name);
-  }
-  
-  /**
-   * Método que busca uma entidade em um metamodelo,caso encontrado,
-   * ele é retornado
-   * @author MarcosDias
-   * 
-   * @param listEntityMetaModel Lista de entidades de um metamodelo
-   * @param nameEntity Nome da entidade que deseja ser buscada
-   * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
-   */
-  public Entity findEntityInMetaModel(final LinkedHashSet<Entity> listEntityMetaModel, final String nameEntity) {
-    return this.findEntityInList(listEntityMetaModel, nameEntity);
-  }
-  
-  /**
-   * Metodo generico que busca entitdade em um metamodelo
-   * @author MarcosDias
-   * 
-   * @param listEntityMetaModel Lista de entidades de um metamodelo
-   * @param nameEntity Nome da entidade que deseja ser buscada
-   * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
-   */
-  private Entity findEntityInList(final LinkedHashSet<Entity> listEntityMetaModel, final String nameEntity) {
-    Object _xblockexpression = null;
-    {
-      for (final Entity entityMetaModel : listEntityMetaModel) {
-        String _name = entityMetaModel.getName();
-        boolean _equals = _name.equals(nameEntity);
-        if (_equals) {
-          return entityMetaModel;
-        }
-      }
-      _xblockexpression = null;
-    }
-    return ((Entity)_xblockexpression);
+  public EntityConverter() {
+    FindEntity _findEntity = new FindEntity();
+    this.findEntity = _findEntity;
   }
 }

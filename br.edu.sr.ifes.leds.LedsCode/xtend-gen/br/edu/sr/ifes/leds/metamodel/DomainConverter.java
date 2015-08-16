@@ -4,6 +4,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Module;
+import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.ServiceConverter;
@@ -11,6 +12,7 @@ import java.util.LinkedHashSet;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Domain;
 import model.domainLayer.Entity;
+import model.domainLayer.Service;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -73,6 +75,10 @@ public class DomainConverter {
           EList<EnumBlock> _enumBlock = moduleLang.getEnumBlock();
           LinkedHashSet<ClassEnum> _convert_1 = this.enumConverter.convert(_enumBlock);
           moduleMetaModel.setEnums(_convert_1);
+          EList<ServiceBlock> _serviceBlock = moduleLang.getServiceBlock();
+          LinkedHashSet<Entity> _entities = moduleMetaModel.getEntities();
+          LinkedHashSet<Service> _convert_2 = this.serviceConverter.convert(_serviceBlock, _entities);
+          moduleMetaModel.setServices(_convert_2);
           setModulesMetaModule.add(moduleMetaModel);
         }
       }

@@ -43,6 +43,6 @@ public class InterfaceTest extends AbstractTestClass {
     String _name = ifaceField.getName();
     Assert.assertEquals("Interface1", _name);
     String _nameApp = ifaceField.getNameApp();
-    Assert.assertEquals("AppDomain", _nameApp);
+    Assert.assertEquals("LibraryPersonApp", _nameApp);
   }
 }

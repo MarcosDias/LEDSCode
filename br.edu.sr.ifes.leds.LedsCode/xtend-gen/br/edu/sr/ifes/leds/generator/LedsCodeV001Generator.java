@@ -3,7 +3,9 @@
  */
 package br.edu.sr.ifes.leds.generator;
 
+import br.edu.sr.ifes.leds.generator.ProjectConverter;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
+import br.edu.sr.ifes.leds.transformador.springroo.ctrl.SpringRooController;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -12,8 +14,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
@@ -30,16 +32,28 @@ public class LedsCodeV001Generator implements IGenerator {
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-    TreeIterator<EObject> _allContents = resource.getAllContents();
-    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-    int _size = IterableExtensions.size(_iterable);
-    InputOutput.<Integer>println(Integer.valueOf(_size));
-    TreeIterator<EObject> _allContents_1 = resource.getAllContents();
-    Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
-    Iterable<Project> _filter = Iterables.<Project>filter(_iterable_1, Project.class);
-    for (final Project e : _filter) {
-      String _string = e.toString();
-      InputOutput.<String>println(_string);
+    ProjectConverter conversor = new ProjectConverter();
+    SpringRooController springRooConversor = new SpringRooController();
+    try {
+      TreeIterator<EObject> _allContents = resource.getAllContents();
+      Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+      Iterable<Project> _filter = Iterables.<Project>filter(_iterable, Project.class);
+      Project projectLang = IterableExtensions.<Project>head(_filter);
+      model.mainLayer.Project metaModelo = conversor.convert(projectLang);
+      String scriptProject = springRooConversor.createProject(metaModelo);
+      String _name = springRooConversor.getName();
+      String _plus = (_name + "-");
+      String _name_1 = metaModelo.getName();
+      String _plus_1 = (_plus + _name_1);
+      String _plus_2 = (_plus_1 + ".roo");
+      fsa.generateFile(_plus_2, scriptProject);
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        final Exception e = (Exception)_t;
+        e.printStackTrace();
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
     }
   }
 }

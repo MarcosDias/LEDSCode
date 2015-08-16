@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.naming.IQualifiedNameProvider
+import br.edu.sr.ifes.leds.transformador.springroo.ctrl.SpringRooController
 
 /**
  * Generates code from your model files on save.
@@ -21,25 +22,18 @@ class LedsCodeV001Generator implements IGenerator {
 	@Inject extension IQualifiedNameProvider
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
-		println(resource.allContents.toIterable.size())
+		var conversor = new ProjectConverter
+		var springRooConversor = new SpringRooController
 		
-
-		//println(resource.allContents.toIterable.head.toString())		
-		/*for(projectLang: resource.allContents.toIterable.filter(Project)) {
-			var projectMetaModel = new ProjectConverter().convert(projectLang)
-    		println(ConvertToYamlController.convert(projectMetaModel))
-  		}*/
-  		var projectLang = resource.allContents.toIterable.filter(Project).head
-  		var conversor = new ProjectConverter
-  		var metaModelo = conversor.convert(projectLang)
-  		print(metaModelo.name)
-  		println(ConvertToYamlController.convert(metaModelo))
-  		//convert(resource.allContents.toIterable.filter(Project).head)
-  		//print(new ProjectConverter().convert(resource.allContents.toIterable.filter(Project).head).name)
+		try{
+			var projectLang = resource.allContents.toIterable.filter(Project).head
+			var metaModelo = conversor.convert(projectLang)
+			var scriptProject = springRooConversor.createProject(metaModelo)
+			
+			fsa.generateFile(springRooConversor.name+'-'+metaModelo.name+'.roo', scriptProject)
+			
+		}catch (Exception e){
+			e.printStackTrace
+		}
 	}
 }

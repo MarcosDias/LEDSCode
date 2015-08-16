@@ -765,11 +765,11 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EntityBlock:
 		//	acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID classExtends=ExtendBlock? "{"
-		//	attributes+=Attribute* repository=Repository? "}";
+		//	attributes+=Attribute* repository=Repository "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID classExtends=ExtendBlock? "{"
-		//attributes+=Attribute* repository=Repository? "}"
+		//attributes+=Attribute* repository=Repository "}"
 		public Group getGroup() { return cGroup; }
 
 		//acessModifier=AccessModifier?
@@ -808,7 +808,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//Attribute
 		public RuleCall getAttributesAttributeParserRuleCall_6_0() { return cAttributesAttributeParserRuleCall_6_0; }
 
-		//repository=Repository?
+		//repository=Repository
 		public Assignment getRepositoryAssignment_7() { return cRepositoryAssignment_7; }
 
 		//Repository
@@ -1582,7 +1582,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	//EntityBlock:
 	//	acessModifier=AccessModifier? isAbstract?="abstract"? "entity" name=ID classExtends=ExtendBlock? "{"
-	//	attributes+=Attribute* repository=Repository? "}";
+	//	attributes+=Attribute* repository=Repository "}";
 	public EntityBlockElements getEntityBlockAccess() {
 		return pEntityBlock;
 	}

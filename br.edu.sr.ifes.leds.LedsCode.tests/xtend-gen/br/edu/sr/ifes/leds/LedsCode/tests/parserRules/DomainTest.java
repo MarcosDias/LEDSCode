@@ -116,7 +116,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdServicesFields() {
     EList<ServiceMethod> _serviceFields = this.singleService.getServiceFields();
     int _size = _serviceFields.size();
-    Assert.assertEquals(4, _size);
+    Assert.assertEquals(2, _size);
   }
   
   @Test
@@ -124,7 +124,7 @@ public class DomainTest extends AbstractTestClass {
     String _name = this.fieldSingleService.getName();
     Assert.assertEquals("findLibraryByName", _name);
     String _methodAcess = this.fieldSingleService.getMethodAcess();
-    Assert.assertEquals("Library.LibraryRepository.findLibraryByName", _methodAcess);
+    Assert.assertEquals("Media.MediaRepository.findMediaByCharacter", _methodAcess);
   }
   
   @Test

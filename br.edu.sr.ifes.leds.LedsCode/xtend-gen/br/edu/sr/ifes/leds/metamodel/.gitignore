@@ -6,3 +6,10 @@
 /.InfrastructureConverter.java._trace
 /.InterfaceConverter.java._trace
 /.DomainConverter.java._trace
+/.AppConverter.java._trace
+/.DomainConverter.xtendbin
+/.InfrastructureConverter.xtendbin
+/.InterfaceConverter.xtendbin
+/DomainConverter.java
+/InfrastructureConverter.java
+/InterfaceConverter.java

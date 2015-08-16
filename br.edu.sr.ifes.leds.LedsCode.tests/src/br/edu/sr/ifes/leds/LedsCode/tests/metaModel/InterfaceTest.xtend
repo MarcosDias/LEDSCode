@@ -7,8 +7,8 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import model.interfaceLayer.Interface
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication
+import model.interfaceLayer.Interface
 
 class InterfaceTest extends AbstractTestClass{
 	InterfaceBlock ifaceLang

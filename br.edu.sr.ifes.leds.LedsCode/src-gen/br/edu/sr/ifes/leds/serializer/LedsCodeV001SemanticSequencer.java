@@ -185,7 +185,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         name=ID 
 	 *         classExtends=ExtendBlock? 
 	 *         attributes+=Attribute* 
-	 *         repository=Repository?
+	 *         repository=Repository
 	 *     )
 	 */
 	protected void sequence_EntityBlock(EObject context, EntityBlock semanticObject) {

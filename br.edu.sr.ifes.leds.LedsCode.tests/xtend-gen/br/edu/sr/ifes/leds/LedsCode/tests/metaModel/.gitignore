@@ -4,3 +4,10 @@
 /.InfrastructureTest.java._trace
 /.InterfaceTest.java._trace
 /.DomainTest.java._trace
+/.ApplicationTest.java._trace
+/.DomainTest.xtendbin
+/.InfrastructureTest.xtendbin
+/.InterfaceTest.xtendbin
+/DomainTest.java
+/InfrastructureTest.java
+/InterfaceTest.java

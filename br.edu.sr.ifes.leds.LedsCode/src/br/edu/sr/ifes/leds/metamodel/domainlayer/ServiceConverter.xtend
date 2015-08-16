@@ -41,10 +41,10 @@ class ServiceConverter {
 		var splitMethodAcessLang = methodAcessLang.split("\\.")
 		var serviceMethodMetaModel = new InternalServiceMethod
 		serviceMethodMetaModel.entity = findEntity.inMetaModel(listEntityMetaModel, splitMethodAcessLang.get(0))
-		/* todo var repositoryMethod = findRepositoryMethod.inRepository(
+		var repositoryMethod = findRepositoryMethod.inRepository(
 			serviceMethodMetaModel.entity.repository.methods, splitMethodAcessLang.get(2)
-		)*/
-		//serviceMethodMetaModel.method = repositoryMethod
+		)
+		serviceMethodMetaModel.method = repositoryMethod
 		serviceMethodMetaModel
 	}
 	

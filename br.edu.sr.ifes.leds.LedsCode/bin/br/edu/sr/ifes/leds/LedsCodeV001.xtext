@@ -95,7 +95,7 @@ EntityBlock:
 	name=ID classExtends=ExtendBlock? '{'
 		(attributes+=Attribute)*
 		
-		repository=Repository?
+		repository=Repository 
 	'}' 
 ;
 

@@ -21,9 +21,11 @@ import model.domainLayer.AccessModifier;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Domain;
 import model.domainLayer.Entity;
+import model.domainLayer.InternalServiceMethod;
 import model.domainLayer.Method;
 import model.domainLayer.Parameter;
 import model.domainLayer.ReturnType;
+import model.domainLayer.Service;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.junit.Assert;
@@ -68,6 +70,10 @@ public class DomainTest extends AbstractTestClass {
   
   private ClassEnum singleEnumMetaModel;
   
+  private Service singleServiceMetaModel;
+  
+  private InternalServiceMethod fieldSingleServiceMetaModel;
+  
   @Before
   public void setUp() {
     Project _parseProject = this.parseProject();
@@ -109,20 +115,26 @@ public class DomainTest extends AbstractTestClass {
     LinkedHashSet<model.domainLayer.Module> _modules = this.singleDomMetaModel.getModules();
     model.domainLayer.Module _get_9 = ((model.domainLayer.Module[])Conversions.unwrapArray(_modules, model.domainLayer.Module.class))[0];
     this.singleModuleMetaModel = _get_9;
+    LinkedHashSet<Service> _services = this.singleModuleMetaModel.getServices();
+    Service _get_10 = ((Service[])Conversions.unwrapArray(_services, Service.class))[0];
+    this.singleServiceMetaModel = _get_10;
+    LinkedHashSet<model.domainLayer.ServiceMethod> _methods_1 = this.singleServiceMetaModel.getMethods();
+    model.domainLayer.ServiceMethod _get_11 = ((model.domainLayer.ServiceMethod[])Conversions.unwrapArray(_methods_1, model.domainLayer.ServiceMethod.class))[0];
+    this.fieldSingleServiceMetaModel = ((InternalServiceMethod) _get_11);
     LinkedHashSet<Entity> _entities = this.singleModuleMetaModel.getEntities();
-    Entity _get_10 = ((Entity[])Conversions.unwrapArray(_entities, Entity.class))[0];
-    this.singleEntityMetaModel = _get_10;
+    Entity _get_12 = ((Entity[])Conversions.unwrapArray(_entities, Entity.class))[0];
+    this.singleEntityMetaModel = _get_12;
     LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
-    model.domainLayer.Attribute _get_11 = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[0];
-    this.singleAttrMetaModel = _get_11;
+    model.domainLayer.Attribute _get_13 = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[0];
+    this.singleAttrMetaModel = _get_13;
     model.domainLayer.Repository _repository_1 = this.singleEntityMetaModel.getRepository();
     this.repositoryMetaModel = _repository_1;
-    LinkedHashSet<Method> _methods_1 = this.repositoryMetaModel.getMethods();
-    Method _get_12 = ((Method[])Conversions.unwrapArray(_methods_1, Method.class))[0];
-    this.fieldRepositoryMetaModel = _get_12;
+    LinkedHashSet<Method> _methods_2 = this.repositoryMetaModel.getMethods();
+    Method _get_14 = ((Method[])Conversions.unwrapArray(_methods_2, Method.class))[0];
+    this.fieldRepositoryMetaModel = _get_14;
     LinkedHashSet<ClassEnum> _enums = this.singleModuleMetaModel.getEnums();
-    ClassEnum _get_13 = ((ClassEnum[])Conversions.unwrapArray(_enums, ClassEnum.class))[0];
-    this.singleEnumMetaModel = _get_13;
+    ClassEnum _get_15 = ((ClassEnum[])Conversions.unwrapArray(_enums, ClassEnum.class))[0];
+    this.singleEnumMetaModel = _get_15;
   }
   
   @Test
@@ -162,28 +174,41 @@ public class DomainTest extends AbstractTestClass {
     Assert.assertEquals(_name, _name_1);
   }
   
-  /**
-   * @Test
-   * def testQtdServices(){
-   * assertEquals(2, singleModule.serviceBlock.size)
-   * }
-   * 
-   * @Test
-   * def testServiceName(){
-   * assertEquals("LibraryService", singleService.name)
-   * }
-   * 
-   * @Test
-   * def testQtdServicesFields(){
-   * assertEquals(4, singleService.serviceFields.size)
-   * }
-   * 
-   * @Test
-   * def testNameServiceField(){
-   * assertEquals("findLibraryByName", fieldSingleService.name)
-   * assertEquals("Library.LibraryRepository.findLibraryByName", fieldSingleService.methodAcess)
-   * }
-   */
+  @Test
+  public void testQtdServices() {
+    EList<ServiceBlock> _serviceBlock = this.singleModuleLang.getServiceBlock();
+    int _size = _serviceBlock.size();
+    LinkedHashSet<Service> _services = this.singleModuleMetaModel.getServices();
+    int _size_1 = _services.size();
+    Assert.assertEquals(_size, _size_1);
+  }
+  
+  @Test
+  public void testServiceName() {
+    String _name = this.singleServiceLang.getName();
+    String _name_1 = this.singleServiceMetaModel.getName();
+    Assert.assertEquals(_name, _name_1);
+  }
+  
+  @Test
+  public void testQtdServicesFields() {
+    EList<ServiceMethod> _serviceFields = this.singleServiceLang.getServiceFields();
+    int _size = _serviceFields.size();
+    LinkedHashSet<model.domainLayer.ServiceMethod> _methods = this.singleServiceMetaModel.getMethods();
+    int _size_1 = _methods.size();
+    Assert.assertEquals(_size, _size_1);
+  }
+  
+  @Test
+  public void testNameServiceField() {
+    String _name = this.fieldSingleServiceLang.getName();
+    String _name_1 = this.fieldSingleServiceMetaModel.getName();
+    Assert.assertEquals(_name, _name_1);
+    String _methodAcess = this.fieldSingleServiceLang.getMethodAcess();
+    String _methodAcess_1 = this.fieldSingleServiceMetaModel.methodAcess();
+    Assert.assertEquals(_methodAcess, _methodAcess_1);
+  }
+  
   @Test
   public void testQtdEntity() {
     EList<EntityBlock> _entityBlock = this.singleModuleLang.getEntityBlock();

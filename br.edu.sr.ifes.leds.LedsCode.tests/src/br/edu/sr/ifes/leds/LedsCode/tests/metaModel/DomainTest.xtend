@@ -86,7 +86,7 @@ class DomainTest extends AbstractTestClass{
 	}
 	
   	@Test
-  	def testDomainName(){	
+  	def testDomainName(){
 		assertTrue(singleDomLang.name.equals(singleDomMetaModel.name))
   	}
   	
@@ -203,5 +203,5 @@ class DomainTest extends AbstractTestClass{
   		val valueEnumLang = singleEnumLang.values.get(0)
   		val valueEnumMetaModel = singleEnumMetaModel.values.get(0)
 		assertEquals(valueEnumLang, valueEnumMetaModel)  		
-  	}	
+  	}
 }

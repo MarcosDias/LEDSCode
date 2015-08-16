@@ -13,7 +13,7 @@ class ProjectTest extends AbstractTestClass{
   	def void setUp(){
   		projectLang = parseProject()
   		projectMetaModel = new ProjectConverter().convert(projectLang);
-  	}
+  	}	
   	
   	@Test
   	def testProject(){
