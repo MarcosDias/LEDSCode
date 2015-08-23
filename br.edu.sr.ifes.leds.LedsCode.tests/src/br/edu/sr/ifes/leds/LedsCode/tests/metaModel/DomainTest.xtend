@@ -101,6 +101,11 @@ class DomainTest extends AbstractTestClass{
   	}
   	
   	@Test
+  	def testModuleParent(){
+  		assertNotNull(singleModuleMetaModel.parent)
+  	}
+  	
+  	@Test
   	def testQtdServices(){
   		assertEquals(singleModuleLang.serviceBlock.size, singleModuleMetaModel.services.size)
   	}
@@ -108,6 +113,11 @@ class DomainTest extends AbstractTestClass{
   	@Test
   	def testServiceName(){
   		assertEquals(singleServiceLang.name, singleServiceMetaModel.name)
+  	}
+  	
+  	@Test
+  	def testServiceParent(){
+  		assertNotNull(singleServiceMetaModel.parent)
   	}
   	
   	@Test
@@ -133,6 +143,11 @@ class DomainTest extends AbstractTestClass{
   		assertEquals(singleEntityLang.acessModifier, singleEntityMetaModel.accessModifier)
   		assertTrue(singleEntityMetaModel.abstrato)
   		assertNull(singleEntityMetaModel.accessModifier)
+  	}
+  	
+  	@Test
+  	def testEntityParent(){
+  		assertNotNull(singleEntityMetaModel.parent)
   	}
   	
   	@Test

@@ -29,7 +29,7 @@ class DomainConverter {
 		for(domainLang: listDomainLang){
 			val domainMetaModel = new Domain
 			domainMetaModel.name = domainLang.name
-			domainMetaModel.modules = convertModule(domainLang.module)
+			domainMetaModel.modules = convertModule(domainLang.module, domainMetaModel)
 			setDomainMetaModel.add(domainMetaModel)
 		}
 		
@@ -42,17 +42,19 @@ class DomainConverter {
 	 * @author MarcosDias
 	 * 
 	 * @paran listModulesLang Lista de modulos que serao traduzidos
+	 * @param domainMetaModel Dominio que esta sendo processado
 	 * @return LinkedHashSet<model.domainLayer.Module> Set de modulo de metamodelo
 	 */
-	def convertModule(EList<Module> listModulesLang) {
+	def convertModule(EList<Module> listModulesLang, Domain domainMetaModel) {
 		val setModulesMetaModule = new LinkedHashSet<model.domainLayer.Module>
 		
 		for (moduleLang: listModulesLang){
 			var moduleMetaModel = new model.domainLayer.Module
+			moduleMetaModel.parent = domainMetaModel
 			moduleMetaModel.name = moduleLang.name
-			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock)
+			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock, moduleMetaModel)
 			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock)
-			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel.entities)
+			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel)
 			
 			setModulesMetaModule.add(moduleMetaModel)
 		}

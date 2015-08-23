@@ -8,6 +8,7 @@ import java.util.LinkedHashSet;
 import model.domainLayer.Entity;
 import model.domainLayer.InternalServiceMethod;
 import model.domainLayer.Method;
+import model.domainLayer.Module;
 import model.domainLayer.Repository;
 import model.domainLayer.Service;
 import org.eclipse.emf.common.util.EList;
@@ -18,17 +19,19 @@ public class ServiceConverter {
   
   private FindRepositoryMethod findRepositoryMethod;
   
-  public LinkedHashSet<Service> convert(final EList<ServiceBlock> listServiceLang, final LinkedHashSet<Entity> listEntityMetaModel) {
+  public LinkedHashSet<Service> convert(final EList<ServiceBlock> listServiceLang, final Module moduleMetaModel) {
     LinkedHashSet<Service> _xblockexpression = null;
     {
       LinkedHashSet<Service> listServiceMetaModel = new LinkedHashSet<Service>();
       for (final ServiceBlock serviceLang : listServiceLang) {
         {
           Service serviceMetaModel = new Service();
+          serviceMetaModel.setParent(moduleMetaModel);
           String _name = serviceLang.getName();
           serviceMetaModel.setName(_name);
           EList<ServiceMethod> _serviceFields = serviceLang.getServiceFields();
-          LinkedHashSet<model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, listEntityMetaModel);
+          LinkedHashSet<Entity> _entities = moduleMetaModel.getEntities();
+          LinkedHashSet<model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, _entities);
           serviceMetaModel.setMethods(_convertServiceMethod);
           listServiceMetaModel.add(serviceMetaModel);
         }

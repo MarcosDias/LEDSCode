@@ -18,6 +18,7 @@ import model.domainLayer.ReturnType
 import model.domainLayer.SuperAttribute
 import org.eclipse.emf.common.util.EList
 import model.domainLayer.Constraints
+import model.domainLayer.Module
 
 class EntityConverter {
 	FindEntity findEntity
@@ -29,10 +30,11 @@ class EntityConverter {
 	 * 
 	 * @param listEntityLang Lista de entidades que serao traduzidas de objetos
 	 * da linguagem para objetos do metamodelo
+	 * @param moduleMetaModel Modulo que está sendo processado no momento
 	 * @return LinkedHashSet<Entity> Set de entidade do metamodelo
 	 */
-	def convert(EList<EntityBlock> listEntityLang) {
-		var listEntityMetaModel = buildIncompleteEntities(listEntityLang)
+	def convert(EList<EntityBlock> listEntityLang, Module moduleMetaModel) {
+		var listEntityMetaModel = buildIncompleteEntities(listEntityLang, moduleMetaModel)
 		convertClassExtendsEntities(listEntityMetaModel, listEntityLang)
 		convertAttributes(listEntityMetaModel, listEntityLang)
 		convertRepository(listEntityMetaModel, listEntityLang)
@@ -47,12 +49,14 @@ class EntityConverter {
 	 * @author MarcosDias
 	 * 
 	 * @param listEntityLang List de entidades da linguagem
+	 * @param moduleMetaModel Modulo que está sendo processado no momento
 	 * @return LinkedHashSet<Entity> Lista de entidade do metamodelo
 	 */
-	def buildIncompleteEntities(EList<EntityBlock> listEntityLang) {
+	def buildIncompleteEntities(EList<EntityBlock> listEntityLang, Module moduleMetaModel) {
 		var listEntityMetaModel = new LinkedHashSet<Entity>
 		for(entityLang: listEntityLang){
 			var entityMetaModel = new Entity
+			entityMetaModel.parent = moduleMetaModel
 			entityMetaModel.name = entityLang.name
 			entityMetaModel.abstrato = entityLang.isIsAbstract
 			entityMetaModel.accessModifier = AccessModifier.fromString(entityLang.acessModifier)

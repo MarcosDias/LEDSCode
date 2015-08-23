@@ -14,6 +14,7 @@ import model.domainLayer.CollectionType;
 import model.domainLayer.Constraints;
 import model.domainLayer.Entity;
 import model.domainLayer.Method;
+import model.domainLayer.Module;
 import model.domainLayer.Parameter;
 import model.domainLayer.PrimaryDateType;
 import model.domainLayer.PrimaryDateTypeEnum;
@@ -33,12 +34,13 @@ public class EntityConverter {
    * 
    * @param listEntityLang Lista de entidades que serao traduzidas de objetos
    * da linguagem para objetos do metamodelo
+   * @param moduleMetaModel Modulo que está sendo processado no momento
    * @return LinkedHashSet<Entity> Set de entidade do metamodelo
    */
-  public LinkedHashSet<Entity> convert(final EList<EntityBlock> listEntityLang) {
+  public LinkedHashSet<Entity> convert(final EList<EntityBlock> listEntityLang, final Module moduleMetaModel) {
     LinkedHashSet<Entity> _xblockexpression = null;
     {
-      LinkedHashSet<Entity> listEntityMetaModel = this.buildIncompleteEntities(listEntityLang);
+      LinkedHashSet<Entity> listEntityMetaModel = this.buildIncompleteEntities(listEntityLang, moduleMetaModel);
       this.convertClassExtendsEntities(listEntityMetaModel, listEntityLang);
       this.convertAttributes(listEntityMetaModel, listEntityLang);
       this.convertRepository(listEntityMetaModel, listEntityLang);
@@ -55,15 +57,17 @@ public class EntityConverter {
    * @author MarcosDias
    * 
    * @param listEntityLang List de entidades da linguagem
+   * @param moduleMetaModel Modulo que está sendo processado no momento
    * @return LinkedHashSet<Entity> Lista de entidade do metamodelo
    */
-  public LinkedHashSet<Entity> buildIncompleteEntities(final EList<EntityBlock> listEntityLang) {
+  public LinkedHashSet<Entity> buildIncompleteEntities(final EList<EntityBlock> listEntityLang, final Module moduleMetaModel) {
     LinkedHashSet<Entity> _xblockexpression = null;
     {
       LinkedHashSet<Entity> listEntityMetaModel = new LinkedHashSet<Entity>();
       for (final EntityBlock entityLang : listEntityLang) {
         {
           Entity entityMetaModel = new Entity();
+          entityMetaModel.setParent(moduleMetaModel);
           String _name = entityLang.getName();
           entityMetaModel.setName(_name);
           boolean _isIsAbstract = entityLang.isIsAbstract();

@@ -176,6 +176,12 @@ public class DomainTest extends AbstractTestClass {
   }
   
   @Test
+  public void testModuleParent() {
+    Domain _parent = this.singleModuleMetaModel.getParent();
+    Assert.assertNotNull(_parent);
+  }
+  
+  @Test
   public void testQtdServices() {
     EList<ServiceBlock> _serviceBlock = this.singleModuleLang.getServiceBlock();
     int _size = _serviceBlock.size();
@@ -189,6 +195,12 @@ public class DomainTest extends AbstractTestClass {
     String _name = this.singleServiceLang.getName();
     String _name_1 = this.singleServiceMetaModel.getName();
     Assert.assertEquals(_name, _name_1);
+  }
+  
+  @Test
+  public void testServiceParent() {
+    model.domainLayer.Module _parent = this.singleServiceMetaModel.getParent();
+    Assert.assertNotNull(_parent);
   }
   
   @Test
@@ -234,6 +246,12 @@ public class DomainTest extends AbstractTestClass {
     Assert.assertTrue(_isAbstrato_1);
     AccessModifier _accessModifier_1 = this.singleEntityMetaModel.getAccessModifier();
     Assert.assertNull(_accessModifier_1);
+  }
+  
+  @Test
+  public void testEntityParent() {
+    model.domainLayer.Module _parent = this.singleEntityMetaModel.getParent();
+    Assert.assertNotNull(_parent);
   }
   
   @Test

@@ -42,7 +42,7 @@ public class DomainConverter {
           String _name = domainLang.getName();
           domainMetaModel.setName(_name);
           EList<Module> _module = domainLang.getModule();
-          LinkedHashSet<model.domainLayer.Module> _convertModule = this.convertModule(_module);
+          LinkedHashSet<model.domainLayer.Module> _convertModule = this.convertModule(_module, domainMetaModel);
           domainMetaModel.setModules(_convertModule);
           setDomainMetaModel.add(domainMetaModel);
         }
@@ -58,26 +58,27 @@ public class DomainConverter {
    * @author MarcosDias
    * 
    * @paran listModulesLang Lista de modulos que serao traduzidos
+   * @param domainMetaModel Dominio que esta sendo processado
    * @return LinkedHashSet<model.domainLayer.Module> Set de modulo de metamodelo
    */
-  public LinkedHashSet<model.domainLayer.Module> convertModule(final EList<Module> listModulesLang) {
+  public LinkedHashSet<model.domainLayer.Module> convertModule(final EList<Module> listModulesLang, final Domain domainMetaModel) {
     LinkedHashSet<model.domainLayer.Module> _xblockexpression = null;
     {
       final LinkedHashSet<model.domainLayer.Module> setModulesMetaModule = new LinkedHashSet<model.domainLayer.Module>();
       for (final Module moduleLang : listModulesLang) {
         {
           model.domainLayer.Module moduleMetaModel = new model.domainLayer.Module();
+          moduleMetaModel.setParent(domainMetaModel);
           String _name = moduleLang.getName();
           moduleMetaModel.setName(_name);
           EList<EntityBlock> _entityBlock = moduleLang.getEntityBlock();
-          LinkedHashSet<Entity> _convert = this.entityConverter.convert(_entityBlock);
+          LinkedHashSet<Entity> _convert = this.entityConverter.convert(_entityBlock, moduleMetaModel);
           moduleMetaModel.setEntities(_convert);
           EList<EnumBlock> _enumBlock = moduleLang.getEnumBlock();
           LinkedHashSet<ClassEnum> _convert_1 = this.enumConverter.convert(_enumBlock);
           moduleMetaModel.setEnums(_convert_1);
           EList<ServiceBlock> _serviceBlock = moduleLang.getServiceBlock();
-          LinkedHashSet<Entity> _entities = moduleMetaModel.getEntities();
-          LinkedHashSet<Service> _convert_2 = this.serviceConverter.convert(_serviceBlock, _entities);
+          LinkedHashSet<Service> _convert_2 = this.serviceConverter.convert(_serviceBlock, moduleMetaModel);
           moduleMetaModel.setServices(_convert_2);
           setModulesMetaModule.add(moduleMetaModel);
         }
