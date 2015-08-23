@@ -39,10 +39,12 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getInterfaceApplicationAccess().getTypeAlternatives_0_0(), "rule__InterfaceApplication__TypeAlternatives_0_0");
 					put(grammarAccess.getModuleAccess().getAlternatives_3(), "rule__Module__Alternatives_3");
+					put(grammarAccess.getAttributeAccess().getAlternatives_3(), "rule__Attribute__Alternatives_3");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getAccessModifierAccess().getAlternatives(), "rule__AccessModifier__Alternatives");
 					put(grammarAccess.getPrivateAccess().getAlternatives(), "rule__Private__Alternatives");
 					put(grammarAccess.getProtectedAccess().getAlternatives(), "rule__Protected__Alternatives");
+					put(grammarAccess.getBOOLEANAccess().getAlternatives(), "rule__BOOLEAN__Alternatives");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
 					put(grammarAccess.getInterfaceBlockAccess().getGroup(), "rule__InterfaceBlock__Group__0");
 					put(grammarAccess.getInterfaceApplicationAccess().getGroup(), "rule__InterfaceApplication__Group__0");
@@ -57,6 +59,11 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getServiceMethodAccess().getGroup(), "rule__ServiceMethod__Group__0");
 					put(grammarAccess.getEntityBlockAccess().getGroup(), "rule__EntityBlock__Group__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
+					put(grammarAccess.getAttributeAccess().getGroup_3_1(), "rule__Attribute__Group_3_1__0");
+					put(grammarAccess.getAttributeAccess().getGroup_3_2(), "rule__Attribute__Group_3_2__0");
+					put(grammarAccess.getAttributeAccess().getGroup_3_3(), "rule__Attribute__Group_3_3__0");
+					put(grammarAccess.getAttributeAccess().getGroup_3_4(), "rule__Attribute__Group_3_4__0");
+					put(grammarAccess.getAttributeAccess().getGroup_3_5(), "rule__Attribute__Group_3_5__0");
 					put(grammarAccess.getRepositoryAccess().getGroup(), "rule__Repository__Group__0");
 					put(grammarAccess.getRepositoryFieldsAccess().getGroup(), "rule__RepositoryFields__Group__0");
 					put(grammarAccess.getEnumBlockAccess().getGroup(), "rule__EnumBlock__Group__0");
@@ -117,6 +124,13 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeAccess().getAcessModifierAssignment_0(), "rule__Attribute__AcessModifierAssignment_0");
 					put(grammarAccess.getAttributeAccess().getTypeAssignment_1(), "rule__Attribute__TypeAssignment_1");
 					put(grammarAccess.getAttributeAccess().getNameAssignment_2(), "rule__Attribute__NameAssignment_2");
+					put(grammarAccess.getAttributeAccess().getPkAssignment_3_0(), "rule__Attribute__PkAssignment_3_0");
+					put(grammarAccess.getAttributeAccess().getUniqueAssignment_3_1_2(), "rule__Attribute__UniqueAssignment_3_1_2");
+					put(grammarAccess.getAttributeAccess().getNullableAssignment_3_2_2(), "rule__Attribute__NullableAssignment_3_2_2");
+					put(grammarAccess.getAttributeAccess().getMinAssignment_3_3_2(), "rule__Attribute__MinAssignment_3_3_2");
+					put(grammarAccess.getAttributeAccess().getMaxAssignment_3_4_2(), "rule__Attribute__MaxAssignment_3_4_2");
+					put(grammarAccess.getAttributeAccess().getMinAssignment_3_5_2(), "rule__Attribute__MinAssignment_3_5_2");
+					put(grammarAccess.getAttributeAccess().getMaxAssignment_3_5_4(), "rule__Attribute__MaxAssignment_3_5_4");
 					put(grammarAccess.getRepositoryAccess().getNameAssignment_1(), "rule__Repository__NameAssignment_1");
 					put(grammarAccess.getRepositoryAccess().getMethodsAssignment_3(), "rule__Repository__MethodsAssignment_3");
 					put(grammarAccess.getRepositoryFieldsAccess().getNameMethodAssignment_0(), "rule__RepositoryFields__NameMethodAssignment_0");

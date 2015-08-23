@@ -19,6 +19,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import model.domainLayer.AccessModifier;
 import model.domainLayer.ClassEnum;
+import model.domainLayer.Constraints;
 import model.domainLayer.Domain;
 import model.domainLayer.Entity;
 import model.domainLayer.InternalServiceMethod;
@@ -278,6 +279,92 @@ public class DomainTest extends AbstractTestClass {
     String _name = this.singleAttrLang.getName();
     String _name_1 = this.singleAttrMetaModel.getName();
     Assert.assertEquals(_name, _name_1);
+  }
+  
+  @Test
+  public void testConstraintsFirtsAttr() {
+    EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
+    Attribute firstLang = _attributes.get(0);
+    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute firstMetaModel = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[0];
+    boolean _isPk = firstLang.isPk();
+    Constraints _constraints = firstMetaModel.getConstraints();
+    boolean _isPk_1 = _constraints.isPk();
+    Assert.assertEquals(Boolean.valueOf(_isPk), Boolean.valueOf(_isPk_1));
+    Integer _max = firstLang.getMax();
+    Constraints _constraints_1 = firstMetaModel.getConstraints();
+    Integer _max_1 = _constraints_1.getMax();
+    Assert.assertEquals(_max, _max_1);
+    Constraints _constraints_2 = firstMetaModel.getConstraints();
+    boolean _isPk_2 = _constraints_2.isPk();
+    Assert.assertTrue(_isPk_2);
+    Constraints _constraints_3 = firstMetaModel.getConstraints();
+    Integer _min = _constraints_3.getMin();
+    Assert.assertNull(_min);
+    Constraints _constraints_4 = firstMetaModel.getConstraints();
+    boolean _isNullable = _constraints_4.isNullable();
+    Assert.assertFalse(_isNullable);
+    Constraints _constraints_5 = firstMetaModel.getConstraints();
+    boolean _isUnique = _constraints_5.isUnique();
+    Assert.assertFalse(_isUnique);
+  }
+  
+  @Test
+  public void testConstraintsSecundAttr() {
+    EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
+    Attribute secundLang = _attributes.get(1);
+    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute secundMetaModel = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[1];
+    String _nullable = secundLang.getNullable();
+    Constraints _constraints = secundMetaModel.getConstraints();
+    boolean _isNullable = _constraints.isNullable();
+    String _string = Boolean.valueOf(_isNullable).toString();
+    Assert.assertEquals(_nullable, _string);
+    Constraints _constraints_1 = secundMetaModel.getConstraints();
+    boolean _isPk = _constraints_1.isPk();
+    Assert.assertFalse(_isPk);
+    Constraints _constraints_2 = secundMetaModel.getConstraints();
+    Integer _min = _constraints_2.getMin();
+    Assert.assertNull(_min);
+    Constraints _constraints_3 = secundMetaModel.getConstraints();
+    Integer _max = _constraints_3.getMax();
+    Assert.assertNull(_max);
+    Constraints _constraints_4 = secundMetaModel.getConstraints();
+    boolean _isNullable_1 = _constraints_4.isNullable();
+    Assert.assertFalse(_isNullable_1);
+    Constraints _constraints_5 = secundMetaModel.getConstraints();
+    boolean _isUnique = _constraints_5.isUnique();
+    Assert.assertFalse(_isUnique);
+  }
+  
+  @Test
+  public void testcConstraintsThirdAttr() {
+    EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
+    Attribute thirdLang = _attributes.get(2);
+    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute thirdMetaModel = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[2];
+    String _unique = thirdLang.getUnique();
+    Constraints _constraints = thirdMetaModel.getConstraints();
+    boolean _isUnique = _constraints.isUnique();
+    String _string = Boolean.valueOf(_isUnique).toString();
+    Assert.assertEquals(_unique, _string);
+    Integer _min = thirdLang.getMin();
+    Constraints _constraints_1 = thirdMetaModel.getConstraints();
+    Integer _min_1 = _constraints_1.getMin();
+    Assert.assertEquals(_min, _min_1);
+    Integer _max = thirdLang.getMax();
+    Constraints _constraints_2 = thirdMetaModel.getConstraints();
+    Integer _max_1 = _constraints_2.getMax();
+    Assert.assertEquals(_max, _max_1);
+    Constraints _constraints_3 = thirdMetaModel.getConstraints();
+    boolean _isPk = _constraints_3.isPk();
+    Assert.assertFalse(_isPk);
+    Constraints _constraints_4 = thirdMetaModel.getConstraints();
+    boolean _isNullable = _constraints_4.isNullable();
+    Assert.assertFalse(_isNullable);
+    Constraints _constraints_5 = thirdMetaModel.getConstraints();
+    boolean _isUnique_1 = _constraints_5.isUnique();
+    Assert.assertTrue(_isUnique_1);
   }
   
   @Test

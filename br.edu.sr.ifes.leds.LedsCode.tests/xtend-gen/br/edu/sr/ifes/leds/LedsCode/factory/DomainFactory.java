@@ -77,10 +77,13 @@ public class DomainFactory {
     _builder.append("abstract entity Media : SuperClass1, SuperClass2 {");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("private String titleb");
+    _builder.append("private String titleb @pk @max(50)");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("- Set<PhysicalMedia> physicalMedia");
+    _builder.append("- Set<PhysicalMedia> physicalMedia @null(false)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("- int valor @between(10, 25) @unique(true)");
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
@@ -102,7 +105,7 @@ public class DomainFactory {
     _builder.append("entity LibraryEntity : Media{");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("String name //key");
+    _builder.append("String name ");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("Set<PhysicalMedia> media");

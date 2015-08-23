@@ -11,6 +11,7 @@ import java.util.LinkedHashSet;
 import model.domainLayer.AccessModifier;
 import model.domainLayer.Attribute;
 import model.domainLayer.CollectionType;
+import model.domainLayer.Constraints;
 import model.domainLayer.Entity;
 import model.domainLayer.Method;
 import model.domainLayer.Parameter;
@@ -281,6 +282,8 @@ public class EntityConverter {
             String _acessModifier = attrLang.getAcessModifier();
             AccessModifier _fromString = AccessModifier.fromString(_acessModifier);
             attrMetaModel.setAccessModifier(_fromString);
+            Constraints _processConstraintsAttr = this.processConstraintsAttr(attrLang);
+            attrMetaModel.setConstraints(_processConstraintsAttr);
             String _type = attrLang.getType();
             this.convertGenericType(listEntityMetaModel, _type, attrMetaModel);
             LinkedHashSet<Attribute> _attributes_1 = entityMetaModel.getAttributes();
@@ -289,6 +292,34 @@ public class EntityConverter {
         }
       }
     }
+  }
+  
+  /**
+   * Metodo que converte a constraint usada para o MetaModelo
+   * @author MarcosDias
+   * 
+   * @param attr Atributo da Linguagem que sera usada para converter o Constraint
+   * @return Constraint do MetaModelo
+   */
+  public Constraints processConstraintsAttr(final br.edu.sr.ifes.leds.ledsCodeV001.Attribute attr) {
+    Constraints _xblockexpression = null;
+    {
+      Constraints const_ = new Constraints();
+      boolean _isPk = attr.isPk();
+      const_.setPk(_isPk);
+      String _unique = attr.getUnique();
+      boolean _parseBoolean = Boolean.parseBoolean(_unique);
+      const_.setUnique(_parseBoolean);
+      String _nullable = attr.getNullable();
+      boolean _parseBoolean_1 = Boolean.parseBoolean(_nullable);
+      const_.setNullable(_parseBoolean_1);
+      Integer _max = attr.getMax();
+      const_.setMax(_max);
+      Integer _min = attr.getMin();
+      const_.setMin(_min);
+      _xblockexpression = const_;
+    }
+    return _xblockexpression;
   }
   
   /**

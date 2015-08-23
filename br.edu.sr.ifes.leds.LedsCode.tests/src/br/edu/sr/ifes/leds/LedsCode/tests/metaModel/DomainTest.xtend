@@ -163,6 +163,48 @@ class DomainTest extends AbstractTestClass{
   	}
   	
   	@Test
+  	def testConstraintsFirtsAttr(){
+  		// entity Media
+  	  	var firstLang = singleEntityLang.attributes.get(0)
+  	  	var firstMetaModel = singleEntityMetaModel.attributes.get(0)
+  	  	assertEquals(firstLang.pk, firstMetaModel.constraints.pk)
+  	  	assertEquals(firstLang.max, firstMetaModel.constraints.max)
+  	  	//and
+  	  	assertTrue(firstMetaModel.constraints.pk)
+  	  	assertNull(firstMetaModel.constraints.min)
+  	  	assertFalse(firstMetaModel.constraints.nullable)
+  	  	assertFalse(firstMetaModel.constraints.unique)
+  	}
+  	
+  	@Test
+  	def testConstraintsSecundAttr(){
+  		// entity Media
+  	  	var secundLang = singleEntityLang.attributes.get(1)
+  	  	var secundMetaModel = singleEntityMetaModel.attributes.get(1)
+  	  	assertEquals(secundLang.nullable, secundMetaModel.constraints.nullable.toString())
+  	  	//and
+  	  	assertFalse(secundMetaModel.constraints.pk)
+  	  	assertNull(secundMetaModel.constraints.min)
+  	  	assertNull(secundMetaModel.constraints.max)
+  	  	assertFalse(secundMetaModel.constraints.nullable)
+  	  	assertFalse(secundMetaModel.constraints.unique)
+  	}
+  	
+  	@Test
+  	def testcConstraintsThirdAttr(){
+  		// entity Media
+  	  	var thirdLang = singleEntityLang.attributes.get(2)
+  	  	var thirdMetaModel = singleEntityMetaModel.attributes.get(2)
+  	  	assertEquals(thirdLang.unique, thirdMetaModel.constraints.unique.toString())
+  	  	assertEquals(thirdLang.min, thirdMetaModel.constraints.min)
+  	  	assertEquals(thirdLang.max, thirdMetaModel.constraints.max)
+  	  	//and
+  	  	assertFalse(thirdMetaModel.constraints.pk)
+  	  	assertFalse(thirdMetaModel.constraints.nullable)
+  	  	assertTrue(thirdMetaModel.constraints.unique)
+  	}
+  	
+  	@Test
   	def testRepositoryEntityName(){
   		assertEquals(repositoryLang.name, repositoryMetaModel.name)
   	}

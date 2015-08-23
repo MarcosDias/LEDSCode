@@ -166,7 +166,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdAttributes() {
     EList<Attribute> _attributes = this.singleEntity.getAttributes();
     int _size = _attributes.size();
-    Assert.assertEquals(2, _size);
+    Assert.assertEquals(3, _size);
   }
   
   @Test
@@ -178,6 +178,36 @@ public class DomainTest extends AbstractTestClass {
     Assert.assertEquals("String", _type);
     String _name = this.singleAttr.getName();
     Assert.assertEquals("titleb", _name);
+  }
+  
+  @Test
+  public void testConstraintsFirtsAttr() {
+    EList<Attribute> _attributes = this.singleEntity.getAttributes();
+    Attribute first = _attributes.get(0);
+    boolean _isPk = first.isPk();
+    Assert.assertTrue(_isPk);
+    Integer _max = first.getMax();
+    Assert.assertEquals(50, (_max).intValue());
+  }
+  
+  @Test
+  public void testConstraintsSecundAttr() {
+    EList<Attribute> _attributes = this.singleEntity.getAttributes();
+    Attribute secund = _attributes.get(1);
+    String _nullable = secund.getNullable();
+    Assert.assertEquals("false", _nullable);
+  }
+  
+  @Test
+  public void testcConstraintsThirdAttr() {
+    EList<Attribute> _attributes = this.singleEntity.getAttributes();
+    Attribute third = _attributes.get(2);
+    String _unique = third.getUnique();
+    Assert.assertEquals("true", _unique);
+    Integer _min = third.getMin();
+    Assert.assertEquals(10, (_min).intValue());
+    Integer _max = third.getMax();
+    Assert.assertEquals(25, (_max).intValue());
   }
   
   @Test

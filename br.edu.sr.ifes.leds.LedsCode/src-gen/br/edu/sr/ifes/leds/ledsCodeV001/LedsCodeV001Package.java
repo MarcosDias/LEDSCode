@@ -728,13 +728,58 @@ public interface LedsCodeV001Package extends EPackage
   int ATTRIBUTE__NAME = 2;
 
   /**
+   * The feature id for the '<em><b>Pk</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__PK = 3;
+
+  /**
+   * The feature id for the '<em><b>Unique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__UNIQUE = 4;
+
+  /**
+   * The feature id for the '<em><b>Nullable</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__NULLABLE = 5;
+
+  /**
+   * The feature id for the '<em><b>Min</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__MIN = 6;
+
+  /**
+   * The feature id for the '<em><b>Max</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__MAX = 7;
+
+  /**
    * The number of structural features of the '<em>Attribute</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_COUNT = 3;
+  int ATTRIBUTE_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl <em>Repository</em>}' class.
@@ -1597,6 +1642,61 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getAttribute_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#isPk <em>Pk</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pk</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#isPk()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Pk();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getUnique <em>Unique</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unique</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getUnique()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Unique();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getNullable <em>Nullable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nullable</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getNullable()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Nullable();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getMin <em>Min</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Min</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getMin()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Min();
+
+  /**
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getMax <em>Max</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Max</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.Attribute#getMax()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Max();
+
+  /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Repository <em>Repository</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2307,6 +2407,46 @@ public interface LedsCodeV001Package extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Pk</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__PK = eINSTANCE.getAttribute_Pk();
+
+    /**
+     * The meta object literal for the '<em><b>Unique</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__UNIQUE = eINSTANCE.getAttribute_Unique();
+
+    /**
+     * The meta object literal for the '<em><b>Nullable</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__NULLABLE = eINSTANCE.getAttribute_Nullable();
+
+    /**
+     * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__MIN = eINSTANCE.getAttribute_Min();
+
+    /**
+     * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__MAX = eINSTANCE.getAttribute_Max();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryImpl <em>Repository</em>}' class.

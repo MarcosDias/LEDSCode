@@ -5,7 +5,7 @@
 	<classpathentry kind="src" path="xtend-gen"/>
 	<classpathentry exported="true" kind="lib" path="jyaml-1.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="lombok-1.12.6.jar"/>
-	<classpathentry exported="true" kind="lib" path="metamodel-1.0-SNAPSHOT.jar" sourcepath="/metamodel"/>
+	<classpathentry exported="true" kind="lib" path="/home/marcosdias/Workspace/facul/tcc/LEDSCodeDSL/br.edu.sr.ifes.leds.LedsCode/metamodel-1.0-SNAPSHOT.jar" sourcepath="/metamodel"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>

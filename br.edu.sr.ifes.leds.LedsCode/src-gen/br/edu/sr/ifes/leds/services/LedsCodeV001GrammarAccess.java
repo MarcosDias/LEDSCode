@@ -827,12 +827,52 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTypeDataTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cPkAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final Keyword cPkPkKeyword_3_0_0 = (Keyword)cPkAssignment_3_0.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cAlternatives_3.eContents().get(1);
+		private final Keyword cUniqueKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3_1_1 = (Keyword)cGroup_3_1.eContents().get(1);
+		private final Assignment cUniqueAssignment_3_1_2 = (Assignment)cGroup_3_1.eContents().get(2);
+		private final RuleCall cUniqueBOOLEANParserRuleCall_3_1_2_0 = (RuleCall)cUniqueAssignment_3_1_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_1_3 = (Keyword)cGroup_3_1.eContents().get(3);
+		private final Group cGroup_3_2 = (Group)cAlternatives_3.eContents().get(2);
+		private final Keyword cNullKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3_2_1 = (Keyword)cGroup_3_2.eContents().get(1);
+		private final Assignment cNullableAssignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
+		private final RuleCall cNullableBOOLEANParserRuleCall_3_2_2_0 = (RuleCall)cNullableAssignment_3_2_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_2_3 = (Keyword)cGroup_3_2.eContents().get(3);
+		private final Group cGroup_3_3 = (Group)cAlternatives_3.eContents().get(3);
+		private final Keyword cMinKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3_3_1 = (Keyword)cGroup_3_3.eContents().get(1);
+		private final Assignment cMinAssignment_3_3_2 = (Assignment)cGroup_3_3.eContents().get(2);
+		private final RuleCall cMinINTEGERParserRuleCall_3_3_2_0 = (RuleCall)cMinAssignment_3_3_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_3_3 = (Keyword)cGroup_3_3.eContents().get(3);
+		private final Group cGroup_3_4 = (Group)cAlternatives_3.eContents().get(4);
+		private final Keyword cMaxKeyword_3_4_0 = (Keyword)cGroup_3_4.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3_4_1 = (Keyword)cGroup_3_4.eContents().get(1);
+		private final Assignment cMaxAssignment_3_4_2 = (Assignment)cGroup_3_4.eContents().get(2);
+		private final RuleCall cMaxINTEGERParserRuleCall_3_4_2_0 = (RuleCall)cMaxAssignment_3_4_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_4_3 = (Keyword)cGroup_3_4.eContents().get(3);
+		private final Group cGroup_3_5 = (Group)cAlternatives_3.eContents().get(5);
+		private final Keyword cBetweenKeyword_3_5_0 = (Keyword)cGroup_3_5.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_3_5_1 = (Keyword)cGroup_3_5.eContents().get(1);
+		private final Assignment cMinAssignment_3_5_2 = (Assignment)cGroup_3_5.eContents().get(2);
+		private final RuleCall cMinINTEGERParserRuleCall_3_5_2_0 = (RuleCall)cMinAssignment_3_5_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3_5_3 = (Keyword)cGroup_3_5.eContents().get(3);
+		private final Assignment cMaxAssignment_3_5_4 = (Assignment)cGroup_3_5.eContents().get(4);
+		private final RuleCall cMaxINTEGERParserRuleCall_3_5_4_0 = (RuleCall)cMaxAssignment_3_5_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_5_5 = (Keyword)cGroup_3_5.eContents().get(5);
 		
 		//Attribute:
-		//	acessModifier=AccessModifier? type=DataType name=ID;
+		//	acessModifier=AccessModifier? type=DataType name=ID (pk?="@pk" // Nao permitir usar between junto de max ou min
+		//	| "@unique"+ "(" unique=BOOLEAN ")" | "@null"+ "(" nullable=BOOLEAN ")" | "@min"+ "(" min=INTEGER ")" | "@max"+ "("
+		//	max=INTEGER ")" | "@between"+ "(" min=INTEGER "," max=INTEGER ")")*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//acessModifier=AccessModifier? type=DataType name=ID
+		//acessModifier=AccessModifier? type=DataType name=ID (pk?="@pk" // Nao permitir usar between junto de max ou min
+		//| "@unique"+ "(" unique=BOOLEAN ")" | "@null"+ "(" nullable=BOOLEAN ")" | "@min"+ "(" min=INTEGER ")" | "@max"+ "("
+		//max=INTEGER ")" | "@between"+ "(" min=INTEGER "," max=INTEGER ")")*
 		public Group getGroup() { return cGroup; }
 
 		//acessModifier=AccessModifier?
@@ -852,6 +892,116 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
+		//(pk?="@pk" // Nao permitir usar between junto de max ou min
+		//| "@unique"+ "(" unique=BOOLEAN ")" | "@null"+ "(" nullable=BOOLEAN ")" | "@min"+ "(" min=INTEGER ")" | "@max"+ "("
+		//max=INTEGER ")" | "@between"+ "(" min=INTEGER "," max=INTEGER ")")*
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+
+		//pk?="@pk"
+		public Assignment getPkAssignment_3_0() { return cPkAssignment_3_0; }
+
+		//"@pk"
+		public Keyword getPkPkKeyword_3_0_0() { return cPkPkKeyword_3_0_0; }
+
+		//"@unique"+ "(" unique=BOOLEAN ")"
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//"@unique"+
+		public Keyword getUniqueKeyword_3_1_0() { return cUniqueKeyword_3_1_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_1_1() { return cLeftParenthesisKeyword_3_1_1; }
+
+		//unique=BOOLEAN
+		public Assignment getUniqueAssignment_3_1_2() { return cUniqueAssignment_3_1_2; }
+
+		//BOOLEAN
+		public RuleCall getUniqueBOOLEANParserRuleCall_3_1_2_0() { return cUniqueBOOLEANParserRuleCall_3_1_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_1_3() { return cRightParenthesisKeyword_3_1_3; }
+
+		//"@null"+ "(" nullable=BOOLEAN ")"
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
+		//"@null"+
+		public Keyword getNullKeyword_3_2_0() { return cNullKeyword_3_2_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_2_1() { return cLeftParenthesisKeyword_3_2_1; }
+
+		//nullable=BOOLEAN
+		public Assignment getNullableAssignment_3_2_2() { return cNullableAssignment_3_2_2; }
+
+		//BOOLEAN
+		public RuleCall getNullableBOOLEANParserRuleCall_3_2_2_0() { return cNullableBOOLEANParserRuleCall_3_2_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_2_3() { return cRightParenthesisKeyword_3_2_3; }
+
+		//"@min"+ "(" min=INTEGER ")"
+		public Group getGroup_3_3() { return cGroup_3_3; }
+
+		//"@min"+
+		public Keyword getMinKeyword_3_3_0() { return cMinKeyword_3_3_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_3_1() { return cLeftParenthesisKeyword_3_3_1; }
+
+		//min=INTEGER
+		public Assignment getMinAssignment_3_3_2() { return cMinAssignment_3_3_2; }
+
+		//INTEGER
+		public RuleCall getMinINTEGERParserRuleCall_3_3_2_0() { return cMinINTEGERParserRuleCall_3_3_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_3_3() { return cRightParenthesisKeyword_3_3_3; }
+
+		//"@max"+ "(" max=INTEGER ")"
+		public Group getGroup_3_4() { return cGroup_3_4; }
+
+		//"@max"+
+		public Keyword getMaxKeyword_3_4_0() { return cMaxKeyword_3_4_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_4_1() { return cLeftParenthesisKeyword_3_4_1; }
+
+		//max=INTEGER
+		public Assignment getMaxAssignment_3_4_2() { return cMaxAssignment_3_4_2; }
+
+		//INTEGER
+		public RuleCall getMaxINTEGERParserRuleCall_3_4_2_0() { return cMaxINTEGERParserRuleCall_3_4_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_4_3() { return cRightParenthesisKeyword_3_4_3; }
+
+		//"@between"+ "(" min=INTEGER "," max=INTEGER ")"
+		public Group getGroup_3_5() { return cGroup_3_5; }
+
+		//"@between"+
+		public Keyword getBetweenKeyword_3_5_0() { return cBetweenKeyword_3_5_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_3_5_1() { return cLeftParenthesisKeyword_3_5_1; }
+
+		//min=INTEGER
+		public Assignment getMinAssignment_3_5_2() { return cMinAssignment_3_5_2; }
+
+		//INTEGER
+		public RuleCall getMinINTEGERParserRuleCall_3_5_2_0() { return cMinINTEGERParserRuleCall_3_5_2_0; }
+
+		//","
+		public Keyword getCommaKeyword_3_5_3() { return cCommaKeyword_3_5_3; }
+
+		//max=INTEGER
+		public Assignment getMaxAssignment_3_5_4() { return cMaxAssignment_3_5_4; }
+
+		//INTEGER
+		public RuleCall getMaxINTEGERParserRuleCall_3_5_4_0() { return cMaxINTEGERParserRuleCall_3_5_4_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3_5_5() { return cRightParenthesisKeyword_3_5_5; }
 	}
 
 	public class RepositoryElements extends AbstractParserRuleElementFinder {
@@ -1355,6 +1505,38 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
+
+	public class BOOLEANElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//BOOLEAN:
+		//	"true" | "false";
+		@Override public ParserRule getRule() { return rule; }
+
+		//"true" | "false"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"true"
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
+
+	public class INTEGERElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "INTEGER");
+		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//INTEGER returns ecore::EIntegerObject:
+		//	INT+;
+		@Override public ParserRule getRule() { return rule; }
+
+		//INT+
+		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
+	}
 	
 	
 	private final LedsCodeDSLElements pLedsCodeDSL;
@@ -1386,6 +1568,8 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	private final ProtectedElements pProtected;
 	private final ImportCompoundNameElements pImportCompoundName;
 	private final CompoundNameElements pCompoundName;
+	private final BOOLEANElements pBOOLEAN;
+	private final INTEGERElements pINTEGER;
 	
 	private final Grammar grammar;
 
@@ -1425,6 +1609,8 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		this.pProtected = new ProtectedElements();
 		this.pImportCompoundName = new ImportCompoundNameElements();
 		this.pCompoundName = new CompoundNameElements();
+		this.pBOOLEAN = new BOOLEANElements();
+		this.pINTEGER = new INTEGERElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1592,7 +1778,9 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Attribute:
-	//	acessModifier=AccessModifier? type=DataType name=ID;
+	//	acessModifier=AccessModifier? type=DataType name=ID (pk?="@pk" // Nao permitir usar between junto de max ou min
+	//	| "@unique"+ "(" unique=BOOLEAN ")" | "@null"+ "(" nullable=BOOLEAN ")" | "@min"+ "(" min=INTEGER ")" | "@max"+ "("
+	//	max=INTEGER ")" | "@between"+ "(" min=INTEGER "," max=INTEGER ")")*;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -1750,6 +1938,26 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCompoundNameRule() {
 		return getCompoundNameAccess().getRule();
+	}
+
+	//BOOLEAN:
+	//	"true" | "false";
+	public BOOLEANElements getBOOLEANAccess() {
+		return pBOOLEAN;
+	}
+	
+	public ParserRule getBOOLEANRule() {
+		return getBOOLEANAccess().getRule();
+	}
+
+	//INTEGER returns ecore::EIntegerObject:
+	//	INT+;
+	public INTEGERElements getINTEGERAccess() {
+		return pINTEGER;
+	}
+	
+	public ParserRule getINTEGERRule() {
+		return getINTEGERAccess().getRule();
 	}
 
 	//terminal ID:

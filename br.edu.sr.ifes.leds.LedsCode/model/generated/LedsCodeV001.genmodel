@@ -80,6 +80,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/acessModifier"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/pk"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/unique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/nullable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Attribute/max"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//Repository">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//Repository/name"/>

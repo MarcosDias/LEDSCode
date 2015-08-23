@@ -100,8 +100,20 @@ EntityBlock:
 ;
 
 Attribute:
-	acessModifier=AccessModifier? type=DataType name=ID
+	acessModifier=AccessModifier? 
+	type=DataType 
+	name=ID
+	(
+		(pk?='@pk') |
+		('@unique' + '(' unique=BOOLEAN ')') |
+		('@null' + '(' nullable=BOOLEAN ')') |
+		// Nao permitir usar between junto de max ou min
+		('@min' + '(' min=INTEGER ')') |
+		('@max' + '(' max=INTEGER ')') |
+		('@between' + '(' min=INTEGER ',' max=INTEGER ')')	
+	)*
 ;
+
 
 Repository:
 	'repository' name=ID '{'
@@ -134,3 +146,5 @@ Private:'-'|'private';
 Protected:'#'|'protected';
 ImportCompoundName: CompoundName('.*'?);
 CompoundName: ID('.'ID)*;
+BOOLEAN: 'true'|'false';
+INTEGER returns ecore::EIntegerObject: (INT)+;

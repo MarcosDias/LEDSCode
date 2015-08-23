@@ -17,6 +17,7 @@ import model.domainLayer.Repository
 import model.domainLayer.ReturnType
 import model.domainLayer.SuperAttribute
 import org.eclipse.emf.common.util.EList
+import model.domainLayer.Constraints
 
 class EntityConverter {
 	FindEntity findEntity
@@ -212,6 +213,7 @@ class EntityConverter {
 				var attrMetaModel = new Attribute
 				attrMetaModel.name = attrLang.name
 				attrMetaModel.accessModifier = AccessModifier.fromString(attrLang.acessModifier)
+				attrMetaModel.constraints = processConstraintsAttr(attrLang)
 				convertGenericType(
 					listEntityMetaModel, attrLang.type, attrMetaModel
 				) as Attribute
@@ -219,6 +221,24 @@ class EntityConverter {
 				entityMetaModel.attributes.add(attrMetaModel)
 			}
 		}
+	}
+	
+	/**
+	 * Metodo que converte a constraint usada para o MetaModelo
+	 * @author MarcosDias
+	 * 
+	 * @param attr Atributo da Linguagem que sera usada para converter o Constraint
+	 * @return Constraint do MetaModelo
+	 */
+	def processConstraintsAttr(br.edu.sr.ifes.leds.ledsCodeV001.Attribute attr) {
+		var const = new Constraints()
+		const.pk = attr.pk
+		const.unique = Boolean.parseBoolean(attr.unique)
+		const.nullable = Boolean.parseBoolean(attr.nullable)
+		const.max = attr.max
+		const.min = attr.min
+		
+		const
 	}
 	
 	/**

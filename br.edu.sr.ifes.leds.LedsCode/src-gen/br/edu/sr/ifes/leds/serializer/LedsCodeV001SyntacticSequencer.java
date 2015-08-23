@@ -11,6 +11,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +20,20 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class LedsCodeV001SyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LedsCodeV001GrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Attribute_BetweenKeyword_3_5_0_p;
+	protected AbstractElementAlias match_Attribute_MaxKeyword_3_4_0_p;
+	protected AbstractElementAlias match_Attribute_MinKeyword_3_3_0_p;
+	protected AbstractElementAlias match_Attribute_NullKeyword_3_2_0_p;
+	protected AbstractElementAlias match_Attribute_UniqueKeyword_3_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LedsCodeV001GrammarAccess) access;
+		match_Attribute_BetweenKeyword_3_5_0_p = new TokenAlias(true, false, grammarAccess.getAttributeAccess().getBetweenKeyword_3_5_0());
+		match_Attribute_MaxKeyword_3_4_0_p = new TokenAlias(true, false, grammarAccess.getAttributeAccess().getMaxKeyword_3_4_0());
+		match_Attribute_MinKeyword_3_3_0_p = new TokenAlias(true, false, grammarAccess.getAttributeAccess().getMinKeyword_3_3_0());
+		match_Attribute_NullKeyword_3_2_0_p = new TokenAlias(true, false, grammarAccess.getAttributeAccess().getNullKeyword_3_2_0());
+		match_Attribute_UniqueKeyword_3_1_0_p = new TokenAlias(true, false, grammarAccess.getAttributeAccess().getUniqueKeyword_3_1_0());
 	}
 	
 	@Override
@@ -46,8 +58,98 @@ public class LedsCodeV001SyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if(match_Attribute_BetweenKeyword_3_5_0_p.equals(syntax))
+				emit_Attribute_BetweenKeyword_3_5_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Attribute_MaxKeyword_3_4_0_p.equals(syntax))
+				emit_Attribute_MaxKeyword_3_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Attribute_MinKeyword_3_3_0_p.equals(syntax))
+				emit_Attribute_MinKeyword_3_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Attribute_NullKeyword_3_2_0_p.equals(syntax))
+				emit_Attribute_NullKeyword_3_2_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Attribute_UniqueKeyword_3_1_0_p.equals(syntax))
+				emit_Attribute_UniqueKeyword_3_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     '@between'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     max=INTEGER ')' (ambiguity) '(' min=INTEGER
+	 *     min=INTEGER ')' (ambiguity) '(' min=INTEGER
+	 *     name=ID (ambiguity) '(' min=INTEGER
+	 *     nullable=BOOLEAN ')' (ambiguity) '(' min=INTEGER
+	 *     pk?='@pk' (ambiguity) '(' min=INTEGER
+	 *     unique=BOOLEAN ')' (ambiguity) '(' min=INTEGER
+	 */
+	protected void emit_Attribute_BetweenKeyword_3_5_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '@max'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     max=INTEGER ')' (ambiguity) '(' max=INTEGER
+	 *     min=INTEGER ')' (ambiguity) '(' max=INTEGER
+	 *     name=ID (ambiguity) '(' max=INTEGER
+	 *     nullable=BOOLEAN ')' (ambiguity) '(' max=INTEGER
+	 *     pk?='@pk' (ambiguity) '(' max=INTEGER
+	 *     unique=BOOLEAN ')' (ambiguity) '(' max=INTEGER
+	 */
+	protected void emit_Attribute_MaxKeyword_3_4_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '@min'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     max=INTEGER ')' (ambiguity) '(' min=INTEGER
+	 *     min=INTEGER ')' (ambiguity) '(' min=INTEGER
+	 *     name=ID (ambiguity) '(' min=INTEGER
+	 *     nullable=BOOLEAN ')' (ambiguity) '(' min=INTEGER
+	 *     pk?='@pk' (ambiguity) '(' min=INTEGER
+	 *     unique=BOOLEAN ')' (ambiguity) '(' min=INTEGER
+	 */
+	protected void emit_Attribute_MinKeyword_3_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '@null'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     max=INTEGER ')' (ambiguity) '(' nullable=BOOLEAN
+	 *     min=INTEGER ')' (ambiguity) '(' nullable=BOOLEAN
+	 *     name=ID (ambiguity) '(' nullable=BOOLEAN
+	 *     nullable=BOOLEAN ')' (ambiguity) '(' nullable=BOOLEAN
+	 *     pk?='@pk' (ambiguity) '(' nullable=BOOLEAN
+	 *     unique=BOOLEAN ')' (ambiguity) '(' nullable=BOOLEAN
+	 */
+	protected void emit_Attribute_NullKeyword_3_2_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '@unique'+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     max=INTEGER ')' (ambiguity) '(' unique=BOOLEAN
+	 *     min=INTEGER ')' (ambiguity) '(' unique=BOOLEAN
+	 *     name=ID (ambiguity) '(' unique=BOOLEAN
+	 *     nullable=BOOLEAN ')' (ambiguity) '(' unique=BOOLEAN
+	 *     pk?='@pk' (ambiguity) '(' unique=BOOLEAN
+	 *     unique=BOOLEAN ')' (ambiguity) '(' unique=BOOLEAN
+	 */
+	protected void emit_Attribute_UniqueKeyword_3_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

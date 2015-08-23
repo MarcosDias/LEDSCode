@@ -111,7 +111,7 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testQtdAttributes(){
-  		assertEquals(2, singleEntity.attributes.size)
+  		assertEquals(3, singleEntity.attributes.size)
   	}
   	
   	@Test
@@ -119,6 +119,31 @@ class DomainTest extends AbstractTestClass{
 		assertTrue("private -".contains(singleAttr.acessModifier))
 		assertEquals("String", singleAttr.type)
 		assertEquals("titleb", singleAttr.name)
+  	}
+  	
+
+  	@Test
+  	def testConstraintsFirtsAttr(){
+  		// entity Media
+  	  	var first = singleEntity.attributes.get(0)
+  	  	assertTrue(first.pk)
+  	  	assertEquals(50, first.max)
+  	}
+  	
+  	@Test
+  	def testConstraintsSecundAttr(){
+  		// entity Media
+  	  	var secund = singleEntity.attributes.get(1)
+  	  	assertEquals('false', secund.nullable)
+  	}
+  	
+  	@Test
+  	def testcConstraintsThirdAttr(){
+  		// entity Media
+  	  	var third = singleEntity.attributes.get(2)
+  	  	assertEquals('true', third.unique)
+  	  	assertEquals(10, third.min)
+  	  	assertEquals(25, third.max)    	  	
   	}
   	
   	@Test

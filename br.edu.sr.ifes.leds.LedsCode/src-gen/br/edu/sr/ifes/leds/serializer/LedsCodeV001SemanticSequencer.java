@@ -123,7 +123,19 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (acessModifier=AccessModifier? type=DataType name=ID)
+	 *     (
+	 *         acessModifier=AccessModifier? 
+	 *         type=DataType 
+	 *         name=ID 
+	 *         (
+	 *             pk?='@pk' | 
+	 *             unique=BOOLEAN | 
+	 *             nullable=BOOLEAN | 
+	 *             min=INTEGER | 
+	 *             max=INTEGER | 
+	 *             (min=INTEGER max=INTEGER)
+	 *         )*
+	 *     )
 	 */
 	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

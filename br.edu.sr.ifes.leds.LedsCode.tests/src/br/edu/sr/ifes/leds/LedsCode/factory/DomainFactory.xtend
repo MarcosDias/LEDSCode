@@ -39,8 +39,9 @@ service PersonService {
 	def static entityBlock(){
 '''
 abstract entity Media : SuperClass1, SuperClass2 {
-	private String titleb
-	- Set<PhysicalMedia> physicalMedia
+	private String titleb @pk @max(50)
+	- Set<PhysicalMedia> physicalMedia @null(false)
+	- int valor @between(10, 25) @unique(true)
 	
 	repository MediaRepository {
 	    findMediaByCharacter(String characterName) : List<Media>
@@ -49,7 +50,7 @@ abstract entity Media : SuperClass1, SuperClass2 {
 }
 
 entity LibraryEntity : Media{
-	String name //key
+	String name 
 	Set<PhysicalMedia> media
 	
 	repository LibraryRepository {
