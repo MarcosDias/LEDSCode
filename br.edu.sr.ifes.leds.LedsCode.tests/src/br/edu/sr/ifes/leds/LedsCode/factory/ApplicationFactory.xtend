@@ -4,11 +4,8 @@ class ApplicationFactory {
 	def static applicationBlock(){
 '''
 application LibraryPersonApp{
-	composedBy Library.*
-	composedBy Loan.*
-}
-application LibraryPersonApp2{
-	composedBy Library.Person.*
+	composedBy Domain1.Module.*
+	composedBy Domain2.*
 }
 '''
 	}

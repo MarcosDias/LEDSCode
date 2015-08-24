@@ -24,7 +24,7 @@ class ApplicationTest extends AbstractTestClass{
 	
 	@Test
 	def testQtdApplication(){
-		assertEquals(2, app.size)
+		assertEquals(1, app.size)
 	}
 
   	@Test
@@ -39,6 +39,6 @@ class ApplicationTest extends AbstractTestClass{
   	
   	@Test
   	def testApplicationDomain(){
-  		assertEquals("Library.*", singleAppDomain)
+  		assertEquals("Domain1.Module.*", singleAppDomain)
 	}
 }

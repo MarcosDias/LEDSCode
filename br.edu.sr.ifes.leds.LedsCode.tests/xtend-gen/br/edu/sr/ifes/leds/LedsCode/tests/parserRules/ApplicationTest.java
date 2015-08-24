@@ -32,7 +32,7 @@ public class ApplicationTest extends AbstractTestClass {
   @Test
   public void testQtdApplication() {
     int _size = this.app.size();
-    Assert.assertEquals(2, _size);
+    Assert.assertEquals(1, _size);
   }
   
   @Test
@@ -50,6 +50,6 @@ public class ApplicationTest extends AbstractTestClass {
   
   @Test
   public void testApplicationDomain() {
-    Assert.assertEquals("Library.*", this.singleAppDomain);
+    Assert.assertEquals("Domain1.Module.*", this.singleAppDomain);
   }
 }

@@ -9,12 +9,6 @@ import br.edu.sr.ifes.leds.metamodel.AppConverter
 
 class ProjectConverter {
 	
-	//model.mainLayer.Project projectMetaModel
-	//InfrastructureConverter infraConverter
-	//InterfaceConverter ifaceConverter
-	//DomainConverter domainConverter
-	//AppConverter appConverter
-	
 	def convert(Project projectLang){
 		var projectMetaModel = new model.mainLayer.Project
 		var infraConverter = new InfrastructureConverter
@@ -35,12 +29,4 @@ class ProjectConverter {
 		
 		projectMetaModel
 	}
-	
-	/*new(){
-		
-		/*infraConverter = new InfrastructureConverter
-		ifaceConverter = new InterfaceConverter
-		domainConverter = new DomainConverter
-		appConverter = new AppConverter
-	}*/
 }

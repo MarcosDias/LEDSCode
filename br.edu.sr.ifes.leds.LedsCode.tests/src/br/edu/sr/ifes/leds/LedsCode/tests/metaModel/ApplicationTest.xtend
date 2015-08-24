@@ -1,15 +1,17 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.metaModel
 
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
+import br.edu.sr.ifes.leds.generator.ProjectConverter
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock
+import java.util.ArrayList
+import java.util.Arrays
+import java.util.LinkedHashSet
+import model.applicationLayer.Application
 import org.eclipse.emf.common.util.EList
 import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
-import br.edu.sr.ifes.leds.generator.ProjectConverter
-import java.util.LinkedHashSet
-import model.applicationLayer.Application
 
 class ApplicationTest extends AbstractTestClass{
 	
@@ -43,13 +45,15 @@ class ApplicationTest extends AbstractTestClass{
   		assertEquals(singleAppLang.name, singleAppMetalModel.name)
   	}
   	
-  	/*@Test
+  	@Test
   	def testQtdApplicationDomain(){
-  		assertEquals(2, singleApp.applicationDomain.size)
+  		assertEquals(2, singleAppMetalModel.structure.size)
   	}
   	
   	@Test
   	def testApplicationDomain(){
-  		assertEquals("Library.*", singleAppDomain)
-	}*/
+		var strutureAppLang = new ArrayList<String>(Arrays.asList(singleAppDomainLang.split('\\.')))
+  		assertEquals(strutureAppLang.get(0).toString(), singleAppMetalModel.structure.get(0).domain.name)
+  		assertNotNull(singleAppMetalModel.structure.get(0).son)
+  	}
 }
