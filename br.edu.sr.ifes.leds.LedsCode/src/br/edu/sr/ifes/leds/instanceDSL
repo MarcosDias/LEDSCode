@@ -1,0 +1,148 @@
+project Sincap {
+	infrastructure{
+		basePackage = "br.edu.ifes.sr.leds"
+		projectVersion = "0.0.0"
+		language = {@name: "Java", @version: "8"}
+		framework = {@name: "SpringRoo", @version: "1.2"}
+		orm = {@name: "Hibernate", @version: "3"}
+		database = {@version: "5", @name: "Postgres", @user: "USER", @pass: "123456", @host: "localhost", @env: "prod"}
+	}
+	  
+	interface ifaceSincap  {
+		HtmlView interfaceWeb => appSincap
+		RestFull interfaceRest => appSincap
+	}
+	
+	application appSincap{
+		composedBy domSincap.*
+	}
+	
+	domain domSincap {
+		module controleInterno {
+			service aplProcessoNotificacao {
+				FindByName => Funcionario.findByName
+				FindNotificadorProcessoNotificacao => controleNotificacao.ProcessoNotificacao.findByNotificadorName
+			}
+			
+			abstract entity Pessoa{
+				# String nome
+    		}
+    
+		    abstract entity Funcionario : Pessoa{
+		      - String cpf
+		      - String telefone
+		      private String email
+		      private String endereco
+		      private boolean status
+		      
+		      repository funcionarioRepository {
+		      	findByName(String name) : Funcionario
+		      }
+		    }
+		    
+		    entity AnalistaCNCDO : Funcionario{}
+		    entity Notificador : Funcionario{}
+		    entity Captador : Funcionario{}
+		    
+		    abstract entity Instituicao{
+		    	# String nome
+		    	protected String endereco
+		    	# List<Funcinonario> funcionarios
+		    }
+		    
+		    entity BancoOlhos : Instituicao{}
+		    
+		    abstract entity InstituicaoNotificadora : Instituicao{
+		    	private BancoOlhos bancoOlhos
+		    } 
+		    
+		    entity Hospital : InstituicaoNotificadora {
+		    	- String sigla
+		    	- String cnes
+		    	- Setor setor
+		    }
+		    
+		    entity Setor{
+		    	private String nome
+		    }
+		}
+    
+		module controleNotificacao {
+			entity ProcessoNotificacao{
+		      - String codigo
+		      - Datetime dataCriacao
+		      - Datetime horaCriacao
+		      - Datatime dataFinalizacao
+		      - Datatime horaFinalizacao
+		      - controleInterno.Funcionario notificador
+		      - boolean arquivado
+		      - Obito obito
+		      - Entrevista entrevista
+		      - Captacao captacao
+		      - CausaNaoDoacao causa
+		      - AnalistaCNCDO analista
+		      
+		      repository processoNotificacaoRepository {
+		      	findByNotificadorName(String notificador) : Funcionario
+		      }
+	    	}
+	    	
+	    	entity Obito {
+	    		- controleInterno.Hospital hospital
+	    		- controleInterno.Setor setor
+	    		- controleInterno.Notificador notificador
+	    		- Paciente paciente
+	    	}
+	    	
+	    	entity Paciente : controleInterno.Pessoa{
+	    		- String numeroProntuario
+	    		- String nome
+	    		- String numeroSUS
+	    		- Datetime dataNascimento
+	    		- String sexo
+	    		- EstadoCivil estadoCivil
+	    		- String nomeMae
+	    		- String nacionalidade
+	    		- String endereco
+	    		- Datetime dataInternacao
+	    		- Datetime horaInternacao
+	    	}
+	    	
+	    	entity Entrevista {
+				- boolean entrevistaRealizada
+				- boolean doacaoAutorizado
+				- Datetime dataRealizacao
+				- Datetime horaRealizacao
+				- List<Testemunha> testemunhas
+				- List<ResponsavelLegal> responsavel
+				- controleInterno.Funcionario notificador
+	    	}
+	    	
+	    	entity ResponsavelLegal {
+	    		- String nacionalidade
+	    		- EstadoCivil estadoCivil
+	    		- String profissao
+	    		- GrauParentesco grauParentesco
+	    	}
+	    	
+	    	entity Testemunha {
+	    		- String cpf
+	    		- String endereco
+	    	}
+	    	
+	    	entity Captacao {
+	    		- boolean captacaoRealizada
+	    		- Datetime dataRealizacao
+	    		- controleInterno.Captador captador
+	    	}
+	    	
+	    	enum EstadoCivil {
+	    		Casado, Solteiro, Viuvo
+	    	}
+	    	
+	    	enum GrauParentesco {
+	    		Irmao, Pai, Mae, Avos
+	    	}
+  		}
+	}
+}
