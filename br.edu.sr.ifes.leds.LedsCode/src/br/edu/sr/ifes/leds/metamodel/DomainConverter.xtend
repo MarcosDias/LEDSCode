@@ -1,13 +1,14 @@
 package br.edu.sr.ifes.leds.metamodel
 
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
-import br.edu.sr.ifes.leds.ledsCodeV001.Module
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter
 import br.edu.sr.ifes.leds.metamodel.domainlayer.ServiceConverter
 import java.util.LinkedHashSet
 import model.domainLayer.Domain
 import org.eclipse.emf.common.util.EList
+import model.mainLayer.TableObjects
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 
 class DomainConverter {
 	
@@ -24,12 +25,12 @@ class DomainConverter {
 	 * da linguagem para objetos do metamodelo
 	 * @return HashSet<Domain> Set de dominio do metamodelo
 	 */
-	def converter(EList<DomainBlock> listDomainLang) {
+	def converter(EList<DomainBlock> listDomainLang, TableObjects tableObjects) {
 		val setDomainMetaModel = new LinkedHashSet<Domain>
 		for(domainLang: listDomainLang){
 			val domainMetaModel = new Domain
 			domainMetaModel.name = domainLang.name
-			domainMetaModel.modules = convertModule(domainLang.module, domainMetaModel)
+			domainMetaModel.modules = convertModule(domainLang.module, domainMetaModel, tableObjects)
 			setDomainMetaModel.add(domainMetaModel)
 		}
 		
@@ -45,18 +46,19 @@ class DomainConverter {
 	 * @param domainMetaModel Dominio que esta sendo processado
 	 * @return LinkedHashSet<model.domainLayer.Module> Set de modulo de metamodelo
 	 */
-	def convertModule(EList<Module> listModulesLang, Domain domainMetaModel) {
+	def convertModule(EList<ModuleBlock> listModulesLang, Domain domainMetaModel, TableObjects tableObjects) {
 		val setModulesMetaModule = new LinkedHashSet<model.domainLayer.Module>
 		
 		for (moduleLang: listModulesLang){
 			var moduleMetaModel = new model.domainLayer.Module
 			moduleMetaModel.parent = domainMetaModel
 			moduleMetaModel.name = moduleLang.name
-			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock, moduleMetaModel)
-			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock)
-			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel)
+			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock, moduleMetaModel, tableObjects)
+			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock, tableObjects)
+			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel, tableObjects)
 			
 			setModulesMetaModule.add(moduleMetaModel)
+			tableObjects.modules.add(moduleMetaModel)
 		}
 		
 		setModulesMetaModule

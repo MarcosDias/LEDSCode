@@ -7,7 +7,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
-import br.edu.sr.ifes.leds.ledsCodeV001.Module;
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository;
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
@@ -25,7 +25,7 @@ public class DomainTest extends AbstractTestClass {
   
   private DomainBlock singleDom;
   
-  private Module singleModule;
+  private ModuleBlock singleModule;
   
   private ServiceBlock singleService;
   
@@ -49,8 +49,8 @@ public class DomainTest extends AbstractTestClass {
     this.domain = _domainBlock;
     DomainBlock _get = this.domain.get(0);
     this.singleDom = _get;
-    EList<Module> _module = this.singleDom.getModule();
-    Module _get_1 = _module.get(0);
+    EList<ModuleBlock> _module = this.singleDom.getModule();
+    ModuleBlock _get_1 = _module.get(0);
     this.singleModule = _get_1;
     EList<ServiceBlock> _serviceBlock = this.singleModule.getServiceBlock();
     ServiceBlock _get_2 = _serviceBlock.get(0);
@@ -88,7 +88,7 @@ public class DomainTest extends AbstractTestClass {
   
   @Test
   public void testQtdModule() {
-    EList<Module> _module = this.singleDom.getModule();
+    EList<ModuleBlock> _module = this.singleDom.getModule();
     int _size = _module.size();
     Assert.assertEquals(1, _size);
   }

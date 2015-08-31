@@ -120,9 +120,9 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
         return createDomainBlockAdapter();
       }
       @Override
-      public Adapter caseModule(Module object)
+      public Adapter caseModuleBlock(ModuleBlock object)
       {
-        return createModuleAdapter();
+        return createModuleBlockAdapter();
       }
       @Override
       public Adapter caseServiceBlock(ServiceBlock object)
@@ -332,16 +332,16 @@ public class LedsCodeV001AdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module <em>Module</em>}'.
+   * Creates a new adapter for an object of class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock <em>Module Block</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
    * @generated
    */
-  public Adapter createModuleAdapter()
+  public Adapter createModuleBlockAdapter()
   {
     return null;
   }

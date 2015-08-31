@@ -59,9 +59,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="DomainBlock">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="module" upperBound="-1"
-        eType="#//Module" containment="true"/>
+        eType="#//ModuleBlock" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Module">
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleBlock">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serviceBlock" upperBound="-1"
         eType="#//ServiceBlock" containment="true"/>

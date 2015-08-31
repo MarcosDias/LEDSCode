@@ -489,14 +489,14 @@ public interface LedsCodeV001Package extends EPackage
   int DOMAIN_BLOCK_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl <em>Module</em>}' class.
+   * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl <em>Module Block</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getModule()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getModuleBlock()
    * @generated
    */
-  int MODULE = 9;
+  int MODULE_BLOCK = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -505,7 +505,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__NAME = 0;
+  int MODULE_BLOCK__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Service Block</b></em>' containment reference list.
@@ -514,7 +514,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__SERVICE_BLOCK = 1;
+  int MODULE_BLOCK__SERVICE_BLOCK = 1;
 
   /**
    * The feature id for the '<em><b>Entity Block</b></em>' containment reference list.
@@ -523,7 +523,7 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__ENTITY_BLOCK = 2;
+  int MODULE_BLOCK__ENTITY_BLOCK = 2;
 
   /**
    * The feature id for the '<em><b>Enum Block</b></em>' containment reference list.
@@ -532,16 +532,16 @@ public interface LedsCodeV001Package extends EPackage
    * @generated
    * @ordered
    */
-  int MODULE__ENUM_BLOCK = 3;
+  int MODULE_BLOCK__ENUM_BLOCK = 3;
 
   /**
-   * The number of structural features of the '<em>Module</em>' class.
+   * The number of structural features of the '<em>Module Block</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_FEATURE_COUNT = 4;
+  int MODULE_BLOCK_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl <em>Service Block</em>}' class.
@@ -1405,58 +1405,58 @@ public interface LedsCodeV001Package extends EPackage
   EReference getDomainBlock_Module();
 
   /**
-   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module <em>Module</em>}'.
+   * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock <em>Module Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Module</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module
+   * @return the meta object for class '<em>Module Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
    * @generated
    */
-  EClass getModule();
+  EClass getModuleBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getName()
-   * @see #getModule()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getName()
+   * @see #getModuleBlock()
    * @generated
    */
-  EAttribute getModule_Name();
+  EAttribute getModuleBlock_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getServiceBlock <em>Service Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock <em>Service Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Service Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getServiceBlock()
-   * @see #getModule()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock()
+   * @see #getModuleBlock()
    * @generated
    */
-  EReference getModule_ServiceBlock();
+  EReference getModuleBlock_ServiceBlock();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getEntityBlock <em>Entity Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEntityBlock <em>Entity Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Entity Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getEntityBlock()
-   * @see #getModule()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEntityBlock()
+   * @see #getModuleBlock()
    * @generated
    */
-  EReference getModule_EntityBlock();
+  EReference getModuleBlock_EntityBlock();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getEnumBlock <em>Enum Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock <em>Enum Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Enum Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.Module#getEnumBlock()
-   * @see #getModule()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock()
+   * @see #getModuleBlock()
    * @generated
    */
-  EReference getModule_EnumBlock();
+  EReference getModuleBlock_EnumBlock();
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock <em>Service Block</em>}'.
@@ -2223,14 +2223,14 @@ public interface LedsCodeV001Package extends EPackage
     EReference DOMAIN_BLOCK__MODULE = eINSTANCE.getDomainBlock_Module();
 
     /**
-     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl <em>Module</em>}' class.
+     * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl <em>Module Block</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleImpl
-     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getModule()
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl
+     * @see br.edu.sr.ifes.leds.ledsCodeV001.impl.LedsCodeV001PackageImpl#getModuleBlock()
      * @generated
      */
-    EClass MODULE = eINSTANCE.getModule();
+    EClass MODULE_BLOCK = eINSTANCE.getModuleBlock();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2238,7 +2238,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MODULE__NAME = eINSTANCE.getModule_Name();
+    EAttribute MODULE_BLOCK__NAME = eINSTANCE.getModuleBlock_Name();
 
     /**
      * The meta object literal for the '<em><b>Service Block</b></em>' containment reference list feature.
@@ -2246,7 +2246,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE__SERVICE_BLOCK = eINSTANCE.getModule_ServiceBlock();
+    EReference MODULE_BLOCK__SERVICE_BLOCK = eINSTANCE.getModuleBlock_ServiceBlock();
 
     /**
      * The meta object literal for the '<em><b>Entity Block</b></em>' containment reference list feature.
@@ -2254,7 +2254,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE__ENTITY_BLOCK = eINSTANCE.getModule_EntityBlock();
+    EReference MODULE_BLOCK__ENTITY_BLOCK = eINSTANCE.getModuleBlock_EntityBlock();
 
     /**
      * The meta object literal for the '<em><b>Enum Block</b></em>' containment reference list feature.
@@ -2262,7 +2262,7 @@ public interface LedsCodeV001Package extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE__ENUM_BLOCK = eINSTANCE.getModule_EnumBlock();
+    EReference MODULE_BLOCK__ENUM_BLOCK = eINSTANCE.getModuleBlock_EnumBlock();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl <em>Service Block</em>}' class.

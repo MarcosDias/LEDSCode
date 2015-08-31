@@ -8,6 +8,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
 import com.google.common.base.Objects;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import model.domainLayer.AccessModifier;
 import model.domainLayer.Attribute;
 import model.domainLayer.CollectionType;
@@ -21,6 +22,7 @@ import model.domainLayer.PrimaryDateTypeEnum;
 import model.domainLayer.Repository;
 import model.domainLayer.ReturnType;
 import model.domainLayer.SuperAttribute;
+import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -37,10 +39,10 @@ public class EntityConverter {
    * @param moduleMetaModel Modulo que está sendo processado no momento
    * @return LinkedHashSet<Entity> Set de entidade do metamodelo
    */
-  public LinkedHashSet<Entity> convert(final EList<EntityBlock> listEntityLang, final Module moduleMetaModel) {
+  public LinkedHashSet<Entity> convert(final EList<EntityBlock> listEntityLang, final Module moduleMetaModel, final TableObjects tableObjects) {
     LinkedHashSet<Entity> _xblockexpression = null;
     {
-      LinkedHashSet<Entity> listEntityMetaModel = this.buildIncompleteEntities(listEntityLang, moduleMetaModel);
+      LinkedHashSet<Entity> listEntityMetaModel = this.buildIncompleteEntities(listEntityLang, moduleMetaModel, tableObjects);
       this.convertClassExtendsEntities(listEntityMetaModel, listEntityLang);
       this.convertAttributes(listEntityMetaModel, listEntityLang);
       this.convertRepository(listEntityMetaModel, listEntityLang);
@@ -60,7 +62,7 @@ public class EntityConverter {
    * @param moduleMetaModel Modulo que está sendo processado no momento
    * @return LinkedHashSet<Entity> Lista de entidade do metamodelo
    */
-  public LinkedHashSet<Entity> buildIncompleteEntities(final EList<EntityBlock> listEntityLang, final Module moduleMetaModel) {
+  public LinkedHashSet<Entity> buildIncompleteEntities(final EList<EntityBlock> listEntityLang, final Module moduleMetaModel, final TableObjects tableObjects) {
     LinkedHashSet<Entity> _xblockexpression = null;
     {
       LinkedHashSet<Entity> listEntityMetaModel = new LinkedHashSet<Entity>();
@@ -82,6 +84,8 @@ public class EntityConverter {
           Repository _repository = new Repository();
           entityMetaModel.setRepository(_repository);
           listEntityMetaModel.add(entityMetaModel);
+          Set<Entity> _entities = tableObjects.getEntities();
+          _entities.add(entityMetaModel);
         }
       }
       _xblockexpression = listEntityMetaModel;

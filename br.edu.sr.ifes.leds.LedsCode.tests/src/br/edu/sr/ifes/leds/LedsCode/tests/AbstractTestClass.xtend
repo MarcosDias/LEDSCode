@@ -10,6 +10,7 @@ import org.eclipse.xtext.junit4.util.ParseHelper
 import org.junit.runner.RunWith
 
 import static br.edu.sr.ifes.leds.LedsCode.factory.ProjectFactory.completeProject
+import model.mainLayer.TableObjects
 
 @InjectWith(LedsCodeV001InjectorProvider)
 @RunWith(XtextRunner)
@@ -19,6 +20,7 @@ abstract class AbstractTestClass {
   	protected ParseHelper<LedsCodeDSL> parser
   	
   	protected Project projectLang
+  	protected TableObjects tableObjects
   	protected model.mainLayer.Project projectMetaModel
   	
   	def parseProject(){

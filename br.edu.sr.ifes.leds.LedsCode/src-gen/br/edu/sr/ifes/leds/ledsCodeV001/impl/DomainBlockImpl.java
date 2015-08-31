@@ -4,7 +4,7 @@ package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
-import br.edu.sr.ifes.leds.ledsCodeV001.Module;
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock;
 
 import java.util.Collection;
 
@@ -66,7 +66,7 @@ public class DomainBlockImpl extends MinimalEObjectImpl.Container implements Dom
    * @generated
    * @ordered
    */
-  protected EList<Module> module;
+  protected EList<ModuleBlock> module;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,11 +117,11 @@ public class DomainBlockImpl extends MinimalEObjectImpl.Container implements Dom
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Module> getModule()
+  public EList<ModuleBlock> getModule()
   {
     if (module == null)
     {
-      module = new EObjectContainmentEList<Module>(Module.class, this, LedsCodeV001Package.DOMAIN_BLOCK__MODULE);
+      module = new EObjectContainmentEList<ModuleBlock>(ModuleBlock.class, this, LedsCodeV001Package.DOMAIN_BLOCK__MODULE);
     }
     return module;
   }
@@ -176,7 +176,7 @@ public class DomainBlockImpl extends MinimalEObjectImpl.Container implements Dom
         return;
       case LedsCodeV001Package.DOMAIN_BLOCK__MODULE:
         getModule().clear();
-        getModule().addAll((Collection<? extends Module>)newValue);
+        getModule().addAll((Collection<? extends ModuleBlock>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

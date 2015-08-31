@@ -8,24 +8,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Module</b></em>'.
+ * A representation of the model object '<em><b>Module Block</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getServiceBlock <em>Service Block</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getEntityBlock <em>Entity Block</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getEnumBlock <em>Enum Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getName <em>Name</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock <em>Service Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEntityBlock <em>Entity Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock <em>Enum Block</em>}</li>
  * </ul>
  * </p>
  *
- * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModule()
+ * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock()
  * @model
  * @generated
  */
-public interface Module extends EObject
+public interface ModuleBlock extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -37,14 +37,14 @@ public interface Module extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModule_Name()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.Module#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -63,7 +63,7 @@ public interface Module extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Service Block</em>' containment reference list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModule_ServiceBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_ServiceBlock()
    * @model containment="true"
    * @generated
    */
@@ -79,7 +79,7 @@ public interface Module extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Entity Block</em>' containment reference list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModule_EntityBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_EntityBlock()
    * @model containment="true"
    * @generated
    */
@@ -95,10 +95,10 @@ public interface Module extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Enum Block</em>' containment reference list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModule_EnumBlock()
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_EnumBlock()
    * @model containment="true"
    * @generated
    */
   EList<EnumBlock> getEnumBlock();
 
-} // Module
+} // ModuleBlock

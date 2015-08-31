@@ -8,7 +8,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
-import br.edu.sr.ifes.leds.ledsCodeV001.Module;
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository;
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
@@ -24,9 +24,11 @@ import model.domainLayer.Domain;
 import model.domainLayer.Entity;
 import model.domainLayer.InternalServiceMethod;
 import model.domainLayer.Method;
+import model.domainLayer.Module;
 import model.domainLayer.Parameter;
 import model.domainLayer.ReturnType;
 import model.domainLayer.Service;
+import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.junit.Assert;
@@ -39,7 +41,7 @@ public class DomainTest extends AbstractTestClass {
   
   private DomainBlock singleDomLang;
   
-  private Module singleModuleLang;
+  private ModuleBlock singleModuleLang;
   
   private ServiceBlock singleServiceLang;
   
@@ -59,7 +61,7 @@ public class DomainTest extends AbstractTestClass {
   
   private Domain singleDomMetaModel;
   
-  private model.domainLayer.Module singleModuleMetaModel;
+  private Module singleModuleMetaModel;
   
   private Entity singleEntityMetaModel;
   
@@ -83,8 +85,8 @@ public class DomainTest extends AbstractTestClass {
     this.domainLang = _domainBlock;
     DomainBlock _get = this.domainLang.get(0);
     this.singleDomLang = _get;
-    EList<Module> _module = this.singleDomLang.getModule();
-    Module _get_1 = _module.get(0);
+    EList<ModuleBlock> _module = this.singleDomLang.getModule();
+    ModuleBlock _get_1 = _module.get(0);
     this.singleModuleLang = _get_1;
     EList<ServiceBlock> _serviceBlock = this.singleModuleLang.getServiceBlock();
     ServiceBlock _get_2 = _serviceBlock.get(0);
@@ -107,14 +109,16 @@ public class DomainTest extends AbstractTestClass {
     EnumBlock _get_7 = _enumBlock.get(0);
     this.singleEnumLang = _get_7;
     ProjectConverter _projectConverter = new ProjectConverter();
-    model.mainLayer.Project _convert = _projectConverter.convert(this.projectLang);
-    this.projectMetaModel = _convert;
+    TableObjects _convert = _projectConverter.convert(this.projectLang);
+    this.tableObjects = _convert;
+    model.mainLayer.Project _project = this.tableObjects.getProject();
+    this.projectMetaModel = _project;
     LinkedHashSet<Domain> _domains = this.projectMetaModel.getDomains();
     this.domainMetaModel = _domains;
     Domain _get_8 = ((Domain[])Conversions.unwrapArray(this.domainMetaModel, Domain.class))[0];
     this.singleDomMetaModel = _get_8;
-    LinkedHashSet<model.domainLayer.Module> _modules = this.singleDomMetaModel.getModules();
-    model.domainLayer.Module _get_9 = ((model.domainLayer.Module[])Conversions.unwrapArray(_modules, model.domainLayer.Module.class))[0];
+    LinkedHashSet<Module> _modules = this.singleDomMetaModel.getModules();
+    Module _get_9 = ((Module[])Conversions.unwrapArray(_modules, Module.class))[0];
     this.singleModuleMetaModel = _get_9;
     LinkedHashSet<Service> _services = this.singleModuleMetaModel.getServices();
     Service _get_10 = ((Service[])Conversions.unwrapArray(_services, Service.class))[0];
@@ -161,9 +165,9 @@ public class DomainTest extends AbstractTestClass {
   
   @Test
   public void testQtdModule() {
-    EList<Module> _module = this.singleDomLang.getModule();
+    EList<ModuleBlock> _module = this.singleDomLang.getModule();
     int _size = _module.size();
-    LinkedHashSet<model.domainLayer.Module> _modules = this.singleDomMetaModel.getModules();
+    LinkedHashSet<Module> _modules = this.singleDomMetaModel.getModules();
     int _size_1 = _modules.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -199,7 +203,7 @@ public class DomainTest extends AbstractTestClass {
   
   @Test
   public void testServiceParent() {
-    model.domainLayer.Module _parent = this.singleServiceMetaModel.getParent();
+    Module _parent = this.singleServiceMetaModel.getParent();
     Assert.assertNotNull(_parent);
   }
   
@@ -250,7 +254,7 @@ public class DomainTest extends AbstractTestClass {
   
   @Test
   public void testEntityParent() {
-    model.domainLayer.Module _parent = this.singleEntityMetaModel.getParent();
+    Module _parent = this.singleEntityMetaModel.getParent();
     Assert.assertNotNull(_parent);
   }
   

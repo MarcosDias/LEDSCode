@@ -10,20 +10,23 @@ import model.domainLayer.InternalServiceMethod
 import model.domainLayer.Service
 import org.eclipse.emf.common.util.EList
 import model.domainLayer.Module
+import model.mainLayer.TableObjects
 
 class ServiceConverter {
 	
 	FindEntity findEntity
 	FindRepositoryMethod findRepositoryMethod
 	
-	def convert(EList<ServiceBlock> listServiceLang, Module moduleMetaModel) {
+	def convert(EList<ServiceBlock> listServiceLang, Module moduleMetaModel, TableObjects tableObjects) {
 		var listServiceMetaModel = new LinkedHashSet<Service>
 		for(serviceLang: listServiceLang){
 			var serviceMetaModel = new Service
 			serviceMetaModel.parent = moduleMetaModel
 			serviceMetaModel.name = serviceLang.name
 			serviceMetaModel.methods = convertServiceMethod(serviceLang.serviceFields, moduleMetaModel.entities)
+			
 			listServiceMetaModel.add(serviceMetaModel)
+			tableObjects.services.add(serviceMetaModel)
 		}
 		
 		listServiceMetaModel

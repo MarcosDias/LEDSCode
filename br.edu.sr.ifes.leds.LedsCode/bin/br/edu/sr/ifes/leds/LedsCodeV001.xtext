@@ -66,11 +66,11 @@ ApplicationBlock:
 
 DomainBlock:
 	'domain' name=ID '{'
-		(module+=Module)*
+		(module+=ModuleBlock)*
 	'}'
 ;
 
-Module:
+ModuleBlock:
 	'module' name=ID '{'
 		(
 			serviceBlock+=ServiceBlock|
@@ -95,7 +95,7 @@ EntityBlock:
 	name=ID classExtends=ExtendBlock? '{'
 		(attributes+=Attribute)*
 		
-		repository=Repository 
+		repository=Repository?
 	'}' 
 ;
 
@@ -132,13 +132,13 @@ EnumBlock:
 ;
 
 DataType:
-	(DataTypeList|DataTypeSet|CompoundName|'String'|'int'|'Integer'|'long'|'Long'|'boolean'|'Boolean'|'DateTime'|
+	(DataTypeList|DataTypeSet|CompoundName|'String'|'int'|'Integer'|'long'|'Long'|'boolean'|'Boolean'|'Datetime'|
   	'double'|'Double'|'float'|'Float'|'Object')
 ;
 MethodParameter: typeAndAttr+=TypeAndAttribute (',' typeAndAttr+=TypeAndAttribute)*;
 TypeAndAttribute: type=DataType name=ID;
 ExtendBlock: Extend values+=CompoundName (',' values+=CompoundName)?;
-Extend: ':';
+Extend: ':'|'extends'|'ext';
 DataTypeList: 'List''<'DataType'>';
 DataTypeSet: 'Set''<'DataType'>';
 AccessModifier: (Private|Protected);
@@ -148,3 +148,4 @@ ImportCompoundName: CompoundName('.*'?);
 CompoundName: ID('.'ID)*;
 BOOLEAN: 'true'|'false';
 INTEGER returns ecore::EIntegerObject: (INT)+;
+//CompoundName2: ((domain=[DomainBlock]'.')?module=[ModuleBlock]'.')?name=[EntityBlock];

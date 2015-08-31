@@ -104,13 +104,13 @@ public interface LedsCodeV001Factory extends EFactory
   DomainBlock createDomainBlock();
 
   /**
-   * Returns a new object of class '<em>Module</em>'.
+   * Returns a new object of class '<em>Module Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Module</em>'.
+   * @return a new object of class '<em>Module Block</em>'.
    * @generated
    */
-  Module createModule();
+  ModuleBlock createModuleBlock();
 
   /**
    * Returns a new object of class '<em>Service Block</em>'.

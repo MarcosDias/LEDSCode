@@ -25,7 +25,8 @@ class InterfaceTest extends AbstractTestClass{
 		ifaceLang = projectLang.interfaceBlock
 		ifaceFieldLang = ifaceLang.interfaceApplication.get(0)
 		
-		projectMetaModel = new ProjectConverter().convert(projectLang);
+		tableObjects = new ProjectConverter().convert(projectLang);
+		projectMetaModel = tableObjects.project
 		ifaceMetaModel = projectMetaModel.iface
 		ifaceFieldMetaModel = ifaceMetaModel.interfaceApplication.get(0)
 	}

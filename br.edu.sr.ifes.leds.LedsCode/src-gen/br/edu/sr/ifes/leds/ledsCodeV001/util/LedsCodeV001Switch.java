@@ -135,10 +135,10 @@ public class LedsCodeV001Switch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LedsCodeV001Package.MODULE:
+      case LedsCodeV001Package.MODULE_BLOCK:
       {
-        Module module = (Module)theEObject;
-        T result = caseModule(module);
+        ModuleBlock moduleBlock = (ModuleBlock)theEObject;
+        T result = caseModuleBlock(moduleBlock);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -361,17 +361,17 @@ public class LedsCodeV001Switch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Module</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Module Block</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Module</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Module Block</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModule(Module object)
+  public T caseModuleBlock(ModuleBlock object)
   {
     return null;
   }

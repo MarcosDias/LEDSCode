@@ -63,6 +63,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__33=33;
+    public static final int T__77=77;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
@@ -73,6 +74,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
     public static final int T__31=31;
     public static final int T__75=75;
     public static final int T__32=32;
+    public static final int T__76=76;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__48=48;
@@ -104,10 +106,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:11:7: ( ':' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:11:9: ':'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:11:7: ( 'HtmlView' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:11:9: 'HtmlView'
             {
-            match(':'); 
+            match("HtmlView"); 
+
 
             }
 
@@ -124,10 +127,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:12:7: ( 'HtmlView' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:12:9: 'HtmlView'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:12:7: ( 'RestFull' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:12:9: 'RestFull'
             {
-            match("HtmlView"); 
+            match("RestFull"); 
 
 
             }
@@ -145,10 +148,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:13:7: ( 'RestFull' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:13:9: 'RestFull'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:13:7: ( 'String' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:13:9: 'String'
             {
-            match("RestFull"); 
+            match("String"); 
 
 
             }
@@ -166,10 +169,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:14:7: ( 'String' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:14:9: 'String'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:14:7: ( 'int' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:14:9: 'int'
             {
-            match("String"); 
+            match("int"); 
 
 
             }
@@ -187,10 +190,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:15:7: ( 'int' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:15:9: 'int'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:15:7: ( 'Integer' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:15:9: 'Integer'
             {
-            match("int"); 
+            match("Integer"); 
 
 
             }
@@ -208,10 +211,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:16:7: ( 'Integer' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:16:9: 'Integer'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:16:7: ( 'long' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:16:9: 'long'
             {
-            match("Integer"); 
+            match("long"); 
 
 
             }
@@ -229,10 +232,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:17:7: ( 'long' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:17:9: 'long'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:17:7: ( 'Long' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:17:9: 'Long'
             {
-            match("long"); 
+            match("Long"); 
 
 
             }
@@ -250,10 +253,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:18:7: ( 'Long' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:18:9: 'Long'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:18:7: ( 'boolean' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:18:9: 'boolean'
             {
-            match("Long"); 
+            match("boolean"); 
 
 
             }
@@ -271,10 +274,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:19:7: ( 'boolean' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:19:9: 'boolean'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:19:7: ( 'Boolean' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:19:9: 'Boolean'
             {
-            match("boolean"); 
+            match("Boolean"); 
 
 
             }
@@ -292,10 +295,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:20:7: ( 'Boolean' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:20:9: 'Boolean'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:20:7: ( 'Datetime' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:20:9: 'Datetime'
             {
-            match("Boolean"); 
+            match("Datetime"); 
 
 
             }
@@ -313,10 +316,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:21:7: ( 'DateTime' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:21:9: 'DateTime'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:21:7: ( 'double' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:21:9: 'double'
             {
-            match("DateTime"); 
+            match("double"); 
 
 
             }
@@ -334,10 +337,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:22:7: ( 'double' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:22:9: 'double'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:22:7: ( 'Double' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:22:9: 'Double'
             {
-            match("double"); 
+            match("Double"); 
 
 
             }
@@ -355,10 +358,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:23:7: ( 'Double' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:23:9: 'Double'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:23:7: ( 'float' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:23:9: 'float'
             {
-            match("Double"); 
+            match("float"); 
 
 
             }
@@ -376,10 +379,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:24:7: ( 'float' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:24:9: 'float'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:24:7: ( 'Float' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:24:9: 'Float'
             {
-            match("float"); 
+            match("Float"); 
 
 
             }
@@ -397,10 +400,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:25:7: ( 'Float' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:25:9: 'Float'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:25:7: ( 'Object' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:25:9: 'Object'
             {
-            match("Float"); 
+            match("Object"); 
 
 
             }
@@ -418,11 +421,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:26:7: ( 'Object' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:26:9: 'Object'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:26:7: ( ':' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:26:9: ':'
             {
-            match("Object"); 
-
+            match(':'); 
 
             }
 
@@ -439,10 +441,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:27:7: ( '-' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:27:9: '-'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:27:7: ( 'extends' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:27:9: 'extends'
             {
-            match('-'); 
+            match("extends"); 
+
 
             }
 
@@ -459,10 +462,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:28:7: ( 'private' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:28:9: 'private'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:28:7: ( 'ext' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:28:9: 'ext'
             {
-            match("private"); 
+            match("ext"); 
 
 
             }
@@ -480,10 +483,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:29:7: ( '#' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:29:9: '#'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:29:7: ( '-' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:29:9: '-'
             {
-            match('#'); 
+            match('-'); 
 
             }
 
@@ -500,10 +503,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:30:7: ( 'protected' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:30:9: 'protected'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:30:7: ( 'private' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:30:9: 'private'
             {
-            match("protected"); 
+            match("private"); 
 
 
             }
@@ -521,11 +524,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:31:7: ( 'true' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:31:9: 'true'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:31:7: ( '#' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:31:9: '#'
             {
-            match("true"); 
-
+            match('#'); 
 
             }
 
@@ -542,10 +544,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:32:7: ( 'false' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:32:9: 'false'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:32:7: ( 'protected' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:32:9: 'protected'
             {
-            match("false"); 
+            match("protected"); 
 
 
             }
@@ -563,10 +565,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:33:7: ( 'project' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:33:9: 'project'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:33:7: ( 'true' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:33:9: 'true'
             {
-            match("project"); 
+            match("true"); 
 
 
             }
@@ -584,10 +586,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:34:7: ( '{' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:34:9: '{'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:34:7: ( 'false' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:34:9: 'false'
             {
-            match('{'); 
+            match("false"); 
+
 
             }
 
@@ -604,10 +607,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:35:7: ( '}' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:35:9: '}'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:35:7: ( 'project' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:35:9: 'project'
             {
-            match('}'); 
+            match("project"); 
+
 
             }
 
@@ -624,11 +628,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:36:7: ( 'interface' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:36:9: 'interface'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:36:7: ( '{' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:36:9: '{'
             {
-            match("interface"); 
-
+            match('{'); 
 
             }
 
@@ -645,11 +648,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:37:7: ( '=>' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:37:9: '=>'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:37:7: ( '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:37:9: '}'
             {
-            match("=>"); 
-
+            match('}'); 
 
             }
 
@@ -666,10 +668,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:38:7: ( 'infrastructure' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:38:9: 'infrastructure'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:38:7: ( 'interface' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:38:9: 'interface'
             {
-            match("infrastructure"); 
+            match("interface"); 
 
 
             }
@@ -687,10 +689,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:39:7: ( 'basePackage' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:39:9: 'basePackage'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:39:7: ( '=>' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:39:9: '=>'
             {
-            match("basePackage"); 
+            match("=>"); 
 
 
             }
@@ -708,10 +710,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:40:7: ( '=' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:40:9: '='
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:40:7: ( 'infrastructure' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:40:9: 'infrastructure'
             {
-            match('='); 
+            match("infrastructure"); 
+
 
             }
 
@@ -728,10 +731,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:41:7: ( 'projectVersion' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:41:9: 'projectVersion'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:41:7: ( 'basePackage' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:41:9: 'basePackage'
             {
-            match("projectVersion"); 
+            match("basePackage"); 
 
 
             }
@@ -749,11 +752,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:42:7: ( 'language' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:42:9: 'language'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:42:7: ( '=' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:42:9: '='
             {
-            match("language"); 
-
+            match('='); 
 
             }
 
@@ -770,10 +772,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:43:7: ( 'framework' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:43:9: 'framework'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:43:7: ( 'projectVersion' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:43:9: 'projectVersion'
             {
-            match("framework"); 
+            match("projectVersion"); 
 
 
             }
@@ -791,10 +793,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:44:7: ( 'orm' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:44:9: 'orm'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:44:7: ( 'language' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:44:9: 'language'
             {
-            match("orm"); 
+            match("language"); 
 
 
             }
@@ -812,10 +814,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:45:7: ( 'database' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:45:9: 'database'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:45:7: ( 'framework' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:45:9: 'framework'
             {
-            match("database"); 
+            match("framework"); 
 
 
             }
@@ -833,10 +835,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:46:7: ( '@version' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:46:9: '@version'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:46:7: ( 'orm' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:46:9: 'orm'
             {
-            match("@version"); 
+            match("orm"); 
 
 
             }
@@ -854,10 +856,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:47:7: ( ',' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:47:9: ','
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:47:7: ( 'database' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:47:9: 'database'
             {
-            match(','); 
+            match("database"); 
+
 
             }
 
@@ -874,10 +877,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:48:7: ( '@name' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:48:9: '@name'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:48:7: ( '@version' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:48:9: '@version'
             {
-            match("@name"); 
+            match("@version"); 
 
 
             }
@@ -895,11 +898,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:49:7: ( '@user' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:49:9: '@user'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:49:7: ( ',' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:49:9: ','
             {
-            match("@user"); 
-
+            match(','); 
 
             }
 
@@ -916,10 +918,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:50:7: ( '@pass' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:50:9: '@pass'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:50:7: ( '@name' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:50:9: '@name'
             {
-            match("@pass"); 
+            match("@name"); 
 
 
             }
@@ -937,10 +939,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:51:7: ( '@host' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:51:9: '@host'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:51:7: ( '@user' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:51:9: '@user'
             {
-            match("@host"); 
+            match("@user"); 
 
 
             }
@@ -958,10 +960,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:52:7: ( '@env' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:52:9: '@env'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:52:7: ( '@pass' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:52:9: '@pass'
             {
-            match("@env"); 
+            match("@pass"); 
 
 
             }
@@ -979,10 +981,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:53:7: ( 'application' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:53:9: 'application'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:53:7: ( '@host' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:53:9: '@host'
             {
-            match("application"); 
+            match("@host"); 
 
 
             }
@@ -1000,10 +1002,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:54:7: ( 'composedBy' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:54:9: 'composedBy'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:54:7: ( '@env' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:54:9: '@env'
             {
-            match("composedBy"); 
+            match("@env"); 
 
 
             }
@@ -1021,10 +1023,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:55:7: ( 'domain' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:55:9: 'domain'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:55:7: ( 'application' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:55:9: 'application'
             {
-            match("domain"); 
+            match("application"); 
 
 
             }
@@ -1042,10 +1044,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:56:7: ( 'module' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:56:9: 'module'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:56:7: ( 'composedBy' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:56:9: 'composedBy'
             {
-            match("module"); 
+            match("composedBy"); 
 
 
             }
@@ -1063,10 +1065,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:57:7: ( 'service' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:57:9: 'service'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:57:7: ( 'domain' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:57:9: 'domain'
             {
-            match("service"); 
+            match("domain"); 
 
 
             }
@@ -1084,10 +1086,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:58:7: ( 'entity' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:58:9: 'entity'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:58:7: ( 'module' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:58:9: 'module'
             {
-            match("entity"); 
+            match("module"); 
 
 
             }
@@ -1105,10 +1107,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:59:7: ( '@unique' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:59:9: '@unique'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:59:7: ( 'service' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:59:9: 'service'
             {
-            match("@unique"); 
+            match("service"); 
 
 
             }
@@ -1126,10 +1128,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:60:7: ( '(' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:60:9: '('
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:60:7: ( 'entity' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:60:9: 'entity'
             {
-            match('('); 
+            match("entity"); 
+
 
             }
 
@@ -1146,10 +1149,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:61:7: ( ')' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:61:9: ')'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:61:7: ( '@unique' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:61:9: '@unique'
             {
-            match(')'); 
+            match("@unique"); 
+
 
             }
 
@@ -1166,11 +1170,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:62:7: ( '@null' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:62:9: '@null'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:62:7: ( '(' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:62:9: '('
             {
-            match("@null"); 
-
+            match('('); 
 
             }
 
@@ -1187,11 +1190,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:63:7: ( '@min' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:63:9: '@min'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:63:7: ( ')' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:63:9: ')'
             {
-            match("@min"); 
-
+            match(')'); 
 
             }
 
@@ -1208,10 +1210,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:64:7: ( '@max' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:64:9: '@max'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:64:7: ( '@null' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:64:9: '@null'
             {
-            match("@max"); 
+            match("@null"); 
 
 
             }
@@ -1229,10 +1231,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:65:7: ( '@between' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:65:9: '@between'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:65:7: ( '@min' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:65:9: '@min'
             {
-            match("@between"); 
+            match("@min"); 
 
 
             }
@@ -1250,10 +1252,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:66:7: ( 'repository' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:66:9: 'repository'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:66:7: ( '@max' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:66:9: '@max'
             {
-            match("repository"); 
+            match("@max"); 
 
 
             }
@@ -1271,10 +1273,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:67:7: ( 'enum' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:67:9: 'enum'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:67:7: ( '@between' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:67:9: '@between'
             {
-            match("enum"); 
+            match("@between"); 
 
 
             }
@@ -1292,10 +1294,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:68:7: ( 'List' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:68:9: 'List'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:68:7: ( 'repository' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:68:9: 'repository'
             {
-            match("List"); 
+            match("repository"); 
 
 
             }
@@ -1313,10 +1315,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:69:7: ( '<' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:69:9: '<'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:69:7: ( 'enum' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:69:9: 'enum'
             {
-            match('<'); 
+            match("enum"); 
+
 
             }
 
@@ -1333,10 +1336,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:70:7: ( '>' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:70:9: '>'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:70:7: ( 'List' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:70:9: 'List'
             {
-            match('>'); 
+            match("List"); 
+
 
             }
 
@@ -1353,11 +1357,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:71:7: ( 'Set' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:71:9: 'Set'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:71:7: ( '<' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:71:9: '<'
             {
-            match("Set"); 
-
+            match('<'); 
 
             }
 
@@ -1374,11 +1377,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:72:7: ( '.*' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:72:9: '.*'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:72:7: ( '>' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:72:9: '>'
             {
-            match(".*"); 
-
+            match('>'); 
 
             }
 
@@ -1395,10 +1397,11 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:73:7: ( '.' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:73:9: '.'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:73:7: ( 'Set' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:73:9: 'Set'
             {
-            match('.'); 
+            match("Set"); 
+
 
             }
 
@@ -1415,10 +1418,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:74:7: ( 'abstract' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:74:9: 'abstract'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:74:7: ( '.*' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:74:9: '.*'
             {
-            match("abstract"); 
+            match(".*"); 
 
 
             }
@@ -1436,8 +1439,49 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:75:7: ( '@pk' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:75:9: '@pk'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:75:7: ( '.' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:75:9: '.'
+            {
+            match('.'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__75"
+
+    // $ANTLR start "T__76"
+    public final void mT__76() throws RecognitionException {
+        try {
+            int _type = T__76;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:76:7: ( 'abstract' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:76:9: 'abstract'
+            {
+            match("abstract"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__76"
+
+    // $ANTLR start "T__77"
+    public final void mT__77() throws RecognitionException {
+        try {
+            int _type = T__77;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:77:7: ( '@pk' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:77:9: '@pk'
             {
             match("@pk"); 
 
@@ -1450,17 +1494,17 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__75"
+    // $ANTLR end "T__77"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8104:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8104:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8136:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8136:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8104:11: ( '^' )?
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8136:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1469,7 +1513,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8104:11: '^'
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8136:11: '^'
                     {
                     match('^'); 
 
@@ -1487,7 +1531,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8104:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8136:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1536,10 +1580,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8106:10: ( ( '0' .. '9' )+ )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8106:12: ( '0' .. '9' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8138:10: ( ( '0' .. '9' )+ )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8138:12: ( '0' .. '9' )+
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8106:12: ( '0' .. '9' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8138:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1553,7 +1597,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8106:13: '0' .. '9'
+            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8138:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1585,10 +1629,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1606,10 +1650,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1625,7 +1669,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:21: '\\\\' .
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1633,7 +1677,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1658,10 +1702,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1677,7 +1721,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:54: '\\\\' .
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1685,7 +1729,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8108:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8140:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1728,12 +1772,12 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8110:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8110:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8142:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8142:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8110:24: ( options {greedy=false; } : . )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8142:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1758,7 +1802,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8110:52: .
+            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8142:52: .
             	    {
             	    matchAny(); 
 
@@ -1788,12 +1832,12 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1806,7 +1850,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1826,7 +1870,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                 }
             } while (true);
 
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:40: ( ( '\\r' )? '\\n' )?
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1835,9 +1879,9 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:41: ( '\\r' )? '\\n'
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:41: ( '\\r' )? '\\n'
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:41: ( '\\r' )?
+                    // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1846,7 +1890,7 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8112:41: '\\r'
+                            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8144:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1878,10 +1922,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8114:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8114:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8146:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8146:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8114:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8146:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1935,8 +1979,8 @@ public class InternalLedsCodeV001Lexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8116:16: ( . )
-            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8116:18: .
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8148:16: ( . )
+            // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:8148:18: .
             {
             matchAny(); 
 
@@ -1951,8 +1995,8 @@ public class InternalLedsCodeV001Lexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=72;
+        // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=74;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -2411,49 +2455,63 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                 }
                 break;
             case 66 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:400: RULE_ID
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:400: T__76
+                {
+                mT__76(); 
+
+                }
+                break;
+            case 67 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:406: T__77
+                {
+                mT__77(); 
+
+                }
+                break;
+            case 68 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:412: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 67 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:408: RULE_INT
+            case 69 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:420: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 68 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:417: RULE_STRING
+            case 70 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:429: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 69 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:429: RULE_ML_COMMENT
+            case 71 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:441: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 70 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:445: RULE_SL_COMMENT
+            case 72 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:457: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 71 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:461: RULE_WS
+            case 73 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:473: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 72 :
-                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:469: RULE_ANY_OTHER
+            case 74 :
+                // ../br.edu.sr.ifes.leds.LedsCode.ui/src-gen/br/edu/sr/ifes/leds/ui/contentassist/antlr/internal/InternalLedsCodeV001.g:1:481: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2467,71 +2525,69 @@ public class InternalLedsCodeV001Lexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\2\uffff\16\57\1\uffff\1\57\1\uffff\1\57\2\uffff\1\114\1\57\1\54\1\uffff\5\57\2\uffff\1\57\2\uffff\1\143\1\54\2\uffff\3\54\3\uffff\1\57\1\uffff\25\57\1\uffff\1\57\1\uffff\1\57\4\uffff\1\57\11\uffff\6\57\2\uffff\1\57\11\uffff\3\57\1\u0098\1\u009a\26\57\1\u00b2\10\uffff\13\57\1\uffff\1\57\1\uffff\2\57\1\u00c1\1\57\1\u00c3\1\u00c4\20\57\1\u00d5\1\uffff\6\57\1\u00dc\7\57\1\uffff\1\57\2\uffff\10\57\1\u00ed\1\u00ee\1\57\1\u00f0\4\57\1\uffff\6\57\1\uffff\3\57\1\u00fe\10\57\1\u0107\1\u0108\1\u0109\1\57\2\uffff\1\57\1\uffff\1\u010c\6\57\1\u0113\1\57\1\u0115\3\57\1\uffff\2\57\1\u011b\1\57\1\u011d\1\57\1\u011f\1\57\3\uffff\2\57\1\uffff\1\u0123\1\57\1\u0126\3\57\1\uffff\1\u012a\1\uffff\1\57\1\u012c\1\u012d\2\57\1\uffff\1\u0130\1\uffff\1\57\1\uffff\1\u0132\1\u0133\1\57\1\uffff\2\57\1\uffff\1\57\1\u0138\1\57\1\uffff\1\57\2\uffff\1\u013b\1\57\1\uffff\1\57\2\uffff\1\u013e\1\u013f\2\57\1\uffff\2\57\1\uffff\2\57\2\uffff\2\57\1\u0148\1\u0149\1\57\1\u014b\1\57\1\u014d\2\uffff\1\57\1\uffff\1\57\1\uffff\2\57\1\u0152\1\u0153\2\uffff";
+        "\1\uffff\16\56\1\uffff\1\56\1\uffff\1\56\1\uffff\1\56\2\uffff\1\116\1\56\1\54\1\uffff\4\56\2\uffff\1\56\2\uffff\1\144\1\54\2\uffff\3\54\2\uffff\1\56\1\uffff\25\56\1\uffff\2\56\1\uffff\1\56\1\uffff\1\56\4\uffff\1\56\11\uffff\5\56\2\uffff\1\56\11\uffff\3\56\1\u009a\1\u009c\23\56\1\u00b1\5\56\1\u00b8\10\uffff\11\56\1\uffff\1\56\1\uffff\2\56\1\u00c5\1\56\1\u00c7\1\u00c8\16\56\1\uffff\1\56\1\u00d8\3\56\1\u00dc\1\uffff\14\56\1\uffff\1\56\2\uffff\10\56\1\u00f2\1\u00f3\1\56\1\u00f5\3\56\1\uffff\3\56\1\uffff\10\56\1\u0104\10\56\1\u010d\1\u010e\1\u010f\1\56\2\uffff\1\56\1\uffff\1\u0112\1\56\1\u0114\6\56\1\u011b\4\56\1\uffff\2\56\1\u0122\1\56\1\u0124\1\56\1\u0126\1\56\3\uffff\2\56\1\uffff\1\u012a\1\uffff\1\u012b\1\56\1\u012e\3\56\1\uffff\1\u0132\1\56\1\u0134\1\u0135\2\56\1\uffff\1\u0138\1\uffff\1\56\1\uffff\1\u013a\1\u013b\1\56\2\uffff\2\56\1\uffff\1\56\1\u0140\1\56\1\uffff\1\56\2\uffff\1\u0143\1\56\1\uffff\1\56\2\uffff\1\u0146\1\u0147\2\56\1\uffff\2\56\1\uffff\2\56\2\uffff\2\56\1\u0150\1\u0151\1\56\1\u0153\1\56\1\u0155\2\uffff\1\56\1\uffff\1\56\1\uffff\2\56\1\u015a\1\u015b\2\uffff";
     static final String DFA12_eofS =
-        "\u0154\uffff";
+        "\u015c\uffff";
     static final String DFA12_minS =
-        "\1\0\1\uffff\1\164\2\145\2\156\1\141\1\151\1\141\1\157\3\141\1\154\1\142\1\uffff\1\162\1\uffff\1\162\2\uffff\1\76\1\162\1\142\1\uffff\1\142\2\157\1\145\1\156\2\uffff\1\145\2\uffff\1\52\1\101\2\uffff\2\0\1\52\3\uffff\1\155\1\uffff\1\163\1\162\1\164\1\146\1\164\3\156\1\163\1\157\1\163\1\157\1\164\1\165\1\155\1\164\1\157\1\154\1\141\1\157\1\152\1\uffff\1\151\1\uffff\1\165\4\uffff\1\155\1\uffff\1\141\1\156\1\141\2\uffff\1\141\2\uffff\1\160\1\163\1\155\1\144\1\162\1\164\2\uffff\1\160\11\uffff\1\154\1\164\1\151\2\60\1\162\1\145\3\147\1\164\1\154\1\145\1\154\1\145\2\142\3\141\1\163\1\155\1\141\1\145\1\166\1\152\1\145\1\60\10\uffff\1\154\1\164\1\160\1\165\1\166\1\151\1\155\1\157\1\126\1\106\1\156\1\uffff\1\162\1\uffff\1\141\1\147\1\60\1\165\2\60\1\145\1\120\1\145\1\124\2\154\1\151\1\142\1\164\2\145\1\164\1\143\1\141\2\145\1\60\1\uffff\1\151\1\162\1\157\1\154\1\151\1\164\1\60\1\163\1\151\1\165\1\147\1\146\1\163\1\145\1\uffff\1\141\2\uffff\3\141\1\151\2\145\1\156\1\141\2\60\1\167\1\60\2\164\2\143\1\uffff\1\143\1\141\1\163\1\145\1\143\1\171\1\uffff\1\151\1\145\1\154\1\60\1\141\1\164\1\162\1\147\1\156\1\143\1\156\1\155\3\60\1\163\2\uffff\1\157\1\uffff\1\60\1\145\2\164\1\141\1\143\1\145\1\60\1\145\1\60\1\164\1\167\1\154\1\uffff\1\143\1\162\1\60\1\145\1\60\1\153\1\60\1\145\3\uffff\1\145\1\162\1\uffff\1\60\1\145\1\60\2\164\1\144\1\uffff\1\60\1\uffff\1\157\2\60\1\145\1\165\1\uffff\1\60\1\uffff\1\141\1\uffff\2\60\1\153\1\uffff\1\144\1\145\1\uffff\1\151\1\60\1\102\1\uffff\1\162\2\uffff\1\60\1\143\1\uffff\1\147\2\uffff\2\60\1\162\1\157\1\uffff\2\171\1\uffff\1\164\1\145\2\uffff\1\163\1\156\2\60\1\165\1\60\1\151\1\60\2\uffff\1\162\1\uffff\1\157\1\uffff\1\145\1\156\2\60\2\uffff";
+        "\1\0\1\164\2\145\2\156\1\141\1\151\1\141\1\157\3\141\1\154\1\142\1\uffff\1\156\1\uffff\1\162\1\uffff\1\162\2\uffff\1\76\1\162\1\142\1\uffff\1\142\2\157\1\145\2\uffff\1\145\2\uffff\1\52\1\101\2\uffff\2\0\1\52\2\uffff\1\155\1\uffff\1\163\1\162\1\164\1\146\1\164\3\156\1\163\1\157\1\163\1\157\1\164\1\165\1\155\1\164\1\157\1\154\1\141\1\157\1\152\1\uffff\2\164\1\uffff\1\151\1\uffff\1\165\4\uffff\1\155\1\uffff\1\141\1\156\1\141\2\uffff\1\141\2\uffff\1\160\1\163\1\155\1\144\1\162\2\uffff\1\160\11\uffff\1\154\1\164\1\151\2\60\1\162\1\145\3\147\1\164\1\154\1\145\1\154\1\145\2\142\3\141\1\163\1\155\1\141\1\145\1\60\1\151\1\155\1\166\1\152\1\145\1\60\10\uffff\1\154\1\164\1\160\1\165\1\166\1\157\1\126\1\106\1\156\1\uffff\1\162\1\uffff\1\141\1\147\1\60\1\165\2\60\1\145\1\120\1\145\1\164\2\154\1\151\1\142\1\164\2\145\1\164\1\143\1\156\1\uffff\1\164\1\60\1\141\2\145\1\60\1\uffff\1\151\1\162\1\157\1\154\1\151\1\163\1\151\1\165\1\147\1\146\1\163\1\145\1\uffff\1\141\2\uffff\3\141\1\151\2\145\1\156\1\141\2\60\1\167\1\60\1\164\1\144\1\171\1\uffff\1\164\2\143\1\uffff\1\143\1\141\1\163\1\145\1\143\1\151\1\145\1\154\1\60\1\141\1\164\1\162\1\147\1\156\1\143\1\156\1\155\3\60\1\163\2\uffff\1\157\1\uffff\1\60\1\163\1\60\1\145\2\164\1\141\1\143\1\145\1\60\1\145\1\164\1\167\1\154\1\uffff\1\143\1\162\1\60\1\145\1\60\1\153\1\60\1\145\3\uffff\1\145\1\162\1\uffff\1\60\1\uffff\1\60\1\145\1\60\2\164\1\144\1\uffff\1\60\1\157\2\60\1\145\1\165\1\uffff\1\60\1\uffff\1\141\1\uffff\2\60\1\153\2\uffff\1\144\1\145\1\uffff\1\151\1\60\1\102\1\uffff\1\162\2\uffff\1\60\1\143\1\uffff\1\147\2\uffff\2\60\1\162\1\157\1\uffff\2\171\1\uffff\1\164\1\145\2\uffff\1\163\1\156\2\60\1\165\1\60\1\151\1\60\2\uffff\1\162\1\uffff\1\157\1\uffff\1\145\1\156\2\60\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\uffff\1\164\1\145\1\164\2\156\6\157\1\162\1\154\1\142\1\uffff\1\162\1\uffff\1\162\2\uffff\1\76\1\162\1\166\1\uffff\1\160\2\157\1\145\1\156\2\uffff\1\145\2\uffff\1\52\1\172\2\uffff\2\uffff\1\57\3\uffff\1\155\1\uffff\1\163\1\162\3\164\3\156\1\163\1\157\1\163\1\157\1\164\2\165\1\164\1\157\1\154\1\141\1\157\1\152\1\uffff\1\157\1\uffff\1\165\4\uffff\1\155\1\uffff\1\165\1\163\1\153\2\uffff\1\151\2\uffff\1\160\1\163\1\155\1\144\1\162\1\165\2\uffff\1\160\11\uffff\1\154\1\164\1\151\2\172\1\162\1\145\3\147\1\164\1\154\1\145\1\154\1\145\2\142\3\141\1\163\1\155\1\141\1\145\1\166\1\164\1\145\1\172\10\uffff\1\154\1\164\1\160\1\165\1\166\1\151\1\155\1\157\1\126\1\106\1\156\1\uffff\1\162\1\uffff\1\141\1\147\1\172\1\165\2\172\1\145\1\120\1\145\1\124\2\154\1\151\1\142\1\164\2\145\1\164\1\143\1\141\2\145\1\172\1\uffff\1\151\1\162\1\157\1\154\1\151\1\164\1\172\1\163\1\151\1\165\1\147\1\146\1\163\1\145\1\uffff\1\141\2\uffff\3\141\1\151\2\145\1\156\1\141\2\172\1\167\1\172\2\164\2\143\1\uffff\1\143\1\141\1\163\1\145\1\143\1\171\1\uffff\1\151\1\145\1\154\1\172\1\141\1\164\1\162\1\147\1\156\1\143\1\156\1\155\3\172\1\163\2\uffff\1\157\1\uffff\1\172\1\145\2\164\1\141\1\143\1\145\1\172\1\145\1\172\1\164\1\167\1\154\1\uffff\1\143\1\162\1\172\1\145\1\172\1\153\1\172\1\145\3\uffff\1\145\1\162\1\uffff\1\172\1\145\1\172\2\164\1\144\1\uffff\1\172\1\uffff\1\157\2\172\1\145\1\165\1\uffff\1\172\1\uffff\1\141\1\uffff\2\172\1\153\1\uffff\1\144\1\145\1\uffff\1\151\1\172\1\102\1\uffff\1\162\2\uffff\1\172\1\143\1\uffff\1\147\2\uffff\2\172\1\162\1\157\1\uffff\2\171\1\uffff\1\164\1\145\2\uffff\1\163\1\156\2\172\1\165\1\172\1\151\1\172\2\uffff\1\162\1\uffff\1\157\1\uffff\1\145\1\156\2\172\2\uffff";
+        "\1\uffff\1\164\1\145\1\164\2\156\6\157\1\162\1\154\1\142\1\uffff\1\170\1\uffff\1\162\1\uffff\1\162\2\uffff\1\76\1\162\1\166\1\uffff\1\160\2\157\1\145\2\uffff\1\145\2\uffff\1\52\1\172\2\uffff\2\uffff\1\57\2\uffff\1\155\1\uffff\1\163\1\162\3\164\3\156\1\163\1\157\1\163\1\157\1\164\2\165\1\164\1\157\1\154\1\141\1\157\1\152\1\uffff\1\164\1\165\1\uffff\1\157\1\uffff\1\165\4\uffff\1\155\1\uffff\1\165\1\163\1\153\2\uffff\1\151\2\uffff\1\160\1\163\1\155\1\144\1\162\2\uffff\1\160\11\uffff\1\154\1\164\1\151\2\172\1\162\1\145\3\147\1\164\1\154\1\145\1\154\1\145\2\142\3\141\1\163\1\155\1\141\1\145\1\172\1\151\1\155\1\166\1\164\1\145\1\172\10\uffff\1\154\1\164\1\160\1\165\1\166\1\157\1\126\1\106\1\156\1\uffff\1\162\1\uffff\1\141\1\147\1\172\1\165\2\172\1\145\1\120\1\145\1\164\2\154\1\151\1\142\1\164\2\145\1\164\1\143\1\156\1\uffff\1\164\1\172\1\141\2\145\1\172\1\uffff\1\151\1\162\1\157\1\154\1\151\1\163\1\151\1\165\1\147\1\146\1\163\1\145\1\uffff\1\141\2\uffff\3\141\1\151\2\145\1\156\1\141\2\172\1\167\1\172\1\164\1\144\1\171\1\uffff\1\164\2\143\1\uffff\1\143\1\141\1\163\1\145\1\143\1\151\1\145\1\154\1\172\1\141\1\164\1\162\1\147\1\156\1\143\1\156\1\155\3\172\1\163\2\uffff\1\157\1\uffff\1\172\1\163\1\172\1\145\2\164\1\141\1\143\1\145\1\172\1\145\1\164\1\167\1\154\1\uffff\1\143\1\162\1\172\1\145\1\172\1\153\1\172\1\145\3\uffff\1\145\1\162\1\uffff\1\172\1\uffff\1\172\1\145\1\172\2\164\1\144\1\uffff\1\172\1\157\2\172\1\145\1\165\1\uffff\1\172\1\uffff\1\141\1\uffff\2\172\1\153\2\uffff\1\144\1\145\1\uffff\1\151\1\172\1\102\1\uffff\1\162\2\uffff\1\172\1\143\1\uffff\1\147\2\uffff\2\172\1\162\1\157\1\uffff\2\171\1\uffff\1\164\1\145\2\uffff\1\163\1\156\2\172\1\165\1\172\1\151\1\172\2\uffff\1\162\1\uffff\1\157\1\uffff\1\145\1\156\2\172\2\uffff";
     static final String DFA12_acceptS =
-        "\1\uffff\1\1\16\uffff\1\21\1\uffff\1\23\1\uffff\1\30\1\31\3\uffff\1\45\5\uffff\1\62\1\63\1\uffff\1\73\1\74\2\uffff\1\102\1\103\3\uffff\1\107\1\110\1\1\1\uffff\1\102\25\uffff\1\21\1\uffff\1\23\1\uffff\1\30\1\31\1\33\1\36\1\uffff\1\44\3\uffff\1\51\1\52\1\uffff\1\67\1\45\6\uffff\1\62\1\63\1\uffff\1\73\1\74\1\76\1\77\1\103\1\104\1\105\1\106\1\107\34\uffff\1\46\1\64\1\47\1\61\1\50\1\101\1\65\1\66\13\uffff\1\75\1\uffff\1\5\27\uffff\1\42\16\uffff\1\7\1\uffff\1\10\1\72\20\uffff\1\25\6\uffff\1\71\20\uffff\1\16\1\26\1\uffff\1\17\15\uffff\1\4\10\uffff\1\15\1\14\1\55\2\uffff\1\20\6\uffff\1\56\1\uffff\1\60\5\uffff\1\6\1\uffff\1\11\1\uffff\1\12\3\uffff\1\22\2\uffff\1\27\3\uffff\1\57\1\uffff\1\2\1\3\2\uffff\1\40\1\uffff\1\13\1\43\4\uffff\1\100\2\uffff\1\32\2\uffff\1\41\1\24\10\uffff\1\54\1\70\1\uffff\1\35\1\uffff\1\53\4\uffff\1\34\1\37";
+        "\17\uffff\1\20\1\uffff\1\23\1\uffff\1\25\1\uffff\1\32\1\33\3\uffff\1\47\4\uffff\1\64\1\65\1\uffff\1\75\1\76\2\uffff\1\104\1\105\3\uffff\1\111\1\112\1\uffff\1\104\25\uffff\1\20\2\uffff\1\23\1\uffff\1\25\1\uffff\1\32\1\33\1\35\1\40\1\uffff\1\46\3\uffff\1\53\1\54\1\uffff\1\71\1\47\5\uffff\1\64\1\65\1\uffff\1\75\1\76\1\100\1\101\1\105\1\106\1\107\1\110\1\111\37\uffff\1\50\1\66\1\51\1\63\1\52\1\103\1\67\1\70\11\uffff\1\77\1\uffff\1\4\24\uffff\1\22\6\uffff\1\44\14\uffff\1\6\1\uffff\1\7\1\74\17\uffff\1\73\3\uffff\1\27\25\uffff\1\15\1\30\1\uffff\1\16\16\uffff\1\3\10\uffff\1\14\1\13\1\57\2\uffff\1\17\1\uffff\1\62\6\uffff\1\60\6\uffff\1\5\1\uffff\1\10\1\uffff\1\11\3\uffff\1\21\1\24\2\uffff\1\31\3\uffff\1\61\1\uffff\1\1\1\2\2\uffff\1\42\1\uffff\1\12\1\45\4\uffff\1\102\2\uffff\1\34\2\uffff\1\43\1\26\10\uffff\1\56\1\72\1\uffff\1\37\1\uffff\1\55\4\uffff\1\36\1\41";
     static final String DFA12_specialS =
-        "\1\1\47\uffff\1\0\1\2\u012a\uffff}>";
+        "\1\1\47\uffff\1\2\1\0\u0132\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\54\2\53\2\54\1\53\22\54\1\53\1\54\1\50\1\22\3\54\1\51\1\37\1\40\2\54\1\31\1\20\1\44\1\52\12\47\1\1\1\54\1\42\1\26\1\43\1\54\1\30\1\46\1\12\1\46\1\13\1\46\1\16\1\46\1\2\1\6\2\46\1\10\2\46\1\17\2\46\1\3\1\4\7\46\3\54\1\45\1\46\1\54\1\32\1\11\1\33\1\14\1\36\1\15\2\46\1\5\2\46\1\7\1\34\1\46\1\27\1\21\1\46\1\41\1\35\1\23\6\46\1\24\1\54\1\25\uff82\54",
-            "",
-            "\1\56",
-            "\1\60",
-            "\1\62\16\uffff\1\61",
+            "\11\54\2\53\2\54\1\53\22\54\1\53\1\54\1\50\1\23\3\54\1\51\1\37\1\40\2\54\1\32\1\21\1\44\1\52\12\47\1\17\1\54\1\42\1\27\1\43\1\54\1\31\1\46\1\11\1\46\1\12\1\46\1\15\1\46\1\1\1\5\2\46\1\7\2\46\1\16\2\46\1\2\1\3\7\46\3\54\1\45\1\46\1\54\1\33\1\10\1\34\1\13\1\20\1\14\2\46\1\4\2\46\1\6\1\35\1\46\1\30\1\22\1\46\1\41\1\36\1\24\6\46\1\25\1\54\1\26\uff82\54",
+            "\1\55",
+            "\1\57",
+            "\1\61\16\uffff\1\60",
+            "\1\62",
             "\1\63",
-            "\1\64",
-            "\1\66\15\uffff\1\65",
-            "\1\70\5\uffff\1\67",
-            "\1\72\15\uffff\1\71",
-            "\1\73",
-            "\1\74\15\uffff\1\75",
-            "\1\77\15\uffff\1\76",
-            "\1\101\12\uffff\1\100\5\uffff\1\102",
+            "\1\65\15\uffff\1\64",
+            "\1\67\5\uffff\1\66",
+            "\1\71\15\uffff\1\70",
+            "\1\72",
+            "\1\73\15\uffff\1\74",
+            "\1\76\15\uffff\1\75",
+            "\1\100\12\uffff\1\77\5\uffff\1\101",
+            "\1\102",
             "\1\103",
-            "\1\104",
             "",
-            "\1\106",
+            "\1\106\11\uffff\1\105",
             "",
             "\1\110",
             "",
+            "\1\112",
             "",
-            "\1\113",
+            "",
             "\1\115",
-            "\1\125\2\uffff\1\123\2\uffff\1\122\4\uffff\1\124\1\117\1\uffff\1\121\4\uffff\1\120\1\116",
+            "\1\117",
+            "\1\127\2\uffff\1\125\2\uffff\1\124\4\uffff\1\126\1\121\1\uffff\1\123\4\uffff\1\122\1\120",
             "",
-            "\1\130\15\uffff\1\127",
-            "\1\131",
-            "\1\132",
+            "\1\132\15\uffff\1\131",
             "\1\133",
             "\1\134",
+            "\1\135",
             "",
             "",
-            "\1\137",
+            "\1\140",
             "",
             "",
-            "\1\142",
-            "\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\143",
+            "\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
-            "\0\145",
-            "\0\145",
-            "\1\146\4\uffff\1\147",
+            "\0\146",
+            "\0\146",
+            "\1\147\4\uffff\1\150",
             "",
-            "",
-            "",
-            "\1\151",
             "",
             "\1\152",
+            "",
             "\1\153",
             "\1\154",
-            "\1\156\15\uffff\1\155",
-            "\1\157",
+            "\1\155",
+            "\1\157\15\uffff\1\156",
             "\1\160",
             "\1\161",
             "\1\162",
@@ -2541,56 +2597,57 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             "\1\166",
             "\1\167",
             "\1\170",
-            "\1\172\7\uffff\1\171",
-            "\1\173",
+            "\1\171",
+            "\1\173\7\uffff\1\172",
             "\1\174",
             "\1\175",
             "\1\176",
             "\1\177",
             "\1\u0080",
+            "\1\u0081",
             "",
-            "\1\u0081\5\uffff\1\u0082",
+            "\1\u0082",
+            "\1\u0083\1\u0084",
             "",
-            "\1\u0083",
+            "\1\u0085\5\uffff\1\u0086",
             "",
-            "",
-            "",
-            "",
-            "\1\u0084",
-            "",
-            "\1\u0085\23\uffff\1\u0086",
-            "\1\u0088\4\uffff\1\u0087",
-            "\1\u0089\11\uffff\1\u008a",
+            "\1\u0087",
             "",
             "",
-            "\1\u008c\7\uffff\1\u008b",
             "",
             "",
-            "\1\u008d",
-            "\1\u008e",
-            "\1\u008f",
-            "\1\u0090",
+            "\1\u0088",
+            "",
+            "\1\u0089\23\uffff\1\u008a",
+            "\1\u008c\4\uffff\1\u008b",
+            "\1\u008d\11\uffff\1\u008e",
+            "",
+            "",
+            "\1\u0090\7\uffff\1\u008f",
+            "",
+            "",
             "\1\u0091",
-            "\1\u0092\1\u0093",
-            "",
-            "",
+            "\1\u0092",
+            "\1\u0093",
             "\1\u0094",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u0095",
+            "",
+            "",
             "\1\u0096",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u0097",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\u0099\25\57",
-            "\1\u009b",
-            "\1\u009c",
+            "\1\u0098",
+            "\1\u0099",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\4\56\1\u009b\25\56",
             "\1\u009d",
             "\1\u009e",
             "\1\u009f",
@@ -2609,41 +2666,40 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             "\1\u00ac",
             "\1\u00ad",
             "\1\u00ae",
-            "\1\u00b0\11\uffff\1\u00af",
-            "\1\u00b1",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\u00af",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\4\56\1\u00b0\25\56",
+            "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
-            "\1\u00b5",
-            "\1\u00b6",
+            "\1\u00b6\11\uffff\1\u00b5",
             "\1\u00b7",
-            "\1\u00b8",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00b9",
             "\1\u00ba",
             "\1\u00bb",
             "\1\u00bc",
             "\1\u00bd",
-            "",
             "\1\u00be",
-            "",
             "\1\u00bf",
             "\1\u00c0",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00c1",
+            "",
             "\1\u00c2",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00c5",
+            "",
+            "\1\u00c3",
+            "\1\u00c4",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00c6",
-            "\1\u00c7",
-            "\1\u00c8",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00c9",
             "\1\u00ca",
             "\1\u00cb",
@@ -2656,15 +2712,16 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             "\1\u00d2",
             "\1\u00d3",
             "\1\u00d4",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\1\u00d5",
             "\1\u00d6",
+            "",
             "\1\u00d7",
-            "\1\u00d8",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00d9",
             "\1\u00da",
             "\1\u00db",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
             "\1\u00dd",
             "\1\u00de",
             "\1\u00df",
@@ -2672,151 +2729,160 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             "\1\u00e1",
             "\1\u00e2",
             "\1\u00e3",
-            "",
             "\1\u00e4",
-            "",
-            "",
             "\1\u00e5",
             "\1\u00e6",
             "\1\u00e7",
             "\1\u00e8",
+            "",
             "\1\u00e9",
+            "",
+            "",
             "\1\u00ea",
             "\1\u00eb",
             "\1\u00ec",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00ed",
+            "\1\u00ee",
             "\1\u00ef",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00f0",
             "\1\u00f1",
-            "\1\u00f2",
-            "\1\u00f3",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00f4",
-            "",
-            "\1\u00f5",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00f6",
             "\1\u00f7",
             "\1\u00f8",
+            "",
             "\1\u00f9",
             "\1\u00fa",
-            "",
             "\1\u00fb",
+            "",
             "\1\u00fc",
             "\1\u00fd",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00fe",
             "\1\u00ff",
             "\1\u0100",
             "\1\u0101",
             "\1\u0102",
             "\1\u0103",
-            "\1\u0104",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0105",
             "\1\u0106",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0107",
+            "\1\u0108",
+            "\1\u0109",
             "\1\u010a",
-            "",
-            "",
             "\1\u010b",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u010d",
-            "\1\u010e",
-            "\1\u010f",
+            "\1\u010c",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0110",
+            "",
+            "",
             "\1\u0111",
-            "\1\u0112",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0114",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0113",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0115",
             "\1\u0116",
             "\1\u0117",
             "\1\u0118",
-            "",
             "\1\u0119",
             "\1\u011a",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u011c",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u011d",
             "\1\u011e",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u011f",
+            "",
             "\1\u0120",
-            "",
-            "",
-            "",
             "\1\u0121",
-            "\1\u0122",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0124",
-            "\12\57\7\uffff\25\57\1\u0125\4\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0123",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0125",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0127",
+            "",
+            "",
+            "",
             "\1\u0128",
             "\1\u0129",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u012b",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u012e",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u012c",
+            "\12\56\7\uffff\25\56\1\u012d\4\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u012f",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\1\u0130",
             "\1\u0131",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0134",
-            "",
-            "\1\u0135",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0133",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0136",
-            "",
             "\1\u0137",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
             "\1\u0139",
             "",
-            "\1\u013a",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u013c",
             "",
+            "",
             "\1\u013d",
+            "\1\u013e",
             "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0140",
+            "\1\u013f",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0141",
             "",
             "\1\u0142",
-            "\1\u0143",
             "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0144",
+            "",
             "\1\u0145",
             "",
             "",
-            "\1\u0146",
-            "\1\u0147",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0148",
+            "\1\u0149",
+            "",
             "\1\u014a",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u014b",
+            "",
             "\1\u014c",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u014d",
             "",
             "",
             "\1\u014e",
-            "",
             "\1\u014f",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0152",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0154",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u0150",
-            "\1\u0151",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\1\u0156",
+            "",
+            "\1\u0157",
+            "",
+            "\1\u0158",
+            "\1\u0159",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             ""
     };
@@ -2851,17 +2917,17 @@ public class InternalLedsCodeV001Lexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_40 = input.LA(1);
+                        int LA12_41 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_40>='\u0000' && LA12_40<='\uFFFF')) ) {s = 101;}
+                        if ( ((LA12_41>='\u0000' && LA12_41<='\uFFFF')) ) {s = 102;}
 
                         else s = 44;
 
@@ -2871,65 +2937,65 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                         int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0==':') ) {s = 1;}
+                        if ( (LA12_0=='H') ) {s = 1;}
 
-                        else if ( (LA12_0=='H') ) {s = 2;}
+                        else if ( (LA12_0=='R') ) {s = 2;}
 
-                        else if ( (LA12_0=='R') ) {s = 3;}
+                        else if ( (LA12_0=='S') ) {s = 3;}
 
-                        else if ( (LA12_0=='S') ) {s = 4;}
+                        else if ( (LA12_0=='i') ) {s = 4;}
 
-                        else if ( (LA12_0=='i') ) {s = 5;}
+                        else if ( (LA12_0=='I') ) {s = 5;}
 
-                        else if ( (LA12_0=='I') ) {s = 6;}
+                        else if ( (LA12_0=='l') ) {s = 6;}
 
-                        else if ( (LA12_0=='l') ) {s = 7;}
+                        else if ( (LA12_0=='L') ) {s = 7;}
 
-                        else if ( (LA12_0=='L') ) {s = 8;}
+                        else if ( (LA12_0=='b') ) {s = 8;}
 
-                        else if ( (LA12_0=='b') ) {s = 9;}
+                        else if ( (LA12_0=='B') ) {s = 9;}
 
-                        else if ( (LA12_0=='B') ) {s = 10;}
+                        else if ( (LA12_0=='D') ) {s = 10;}
 
-                        else if ( (LA12_0=='D') ) {s = 11;}
+                        else if ( (LA12_0=='d') ) {s = 11;}
 
-                        else if ( (LA12_0=='d') ) {s = 12;}
+                        else if ( (LA12_0=='f') ) {s = 12;}
 
-                        else if ( (LA12_0=='f') ) {s = 13;}
+                        else if ( (LA12_0=='F') ) {s = 13;}
 
-                        else if ( (LA12_0=='F') ) {s = 14;}
+                        else if ( (LA12_0=='O') ) {s = 14;}
 
-                        else if ( (LA12_0=='O') ) {s = 15;}
+                        else if ( (LA12_0==':') ) {s = 15;}
 
-                        else if ( (LA12_0=='-') ) {s = 16;}
+                        else if ( (LA12_0=='e') ) {s = 16;}
 
-                        else if ( (LA12_0=='p') ) {s = 17;}
+                        else if ( (LA12_0=='-') ) {s = 17;}
 
-                        else if ( (LA12_0=='#') ) {s = 18;}
+                        else if ( (LA12_0=='p') ) {s = 18;}
 
-                        else if ( (LA12_0=='t') ) {s = 19;}
+                        else if ( (LA12_0=='#') ) {s = 19;}
 
-                        else if ( (LA12_0=='{') ) {s = 20;}
+                        else if ( (LA12_0=='t') ) {s = 20;}
 
-                        else if ( (LA12_0=='}') ) {s = 21;}
+                        else if ( (LA12_0=='{') ) {s = 21;}
 
-                        else if ( (LA12_0=='=') ) {s = 22;}
+                        else if ( (LA12_0=='}') ) {s = 22;}
 
-                        else if ( (LA12_0=='o') ) {s = 23;}
+                        else if ( (LA12_0=='=') ) {s = 23;}
 
-                        else if ( (LA12_0=='@') ) {s = 24;}
+                        else if ( (LA12_0=='o') ) {s = 24;}
 
-                        else if ( (LA12_0==',') ) {s = 25;}
+                        else if ( (LA12_0=='@') ) {s = 25;}
 
-                        else if ( (LA12_0=='a') ) {s = 26;}
+                        else if ( (LA12_0==',') ) {s = 26;}
 
-                        else if ( (LA12_0=='c') ) {s = 27;}
+                        else if ( (LA12_0=='a') ) {s = 27;}
 
-                        else if ( (LA12_0=='m') ) {s = 28;}
+                        else if ( (LA12_0=='c') ) {s = 28;}
 
-                        else if ( (LA12_0=='s') ) {s = 29;}
+                        else if ( (LA12_0=='m') ) {s = 29;}
 
-                        else if ( (LA12_0=='e') ) {s = 30;}
+                        else if ( (LA12_0=='s') ) {s = 30;}
 
                         else if ( (LA12_0=='(') ) {s = 31;}
 
@@ -2962,10 +3028,10 @@ public class InternalLedsCodeV001Lexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_41 = input.LA(1);
+                        int LA12_40 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_41>='\u0000' && LA12_41<='\uFFFF')) ) {s = 101;}
+                        if ( ((LA12_40>='\u0000' && LA12_40<='\uFFFF')) ) {s = 102;}
 
                         else s = 44;
 

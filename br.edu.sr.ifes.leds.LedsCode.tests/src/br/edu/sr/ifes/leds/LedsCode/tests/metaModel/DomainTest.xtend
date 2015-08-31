@@ -4,7 +4,6 @@ import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
-import br.edu.sr.ifes.leds.ledsCodeV001.Module
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
@@ -23,12 +22,13 @@ import model.domainLayer.Method
 import model.domainLayer.ClassEnum
 import model.domainLayer.Service
 import model.domainLayer.InternalServiceMethod
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 
 class DomainTest extends AbstractTestClass{
 	
 	EList<DomainBlock> domainLang
 	DomainBlock singleDomLang
-	Module singleModuleLang
+	ModuleBlock singleModuleLang
 	ServiceBlock singleServiceLang
 	ServiceMethod fieldSingleServiceLang
 	EntityBlock singleEntityLang
@@ -62,7 +62,8 @@ class DomainTest extends AbstractTestClass{
 		fieldRepositoryLang = repositoryLang.methods.get(0)
 		singleEnumLang = singleModuleLang.enumBlock.get(0)
 		
-		projectMetaModel = new ProjectConverter().convert(projectLang);
+		tableObjects = new ProjectConverter().convert(projectLang);
+		projectMetaModel = tableObjects.project
 		domainMetaModel = projectMetaModel.domains
 		singleDomMetaModel = domainMetaModel.get(0)
 		singleModuleMetaModel = singleDomMetaModel.modules.get(0)

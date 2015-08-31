@@ -1,7 +1,6 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.metaModel
 
 import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
-import br.edu.sr.ifes.leds.generator.ProjectConverter
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock
 import java.util.ArrayList
 import java.util.Arrays
@@ -12,6 +11,7 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
+import br.edu.sr.ifes.leds.generator.ProjectConverter
 
 class ApplicationTest extends AbstractTestClass{
 	
@@ -30,7 +30,8 @@ class ApplicationTest extends AbstractTestClass{
 		singleAppLang = appLang.get(0)
 		singleAppDomainLang = singleAppLang.applicationDomain.get(0)
 		
-		projectMetaModel = new ProjectConverter().convert(projectLang);
+		tableObjects = new ProjectConverter().convert(projectLang);
+		projectMetaModel = tableObjects.project
 		appMetaModel = projectMetaModel.applications
 		singleAppMetalModel = appMetaModel.get(0)
 	}

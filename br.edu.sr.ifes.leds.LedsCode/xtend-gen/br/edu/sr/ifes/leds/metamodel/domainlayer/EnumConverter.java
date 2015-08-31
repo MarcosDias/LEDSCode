@@ -2,12 +2,14 @@ package br.edu.sr.ifes.leds.metamodel.domainlayer;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import model.domainLayer.ClassEnum;
+import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class EnumConverter {
-  public LinkedHashSet<ClassEnum> convert(final EList<EnumBlock> listEnumLang) {
+  public LinkedHashSet<ClassEnum> convert(final EList<EnumBlock> listEnumLang, final TableObjects tableObjects) {
     LinkedHashSet<ClassEnum> _xblockexpression = null;
     {
       LinkedHashSet<ClassEnum> listEnumMetaModel = new LinkedHashSet<ClassEnum>();
@@ -20,6 +22,8 @@ public class EnumConverter {
           LinkedHashSet<String> _linkedHashSet = new LinkedHashSet<String>(_values);
           enumMetaModel.setValues(_linkedHashSet);
           listEnumMetaModel.add(enumMetaModel);
+          Set<ClassEnum> _enums = tableObjects.getEnums();
+          _enums.add(enumMetaModel);
         }
       }
       _xblockexpression = listEnumMetaModel;

@@ -5,12 +5,14 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
 import br.edu.sr.ifes.leds.metamodel.util.FindRepositoryMethod;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import model.domainLayer.Entity;
 import model.domainLayer.InternalServiceMethod;
 import model.domainLayer.Method;
 import model.domainLayer.Module;
 import model.domainLayer.Repository;
 import model.domainLayer.Service;
+import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -19,7 +21,7 @@ public class ServiceConverter {
   
   private FindRepositoryMethod findRepositoryMethod;
   
-  public LinkedHashSet<Service> convert(final EList<ServiceBlock> listServiceLang, final Module moduleMetaModel) {
+  public LinkedHashSet<Service> convert(final EList<ServiceBlock> listServiceLang, final Module moduleMetaModel, final TableObjects tableObjects) {
     LinkedHashSet<Service> _xblockexpression = null;
     {
       LinkedHashSet<Service> listServiceMetaModel = new LinkedHashSet<Service>();
@@ -34,6 +36,8 @@ public class ServiceConverter {
           LinkedHashSet<model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, _entities);
           serviceMetaModel.setMethods(_convertServiceMethod);
           listServiceMetaModel.add(serviceMetaModel);
+          Set<Service> _services = tableObjects.getServices();
+          _services.add(serviceMetaModel);
         }
       }
       _xblockexpression = listServiceMetaModel;

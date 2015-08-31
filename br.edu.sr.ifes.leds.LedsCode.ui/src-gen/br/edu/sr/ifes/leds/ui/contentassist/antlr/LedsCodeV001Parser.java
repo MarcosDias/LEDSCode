@@ -38,9 +38,10 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getInterfaceApplicationAccess().getTypeAlternatives_0_0(), "rule__InterfaceApplication__TypeAlternatives_0_0");
-					put(grammarAccess.getModuleAccess().getAlternatives_3(), "rule__Module__Alternatives_3");
+					put(grammarAccess.getModuleBlockAccess().getAlternatives_3(), "rule__ModuleBlock__Alternatives_3");
 					put(grammarAccess.getAttributeAccess().getAlternatives_3(), "rule__Attribute__Alternatives_3");
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
+					put(grammarAccess.getExtendAccess().getAlternatives(), "rule__Extend__Alternatives");
 					put(grammarAccess.getAccessModifierAccess().getAlternatives(), "rule__AccessModifier__Alternatives");
 					put(grammarAccess.getPrivateAccess().getAlternatives(), "rule__Private__Alternatives");
 					put(grammarAccess.getProtectedAccess().getAlternatives(), "rule__Protected__Alternatives");
@@ -54,7 +55,7 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationBlockAccess().getGroup(), "rule__ApplicationBlock__Group__0");
 					put(grammarAccess.getApplicationBlockAccess().getGroup_3(), "rule__ApplicationBlock__Group_3__0");
 					put(grammarAccess.getDomainBlockAccess().getGroup(), "rule__DomainBlock__Group__0");
-					put(grammarAccess.getModuleAccess().getGroup(), "rule__Module__Group__0");
+					put(grammarAccess.getModuleBlockAccess().getGroup(), "rule__ModuleBlock__Group__0");
 					put(grammarAccess.getServiceBlockAccess().getGroup(), "rule__ServiceBlock__Group__0");
 					put(grammarAccess.getServiceMethodAccess().getGroup(), "rule__ServiceMethod__Group__0");
 					put(grammarAccess.getEntityBlockAccess().getGroup(), "rule__EntityBlock__Group__0");
@@ -107,10 +108,10 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationBlockAccess().getApplicationDomainAssignment_3_1(), "rule__ApplicationBlock__ApplicationDomainAssignment_3_1");
 					put(grammarAccess.getDomainBlockAccess().getNameAssignment_1(), "rule__DomainBlock__NameAssignment_1");
 					put(grammarAccess.getDomainBlockAccess().getModuleAssignment_3(), "rule__DomainBlock__ModuleAssignment_3");
-					put(grammarAccess.getModuleAccess().getNameAssignment_1(), "rule__Module__NameAssignment_1");
-					put(grammarAccess.getModuleAccess().getServiceBlockAssignment_3_0(), "rule__Module__ServiceBlockAssignment_3_0");
-					put(grammarAccess.getModuleAccess().getEntityBlockAssignment_3_1(), "rule__Module__EntityBlockAssignment_3_1");
-					put(grammarAccess.getModuleAccess().getEnumBlockAssignment_3_2(), "rule__Module__EnumBlockAssignment_3_2");
+					put(grammarAccess.getModuleBlockAccess().getNameAssignment_1(), "rule__ModuleBlock__NameAssignment_1");
+					put(grammarAccess.getModuleBlockAccess().getServiceBlockAssignment_3_0(), "rule__ModuleBlock__ServiceBlockAssignment_3_0");
+					put(grammarAccess.getModuleBlockAccess().getEntityBlockAssignment_3_1(), "rule__ModuleBlock__EntityBlockAssignment_3_1");
+					put(grammarAccess.getModuleBlockAccess().getEnumBlockAssignment_3_2(), "rule__ModuleBlock__EnumBlockAssignment_3_2");
 					put(grammarAccess.getServiceBlockAccess().getNameAssignment_1(), "rule__ServiceBlock__NameAssignment_1");
 					put(grammarAccess.getServiceBlockAccess().getServiceFieldsAssignment_3(), "rule__ServiceBlock__ServiceFieldsAssignment_3");
 					put(grammarAccess.getServiceMethodAccess().getNameAssignment_0(), "rule__ServiceMethod__NameAssignment_0");

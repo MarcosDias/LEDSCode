@@ -5,7 +5,6 @@ import br.edu.sr.ifes.leds.ledsCodeV001.Attribute
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
-import br.edu.sr.ifes.leds.ledsCodeV001.Module
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
@@ -15,12 +14,13 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 
 class DomainTest extends AbstractTestClass{
 	
 	EList<DomainBlock> domain
 	DomainBlock singleDom
-	Module singleModule
+	ModuleBlock singleModule
 	ServiceBlock singleService
 	ServiceMethod fieldSingleService
 	EntityBlock singleEntity

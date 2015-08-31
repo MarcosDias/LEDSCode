@@ -38,7 +38,8 @@ class InfrastructureTest extends AbstractTestClass{
   		ormLang = infraLang.orm
   		dbLang = infraLang.database
   		
-  		projectMetaModel = new ProjectConverter().convert(projectLang);
+  		tableObjects = new ProjectConverter().convert(projectLang);
+		projectMetaModel = tableObjects.project
   		infraMetaModel = projectMetaModel.infrastructure
   		langMetaModel = infraMetaModel.language
   		frameworkMetaModel = infraMetaModel.languageFramework

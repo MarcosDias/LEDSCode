@@ -73,7 +73,7 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
       case LedsCodeV001Package.NAME_VERSION: return createNameVersion();
       case LedsCodeV001Package.APPLICATION_BLOCK: return createApplicationBlock();
       case LedsCodeV001Package.DOMAIN_BLOCK: return createDomainBlock();
-      case LedsCodeV001Package.MODULE: return createModule();
+      case LedsCodeV001Package.MODULE_BLOCK: return createModuleBlock();
       case LedsCodeV001Package.SERVICE_BLOCK: return createServiceBlock();
       case LedsCodeV001Package.SERVICE_METHOD: return createServiceMethod();
       case LedsCodeV001Package.ENTITY_BLOCK: return createEntityBlock();
@@ -193,10 +193,10 @@ public class LedsCodeV001FactoryImpl extends EFactoryImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public Module createModule()
+  public ModuleBlock createModuleBlock()
   {
-    ModuleImpl module = new ModuleImpl();
-    return module;
+    ModuleBlockImpl moduleBlock = new ModuleBlockImpl();
+    return moduleBlock;
   }
 
   /**

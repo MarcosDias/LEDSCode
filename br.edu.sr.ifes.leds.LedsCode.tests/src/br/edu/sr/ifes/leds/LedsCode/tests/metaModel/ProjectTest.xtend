@@ -12,7 +12,8 @@ class ProjectTest extends AbstractTestClass{
 	@Before
   	def void setUp(){
   		projectLang = parseProject()
-  		projectMetaModel = new ProjectConverter().convert(projectLang);
+  		tableObjects = new ProjectConverter().convert(projectLang);
+		projectMetaModel = tableObjects.project
   	}	
   	
   	@Test

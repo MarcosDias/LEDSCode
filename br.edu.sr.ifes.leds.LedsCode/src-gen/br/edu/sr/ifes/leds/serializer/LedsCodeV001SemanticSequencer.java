@@ -16,7 +16,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeDSL;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
 import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
-import br.edu.sr.ifes.leds.ledsCodeV001.Module;
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository;
@@ -84,8 +84,8 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 			case LedsCodeV001Package.METHOD_PARAMETER:
 				sequence_MethodParameter(context, (MethodParameter) semanticObject); 
 				return; 
-			case LedsCodeV001Package.MODULE:
-				sequence_Module(context, (Module) semanticObject); 
+			case LedsCodeV001Package.MODULE_BLOCK:
+				sequence_ModuleBlock(context, (ModuleBlock) semanticObject); 
 				return; 
 			case LedsCodeV001Package.NAME_VERSION:
 				sequence_NameVersion(context, (NameVersion) semanticObject); 
@@ -182,7 +182,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID module+=Module*)
+	 *     (name=ID module+=ModuleBlock*)
 	 */
 	protected void sequence_DomainBlock(EObject context, DomainBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -197,7 +197,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         name=ID 
 	 *         classExtends=ExtendBlock? 
 	 *         attributes+=Attribute* 
-	 *         repository=Repository
+	 *         repository=Repository?
 	 *     )
 	 */
 	protected void sequence_EntityBlock(EObject context, EntityBlock semanticObject) {
@@ -301,7 +301,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * Constraint:
 	 *     (name=ID (serviceBlock+=ServiceBlock | entityBlock+=EntityBlock | enumBlock+=EnumBlock)*)
 	 */
-	protected void sequence_Module(EObject context, Module semanticObject) {
+	protected void sequence_ModuleBlock(EObject context, ModuleBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

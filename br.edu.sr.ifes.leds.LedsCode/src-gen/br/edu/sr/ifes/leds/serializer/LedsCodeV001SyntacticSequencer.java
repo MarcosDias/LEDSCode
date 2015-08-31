@@ -44,7 +44,7 @@ public class LedsCodeV001SyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * Extend: ':';
+	 * Extend: ':'|'extends'|'ext';
 	 */
 	protected String getExtendToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)

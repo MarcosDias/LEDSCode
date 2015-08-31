@@ -19,6 +19,7 @@ import model.domainLayer.SuperAttribute
 import org.eclipse.emf.common.util.EList
 import model.domainLayer.Constraints
 import model.domainLayer.Module
+import model.mainLayer.TableObjects
 
 class EntityConverter {
 	FindEntity findEntity
@@ -33,8 +34,8 @@ class EntityConverter {
 	 * @param moduleMetaModel Modulo que está sendo processado no momento
 	 * @return LinkedHashSet<Entity> Set de entidade do metamodelo
 	 */
-	def convert(EList<EntityBlock> listEntityLang, Module moduleMetaModel) {
-		var listEntityMetaModel = buildIncompleteEntities(listEntityLang, moduleMetaModel)
+	def convert(EList<EntityBlock> listEntityLang, Module moduleMetaModel, TableObjects tableObjects) {
+		var listEntityMetaModel = buildIncompleteEntities(listEntityLang, moduleMetaModel, tableObjects)
 		convertClassExtendsEntities(listEntityMetaModel, listEntityLang)
 		convertAttributes(listEntityMetaModel, listEntityLang)
 		convertRepository(listEntityMetaModel, listEntityLang)
@@ -52,7 +53,7 @@ class EntityConverter {
 	 * @param moduleMetaModel Modulo que está sendo processado no momento
 	 * @return LinkedHashSet<Entity> Lista de entidade do metamodelo
 	 */
-	def buildIncompleteEntities(EList<EntityBlock> listEntityLang, Module moduleMetaModel) {
+	def buildIncompleteEntities(EList<EntityBlock> listEntityLang, Module moduleMetaModel, TableObjects tableObjects) {
 		var listEntityMetaModel = new LinkedHashSet<Entity>
 		for(entityLang: listEntityLang){
 			var entityMetaModel = new Entity
@@ -65,6 +66,7 @@ class EntityConverter {
 			entityMetaModel.repository = new Repository
 			
 			listEntityMetaModel.add(entityMetaModel)
+			tableObjects.entities.add(entityMetaModel)
 		}
 		listEntityMetaModel
 	}

@@ -53,7 +53,7 @@ public interface DomainBlock extends EObject
 
   /**
    * Returns the value of the '<em><b>Module</b></em>' containment reference list.
-   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.Module}.
+   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Module</em>' containment reference list isn't clear,
@@ -65,6 +65,6 @@ public interface DomainBlock extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Module> getModule();
+  EList<ModuleBlock> getModule();
 
 } // DomainBlock
