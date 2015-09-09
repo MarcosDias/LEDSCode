@@ -25,10 +25,10 @@ public class ProjectConverter {
     {
       TableObjects tableObjects = new TableObjects();
       model.mainLayer.Project projectMetaModel = new model.mainLayer.Project();
-      InfrastructureConverter infraConverter = new InfrastructureConverter();
-      InterfaceConverter ifaceConverter = new InterfaceConverter();
-      DomainConverter domainConverter = new DomainConverter();
-      AppConverter appConverter = new AppConverter();
+      InfrastructureConverter infraConverter = new InfrastructureConverter(projectLang, projectMetaModel);
+      InterfaceConverter ifaceConverter = new InterfaceConverter(projectLang, projectMetaModel);
+      DomainConverter domainConverter = new DomainConverter(projectLang, projectMetaModel);
+      AppConverter appConverter = new AppConverter(projectLang, projectMetaModel);
       String _name = projectLang.getName();
       projectMetaModel.setName(_name);
       Calendar _instance = Calendar.getInstance();

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getNameMethod <em>Name Method</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getMethodsParameters <em>Methods Parameters</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getReturnType <em>Return Type</em>}</li>
  * </ul>
@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface RepositoryFields extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name Method</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Method</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Method</em>' attribute.
-   * @see #setNameMethod(String)
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getRepositoryFields_NameMethod()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getRepositoryFields_Name()
    * @model
    * @generated
    */
-  String getNameMethod();
+  String getName();
 
   /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getNameMethod <em>Name Method</em>}' attribute.
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name Method</em>' attribute.
-   * @see #getNameMethod()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setNameMethod(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Methods Parameters</b></em>' containment reference.

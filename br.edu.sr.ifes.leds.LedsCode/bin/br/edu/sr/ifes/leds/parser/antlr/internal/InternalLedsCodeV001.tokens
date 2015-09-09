@@ -1,10 +1,8 @@
-'#'=72
 '('=43
 ')'=44
 ','=28
-'-'=70
-'.'=75
-'.*'=74
+'.'=73
+'.*'=72
 ':'=27
 '<'=67
 '='=20
@@ -46,7 +44,7 @@
 'enum'=50
 'ext'=65
 'extends'=64
-'false'=77
+'false'=75
 'float'=61
 'framework'=23
 'infrastructure'=18
@@ -56,13 +54,13 @@
 'long'=54
 'module'=37
 'orm'=24
-'private'=71
+'private'=70
 'project'=11
 'projectVersion'=21
-'protected'=73
+'protected'=71
 'repository'=49
 'service'=38
-'true'=76
+'true'=74
 '{'=12
 '}'=13
 RULE_ANY_OTHER=10
@@ -137,5 +135,3 @@ T__72=72
 T__73=73
 T__74=74
 T__75=75
-T__76=76
-T__77=77

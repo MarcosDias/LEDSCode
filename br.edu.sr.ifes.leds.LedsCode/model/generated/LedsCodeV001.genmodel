@@ -56,9 +56,9 @@
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//ModuleBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ModuleBlock/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ModuleBlock/serviceBlock"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ModuleBlock/entityBlock"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ModuleBlock/enumBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ModuleBlock/entityBlock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ModuleBlock/serviceBlock"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//ServiceBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ServiceBlock/name"/>
@@ -66,7 +66,7 @@
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//ServiceMethod">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ServiceMethod/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ServiceMethod/methodAcess"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ServiceMethod/methodAcess"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//EntityBlock">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//EntityBlock/acessModifier"/>
@@ -91,7 +91,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//Repository/methods"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//RepositoryFields">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//RepositoryFields/nameMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//RepositoryFields/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//RepositoryFields/methodsParameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//RepositoryFields/returnType"/>
     </genClasses>
@@ -107,7 +107,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//TypeAndAttribute/name"/>
     </genClasses>
     <genClasses ecoreClass="LedsCodeV001.ecore#//ExtendBlock">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LedsCodeV001.ecore#//ExtendBlock/values"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LedsCodeV001.ecore#//ExtendBlock/values"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

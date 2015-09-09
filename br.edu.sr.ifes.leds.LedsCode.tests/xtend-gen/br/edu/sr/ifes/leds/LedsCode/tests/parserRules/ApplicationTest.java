@@ -38,18 +38,18 @@ public class ApplicationTest extends AbstractTestClass {
   @Test
   public void testApplicationName() {
     String _name = this.singleApp.getName();
-    Assert.assertEquals("LibraryPersonApp", _name);
+    Assert.assertEquals("appSincap", _name);
   }
   
   @Test
   public void testQtdApplicationDomain() {
     EList<String> _applicationDomain = this.singleApp.getApplicationDomain();
     int _size = _applicationDomain.size();
-    Assert.assertEquals(2, _size);
+    Assert.assertEquals(1, _size);
   }
   
   @Test
   public void testApplicationDomain() {
-    Assert.assertEquals("Domain1.Module.*", this.singleAppDomain);
+    Assert.assertEquals("domSincap.*", this.singleAppDomain);
   }
 }

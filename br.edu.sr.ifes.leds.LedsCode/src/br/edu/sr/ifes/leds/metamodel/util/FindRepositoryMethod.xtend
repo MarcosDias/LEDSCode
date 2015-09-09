@@ -12,5 +12,5 @@ class FindRepositoryMethod {
 			}
 		}
 		null
-	}
+	}	
 }

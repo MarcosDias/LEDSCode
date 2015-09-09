@@ -2,6 +2,7 @@ package br.edu.sr.ifes.leds.metamodel;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindApplication;
 import java.util.LinkedHashSet;
 import model.applicationLayer.Application;
@@ -12,6 +13,10 @@ import org.eclipse.emf.common.util.EList;
 @SuppressWarnings("all")
 public class InterfaceConverter {
   private FindApplication findApplication;
+  
+  private Project projectLang;
+  
+  private model.mainLayer.Project projectMetaModel;
   
   public Interface conveter(final InterfaceBlock ifaceLang, final LinkedHashSet<Application> listAppMetaModel) {
     Interface _xblockexpression = null;
@@ -50,8 +55,10 @@ public class InterfaceConverter {
     return _xblockexpression;
   }
   
-  public InterfaceConverter() {
+  public InterfaceConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
     FindApplication _findApplication = new FindApplication();
     this.findApplication = _findApplication;
+    this.projectLang = projectLang;
+    this.projectMetaModel = projectMetaModel;
   }
 }

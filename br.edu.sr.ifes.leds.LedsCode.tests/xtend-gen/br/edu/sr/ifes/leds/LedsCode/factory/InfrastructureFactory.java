@@ -9,7 +9,7 @@ public class InfrastructureFactory {
     _builder.append("infrastructure{");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("basePackage = \"org.company.exempla\"");
+    _builder.append("basePackage = \"br.edu.ifes.sr.leds\"");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("projectVersion = \"0.0.0\"");
@@ -24,7 +24,7 @@ public class InfrastructureFactory {
     _builder.append("orm = {@name: \"Hibernate\", @version: \"3\"}");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("database = {@version: \"5\", @name: \"Postgres\", @user: \"USER\", @pass: \"123456\", @host: \"localhost\", @env:\"prod\"}");
+    _builder.append("database = {@version: \"5\", @name: \"Postgres\", @user: \"USER\", @pass: \"123456\", @host: \"localhost\", @env: \"prod\"}");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

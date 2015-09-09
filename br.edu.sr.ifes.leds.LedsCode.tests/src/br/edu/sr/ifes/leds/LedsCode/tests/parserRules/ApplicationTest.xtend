@@ -29,16 +29,16 @@ class ApplicationTest extends AbstractTestClass{
 
   	@Test
   	def testApplicationName(){
-  		assertEquals("LibraryPersonApp", singleApp.name)
+  		assertEquals("appSincap", singleApp.name)
   	}
   	
   	@Test
   	def testQtdApplicationDomain(){
-  		assertEquals(2, singleApp.applicationDomain.size)
+  		assertEquals(1, singleApp.applicationDomain.size)
   	}
   	
   	@Test
   	def testApplicationDomain(){
-  		assertEquals("Domain1.Module.*", singleAppDomain)
+  		assertEquals("domSincap.*", singleAppDomain)
 	}
 }

@@ -60,7 +60,7 @@ class TableObjectsTest extends AbstractTestClass{
   	
   	@Test
   	def testSizeDomains(){
-  		assertEquals(2, domains.size)
+  		assertEquals(1, domains.size)
   	}
   	
   	@Test
@@ -75,17 +75,17 @@ class TableObjectsTest extends AbstractTestClass{
   	
   	@Test
   	def testSizeServices(){
-  		assertEquals(4, services.size)
+  		assertEquals(1, services.size)
   	}
   	
   	@Test
   	def testSizeEntities(){
-  		assertEquals(8, entity.size)
+  		assertEquals(18, entity.size)
   	}
   	
   	@Test
   	def testSizeEnums(){
-  		assertEquals(4, enums.size)
+  		assertEquals(2, enums.size)
   	}
   	
   	

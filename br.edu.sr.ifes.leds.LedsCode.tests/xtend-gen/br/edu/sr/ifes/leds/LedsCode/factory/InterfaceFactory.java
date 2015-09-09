@@ -6,20 +6,13 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 public class InterfaceFactory {
   public static CharSequence interfaceBlock() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("interface InterfaceLibrary  {");
+    _builder.append("interface ifaceSincap  {");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("//Cria as telas da aplicação Library");
+    _builder.append("HtmlView interfaceWeb => appSincap");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("HtmlView Interface1 => LibraryPersonApp");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("//Criar um webservice do application Library");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("RestFull Interface2 => LibraryPersonApp2");
+    _builder.append("RestFull interfaceRest => appSincap");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

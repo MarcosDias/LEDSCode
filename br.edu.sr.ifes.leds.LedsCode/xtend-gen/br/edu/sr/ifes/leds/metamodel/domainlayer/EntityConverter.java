@@ -3,6 +3,7 @@ package br.edu.sr.ifes.leds.metamodel.domainlayer;
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
@@ -29,6 +30,10 @@ import org.eclipse.emf.common.util.EList;
 public class EntityConverter {
   private FindEntity findEntity;
   
+  private Project projectLang;
+  
+  private model.mainLayer.Project projectMetaModel;
+  
   /**
    * Metodo que converte uma lista de entidades provenientes de uma linguagem
    * em objetos do metamodelo
@@ -43,9 +48,10 @@ public class EntityConverter {
     LinkedHashSet<Entity> _xblockexpression = null;
     {
       LinkedHashSet<Entity> listEntityMetaModel = this.buildIncompleteEntities(listEntityLang, moduleMetaModel, tableObjects);
-      this.convertClassExtendsEntities(listEntityMetaModel, listEntityLang);
-      this.convertAttributes(listEntityMetaModel, listEntityLang);
-      this.convertRepository(listEntityMetaModel, listEntityLang);
+      Set<Entity> _entities = tableObjects.getEntities();
+      this.convertClassExtendsEntities(_entities, listEntityLang);
+      this.convertAttributes(listEntityMetaModel, listEntityLang, tableObjects);
+      this.convertRepository(listEntityMetaModel, listEntityLang, tableObjects);
       _xblockexpression = listEntityMetaModel;
     }
     return _xblockexpression;
@@ -103,7 +109,7 @@ public class EntityConverter {
    * @param listEntityMetaModel Lista de Entidades provenientes do MetaModelo
    * @paran listEntityLang Lista de Entidades provenientes do linguagem
    */
-  public void convertClassExtendsEntities(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang) {
+  public void convertClassExtendsEntities(final Set<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang) {
     for (final EntityBlock entityLang : listEntityLang) {
       ExtendBlock _classExtends = entityLang.getClassExtends();
       boolean _notEquals = (!Objects.equal(_classExtends, null));
@@ -120,13 +126,15 @@ public class EntityConverter {
    * @param listEntityMetaModel Lista de entidades do MetaModelo que será processada
    * @param entityLang entidade da linguagem que que serah processada
    */
-  private void buildClassExtendsEntities(final LinkedHashSet<Entity> listEntityMetaModel, final EntityBlock entityLang) {
-    Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, entityLang);
+  private void buildClassExtendsEntities(final Set<Entity> listEntityMetaModel, final EntityBlock entityLang) {
+    String _name = entityLang.getName();
+    Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, _name);
     ExtendBlock _classExtends = entityLang.getClassExtends();
-    EList<String> _values = _classExtends.getValues();
-    for (final String extendLang : _values) {
+    EList<EntityBlock> _values = _classExtends.getValues();
+    for (final EntityBlock extendLang : _values) {
       {
-        Entity extendsMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, extendLang);
+        String _name_1 = extendLang.getName();
+        Entity extendsMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, _name_1);
         LinkedHashSet<Entity> _classExtends_1 = entityMetaModel.getClassExtends();
         _classExtends_1.add(extendsMetaModel);
       }
@@ -141,7 +149,7 @@ public class EntityConverter {
    * convertidos
    * @return LinkedHashSet<Entity> Set de entidade do metamodelo
    */
-  public void convertRepository(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang) {
+  public void convertRepository(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang, final TableObjects tableObjects) {
     for (final EntityBlock entityLang : listEntityLang) {
       {
         Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, entityLang);
@@ -154,7 +162,7 @@ public class EntityConverter {
           repositoryMetaModel.setName(_name);
           br.edu.sr.ifes.leds.ledsCodeV001.Repository _repository_2 = entityLang.getRepository();
           EList<RepositoryFields> _methods = _repository_2.getMethods();
-          LinkedHashSet<Method> _convertRepositoriyMethods = this.convertRepositoriyMethods(listEntityMetaModel, _methods);
+          LinkedHashSet<Method> _convertRepositoriyMethods = this.convertRepositoriyMethods(listEntityMetaModel, _methods, repositoryMetaModel, tableObjects);
           repositoryMetaModel.setMethods(_convertRepositoriyMethods);
           entityMetaModel.setRepository(repositoryMetaModel);
         }
@@ -172,21 +180,22 @@ public class EntityConverter {
    * @return LinkedHashSet<Method> Lista de metodos de um repositorio já em no
    * formato do MetaModelo
    */
-  public LinkedHashSet<Method> convertRepositoriyMethods(final LinkedHashSet<Entity> listEntityMetaModel, final EList<RepositoryFields> listRepositoryMethodsLang) {
+  public LinkedHashSet<Method> convertRepositoriyMethods(final LinkedHashSet<Entity> listEntityMetaModel, final EList<RepositoryFields> listRepositoryMethodsLang, final Repository repositoryMetaModel, final TableObjects tableObjects) {
     LinkedHashSet<Method> _xblockexpression = null;
     {
       LinkedHashSet<Method> listRepositoryMethodsMetaModelo = new LinkedHashSet<Method>();
       for (final RepositoryFields repositoryMethodslang : listRepositoryMethodsLang) {
         {
           Method repositoryMethodMetaModel = new Method();
-          String _nameMethod = repositoryMethodslang.getNameMethod();
-          repositoryMethodMetaModel.setName(_nameMethod);
+          String _name = repositoryMethodslang.getName();
+          repositoryMethodMetaModel.setName(_name);
+          repositoryMethodMetaModel.setParent(repositoryMetaModel);
           String _returnType = repositoryMethodslang.getReturnType();
           ReturnType _returnType_1 = new ReturnType();
-          SuperAttribute _convertGenericType = this.convertGenericType(listEntityMetaModel, _returnType, _returnType_1);
+          SuperAttribute _convertGenericType = this.convertGenericType(listEntityMetaModel, _returnType, _returnType_1, tableObjects);
           repositoryMethodMetaModel.setReturnMethod(((ReturnType) _convertGenericType));
           MethodParameter _methodsParameters = repositoryMethodslang.getMethodsParameters();
-          LinkedHashSet<Parameter> _convertparameters = this.convertparameters(listEntityMetaModel, _methodsParameters);
+          LinkedHashSet<Parameter> _convertparameters = this.convertparameters(listEntityMetaModel, _methodsParameters, tableObjects);
           repositoryMethodMetaModel.setParameters(_convertparameters);
           listRepositoryMethodsMetaModelo.add(repositoryMethodMetaModel);
         }
@@ -204,7 +213,7 @@ public class EntityConverter {
    * @param parameteresLang Lista de paramentros que seram convertidos
    * @return LinkedHashSet<Parameter> Lista de parametros do metamodelo
    */
-  public LinkedHashSet<Parameter> convertparameters(final LinkedHashSet<Entity> listEntityMetaModel, final MethodParameter parameteresLang) {
+  public LinkedHashSet<Parameter> convertparameters(final LinkedHashSet<Entity> listEntityMetaModel, final MethodParameter parameteresLang, final TableObjects tableObjects) {
     LinkedHashSet<Parameter> _xblockexpression = null;
     {
       LinkedHashSet<Parameter> parameteresMetaModel = new LinkedHashSet<Parameter>();
@@ -217,7 +226,7 @@ public class EntityConverter {
             String _name = paramLang.getName();
             paramMetaModel.setName(_name);
             String _type = paramLang.getType();
-            this.convertGenericType(listEntityMetaModel, _type, paramMetaModel);
+            this.convertGenericType(listEntityMetaModel, _type, paramMetaModel, tableObjects);
             parameteresMetaModel.add(paramMetaModel);
           }
         }
@@ -237,15 +246,15 @@ public class EntityConverter {
    * podendo ser um `Attribute`, `ReturnType` ou um `Parameter`
    * @return SuperAttribute Objecto Convertido e com o tipo correto
    */
-  public SuperAttribute convertGenericType(final LinkedHashSet<Entity> listEntityMetaModel, final String typeObject, final SuperAttribute genericTypeMetaModel) {
+  public SuperAttribute convertGenericType(final LinkedHashSet<Entity> listEntityMetaModel, final String typeObject, final SuperAttribute genericTypeMetaModel, final TableObjects tableObjects) {
     SuperAttribute _xblockexpression = null;
     {
       boolean _or = false;
-      boolean _contains = typeObject.contains("Set");
+      boolean _contains = typeObject.contains("Set<");
       if (_contains) {
         _or = true;
       } else {
-        boolean _contains_1 = typeObject.contains("List");
+        boolean _contains_1 = typeObject.contains("List<");
         _or = _contains_1;
       }
       if (_or) {
@@ -256,10 +265,10 @@ public class EntityConverter {
         String type = _split[0];
         CollectionType _fromString = CollectionType.fromString(collectionType);
         genericTypeMetaModel.setCollectionType(_fromString);
-        this.processAttrType(type, genericTypeMetaModel, listEntityMetaModel);
+        this.processAttrType(type, genericTypeMetaModel, listEntityMetaModel, tableObjects);
       } else {
         genericTypeMetaModel.setCollectionType(null);
-        this.processAttrType(typeObject, genericTypeMetaModel, listEntityMetaModel);
+        this.processAttrType(typeObject, genericTypeMetaModel, listEntityMetaModel, tableObjects);
       }
       _xblockexpression = genericTypeMetaModel;
     }
@@ -275,7 +284,7 @@ public class EntityConverter {
    * processados
    * @param listEntityLang Lista de entidades da linguagem para suporte
    */
-  public void convertAttributes(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang) {
+  public void convertAttributes(final LinkedHashSet<Entity> listEntityMetaModel, final EList<EntityBlock> listEntityLang, final TableObjects tableObjects) {
     for (final EntityBlock entityLang : listEntityLang) {
       {
         Entity entityMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, entityLang);
@@ -293,7 +302,7 @@ public class EntityConverter {
             Constraints _processConstraintsAttr = this.processConstraintsAttr(attrLang);
             attrMetaModel.setConstraints(_processConstraintsAttr);
             String _type = attrLang.getType();
-            this.convertGenericType(listEntityMetaModel, _type, attrMetaModel);
+            this.convertGenericType(listEntityMetaModel, _type, attrMetaModel, tableObjects);
             LinkedHashSet<Attribute> _attributes_1 = entityMetaModel.getAttributes();
             _attributes_1.add(attrMetaModel);
           }
@@ -338,20 +347,30 @@ public class EntityConverter {
    * @param attrMetaModel atributo do metamodelo que sera processado no momento
    * @param listEntityMetaModel Lista de entidades do metamodelo
    */
-  public void processAttrType(final String type, final SuperAttribute genericTypeMetaModel, final LinkedHashSet<Entity> listEntityMetaModel) {
-    PrimaryDateTypeEnum primitiveType = PrimaryDateTypeEnum.fromString(type);
+  public void processAttrType(final String type, final SuperAttribute genericTypeMetaModel, final LinkedHashSet<Entity> listEntityMetaModel, final TableObjects tableObjects) {
+    PrimaryDateTypeEnum _fromString = PrimaryDateTypeEnum.fromString(type);
+    PrimaryDateTypeEnum primitiveType = ((PrimaryDateTypeEnum) _fromString);
     boolean _equals = Objects.equal(primitiveType, null);
     if (_equals) {
-      Entity _inMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, type);
-      genericTypeMetaModel.setDatetype(_inMetaModel);
+      boolean _contains = type.contains(".");
+      if (_contains) {
+        Set<Entity> _entities = tableObjects.getEntities();
+        Entity _findFullPathEntity = this.findEntity.findFullPathEntity(_entities, type);
+        genericTypeMetaModel.setDatetype(_findFullPathEntity);
+      } else {
+        Entity _inMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, type);
+        genericTypeMetaModel.setDatetype(_inMetaModel);
+      }
     } else {
       PrimaryDateType _primaryDateType = new PrimaryDateType(primitiveType);
       genericTypeMetaModel.setDatetype(_primaryDateType);
     }
   }
   
-  public EntityConverter() {
+  public EntityConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
     FindEntity _findEntity = new FindEntity();
     this.findEntity = _findEntity;
+    this.projectLang = projectLang;
+    this.projectMetaModel = projectMetaModel;
   }
 }

@@ -31,7 +31,7 @@ class InfrastructureTest extends AbstractTestClass{
 	
 	@Test
 	def testBasePackaga(){
-		assertEquals("org.company.exempla", infra.basePackage)
+		assertEquals("br.edu.ifes.sr.leds", infra.basePackage)
 	}
 	
 	@Test

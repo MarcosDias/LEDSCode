@@ -40,7 +40,7 @@ public class InfrastructureTest extends AbstractTestClass {
   @Test
   public void testBasePackaga() {
     String _basePackage = this.infra.getBasePackage();
-    Assert.assertEquals("org.company.exempla", _basePackage);
+    Assert.assertEquals("br.edu.ifes.sr.leds", _basePackage);
   }
   
   @Test

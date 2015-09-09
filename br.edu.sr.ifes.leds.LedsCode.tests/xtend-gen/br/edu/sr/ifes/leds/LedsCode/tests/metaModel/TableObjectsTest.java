@@ -80,7 +80,7 @@ public class TableObjectsTest extends AbstractTestClass {
   @Test
   public void testSizeDomains() {
     int _size = this.domains.size();
-    Assert.assertEquals(2, _size);
+    Assert.assertEquals(1, _size);
   }
   
   @Test
@@ -98,18 +98,18 @@ public class TableObjectsTest extends AbstractTestClass {
   @Test
   public void testSizeServices() {
     int _size = this.services.size();
-    Assert.assertEquals(4, _size);
+    Assert.assertEquals(1, _size);
   }
   
   @Test
   public void testSizeEntities() {
     int _size = this.entity.size();
-    Assert.assertEquals(8, _size);
+    Assert.assertEquals(18, _size);
   }
   
   @Test
   public void testSizeEnums() {
     int _size = this.enums.size();
-    Assert.assertEquals(4, _size);
+    Assert.assertEquals(2, _size);
   }
 }

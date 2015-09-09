@@ -18,7 +18,7 @@ class InterfaceTest extends AbstractTestClass{
   	
   	@Test
   	def testInterfaceName(){
-  		assertEquals("InterfaceLibrary", iface.name)
+  		assertEquals("ifaceSincap", iface.name)
   	}
   	
   	@Test
@@ -31,7 +31,7 @@ class InterfaceTest extends AbstractTestClass{
   		val ifaceField = iface.interfaceApplication.get(0)
   			
   		assertEquals("HtmlView", ifaceField.type)
-  		assertEquals("Interface1", ifaceField.name)
-  		assertEquals("LibraryPersonApp", ifaceField.nameApp)
+  		assertEquals("interfaceWeb", ifaceField.name)
+  		assertEquals("appSincap", ifaceField.nameApp)
   	}
 }

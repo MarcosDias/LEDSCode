@@ -48,13 +48,13 @@ class ApplicationTest extends AbstractTestClass{
   	
   	@Test
   	def testQtdApplicationDomain(){
-  		assertEquals(2, singleAppMetalModel.structure.size)
+  		assertEquals(1, singleAppMetalModel.structure.size)
   	}
   	
   	@Test
   	def testApplicationDomain(){
 		var strutureAppLang = new ArrayList<String>(Arrays.asList(singleAppDomainLang.split('\\.')))
   		assertEquals(strutureAppLang.get(0).toString(), singleAppMetalModel.structure.get(0).domain.name)
-  		assertNotNull(singleAppMetalModel.structure.get(0).son)
+  		assertNull(singleAppMetalModel.structure.get(0).son)
   	}
 }

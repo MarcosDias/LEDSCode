@@ -9,12 +9,17 @@ import model.domainLayer.Domain
 import org.eclipse.emf.common.util.EList
 import model.mainLayer.TableObjects
 import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import org.eclipse.xtext.common.types.access.impl.IndexedJvmTypeAccess.ShadowedTypeException
 
 class DomainConverter {
 	
 	EnumConverter enumConverter
 	EntityConverter entityConverter
 	ServiceConverter serviceConverter
+	
+	Project projectLang
+	model.mainLayer.Project projectMetaModel
 	
 	/**
 	 * Metodo que converte uma lista de objetos de dominio provenientes de uma linguagem
@@ -53,8 +58,8 @@ class DomainConverter {
 			var moduleMetaModel = new model.domainLayer.Module
 			moduleMetaModel.parent = domainMetaModel
 			moduleMetaModel.name = moduleLang.name
-			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock, moduleMetaModel, tableObjects)
 			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock, tableObjects)
+			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock, moduleMetaModel, tableObjects)
 			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel, tableObjects)
 			
 			setModulesMetaModule.add(moduleMetaModel)
@@ -64,9 +69,12 @@ class DomainConverter {
 		setModulesMetaModule
 	}
 	
-	new(){
-		entityConverter = new EntityConverter
-		enumConverter = new EnumConverter
-		serviceConverter = new ServiceConverter
+	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+		this.entityConverter = new EntityConverter(projectLang, projectMetaModel)
+		this.enumConverter = new EnumConverter(projectLang, projectMetaModel)
+		this.serviceConverter = new ServiceConverter(projectLang, projectMetaModel)
+		
+		this.projectLang = projectLang
+		this.projectMetaModel = projectMetaModel
 	}
 }

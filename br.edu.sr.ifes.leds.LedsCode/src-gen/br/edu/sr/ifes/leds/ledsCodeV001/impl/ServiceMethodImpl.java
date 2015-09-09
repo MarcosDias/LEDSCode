@@ -3,11 +3,13 @@
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
+import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -49,24 +51,14 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMethodAcess() <em>Method Acess</em>}' attribute.
+   * The cached value of the '{@link #getMethodAcess() <em>Method Acess</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMethodAcess()
    * @generated
    * @ordered
    */
-  protected static final String METHOD_ACESS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMethodAcess() <em>Method Acess</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMethodAcess()
-   * @generated
-   * @ordered
-   */
-  protected String methodAcess = METHOD_ACESS_EDEFAULT;
+  protected RepositoryFields methodAcess;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,7 +109,27 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMethodAcess()
+  public RepositoryFields getMethodAcess()
+  {
+    if (methodAcess != null && methodAcess.eIsProxy())
+    {
+      InternalEObject oldMethodAcess = (InternalEObject)methodAcess;
+      methodAcess = (RepositoryFields)eResolveProxy(oldMethodAcess);
+      if (methodAcess != oldMethodAcess)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LedsCodeV001Package.SERVICE_METHOD__METHOD_ACESS, oldMethodAcess, methodAcess));
+      }
+    }
+    return methodAcess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RepositoryFields basicGetMethodAcess()
   {
     return methodAcess;
   }
@@ -127,9 +139,9 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMethodAcess(String newMethodAcess)
+  public void setMethodAcess(RepositoryFields newMethodAcess)
   {
-    String oldMethodAcess = methodAcess;
+    RepositoryFields oldMethodAcess = methodAcess;
     methodAcess = newMethodAcess;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.SERVICE_METHOD__METHOD_ACESS, oldMethodAcess, methodAcess));
@@ -148,7 +160,8 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
       case LedsCodeV001Package.SERVICE_METHOD__NAME:
         return getName();
       case LedsCodeV001Package.SERVICE_METHOD__METHOD_ACESS:
-        return getMethodAcess();
+        if (resolve) return getMethodAcess();
+        return basicGetMethodAcess();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,7 +180,7 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
         setName((String)newValue);
         return;
       case LedsCodeV001Package.SERVICE_METHOD__METHOD_ACESS:
-        setMethodAcess((String)newValue);
+        setMethodAcess((RepositoryFields)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,7 +200,7 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
         setName(NAME_EDEFAULT);
         return;
       case LedsCodeV001Package.SERVICE_METHOD__METHOD_ACESS:
-        setMethodAcess(METHOD_ACESS_EDEFAULT);
+        setMethodAcess((RepositoryFields)null);
         return;
     }
     super.eUnset(featureID);
@@ -206,7 +219,7 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
       case LedsCodeV001Package.SERVICE_METHOD__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LedsCodeV001Package.SERVICE_METHOD__METHOD_ACESS:
-        return METHOD_ACESS_EDEFAULT == null ? methodAcess != null : !METHOD_ACESS_EDEFAULT.equals(methodAcess);
+        return methodAcess != null;
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +237,6 @@ public class ServiceMethodImpl extends MinimalEObjectImpl.Container implements S
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", methodAcess: ");
-    result.append(methodAcess);
     result.append(')');
     return result.toString();
   }

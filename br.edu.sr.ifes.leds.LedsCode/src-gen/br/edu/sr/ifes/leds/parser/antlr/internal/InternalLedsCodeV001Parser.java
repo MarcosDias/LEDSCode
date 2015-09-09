@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'project'", "'{'", "'}'", "'interface'", "'HtmlView'", "'RestFull'", "'=>'", "'infrastructure'", "'basePackage'", "'='", "'projectVersion'", "'language'", "'framework'", "'orm'", "'database'", "'@version'", "':'", "','", "'@name'", "'@user'", "'@pass'", "'@host'", "'@env'", "'application'", "'composedBy'", "'domain'", "'module'", "'service'", "'abstract'", "'entity'", "'@pk'", "'@unique'", "'('", "')'", "'@null'", "'@min'", "'@max'", "'@between'", "'repository'", "'enum'", "'String'", "'int'", "'Integer'", "'long'", "'Long'", "'boolean'", "'Boolean'", "'Datetime'", "'double'", "'Double'", "'float'", "'Float'", "'Object'", "'extends'", "'ext'", "'List'", "'<'", "'>'", "'Set'", "'-'", "'private'", "'#'", "'protected'", "'.*'", "'.'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'project'", "'{'", "'}'", "'interface'", "'HtmlView'", "'RestFull'", "'=>'", "'infrastructure'", "'basePackage'", "'='", "'projectVersion'", "'language'", "'framework'", "'orm'", "'database'", "'@version'", "':'", "','", "'@name'", "'@user'", "'@pass'", "'@host'", "'@env'", "'application'", "'composedBy'", "'domain'", "'module'", "'service'", "'abstract'", "'entity'", "'@pk'", "'@unique'", "'('", "')'", "'@null'", "'@min'", "'@max'", "'@between'", "'repository'", "'enum'", "'String'", "'int'", "'Integer'", "'long'", "'Long'", "'boolean'", "'Boolean'", "'Datetime'", "'double'", "'Double'", "'float'", "'Float'", "'Object'", "'extends'", "'ext'", "'List'", "'<'", "'>'", "'Set'", "'private'", "'protected'", "'.*'", "'.'", "'true'", "'false'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -74,7 +74,6 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__33=33;
-    public static final int T__77=77;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
@@ -85,7 +84,6 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
     public static final int T__31=31;
     public static final int T__75=75;
     public static final int T__32=32;
-    public static final int T__76=76;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__48=48;
@@ -2108,7 +2106,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModuleBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1035:1: ruleModuleBlock returns [EObject current=null] : (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_serviceBlock_3_0= ruleServiceBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_enumBlock_5_0= ruleEnumBlock ) ) )* otherlv_6= '}' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1035:1: ruleModuleBlock returns [EObject current=null] : (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_enumBlock_3_0= ruleEnumBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_serviceBlock_5_0= ruleServiceBlock ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleModuleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -2116,21 +2114,21 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
         Token lv_name_1_0=null;
         Token otherlv_2=null;
         Token otherlv_6=null;
-        EObject lv_serviceBlock_3_0 = null;
+        EObject lv_enumBlock_3_0 = null;
 
         EObject lv_entityBlock_4_0 = null;
 
-        EObject lv_enumBlock_5_0 = null;
+        EObject lv_serviceBlock_5_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1038:28: ( (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_serviceBlock_3_0= ruleServiceBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_enumBlock_5_0= ruleEnumBlock ) ) )* otherlv_6= '}' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1039:1: (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_serviceBlock_3_0= ruleServiceBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_enumBlock_5_0= ruleEnumBlock ) ) )* otherlv_6= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1038:28: ( (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_enumBlock_3_0= ruleEnumBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_serviceBlock_5_0= ruleServiceBlock ) ) )* otherlv_6= '}' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1039:1: (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_enumBlock_3_0= ruleEnumBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_serviceBlock_5_0= ruleServiceBlock ) ) )* otherlv_6= '}' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1039:1: (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_serviceBlock_3_0= ruleServiceBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_enumBlock_5_0= ruleEnumBlock ) ) )* otherlv_6= '}' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1039:3: otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_serviceBlock_3_0= ruleServiceBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_enumBlock_5_0= ruleEnumBlock ) ) )* otherlv_6= '}'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1039:1: (otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_enumBlock_3_0= ruleEnumBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_serviceBlock_5_0= ruleServiceBlock ) ) )* otherlv_6= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1039:3: otherlv_0= 'module' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( ( (lv_enumBlock_3_0= ruleEnumBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_serviceBlock_5_0= ruleServiceBlock ) ) )* otherlv_6= '}'
             {
             otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleModuleBlock2144); 
 
@@ -2166,12 +2164,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getModuleBlockAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1065:1: ( ( (lv_serviceBlock_3_0= ruleServiceBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_enumBlock_5_0= ruleEnumBlock ) ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1065:1: ( ( (lv_enumBlock_3_0= ruleEnumBlock ) ) | ( (lv_entityBlock_4_0= ruleEntityBlock ) ) | ( (lv_serviceBlock_5_0= ruleServiceBlock ) ) )*
             loop8:
             do {
                 int alt8=4;
                 switch ( input.LA(1) ) {
-                case 38:
+                case 50:
                     {
                     alt8=1;
                     }
@@ -2180,13 +2178,11 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                 case 40:
                 case 70:
                 case 71:
-                case 72:
-                case 73:
                     {
                     alt8=2;
                     }
                     break;
-                case 50:
+                case 38:
                     {
                     alt8=3;
                     }
@@ -2196,19 +2192,19 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1065:2: ( (lv_serviceBlock_3_0= ruleServiceBlock ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1065:2: ( (lv_enumBlock_3_0= ruleEnumBlock ) )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1065:2: ( (lv_serviceBlock_3_0= ruleServiceBlock ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1066:1: (lv_serviceBlock_3_0= ruleServiceBlock )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1065:2: ( (lv_enumBlock_3_0= ruleEnumBlock ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1066:1: (lv_enumBlock_3_0= ruleEnumBlock )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1066:1: (lv_serviceBlock_3_0= ruleServiceBlock )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1067:3: lv_serviceBlock_3_0= ruleServiceBlock
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1066:1: (lv_enumBlock_3_0= ruleEnumBlock )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1067:3: lv_enumBlock_3_0= ruleEnumBlock
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getModuleBlockAccess().getServiceBlockServiceBlockParserRuleCall_3_0_0()); 
+            	    	        newCompositeNode(grammarAccess.getModuleBlockAccess().getEnumBlockEnumBlockParserRuleCall_3_0_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleServiceBlock_in_ruleModuleBlock2200);
-            	    lv_serviceBlock_3_0=ruleServiceBlock();
+            	    pushFollow(FOLLOW_ruleEnumBlock_in_ruleModuleBlock2200);
+            	    lv_enumBlock_3_0=ruleEnumBlock();
 
             	    state._fsp--;
 
@@ -2218,9 +2214,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"serviceBlock",
-            	            		lv_serviceBlock_3_0, 
-            	            		"ServiceBlock");
+            	           			"enumBlock",
+            	            		lv_enumBlock_3_0, 
+            	            		"EnumBlock");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -2270,19 +2266,19 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1103:6: ( (lv_enumBlock_5_0= ruleEnumBlock ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1103:6: ( (lv_serviceBlock_5_0= ruleServiceBlock ) )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1103:6: ( (lv_enumBlock_5_0= ruleEnumBlock ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1104:1: (lv_enumBlock_5_0= ruleEnumBlock )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1103:6: ( (lv_serviceBlock_5_0= ruleServiceBlock ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1104:1: (lv_serviceBlock_5_0= ruleServiceBlock )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1104:1: (lv_enumBlock_5_0= ruleEnumBlock )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1105:3: lv_enumBlock_5_0= ruleEnumBlock
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1104:1: (lv_serviceBlock_5_0= ruleServiceBlock )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1105:3: lv_serviceBlock_5_0= ruleServiceBlock
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getModuleBlockAccess().getEnumBlockEnumBlockParserRuleCall_3_2_0()); 
+            	    	        newCompositeNode(grammarAccess.getModuleBlockAccess().getServiceBlockServiceBlockParserRuleCall_3_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleEnumBlock_in_ruleModuleBlock2254);
-            	    lv_enumBlock_5_0=ruleEnumBlock();
+            	    pushFollow(FOLLOW_ruleServiceBlock_in_ruleModuleBlock2254);
+            	    lv_serviceBlock_5_0=ruleServiceBlock();
 
             	    state._fsp--;
 
@@ -2292,9 +2288,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"enumBlock",
-            	            		lv_enumBlock_5_0, 
-            	            		"EnumBlock");
+            	           			"serviceBlock",
+            	            		lv_serviceBlock_5_0, 
+            	            		"ServiceBlock");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -2537,23 +2533,21 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServiceMethod"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1211:1: ruleServiceMethod returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_methodAcess_2_0= ruleCompoundName ) ) ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1211:1: ruleServiceMethod returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( ( ruleCompoundName ) ) ) ;
     public final EObject ruleServiceMethod() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
-        AntlrDatatypeRuleToken lv_methodAcess_2_0 = null;
-
 
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1214:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_methodAcess_2_0= ruleCompoundName ) ) ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_methodAcess_2_0= ruleCompoundName ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1214:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( ( ruleCompoundName ) ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( ( ruleCompoundName ) ) )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_methodAcess_2_0= ruleCompoundName ) ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( (lv_methodAcess_2_0= ruleCompoundName ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( ( ruleCompoundName ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=>' ( ( ruleCompoundName ) )
             {
             // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1215:2: ( (lv_name_0_0= RULE_ID ) )
             // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1216:1: (lv_name_0_0= RULE_ID )
@@ -2585,29 +2579,26 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getServiceMethodAccess().getEqualsSignGreaterThanSignKeyword_1());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1237:1: ( (lv_methodAcess_2_0= ruleCompoundName ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1238:1: (lv_methodAcess_2_0= ruleCompoundName )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1237:1: ( ( ruleCompoundName ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1238:1: ( ruleCompoundName )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1238:1: (lv_methodAcess_2_0= ruleCompoundName )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1239:3: lv_methodAcess_2_0= ruleCompoundName
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1238:1: ( ruleCompoundName )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1239:3: ruleCompoundName
             {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getServiceMethodRule());
+            	        }
+                    
              
-            	        newCompositeNode(grammarAccess.getServiceMethodAccess().getMethodAcessCompoundNameParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getServiceMethodAccess().getMethodAcessRepositoryFieldsCrossReference_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleCompoundName_in_ruleServiceMethod2545);
-            lv_methodAcess_2_0=ruleCompoundName();
+            pushFollow(FOLLOW_ruleCompoundName_in_ruleServiceMethod2547);
+            ruleCompoundName();
 
             state._fsp--;
 
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getServiceMethodRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"methodAcess",
-                    		lv_methodAcess_2_0, 
-                    		"CompoundName");
+             
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -2637,7 +2628,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntityBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1263:1: entryRuleEntityBlock returns [EObject current=null] : iv_ruleEntityBlock= ruleEntityBlock EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1260:1: entryRuleEntityBlock returns [EObject current=null] : iv_ruleEntityBlock= ruleEntityBlock EOF ;
     public final EObject entryRuleEntityBlock() throws RecognitionException {
         EObject current = null;
 
@@ -2645,17 +2636,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1264:2: (iv_ruleEntityBlock= ruleEntityBlock EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1265:2: iv_ruleEntityBlock= ruleEntityBlock EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1261:2: (iv_ruleEntityBlock= ruleEntityBlock EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1262:2: iv_ruleEntityBlock= ruleEntityBlock EOF
             {
              newCompositeNode(grammarAccess.getEntityBlockRule()); 
-            pushFollow(FOLLOW_ruleEntityBlock_in_entryRuleEntityBlock2581);
+            pushFollow(FOLLOW_ruleEntityBlock_in_entryRuleEntityBlock2583);
             iv_ruleEntityBlock=ruleEntityBlock();
 
             state._fsp--;
 
              current =iv_ruleEntityBlock; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEntityBlock2591); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEntityBlock2593); 
 
             }
 
@@ -2673,7 +2664,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1272:1: ruleEntityBlock returns [EObject current=null] : ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1269:1: ruleEntityBlock returns [EObject current=null] : ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' ) ;
     public final EObject ruleEntityBlock() throws RecognitionException {
         EObject current = null;
 
@@ -2694,30 +2685,30 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1275:28: ( ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1276:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1272:28: ( ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1273:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1276:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1276:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1273:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1273:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_isAbstract_1_0= 'abstract' ) )? otherlv_2= 'entity' ( (lv_name_3_0= RULE_ID ) ) ( (lv_classExtends_4_0= ruleExtendBlock ) )? otherlv_5= '{' ( (lv_attributes_6_0= ruleAttribute ) )* ( (lv_repository_7_0= ruleRepository ) )? otherlv_8= '}'
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1276:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1273:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( ((LA10_0>=70 && LA10_0<=73)) ) {
+            if ( ((LA10_0>=70 && LA10_0<=71)) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1277:1: (lv_acessModifier_0_0= ruleAccessModifier )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1274:1: (lv_acessModifier_0_0= ruleAccessModifier )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1277:1: (lv_acessModifier_0_0= ruleAccessModifier )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1278:3: lv_acessModifier_0_0= ruleAccessModifier
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1274:1: (lv_acessModifier_0_0= ruleAccessModifier )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1275:3: lv_acessModifier_0_0= ruleAccessModifier
                     {
                      
                     	        newCompositeNode(grammarAccess.getEntityBlockAccess().getAcessModifierAccessModifierParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAccessModifier_in_ruleEntityBlock2637);
+                    pushFollow(FOLLOW_ruleAccessModifier_in_ruleEntityBlock2639);
                     lv_acessModifier_0_0=ruleAccessModifier();
 
                     state._fsp--;
@@ -2742,7 +2733,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1294:3: ( (lv_isAbstract_1_0= 'abstract' ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1291:3: ( (lv_isAbstract_1_0= 'abstract' ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2751,12 +2742,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1295:1: (lv_isAbstract_1_0= 'abstract' )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1292:1: (lv_isAbstract_1_0= 'abstract' )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1295:1: (lv_isAbstract_1_0= 'abstract' )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1296:3: lv_isAbstract_1_0= 'abstract'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1292:1: (lv_isAbstract_1_0= 'abstract' )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1293:3: lv_isAbstract_1_0= 'abstract'
                     {
-                    lv_isAbstract_1_0=(Token)match(input,39,FOLLOW_39_in_ruleEntityBlock2656); 
+                    lv_isAbstract_1_0=(Token)match(input,39,FOLLOW_39_in_ruleEntityBlock2658); 
 
                             newLeafNode(lv_isAbstract_1_0, grammarAccess.getEntityBlockAccess().getIsAbstractAbstractKeyword_1_0());
                         
@@ -2775,17 +2766,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleEntityBlock2682); 
+            otherlv_2=(Token)match(input,40,FOLLOW_40_in_ruleEntityBlock2684); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEntityBlockAccess().getEntityKeyword_2());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1313:1: ( (lv_name_3_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1314:1: (lv_name_3_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1310:1: ( (lv_name_3_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1311:1: (lv_name_3_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1314:1: (lv_name_3_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1315:3: lv_name_3_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1311:1: (lv_name_3_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1312:3: lv_name_3_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityBlock2699); 
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityBlock2701); 
 
             			newLeafNode(lv_name_3_0, grammarAccess.getEntityBlockAccess().getNameIDTerminalRuleCall_3_0()); 
             		
@@ -2805,7 +2796,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1331:2: ( (lv_classExtends_4_0= ruleExtendBlock ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1328:2: ( (lv_classExtends_4_0= ruleExtendBlock ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2814,15 +2805,15 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1332:1: (lv_classExtends_4_0= ruleExtendBlock )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1329:1: (lv_classExtends_4_0= ruleExtendBlock )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1332:1: (lv_classExtends_4_0= ruleExtendBlock )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1333:3: lv_classExtends_4_0= ruleExtendBlock
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1329:1: (lv_classExtends_4_0= ruleExtendBlock )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1330:3: lv_classExtends_4_0= ruleExtendBlock
                     {
                      
                     	        newCompositeNode(grammarAccess.getEntityBlockAccess().getClassExtendsExtendBlockParserRuleCall_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExtendBlock_in_ruleEntityBlock2725);
+                    pushFollow(FOLLOW_ruleExtendBlock_in_ruleEntityBlock2727);
                     lv_classExtends_4_0=ruleExtendBlock();
 
                     state._fsp--;
@@ -2847,32 +2838,32 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,12,FOLLOW_12_in_ruleEntityBlock2738); 
+            otherlv_5=(Token)match(input,12,FOLLOW_12_in_ruleEntityBlock2740); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getEntityBlockAccess().getLeftCurlyBracketKeyword_5());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1353:1: ( (lv_attributes_6_0= ruleAttribute ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1350:1: ( (lv_attributes_6_0= ruleAttribute ) )*
             loop13:
             do {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==RULE_ID||(LA13_0>=51 && LA13_0<=63)||LA13_0==66||(LA13_0>=69 && LA13_0<=73)) ) {
+                if ( (LA13_0==RULE_ID||(LA13_0>=51 && LA13_0<=63)||LA13_0==66||(LA13_0>=69 && LA13_0<=71)) ) {
                     alt13=1;
                 }
 
 
                 switch (alt13) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1354:1: (lv_attributes_6_0= ruleAttribute )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1351:1: (lv_attributes_6_0= ruleAttribute )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1354:1: (lv_attributes_6_0= ruleAttribute )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1355:3: lv_attributes_6_0= ruleAttribute
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1351:1: (lv_attributes_6_0= ruleAttribute )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1352:3: lv_attributes_6_0= ruleAttribute
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityBlockAccess().getAttributesAttributeParserRuleCall_6_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleAttribute_in_ruleEntityBlock2759);
+            	    pushFollow(FOLLOW_ruleAttribute_in_ruleEntityBlock2761);
             	    lv_attributes_6_0=ruleAttribute();
 
             	    state._fsp--;
@@ -2900,7 +2891,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1371:3: ( (lv_repository_7_0= ruleRepository ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1368:3: ( (lv_repository_7_0= ruleRepository ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2909,15 +2900,15 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1372:1: (lv_repository_7_0= ruleRepository )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1369:1: (lv_repository_7_0= ruleRepository )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1372:1: (lv_repository_7_0= ruleRepository )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1373:3: lv_repository_7_0= ruleRepository
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1369:1: (lv_repository_7_0= ruleRepository )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1370:3: lv_repository_7_0= ruleRepository
                     {
                      
                     	        newCompositeNode(grammarAccess.getEntityBlockAccess().getRepositoryRepositoryParserRuleCall_7_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleRepository_in_ruleEntityBlock2781);
+                    pushFollow(FOLLOW_ruleRepository_in_ruleEntityBlock2783);
                     lv_repository_7_0=ruleRepository();
 
                     state._fsp--;
@@ -2942,7 +2933,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,13,FOLLOW_13_in_ruleEntityBlock2794); 
+            otherlv_8=(Token)match(input,13,FOLLOW_13_in_ruleEntityBlock2796); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getEntityBlockAccess().getRightCurlyBracketKeyword_8());
                 
@@ -2967,7 +2958,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1401:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1398:1: entryRuleAttribute returns [EObject current=null] : iv_ruleAttribute= ruleAttribute EOF ;
     public final EObject entryRuleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -2975,17 +2966,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1402:2: (iv_ruleAttribute= ruleAttribute EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1403:2: iv_ruleAttribute= ruleAttribute EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1399:2: (iv_ruleAttribute= ruleAttribute EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1400:2: iv_ruleAttribute= ruleAttribute EOF
             {
              newCompositeNode(grammarAccess.getAttributeRule()); 
-            pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute2830);
+            pushFollow(FOLLOW_ruleAttribute_in_entryRuleAttribute2832);
             iv_ruleAttribute=ruleAttribute();
 
             state._fsp--;
 
              current =iv_ruleAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute2840); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAttribute2842); 
 
             }
 
@@ -3003,7 +2994,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1410:1: ruleAttribute returns [EObject current=null] : ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1407:1: ruleAttribute returns [EObject current=null] : ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -3045,30 +3036,30 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1413:28: ( ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1414:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1410:28: ( ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1411:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1414:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1414:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1411:1: ( ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )* )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1411:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )? ( (lv_type_1_0= ruleDataType ) ) ( (lv_name_2_0= RULE_ID ) ) ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )*
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1414:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1411:2: ( (lv_acessModifier_0_0= ruleAccessModifier ) )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( ((LA15_0>=70 && LA15_0<=73)) ) {
+            if ( ((LA15_0>=70 && LA15_0<=71)) ) {
                 alt15=1;
             }
             switch (alt15) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1415:1: (lv_acessModifier_0_0= ruleAccessModifier )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1412:1: (lv_acessModifier_0_0= ruleAccessModifier )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1415:1: (lv_acessModifier_0_0= ruleAccessModifier )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1416:3: lv_acessModifier_0_0= ruleAccessModifier
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1412:1: (lv_acessModifier_0_0= ruleAccessModifier )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1413:3: lv_acessModifier_0_0= ruleAccessModifier
                     {
                      
                     	        newCompositeNode(grammarAccess.getAttributeAccess().getAcessModifierAccessModifierParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleAccessModifier_in_ruleAttribute2886);
+                    pushFollow(FOLLOW_ruleAccessModifier_in_ruleAttribute2888);
                     lv_acessModifier_0_0=ruleAccessModifier();
 
                     state._fsp--;
@@ -3093,16 +3084,16 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1432:3: ( (lv_type_1_0= ruleDataType ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1433:1: (lv_type_1_0= ruleDataType )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1429:3: ( (lv_type_1_0= ruleDataType ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1430:1: (lv_type_1_0= ruleDataType )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1433:1: (lv_type_1_0= ruleDataType )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1434:3: lv_type_1_0= ruleDataType
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1430:1: (lv_type_1_0= ruleDataType )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1431:3: lv_type_1_0= ruleDataType
             {
              
             	        newCompositeNode(grammarAccess.getAttributeAccess().getTypeDataTypeParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataType_in_ruleAttribute2908);
+            pushFollow(FOLLOW_ruleDataType_in_ruleAttribute2910);
             lv_type_1_0=ruleDataType();
 
             state._fsp--;
@@ -3124,13 +3115,13 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1450:2: ( (lv_name_2_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1451:1: (lv_name_2_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1447:2: ( (lv_name_2_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1448:1: (lv_name_2_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1451:1: (lv_name_2_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1452:3: lv_name_2_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1448:1: (lv_name_2_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1449:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute2925); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAttribute2927); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -3150,7 +3141,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1468:2: ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1465:2: ( ( (lv_pk_3_0= '@pk' ) ) | ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' ) | ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' ) | ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' ) | ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' ) | ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' ) )*
             loop21:
             do {
                 int alt21=7;
@@ -3190,15 +3181,15 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1468:3: ( (lv_pk_3_0= '@pk' ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1465:3: ( (lv_pk_3_0= '@pk' ) )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1468:3: ( (lv_pk_3_0= '@pk' ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1469:1: (lv_pk_3_0= '@pk' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1465:3: ( (lv_pk_3_0= '@pk' ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1466:1: (lv_pk_3_0= '@pk' )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1469:1: (lv_pk_3_0= '@pk' )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1470:3: lv_pk_3_0= '@pk'
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1466:1: (lv_pk_3_0= '@pk' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1467:3: lv_pk_3_0= '@pk'
             	    {
-            	    lv_pk_3_0=(Token)match(input,41,FOLLOW_41_in_ruleAttribute2949); 
+            	    lv_pk_3_0=(Token)match(input,41,FOLLOW_41_in_ruleAttribute2951); 
 
             	            newLeafNode(lv_pk_3_0, grammarAccess.getAttributeAccess().getPkPkKeyword_3_0_0());
             	        
@@ -3218,12 +3209,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1484:6: ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1481:6: ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1484:6: ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1484:7: (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')'
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1481:6: ( (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1481:7: (otherlv_4= '@unique' )+ otherlv_5= '(' ( (lv_unique_6_0= ruleBOOLEAN ) ) otherlv_7= ')'
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1484:7: (otherlv_4= '@unique' )+
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1481:7: (otherlv_4= '@unique' )+
             	    int cnt16=0;
             	    loop16:
             	    do {
@@ -3237,9 +3228,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	        switch (alt16) {
             	    	case 1 :
-            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1484:9: otherlv_4= '@unique'
+            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1481:9: otherlv_4= '@unique'
             	    	    {
-            	    	    otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleAttribute2982); 
+            	    	    otherlv_4=(Token)match(input,42,FOLLOW_42_in_ruleAttribute2984); 
 
             	    	        	newLeafNode(otherlv_4, grammarAccess.getAttributeAccess().getUniqueKeyword_3_1_0());
             	    	        
@@ -3256,20 +3247,20 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	        cnt16++;
             	    } while (true);
 
-            	    otherlv_5=(Token)match(input,43,FOLLOW_43_in_ruleAttribute2996); 
+            	    otherlv_5=(Token)match(input,43,FOLLOW_43_in_ruleAttribute2998); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_3_1_1());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1492:1: ( (lv_unique_6_0= ruleBOOLEAN ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1493:1: (lv_unique_6_0= ruleBOOLEAN )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1489:1: ( (lv_unique_6_0= ruleBOOLEAN ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1490:1: (lv_unique_6_0= ruleBOOLEAN )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1493:1: (lv_unique_6_0= ruleBOOLEAN )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1494:3: lv_unique_6_0= ruleBOOLEAN
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1490:1: (lv_unique_6_0= ruleBOOLEAN )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1491:3: lv_unique_6_0= ruleBOOLEAN
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributeAccess().getUniqueBOOLEANParserRuleCall_3_1_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleBOOLEAN_in_ruleAttribute3017);
+            	    pushFollow(FOLLOW_ruleBOOLEAN_in_ruleAttribute3019);
             	    lv_unique_6_0=ruleBOOLEAN();
 
             	    state._fsp--;
@@ -3291,7 +3282,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_7=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3029); 
+            	    otherlv_7=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3031); 
 
             	        	newLeafNode(otherlv_7, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3_1_3());
             	        
@@ -3302,12 +3293,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1515:6: ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1512:6: ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1515:6: ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1515:7: (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')'
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1512:6: ( (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1512:7: (otherlv_8= '@null' )+ otherlv_9= '(' ( (lv_nullable_10_0= ruleBOOLEAN ) ) otherlv_11= ')'
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1515:7: (otherlv_8= '@null' )+
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1512:7: (otherlv_8= '@null' )+
             	    int cnt17=0;
             	    loop17:
             	    do {
@@ -3321,9 +3312,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	        switch (alt17) {
             	    	case 1 :
-            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1515:9: otherlv_8= '@null'
+            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1512:9: otherlv_8= '@null'
             	    	    {
-            	    	    otherlv_8=(Token)match(input,45,FOLLOW_45_in_ruleAttribute3050); 
+            	    	    otherlv_8=(Token)match(input,45,FOLLOW_45_in_ruleAttribute3052); 
 
             	    	        	newLeafNode(otherlv_8, grammarAccess.getAttributeAccess().getNullKeyword_3_2_0());
             	    	        
@@ -3340,20 +3331,20 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	        cnt17++;
             	    } while (true);
 
-            	    otherlv_9=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3064); 
+            	    otherlv_9=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3066); 
 
             	        	newLeafNode(otherlv_9, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_3_2_1());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1523:1: ( (lv_nullable_10_0= ruleBOOLEAN ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1524:1: (lv_nullable_10_0= ruleBOOLEAN )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1520:1: ( (lv_nullable_10_0= ruleBOOLEAN ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1521:1: (lv_nullable_10_0= ruleBOOLEAN )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1524:1: (lv_nullable_10_0= ruleBOOLEAN )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1525:3: lv_nullable_10_0= ruleBOOLEAN
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1521:1: (lv_nullable_10_0= ruleBOOLEAN )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1522:3: lv_nullable_10_0= ruleBOOLEAN
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributeAccess().getNullableBOOLEANParserRuleCall_3_2_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleBOOLEAN_in_ruleAttribute3085);
+            	    pushFollow(FOLLOW_ruleBOOLEAN_in_ruleAttribute3087);
             	    lv_nullable_10_0=ruleBOOLEAN();
 
             	    state._fsp--;
@@ -3375,7 +3366,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_11=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3097); 
+            	    otherlv_11=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3099); 
 
             	        	newLeafNode(otherlv_11, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3_2_3());
             	        
@@ -3386,12 +3377,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1546:6: ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1543:6: ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1546:6: ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1546:7: (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')'
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1543:6: ( (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1543:7: (otherlv_12= '@min' )+ otherlv_13= '(' ( (lv_min_14_0= ruleINTEGER ) ) otherlv_15= ')'
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1546:7: (otherlv_12= '@min' )+
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1543:7: (otherlv_12= '@min' )+
             	    int cnt18=0;
             	    loop18:
             	    do {
@@ -3405,9 +3396,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	        switch (alt18) {
             	    	case 1 :
-            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1546:9: otherlv_12= '@min'
+            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1543:9: otherlv_12= '@min'
             	    	    {
-            	    	    otherlv_12=(Token)match(input,46,FOLLOW_46_in_ruleAttribute3118); 
+            	    	    otherlv_12=(Token)match(input,46,FOLLOW_46_in_ruleAttribute3120); 
 
             	    	        	newLeafNode(otherlv_12, grammarAccess.getAttributeAccess().getMinKeyword_3_3_0());
             	    	        
@@ -3424,20 +3415,20 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	        cnt18++;
             	    } while (true);
 
-            	    otherlv_13=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3132); 
+            	    otherlv_13=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3134); 
 
             	        	newLeafNode(otherlv_13, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_3_3_1());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1554:1: ( (lv_min_14_0= ruleINTEGER ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1555:1: (lv_min_14_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1551:1: ( (lv_min_14_0= ruleINTEGER ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1552:1: (lv_min_14_0= ruleINTEGER )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1555:1: (lv_min_14_0= ruleINTEGER )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1556:3: lv_min_14_0= ruleINTEGER
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1552:1: (lv_min_14_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1553:3: lv_min_14_0= ruleINTEGER
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributeAccess().getMinINTEGERParserRuleCall_3_3_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3153);
+            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3155);
             	    lv_min_14_0=ruleINTEGER();
 
             	    state._fsp--;
@@ -3459,7 +3450,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_15=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3165); 
+            	    otherlv_15=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3167); 
 
             	        	newLeafNode(otherlv_15, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3_3_3());
             	        
@@ -3470,12 +3461,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1577:6: ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1574:6: ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1577:6: ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1577:7: (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')'
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1574:6: ( (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1574:7: (otherlv_16= '@max' )+ otherlv_17= '(' ( (lv_max_18_0= ruleINTEGER ) ) otherlv_19= ')'
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1577:7: (otherlv_16= '@max' )+
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1574:7: (otherlv_16= '@max' )+
             	    int cnt19=0;
             	    loop19:
             	    do {
@@ -3489,9 +3480,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	        switch (alt19) {
             	    	case 1 :
-            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1577:9: otherlv_16= '@max'
+            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1574:9: otherlv_16= '@max'
             	    	    {
-            	    	    otherlv_16=(Token)match(input,47,FOLLOW_47_in_ruleAttribute3186); 
+            	    	    otherlv_16=(Token)match(input,47,FOLLOW_47_in_ruleAttribute3188); 
 
             	    	        	newLeafNode(otherlv_16, grammarAccess.getAttributeAccess().getMaxKeyword_3_4_0());
             	    	        
@@ -3508,20 +3499,20 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	        cnt19++;
             	    } while (true);
 
-            	    otherlv_17=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3200); 
+            	    otherlv_17=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3202); 
 
             	        	newLeafNode(otherlv_17, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_3_4_1());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1585:1: ( (lv_max_18_0= ruleINTEGER ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1586:1: (lv_max_18_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1582:1: ( (lv_max_18_0= ruleINTEGER ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1583:1: (lv_max_18_0= ruleINTEGER )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1586:1: (lv_max_18_0= ruleINTEGER )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1587:3: lv_max_18_0= ruleINTEGER
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1583:1: (lv_max_18_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1584:3: lv_max_18_0= ruleINTEGER
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributeAccess().getMaxINTEGERParserRuleCall_3_4_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3221);
+            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3223);
             	    lv_max_18_0=ruleINTEGER();
 
             	    state._fsp--;
@@ -3543,7 +3534,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_19=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3233); 
+            	    otherlv_19=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3235); 
 
             	        	newLeafNode(otherlv_19, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3_4_3());
             	        
@@ -3554,12 +3545,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1608:6: ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1605:6: ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1608:6: ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1608:7: (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')'
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1605:6: ( (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')' )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1605:7: (otherlv_20= '@between' )+ otherlv_21= '(' ( (lv_min_22_0= ruleINTEGER ) ) otherlv_23= ',' ( (lv_max_24_0= ruleINTEGER ) ) otherlv_25= ')'
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1608:7: (otherlv_20= '@between' )+
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1605:7: (otherlv_20= '@between' )+
             	    int cnt20=0;
             	    loop20:
             	    do {
@@ -3573,9 +3564,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	        switch (alt20) {
             	    	case 1 :
-            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1608:9: otherlv_20= '@between'
+            	    	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1605:9: otherlv_20= '@between'
             	    	    {
-            	    	    otherlv_20=(Token)match(input,48,FOLLOW_48_in_ruleAttribute3254); 
+            	    	    otherlv_20=(Token)match(input,48,FOLLOW_48_in_ruleAttribute3256); 
 
             	    	        	newLeafNode(otherlv_20, grammarAccess.getAttributeAccess().getBetweenKeyword_3_5_0());
             	    	        
@@ -3592,20 +3583,20 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	        cnt20++;
             	    } while (true);
 
-            	    otherlv_21=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3268); 
+            	    otherlv_21=(Token)match(input,43,FOLLOW_43_in_ruleAttribute3270); 
 
             	        	newLeafNode(otherlv_21, grammarAccess.getAttributeAccess().getLeftParenthesisKeyword_3_5_1());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1616:1: ( (lv_min_22_0= ruleINTEGER ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1617:1: (lv_min_22_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1613:1: ( (lv_min_22_0= ruleINTEGER ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1614:1: (lv_min_22_0= ruleINTEGER )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1617:1: (lv_min_22_0= ruleINTEGER )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1618:3: lv_min_22_0= ruleINTEGER
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1614:1: (lv_min_22_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1615:3: lv_min_22_0= ruleINTEGER
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributeAccess().getMinINTEGERParserRuleCall_3_5_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3289);
+            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3291);
             	    lv_min_22_0=ruleINTEGER();
 
             	    state._fsp--;
@@ -3627,20 +3618,20 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_23=(Token)match(input,28,FOLLOW_28_in_ruleAttribute3301); 
+            	    otherlv_23=(Token)match(input,28,FOLLOW_28_in_ruleAttribute3303); 
 
             	        	newLeafNode(otherlv_23, grammarAccess.getAttributeAccess().getCommaKeyword_3_5_3());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1638:1: ( (lv_max_24_0= ruleINTEGER ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1639:1: (lv_max_24_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1635:1: ( (lv_max_24_0= ruleINTEGER ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1636:1: (lv_max_24_0= ruleINTEGER )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1639:1: (lv_max_24_0= ruleINTEGER )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1640:3: lv_max_24_0= ruleINTEGER
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1636:1: (lv_max_24_0= ruleINTEGER )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1637:3: lv_max_24_0= ruleINTEGER
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAttributeAccess().getMaxINTEGERParserRuleCall_3_5_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3322);
+            	    pushFollow(FOLLOW_ruleINTEGER_in_ruleAttribute3324);
             	    lv_max_24_0=ruleINTEGER();
 
             	    state._fsp--;
@@ -3662,7 +3653,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_25=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3334); 
+            	    otherlv_25=(Token)match(input,44,FOLLOW_44_in_ruleAttribute3336); 
 
             	        	newLeafNode(otherlv_25, grammarAccess.getAttributeAccess().getRightParenthesisKeyword_3_5_5());
             	        
@@ -3699,7 +3690,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRepository"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1668:1: entryRuleRepository returns [EObject current=null] : iv_ruleRepository= ruleRepository EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1665:1: entryRuleRepository returns [EObject current=null] : iv_ruleRepository= ruleRepository EOF ;
     public final EObject entryRuleRepository() throws RecognitionException {
         EObject current = null;
 
@@ -3707,17 +3698,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1669:2: (iv_ruleRepository= ruleRepository EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1670:2: iv_ruleRepository= ruleRepository EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1666:2: (iv_ruleRepository= ruleRepository EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1667:2: iv_ruleRepository= ruleRepository EOF
             {
              newCompositeNode(grammarAccess.getRepositoryRule()); 
-            pushFollow(FOLLOW_ruleRepository_in_entryRuleRepository3373);
+            pushFollow(FOLLOW_ruleRepository_in_entryRuleRepository3375);
             iv_ruleRepository=ruleRepository();
 
             state._fsp--;
 
              current =iv_ruleRepository; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRepository3383); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRepository3385); 
 
             }
 
@@ -3735,7 +3726,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRepository"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1677:1: ruleRepository returns [EObject current=null] : (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1674:1: ruleRepository returns [EObject current=null] : (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' ) ;
     public final EObject ruleRepository() throws RecognitionException {
         EObject current = null;
 
@@ -3749,23 +3740,23 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1680:28: ( (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1681:1: (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1677:28: ( (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1678:1: (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1681:1: (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1681:3: otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1678:1: (otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1678:3: otherlv_0= 'repository' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_methods_3_0= ruleRepositoryFields ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleRepository3420); 
+            otherlv_0=(Token)match(input,49,FOLLOW_49_in_ruleRepository3422); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRepositoryAccess().getRepositoryKeyword_0());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1685:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1686:1: (lv_name_1_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1682:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1683:1: (lv_name_1_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1686:1: (lv_name_1_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1687:3: lv_name_1_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1683:1: (lv_name_1_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1684:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRepository3437); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRepository3439); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getRepositoryAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -3785,11 +3776,11 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleRepository3454); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleRepository3456); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getRepositoryAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1707:1: ( (lv_methods_3_0= ruleRepositoryFields ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1704:1: ( (lv_methods_3_0= ruleRepositoryFields ) )*
             loop22:
             do {
                 int alt22=2;
@@ -3802,15 +3793,15 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1708:1: (lv_methods_3_0= ruleRepositoryFields )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1705:1: (lv_methods_3_0= ruleRepositoryFields )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1708:1: (lv_methods_3_0= ruleRepositoryFields )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1709:3: lv_methods_3_0= ruleRepositoryFields
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1705:1: (lv_methods_3_0= ruleRepositoryFields )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1706:3: lv_methods_3_0= ruleRepositoryFields
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRepositoryAccess().getMethodsRepositoryFieldsParserRuleCall_3_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRepositoryFields_in_ruleRepository3475);
+            	    pushFollow(FOLLOW_ruleRepositoryFields_in_ruleRepository3477);
             	    lv_methods_3_0=ruleRepositoryFields();
 
             	    state._fsp--;
@@ -3838,7 +3829,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleRepository3488); 
+            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleRepository3490); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRepositoryAccess().getRightCurlyBracketKeyword_4());
                 
@@ -3863,7 +3854,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRepositoryFields"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1737:1: entryRuleRepositoryFields returns [EObject current=null] : iv_ruleRepositoryFields= ruleRepositoryFields EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1734:1: entryRuleRepositoryFields returns [EObject current=null] : iv_ruleRepositoryFields= ruleRepositoryFields EOF ;
     public final EObject entryRuleRepositoryFields() throws RecognitionException {
         EObject current = null;
 
@@ -3871,17 +3862,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1738:2: (iv_ruleRepositoryFields= ruleRepositoryFields EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1739:2: iv_ruleRepositoryFields= ruleRepositoryFields EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1735:2: (iv_ruleRepositoryFields= ruleRepositoryFields EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1736:2: iv_ruleRepositoryFields= ruleRepositoryFields EOF
             {
              newCompositeNode(grammarAccess.getRepositoryFieldsRule()); 
-            pushFollow(FOLLOW_ruleRepositoryFields_in_entryRuleRepositoryFields3524);
+            pushFollow(FOLLOW_ruleRepositoryFields_in_entryRuleRepositoryFields3526);
             iv_ruleRepositoryFields=ruleRepositoryFields();
 
             state._fsp--;
 
              current =iv_ruleRepositoryFields; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRepositoryFields3534); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRepositoryFields3536); 
 
             }
 
@@ -3899,11 +3890,11 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRepositoryFields"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1746:1: ruleRepositoryFields returns [EObject current=null] : ( ( (lv_nameMethod_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1743:1: ruleRepositoryFields returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) ) ;
     public final EObject ruleRepositoryFields() throws RecognitionException {
         EObject current = null;
 
-        Token lv_nameMethod_0_0=null;
+        Token lv_name_0_0=null;
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
@@ -3915,21 +3906,21 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1749:28: ( ( ( (lv_nameMethod_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1750:1: ( ( (lv_nameMethod_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1746:28: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1747:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1750:1: ( ( (lv_nameMethod_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1750:2: ( (lv_nameMethod_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1747:1: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1747:2: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '(' ( (lv_methodsParameters_2_0= ruleMethodParameter ) )? otherlv_3= ')' otherlv_4= ':' ( (lv_returnType_5_0= ruleDataType ) )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1750:2: ( (lv_nameMethod_0_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1751:1: (lv_nameMethod_0_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1747:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1748:1: (lv_name_0_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1751:1: (lv_nameMethod_0_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1752:3: lv_nameMethod_0_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1748:1: (lv_name_0_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1749:3: lv_name_0_0= RULE_ID
             {
-            lv_nameMethod_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRepositoryFields3576); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRepositoryFields3578); 
 
-            			newLeafNode(lv_nameMethod_0_0, grammarAccess.getRepositoryFieldsAccess().getNameMethodIDTerminalRuleCall_0_0()); 
+            			newLeafNode(lv_name_0_0, grammarAccess.getRepositoryFieldsAccess().getNameIDTerminalRuleCall_0_0()); 
             		
 
             	        if (current==null) {
@@ -3937,8 +3928,8 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"nameMethod",
-                    		lv_nameMethod_0_0, 
+                   			"name",
+                    		lv_name_0_0, 
                     		"ID");
             	    
 
@@ -3947,11 +3938,11 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,43,FOLLOW_43_in_ruleRepositoryFields3593); 
+            otherlv_1=(Token)match(input,43,FOLLOW_43_in_ruleRepositoryFields3595); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getRepositoryFieldsAccess().getLeftParenthesisKeyword_1());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1772:1: ( (lv_methodsParameters_2_0= ruleMethodParameter ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1769:1: ( (lv_methodsParameters_2_0= ruleMethodParameter ) )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -3960,15 +3951,15 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1773:1: (lv_methodsParameters_2_0= ruleMethodParameter )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1770:1: (lv_methodsParameters_2_0= ruleMethodParameter )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1773:1: (lv_methodsParameters_2_0= ruleMethodParameter )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1774:3: lv_methodsParameters_2_0= ruleMethodParameter
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1770:1: (lv_methodsParameters_2_0= ruleMethodParameter )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1771:3: lv_methodsParameters_2_0= ruleMethodParameter
                     {
                      
                     	        newCompositeNode(grammarAccess.getRepositoryFieldsAccess().getMethodsParametersMethodParameterParserRuleCall_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleMethodParameter_in_ruleRepositoryFields3614);
+                    pushFollow(FOLLOW_ruleMethodParameter_in_ruleRepositoryFields3616);
                     lv_methodsParameters_2_0=ruleMethodParameter();
 
                     state._fsp--;
@@ -3993,24 +3984,24 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,44,FOLLOW_44_in_ruleRepositoryFields3627); 
+            otherlv_3=(Token)match(input,44,FOLLOW_44_in_ruleRepositoryFields3629); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getRepositoryFieldsAccess().getRightParenthesisKeyword_3());
                 
-            otherlv_4=(Token)match(input,27,FOLLOW_27_in_ruleRepositoryFields3639); 
+            otherlv_4=(Token)match(input,27,FOLLOW_27_in_ruleRepositoryFields3641); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getRepositoryFieldsAccess().getColonKeyword_4());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1798:1: ( (lv_returnType_5_0= ruleDataType ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1799:1: (lv_returnType_5_0= ruleDataType )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1795:1: ( (lv_returnType_5_0= ruleDataType ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1796:1: (lv_returnType_5_0= ruleDataType )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1799:1: (lv_returnType_5_0= ruleDataType )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1800:3: lv_returnType_5_0= ruleDataType
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1796:1: (lv_returnType_5_0= ruleDataType )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1797:3: lv_returnType_5_0= ruleDataType
             {
              
             	        newCompositeNode(grammarAccess.getRepositoryFieldsAccess().getReturnTypeDataTypeParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataType_in_ruleRepositoryFields3660);
+            pushFollow(FOLLOW_ruleDataType_in_ruleRepositoryFields3662);
             lv_returnType_5_0=ruleDataType();
 
             state._fsp--;
@@ -4053,7 +4044,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEnumBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1824:1: entryRuleEnumBlock returns [EObject current=null] : iv_ruleEnumBlock= ruleEnumBlock EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1821:1: entryRuleEnumBlock returns [EObject current=null] : iv_ruleEnumBlock= ruleEnumBlock EOF ;
     public final EObject entryRuleEnumBlock() throws RecognitionException {
         EObject current = null;
 
@@ -4061,17 +4052,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1825:2: (iv_ruleEnumBlock= ruleEnumBlock EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1826:2: iv_ruleEnumBlock= ruleEnumBlock EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1822:2: (iv_ruleEnumBlock= ruleEnumBlock EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1823:2: iv_ruleEnumBlock= ruleEnumBlock EOF
             {
              newCompositeNode(grammarAccess.getEnumBlockRule()); 
-            pushFollow(FOLLOW_ruleEnumBlock_in_entryRuleEnumBlock3696);
+            pushFollow(FOLLOW_ruleEnumBlock_in_entryRuleEnumBlock3698);
             iv_ruleEnumBlock=ruleEnumBlock();
 
             state._fsp--;
 
              current =iv_ruleEnumBlock; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumBlock3706); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumBlock3708); 
 
             }
 
@@ -4089,7 +4080,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnumBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1833:1: ruleEnumBlock returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1830:1: ruleEnumBlock returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleEnumBlock() throws RecognitionException {
         EObject current = null;
 
@@ -4104,23 +4095,23 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1836:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1837:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1833:28: ( (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1834:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1837:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1837:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1834:1: (otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1834:3: otherlv_0= 'enum' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_values_3_0= RULE_ID ) ) (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleEnumBlock3743); 
+            otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleEnumBlock3745); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getEnumBlockAccess().getEnumKeyword_0());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1841:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1842:1: (lv_name_1_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1838:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1839:1: (lv_name_1_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1842:1: (lv_name_1_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1843:3: lv_name_1_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1839:1: (lv_name_1_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1840:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumBlock3760); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumBlock3762); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getEnumBlockAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -4140,17 +4131,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleEnumBlock3777); 
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleEnumBlock3779); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getEnumBlockAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1863:1: ( (lv_values_3_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1864:1: (lv_values_3_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1860:1: ( (lv_values_3_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1861:1: (lv_values_3_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1864:1: (lv_values_3_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1865:3: lv_values_3_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1861:1: (lv_values_3_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1862:3: lv_values_3_0= RULE_ID
             {
-            lv_values_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumBlock3794); 
+            lv_values_3_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumBlock3796); 
 
             			newLeafNode(lv_values_3_0, grammarAccess.getEnumBlockAccess().getValuesIDTerminalRuleCall_3_0()); 
             		
@@ -4170,7 +4161,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1881:2: (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1878:2: (otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) ) )*
             loop24:
             do {
                 int alt24=2;
@@ -4183,19 +4174,19 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 switch (alt24) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1881:4: otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1878:4: otherlv_4= ',' ( (lv_values_5_0= RULE_ID ) )
             	    {
-            	    otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleEnumBlock3812); 
+            	    otherlv_4=(Token)match(input,28,FOLLOW_28_in_ruleEnumBlock3814); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getEnumBlockAccess().getCommaKeyword_4_0());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1885:1: ( (lv_values_5_0= RULE_ID ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1886:1: (lv_values_5_0= RULE_ID )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1882:1: ( (lv_values_5_0= RULE_ID ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1883:1: (lv_values_5_0= RULE_ID )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1886:1: (lv_values_5_0= RULE_ID )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1887:3: lv_values_5_0= RULE_ID
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1883:1: (lv_values_5_0= RULE_ID )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1884:3: lv_values_5_0= RULE_ID
             	    {
-            	    lv_values_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumBlock3829); 
+            	    lv_values_5_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumBlock3831); 
 
             	    			newLeafNode(lv_values_5_0, grammarAccess.getEnumBlockAccess().getValuesIDTerminalRuleCall_4_1_0()); 
             	    		
@@ -4224,7 +4215,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,13,FOLLOW_13_in_ruleEnumBlock3848); 
+            otherlv_6=(Token)match(input,13,FOLLOW_13_in_ruleEnumBlock3850); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getEnumBlockAccess().getRightCurlyBracketKeyword_5());
                 
@@ -4249,7 +4240,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataType"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1915:1: entryRuleDataType returns [String current=null] : iv_ruleDataType= ruleDataType EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1912:1: entryRuleDataType returns [String current=null] : iv_ruleDataType= ruleDataType EOF ;
     public final String entryRuleDataType() throws RecognitionException {
         String current = null;
 
@@ -4257,17 +4248,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1916:2: (iv_ruleDataType= ruleDataType EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1917:2: iv_ruleDataType= ruleDataType EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1913:2: (iv_ruleDataType= ruleDataType EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1914:2: iv_ruleDataType= ruleDataType EOF
             {
              newCompositeNode(grammarAccess.getDataTypeRule()); 
-            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType3885);
+            pushFollow(FOLLOW_ruleDataType_in_entryRuleDataType3887);
             iv_ruleDataType=ruleDataType();
 
             state._fsp--;
 
              current =iv_ruleDataType.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType3896); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataType3898); 
 
             }
 
@@ -4285,7 +4276,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataType"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1924:1: ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1921:1: ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' ) ;
     public final AntlrDatatypeRuleToken ruleDataType() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4300,10 +4291,10 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1927:28: ( (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1928:1: (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1924:28: ( (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1925:1: (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1928:1: (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1925:1: (this_DataTypeList_0= ruleDataTypeList | this_DataTypeSet_1= ruleDataTypeSet | this_CompoundName_2= ruleCompoundName | kw= 'String' | kw= 'int' | kw= 'Integer' | kw= 'long' | kw= 'Long' | kw= 'boolean' | kw= 'Boolean' | kw= 'Datetime' | kw= 'double' | kw= 'Double' | kw= 'float' | kw= 'Float' | kw= 'Object' )
             int alt25=16;
             switch ( input.LA(1) ) {
             case 66:
@@ -4395,12 +4386,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             switch (alt25) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1929:5: this_DataTypeList_0= ruleDataTypeList
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1926:5: this_DataTypeList_0= ruleDataTypeList
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getDataTypeListParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleDataTypeList_in_ruleDataType3943);
+                    pushFollow(FOLLOW_ruleDataTypeList_in_ruleDataType3945);
                     this_DataTypeList_0=ruleDataTypeList();
 
                     state._fsp--;
@@ -4415,12 +4406,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1941:5: this_DataTypeSet_1= ruleDataTypeSet
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1938:5: this_DataTypeSet_1= ruleDataTypeSet
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getDataTypeSetParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleDataTypeSet_in_ruleDataType3976);
+                    pushFollow(FOLLOW_ruleDataTypeSet_in_ruleDataType3978);
                     this_DataTypeSet_1=ruleDataTypeSet();
 
                     state._fsp--;
@@ -4435,12 +4426,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1953:5: this_CompoundName_2= ruleCompoundName
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1950:5: this_CompoundName_2= ruleCompoundName
                     {
                      
                             newCompositeNode(grammarAccess.getDataTypeAccess().getCompoundNameParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleCompoundName_in_ruleDataType4009);
+                    pushFollow(FOLLOW_ruleCompoundName_in_ruleDataType4011);
                     this_CompoundName_2=ruleCompoundName();
 
                     state._fsp--;
@@ -4455,9 +4446,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1965:2: kw= 'String'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1962:2: kw= 'String'
                     {
-                    kw=(Token)match(input,51,FOLLOW_51_in_ruleDataType4033); 
+                    kw=(Token)match(input,51,FOLLOW_51_in_ruleDataType4035); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getStringKeyword_3()); 
@@ -4466,9 +4457,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1972:2: kw= 'int'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1969:2: kw= 'int'
                     {
-                    kw=(Token)match(input,52,FOLLOW_52_in_ruleDataType4052); 
+                    kw=(Token)match(input,52,FOLLOW_52_in_ruleDataType4054); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getIntKeyword_4()); 
@@ -4477,9 +4468,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1979:2: kw= 'Integer'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1976:2: kw= 'Integer'
                     {
-                    kw=(Token)match(input,53,FOLLOW_53_in_ruleDataType4071); 
+                    kw=(Token)match(input,53,FOLLOW_53_in_ruleDataType4073); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getIntegerKeyword_5()); 
@@ -4488,9 +4479,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1986:2: kw= 'long'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1983:2: kw= 'long'
                     {
-                    kw=(Token)match(input,54,FOLLOW_54_in_ruleDataType4090); 
+                    kw=(Token)match(input,54,FOLLOW_54_in_ruleDataType4092); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getLongKeyword_6()); 
@@ -4499,9 +4490,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1993:2: kw= 'Long'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1990:2: kw= 'Long'
                     {
-                    kw=(Token)match(input,55,FOLLOW_55_in_ruleDataType4109); 
+                    kw=(Token)match(input,55,FOLLOW_55_in_ruleDataType4111); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getLongKeyword_7()); 
@@ -4510,9 +4501,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2000:2: kw= 'boolean'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:1997:2: kw= 'boolean'
                     {
-                    kw=(Token)match(input,56,FOLLOW_56_in_ruleDataType4128); 
+                    kw=(Token)match(input,56,FOLLOW_56_in_ruleDataType4130); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getBooleanKeyword_8()); 
@@ -4521,9 +4512,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2007:2: kw= 'Boolean'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2004:2: kw= 'Boolean'
                     {
-                    kw=(Token)match(input,57,FOLLOW_57_in_ruleDataType4147); 
+                    kw=(Token)match(input,57,FOLLOW_57_in_ruleDataType4149); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getBooleanKeyword_9()); 
@@ -4532,9 +4523,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2014:2: kw= 'Datetime'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2011:2: kw= 'Datetime'
                     {
-                    kw=(Token)match(input,58,FOLLOW_58_in_ruleDataType4166); 
+                    kw=(Token)match(input,58,FOLLOW_58_in_ruleDataType4168); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getDatetimeKeyword_10()); 
@@ -4543,9 +4534,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2021:2: kw= 'double'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2018:2: kw= 'double'
                     {
-                    kw=(Token)match(input,59,FOLLOW_59_in_ruleDataType4185); 
+                    kw=(Token)match(input,59,FOLLOW_59_in_ruleDataType4187); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getDoubleKeyword_11()); 
@@ -4554,9 +4545,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2028:2: kw= 'Double'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2025:2: kw= 'Double'
                     {
-                    kw=(Token)match(input,60,FOLLOW_60_in_ruleDataType4204); 
+                    kw=(Token)match(input,60,FOLLOW_60_in_ruleDataType4206); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getDoubleKeyword_12()); 
@@ -4565,9 +4556,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2035:2: kw= 'float'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2032:2: kw= 'float'
                     {
-                    kw=(Token)match(input,61,FOLLOW_61_in_ruleDataType4223); 
+                    kw=(Token)match(input,61,FOLLOW_61_in_ruleDataType4225); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getFloatKeyword_13()); 
@@ -4576,9 +4567,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2042:2: kw= 'Float'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2039:2: kw= 'Float'
                     {
-                    kw=(Token)match(input,62,FOLLOW_62_in_ruleDataType4242); 
+                    kw=(Token)match(input,62,FOLLOW_62_in_ruleDataType4244); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getFloatKeyword_14()); 
@@ -4587,9 +4578,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2049:2: kw= 'Object'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2046:2: kw= 'Object'
                     {
-                    kw=(Token)match(input,63,FOLLOW_63_in_ruleDataType4261); 
+                    kw=(Token)match(input,63,FOLLOW_63_in_ruleDataType4263); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getDataTypeAccess().getObjectKeyword_15()); 
@@ -4618,7 +4609,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMethodParameter"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2062:1: entryRuleMethodParameter returns [EObject current=null] : iv_ruleMethodParameter= ruleMethodParameter EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2059:1: entryRuleMethodParameter returns [EObject current=null] : iv_ruleMethodParameter= ruleMethodParameter EOF ;
     public final EObject entryRuleMethodParameter() throws RecognitionException {
         EObject current = null;
 
@@ -4626,17 +4617,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2063:2: (iv_ruleMethodParameter= ruleMethodParameter EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2064:2: iv_ruleMethodParameter= ruleMethodParameter EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2060:2: (iv_ruleMethodParameter= ruleMethodParameter EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2061:2: iv_ruleMethodParameter= ruleMethodParameter EOF
             {
              newCompositeNode(grammarAccess.getMethodParameterRule()); 
-            pushFollow(FOLLOW_ruleMethodParameter_in_entryRuleMethodParameter4301);
+            pushFollow(FOLLOW_ruleMethodParameter_in_entryRuleMethodParameter4303);
             iv_ruleMethodParameter=ruleMethodParameter();
 
             state._fsp--;
 
              current =iv_ruleMethodParameter; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMethodParameter4311); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMethodParameter4313); 
 
             }
 
@@ -4654,7 +4645,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMethodParameter"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2071:1: ruleMethodParameter returns [EObject current=null] : ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2068:1: ruleMethodParameter returns [EObject current=null] : ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* ) ;
     public final EObject ruleMethodParameter() throws RecognitionException {
         EObject current = null;
 
@@ -4667,22 +4658,22 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2074:28: ( ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2075:1: ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2071:28: ( ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2072:1: ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2075:1: ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2075:2: ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2072:1: ( ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )* )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2072:2: ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) ) (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )*
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2075:2: ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2076:1: (lv_typeAndAttr_0_0= ruleTypeAndAttribute )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2072:2: ( (lv_typeAndAttr_0_0= ruleTypeAndAttribute ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2073:1: (lv_typeAndAttr_0_0= ruleTypeAndAttribute )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2076:1: (lv_typeAndAttr_0_0= ruleTypeAndAttribute )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2077:3: lv_typeAndAttr_0_0= ruleTypeAndAttribute
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2073:1: (lv_typeAndAttr_0_0= ruleTypeAndAttribute )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2074:3: lv_typeAndAttr_0_0= ruleTypeAndAttribute
             {
              
             	        newCompositeNode(grammarAccess.getMethodParameterAccess().getTypeAndAttrTypeAndAttributeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4357);
+            pushFollow(FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4359);
             lv_typeAndAttr_0_0=ruleTypeAndAttribute();
 
             state._fsp--;
@@ -4704,7 +4695,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2093:2: (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2090:2: (otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) ) )*
             loop26:
             do {
                 int alt26=2;
@@ -4717,22 +4708,22 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2093:4: otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2090:4: otherlv_1= ',' ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) )
             	    {
-            	    otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleMethodParameter4370); 
+            	    otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleMethodParameter4372); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getMethodParameterAccess().getCommaKeyword_1_0());
             	        
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2097:1: ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2098:1: (lv_typeAndAttr_2_0= ruleTypeAndAttribute )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2094:1: ( (lv_typeAndAttr_2_0= ruleTypeAndAttribute ) )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2095:1: (lv_typeAndAttr_2_0= ruleTypeAndAttribute )
             	    {
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2098:1: (lv_typeAndAttr_2_0= ruleTypeAndAttribute )
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2099:3: lv_typeAndAttr_2_0= ruleTypeAndAttribute
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2095:1: (lv_typeAndAttr_2_0= ruleTypeAndAttribute )
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2096:3: lv_typeAndAttr_2_0= ruleTypeAndAttribute
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getMethodParameterAccess().getTypeAndAttrTypeAndAttributeParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4391);
+            	    pushFollow(FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4393);
             	    lv_typeAndAttr_2_0=ruleTypeAndAttribute();
 
             	    state._fsp--;
@@ -4784,7 +4775,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTypeAndAttribute"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2123:1: entryRuleTypeAndAttribute returns [EObject current=null] : iv_ruleTypeAndAttribute= ruleTypeAndAttribute EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2120:1: entryRuleTypeAndAttribute returns [EObject current=null] : iv_ruleTypeAndAttribute= ruleTypeAndAttribute EOF ;
     public final EObject entryRuleTypeAndAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -4792,17 +4783,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2124:2: (iv_ruleTypeAndAttribute= ruleTypeAndAttribute EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2125:2: iv_ruleTypeAndAttribute= ruleTypeAndAttribute EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2121:2: (iv_ruleTypeAndAttribute= ruleTypeAndAttribute EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2122:2: iv_ruleTypeAndAttribute= ruleTypeAndAttribute EOF
             {
              newCompositeNode(grammarAccess.getTypeAndAttributeRule()); 
-            pushFollow(FOLLOW_ruleTypeAndAttribute_in_entryRuleTypeAndAttribute4429);
+            pushFollow(FOLLOW_ruleTypeAndAttribute_in_entryRuleTypeAndAttribute4431);
             iv_ruleTypeAndAttribute=ruleTypeAndAttribute();
 
             state._fsp--;
 
              current =iv_ruleTypeAndAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeAndAttribute4439); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeAndAttribute4441); 
 
             }
 
@@ -4820,7 +4811,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTypeAndAttribute"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2132:1: ruleTypeAndAttribute returns [EObject current=null] : ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2129:1: ruleTypeAndAttribute returns [EObject current=null] : ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTypeAndAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -4831,22 +4822,22 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2135:28: ( ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2136:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2132:28: ( ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2133:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2136:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2136:2: ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2133:1: ( ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2133:2: ( (lv_type_0_0= ruleDataType ) ) ( (lv_name_1_0= RULE_ID ) )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2136:2: ( (lv_type_0_0= ruleDataType ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2137:1: (lv_type_0_0= ruleDataType )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2133:2: ( (lv_type_0_0= ruleDataType ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2134:1: (lv_type_0_0= ruleDataType )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2137:1: (lv_type_0_0= ruleDataType )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2138:3: lv_type_0_0= ruleDataType
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2134:1: (lv_type_0_0= ruleDataType )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2135:3: lv_type_0_0= ruleDataType
             {
              
             	        newCompositeNode(grammarAccess.getTypeAndAttributeAccess().getTypeDataTypeParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleDataType_in_ruleTypeAndAttribute4485);
+            pushFollow(FOLLOW_ruleDataType_in_ruleTypeAndAttribute4487);
             lv_type_0_0=ruleDataType();
 
             state._fsp--;
@@ -4868,13 +4859,13 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2154:2: ( (lv_name_1_0= RULE_ID ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2155:1: (lv_name_1_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2151:2: ( (lv_name_1_0= RULE_ID ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2152:1: (lv_name_1_0= RULE_ID )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2155:1: (lv_name_1_0= RULE_ID )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2156:3: lv_name_1_0= RULE_ID
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2152:1: (lv_name_1_0= RULE_ID )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2153:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeAndAttribute4502); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeAndAttribute4504); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getTypeAndAttributeAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -4915,7 +4906,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExtendBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2180:1: entryRuleExtendBlock returns [EObject current=null] : iv_ruleExtendBlock= ruleExtendBlock EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2177:1: entryRuleExtendBlock returns [EObject current=null] : iv_ruleExtendBlock= ruleExtendBlock EOF ;
     public final EObject entryRuleExtendBlock() throws RecognitionException {
         EObject current = null;
 
@@ -4923,17 +4914,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2181:2: (iv_ruleExtendBlock= ruleExtendBlock EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2182:2: iv_ruleExtendBlock= ruleExtendBlock EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2178:2: (iv_ruleExtendBlock= ruleExtendBlock EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2179:2: iv_ruleExtendBlock= ruleExtendBlock EOF
             {
              newCompositeNode(grammarAccess.getExtendBlockRule()); 
-            pushFollow(FOLLOW_ruleExtendBlock_in_entryRuleExtendBlock4543);
+            pushFollow(FOLLOW_ruleExtendBlock_in_entryRuleExtendBlock4545);
             iv_ruleExtendBlock=ruleExtendBlock();
 
             state._fsp--;
 
              current =iv_ruleExtendBlock; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExtendBlock4553); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExtendBlock4555); 
 
             }
 
@@ -4951,29 +4942,25 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExtendBlock"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2189:1: ruleExtendBlock returns [EObject current=null] : ( ruleExtend ( (lv_values_1_0= ruleCompoundName ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) ) )? ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2186:1: ruleExtendBlock returns [EObject current=null] : ( ruleExtend ( ( ruleCompoundName ) ) (otherlv_2= ',' ( ( ruleCompoundName ) ) )? ) ;
     public final EObject ruleExtendBlock() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        AntlrDatatypeRuleToken lv_values_1_0 = null;
-
-        AntlrDatatypeRuleToken lv_values_3_0 = null;
-
 
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2192:28: ( ( ruleExtend ( (lv_values_1_0= ruleCompoundName ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) ) )? ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2193:1: ( ruleExtend ( (lv_values_1_0= ruleCompoundName ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) ) )? )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2189:28: ( ( ruleExtend ( ( ruleCompoundName ) ) (otherlv_2= ',' ( ( ruleCompoundName ) ) )? ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2190:1: ( ruleExtend ( ( ruleCompoundName ) ) (otherlv_2= ',' ( ( ruleCompoundName ) ) )? )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2193:1: ( ruleExtend ( (lv_values_1_0= ruleCompoundName ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) ) )? )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2194:5: ruleExtend ( (lv_values_1_0= ruleCompoundName ) ) (otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2190:1: ( ruleExtend ( ( ruleCompoundName ) ) (otherlv_2= ',' ( ( ruleCompoundName ) ) )? )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2191:5: ruleExtend ( ( ruleCompoundName ) ) (otherlv_2= ',' ( ( ruleCompoundName ) ) )?
             {
              
                     newCompositeNode(grammarAccess.getExtendBlockAccess().getExtendParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleExtend_in_ruleExtendBlock4594);
+            pushFollow(FOLLOW_ruleExtend_in_ruleExtendBlock4596);
             ruleExtend();
 
             state._fsp--;
@@ -4981,29 +4968,26 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2201:1: ( (lv_values_1_0= ruleCompoundName ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2202:1: (lv_values_1_0= ruleCompoundName )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2198:1: ( ( ruleCompoundName ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2199:1: ( ruleCompoundName )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2202:1: (lv_values_1_0= ruleCompoundName )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2203:3: lv_values_1_0= ruleCompoundName
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2199:1: ( ruleCompoundName )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2200:3: ruleCompoundName
             {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getExtendBlockRule());
+            	        }
+                    
              
-            	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesCompoundNameParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesEntityBlockCrossReference_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleCompoundName_in_ruleExtendBlock4614);
-            lv_values_1_0=ruleCompoundName();
+            pushFollow(FOLLOW_ruleCompoundName_in_ruleExtendBlock4618);
+            ruleCompoundName();
 
             state._fsp--;
 
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getExtendBlockRule());
-            	        }
-                   		add(
-                   			current, 
-                   			"values",
-                    		lv_values_1_0, 
-                    		"CompoundName");
+             
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -5012,7 +4996,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2219:2: (otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) ) )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2213:2: (otherlv_2= ',' ( ( ruleCompoundName ) ) )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -5021,35 +5005,32 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             }
             switch (alt27) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2219:4: otherlv_2= ',' ( (lv_values_3_0= ruleCompoundName ) )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2213:4: otherlv_2= ',' ( ( ruleCompoundName ) )
                     {
-                    otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleExtendBlock4627); 
+                    otherlv_2=(Token)match(input,28,FOLLOW_28_in_ruleExtendBlock4631); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getExtendBlockAccess().getCommaKeyword_2_0());
                         
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2223:1: ( (lv_values_3_0= ruleCompoundName ) )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2224:1: (lv_values_3_0= ruleCompoundName )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2217:1: ( ( ruleCompoundName ) )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2218:1: ( ruleCompoundName )
                     {
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2224:1: (lv_values_3_0= ruleCompoundName )
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2225:3: lv_values_3_0= ruleCompoundName
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2218:1: ( ruleCompoundName )
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2219:3: ruleCompoundName
                     {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getExtendBlockRule());
+                    	        }
+                            
                      
-                    	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesCompoundNameParserRuleCall_2_1_0()); 
+                    	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesEntityBlockCrossReference_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleCompoundName_in_ruleExtendBlock4648);
-                    lv_values_3_0=ruleCompoundName();
+                    pushFollow(FOLLOW_ruleCompoundName_in_ruleExtendBlock4654);
+                    ruleCompoundName();
 
                     state._fsp--;
 
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getExtendBlockRule());
-                    	        }
-                           		add(
-                           			current, 
-                           			"values",
-                            		lv_values_3_0, 
-                            		"CompoundName");
+                     
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -5085,7 +5066,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExtend"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2249:1: entryRuleExtend returns [String current=null] : iv_ruleExtend= ruleExtend EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2240:1: entryRuleExtend returns [String current=null] : iv_ruleExtend= ruleExtend EOF ;
     public final String entryRuleExtend() throws RecognitionException {
         String current = null;
 
@@ -5093,17 +5074,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2250:2: (iv_ruleExtend= ruleExtend EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2251:2: iv_ruleExtend= ruleExtend EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2241:2: (iv_ruleExtend= ruleExtend EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2242:2: iv_ruleExtend= ruleExtend EOF
             {
              newCompositeNode(grammarAccess.getExtendRule()); 
-            pushFollow(FOLLOW_ruleExtend_in_entryRuleExtend4687);
+            pushFollow(FOLLOW_ruleExtend_in_entryRuleExtend4693);
             iv_ruleExtend=ruleExtend();
 
             state._fsp--;
 
              current =iv_ruleExtend.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExtend4698); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExtend4704); 
 
             }
 
@@ -5121,7 +5102,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExtend"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2258:1: ruleExtend returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= ':' | kw= 'extends' | kw= 'ext' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2249:1: ruleExtend returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= ':' | kw= 'extends' | kw= 'ext' ) ;
     public final AntlrDatatypeRuleToken ruleExtend() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5130,10 +5111,10 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2261:28: ( (kw= ':' | kw= 'extends' | kw= 'ext' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2262:1: (kw= ':' | kw= 'extends' | kw= 'ext' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2252:28: ( (kw= ':' | kw= 'extends' | kw= 'ext' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2253:1: (kw= ':' | kw= 'extends' | kw= 'ext' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2262:1: (kw= ':' | kw= 'extends' | kw= 'ext' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2253:1: (kw= ':' | kw= 'extends' | kw= 'ext' )
             int alt28=3;
             switch ( input.LA(1) ) {
             case 27:
@@ -5160,9 +5141,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
             switch (alt28) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2263:2: kw= ':'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2254:2: kw= ':'
                     {
-                    kw=(Token)match(input,27,FOLLOW_27_in_ruleExtend4736); 
+                    kw=(Token)match(input,27,FOLLOW_27_in_ruleExtend4742); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getExtendAccess().getColonKeyword_0()); 
@@ -5171,9 +5152,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2270:2: kw= 'extends'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2261:2: kw= 'extends'
                     {
-                    kw=(Token)match(input,64,FOLLOW_64_in_ruleExtend4755); 
+                    kw=(Token)match(input,64,FOLLOW_64_in_ruleExtend4761); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getExtendAccess().getExtendsKeyword_1()); 
@@ -5182,9 +5163,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2277:2: kw= 'ext'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2268:2: kw= 'ext'
                     {
-                    kw=(Token)match(input,65,FOLLOW_65_in_ruleExtend4774); 
+                    kw=(Token)match(input,65,FOLLOW_65_in_ruleExtend4780); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getExtendAccess().getExtKeyword_2()); 
@@ -5213,7 +5194,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataTypeList"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2290:1: entryRuleDataTypeList returns [String current=null] : iv_ruleDataTypeList= ruleDataTypeList EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2281:1: entryRuleDataTypeList returns [String current=null] : iv_ruleDataTypeList= ruleDataTypeList EOF ;
     public final String entryRuleDataTypeList() throws RecognitionException {
         String current = null;
 
@@ -5221,17 +5202,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2291:2: (iv_ruleDataTypeList= ruleDataTypeList EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2292:2: iv_ruleDataTypeList= ruleDataTypeList EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2282:2: (iv_ruleDataTypeList= ruleDataTypeList EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2283:2: iv_ruleDataTypeList= ruleDataTypeList EOF
             {
              newCompositeNode(grammarAccess.getDataTypeListRule()); 
-            pushFollow(FOLLOW_ruleDataTypeList_in_entryRuleDataTypeList4815);
+            pushFollow(FOLLOW_ruleDataTypeList_in_entryRuleDataTypeList4821);
             iv_ruleDataTypeList=ruleDataTypeList();
 
             state._fsp--;
 
              current =iv_ruleDataTypeList.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataTypeList4826); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataTypeList4832); 
 
             }
 
@@ -5249,7 +5230,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataTypeList"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2299:1: ruleDataTypeList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2290:1: ruleDataTypeList returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' ) ;
     public final AntlrDatatypeRuleToken ruleDataTypeList() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5260,18 +5241,18 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2302:28: ( (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2303:1: (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2293:28: ( (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2294:1: (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2303:1: (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2304:2: kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2294:1: (kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2295:2: kw= 'List' kw= '<' this_DataType_2= ruleDataType kw= '>'
             {
-            kw=(Token)match(input,66,FOLLOW_66_in_ruleDataTypeList4864); 
+            kw=(Token)match(input,66,FOLLOW_66_in_ruleDataTypeList4870); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDataTypeListAccess().getListKeyword_0()); 
                 
-            kw=(Token)match(input,67,FOLLOW_67_in_ruleDataTypeList4877); 
+            kw=(Token)match(input,67,FOLLOW_67_in_ruleDataTypeList4883); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDataTypeListAccess().getLessThanSignKeyword_1()); 
@@ -5279,7 +5260,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getDataTypeListAccess().getDataTypeParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleDataType_in_ruleDataTypeList4899);
+            pushFollow(FOLLOW_ruleDataType_in_ruleDataTypeList4905);
             this_DataType_2=ruleDataType();
 
             state._fsp--;
@@ -5290,7 +5271,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,68,FOLLOW_68_in_ruleDataTypeList4917); 
+            kw=(Token)match(input,68,FOLLOW_68_in_ruleDataTypeList4923); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDataTypeListAccess().getGreaterThanSignKeyword_3()); 
@@ -5316,7 +5297,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDataTypeSet"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2340:1: entryRuleDataTypeSet returns [String current=null] : iv_ruleDataTypeSet= ruleDataTypeSet EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2331:1: entryRuleDataTypeSet returns [String current=null] : iv_ruleDataTypeSet= ruleDataTypeSet EOF ;
     public final String entryRuleDataTypeSet() throws RecognitionException {
         String current = null;
 
@@ -5324,17 +5305,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2341:2: (iv_ruleDataTypeSet= ruleDataTypeSet EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2342:2: iv_ruleDataTypeSet= ruleDataTypeSet EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2332:2: (iv_ruleDataTypeSet= ruleDataTypeSet EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2333:2: iv_ruleDataTypeSet= ruleDataTypeSet EOF
             {
              newCompositeNode(grammarAccess.getDataTypeSetRule()); 
-            pushFollow(FOLLOW_ruleDataTypeSet_in_entryRuleDataTypeSet4958);
+            pushFollow(FOLLOW_ruleDataTypeSet_in_entryRuleDataTypeSet4964);
             iv_ruleDataTypeSet=ruleDataTypeSet();
 
             state._fsp--;
 
              current =iv_ruleDataTypeSet.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDataTypeSet4969); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDataTypeSet4975); 
 
             }
 
@@ -5352,7 +5333,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDataTypeSet"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2349:1: ruleDataTypeSet returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2340:1: ruleDataTypeSet returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' ) ;
     public final AntlrDatatypeRuleToken ruleDataTypeSet() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5363,18 +5344,18 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2352:28: ( (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2353:1: (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2343:28: ( (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2344:1: (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2353:1: (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2354:2: kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>'
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2344:1: (kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2345:2: kw= 'Set' kw= '<' this_DataType_2= ruleDataType kw= '>'
             {
-            kw=(Token)match(input,69,FOLLOW_69_in_ruleDataTypeSet5007); 
+            kw=(Token)match(input,69,FOLLOW_69_in_ruleDataTypeSet5013); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDataTypeSetAccess().getSetKeyword_0()); 
                 
-            kw=(Token)match(input,67,FOLLOW_67_in_ruleDataTypeSet5020); 
+            kw=(Token)match(input,67,FOLLOW_67_in_ruleDataTypeSet5026); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDataTypeSetAccess().getLessThanSignKeyword_1()); 
@@ -5382,7 +5363,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
              
                     newCompositeNode(grammarAccess.getDataTypeSetAccess().getDataTypeParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleDataType_in_ruleDataTypeSet5042);
+            pushFollow(FOLLOW_ruleDataType_in_ruleDataTypeSet5048);
             this_DataType_2=ruleDataType();
 
             state._fsp--;
@@ -5393,7 +5374,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,68,FOLLOW_68_in_ruleDataTypeSet5060); 
+            kw=(Token)match(input,68,FOLLOW_68_in_ruleDataTypeSet5066); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getDataTypeSetAccess().getGreaterThanSignKeyword_3()); 
@@ -5419,7 +5400,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAccessModifier"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2390:1: entryRuleAccessModifier returns [String current=null] : iv_ruleAccessModifier= ruleAccessModifier EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2381:1: entryRuleAccessModifier returns [String current=null] : iv_ruleAccessModifier= ruleAccessModifier EOF ;
     public final String entryRuleAccessModifier() throws RecognitionException {
         String current = null;
 
@@ -5427,17 +5408,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2391:2: (iv_ruleAccessModifier= ruleAccessModifier EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2392:2: iv_ruleAccessModifier= ruleAccessModifier EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2382:2: (iv_ruleAccessModifier= ruleAccessModifier EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2383:2: iv_ruleAccessModifier= ruleAccessModifier EOF
             {
              newCompositeNode(grammarAccess.getAccessModifierRule()); 
-            pushFollow(FOLLOW_ruleAccessModifier_in_entryRuleAccessModifier5101);
+            pushFollow(FOLLOW_ruleAccessModifier_in_entryRuleAccessModifier5107);
             iv_ruleAccessModifier=ruleAccessModifier();
 
             state._fsp--;
 
              current =iv_ruleAccessModifier.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAccessModifier5112); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAccessModifier5118); 
 
             }
 
@@ -5455,7 +5436,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAccessModifier"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2399:1: ruleAccessModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Private_0= rulePrivate | this_Protected_1= ruleProtected ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2390:1: ruleAccessModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Private_0= rulePrivate | this_Protected_1= ruleProtected ) ;
     public final AntlrDatatypeRuleToken ruleAccessModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5467,17 +5448,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2402:28: ( (this_Private_0= rulePrivate | this_Protected_1= ruleProtected ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2403:1: (this_Private_0= rulePrivate | this_Protected_1= ruleProtected )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2393:28: ( (this_Private_0= rulePrivate | this_Protected_1= ruleProtected ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2394:1: (this_Private_0= rulePrivate | this_Protected_1= ruleProtected )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2403:1: (this_Private_0= rulePrivate | this_Protected_1= ruleProtected )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2394:1: (this_Private_0= rulePrivate | this_Protected_1= ruleProtected )
             int alt29=2;
             int LA29_0 = input.LA(1);
 
-            if ( ((LA29_0>=70 && LA29_0<=71)) ) {
+            if ( (LA29_0==70) ) {
                 alt29=1;
             }
-            else if ( ((LA29_0>=72 && LA29_0<=73)) ) {
+            else if ( (LA29_0==71) ) {
                 alt29=2;
             }
             else {
@@ -5488,12 +5469,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             }
             switch (alt29) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2404:5: this_Private_0= rulePrivate
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2395:5: this_Private_0= rulePrivate
                     {
                      
                             newCompositeNode(grammarAccess.getAccessModifierAccess().getPrivateParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_rulePrivate_in_ruleAccessModifier5159);
+                    pushFollow(FOLLOW_rulePrivate_in_ruleAccessModifier5165);
                     this_Private_0=rulePrivate();
 
                     state._fsp--;
@@ -5508,12 +5489,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2416:5: this_Protected_1= ruleProtected
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2407:5: this_Protected_1= ruleProtected
                     {
                      
                             newCompositeNode(grammarAccess.getAccessModifierAccess().getProtectedParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleProtected_in_ruleAccessModifier5192);
+                    pushFollow(FOLLOW_ruleProtected_in_ruleAccessModifier5198);
                     this_Protected_1=ruleProtected();
 
                     state._fsp--;
@@ -5548,7 +5529,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrivate"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2434:1: entryRulePrivate returns [String current=null] : iv_rulePrivate= rulePrivate EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2425:1: entryRulePrivate returns [String current=null] : iv_rulePrivate= rulePrivate EOF ;
     public final String entryRulePrivate() throws RecognitionException {
         String current = null;
 
@@ -5556,17 +5537,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2435:2: (iv_rulePrivate= rulePrivate EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2436:2: iv_rulePrivate= rulePrivate EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2426:2: (iv_rulePrivate= rulePrivate EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2427:2: iv_rulePrivate= rulePrivate EOF
             {
              newCompositeNode(grammarAccess.getPrivateRule()); 
-            pushFollow(FOLLOW_rulePrivate_in_entryRulePrivate5238);
+            pushFollow(FOLLOW_rulePrivate_in_entryRulePrivate5244);
             iv_rulePrivate=rulePrivate();
 
             state._fsp--;
 
              current =iv_rulePrivate.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePrivate5249); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePrivate5255); 
 
             }
 
@@ -5584,7 +5565,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrivate"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2443:1: rulePrivate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '-' | kw= 'private' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2434:1: rulePrivate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'private' ;
     public final AntlrDatatypeRuleToken rulePrivate() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5593,51 +5574,14 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2446:28: ( (kw= '-' | kw= 'private' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2447:1: (kw= '-' | kw= 'private' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2437:28: (kw= 'private' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2439:2: kw= 'private'
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2447:1: (kw= '-' | kw= 'private' )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            kw=(Token)match(input,70,FOLLOW_70_in_rulePrivate5292); 
 
-            if ( (LA30_0==70) ) {
-                alt30=1;
-            }
-            else if ( (LA30_0==71) ) {
-                alt30=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
-
-                throw nvae;
-            }
-            switch (alt30) {
-                case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2448:2: kw= '-'
-                    {
-                    kw=(Token)match(input,70,FOLLOW_70_in_rulePrivate5287); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getPrivateAccess().getHyphenMinusKeyword_0()); 
-                        
-
-                    }
-                    break;
-                case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2455:2: kw= 'private'
-                    {
-                    kw=(Token)match(input,71,FOLLOW_71_in_rulePrivate5306); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getPrivateAccess().getPrivateKeyword_1()); 
-                        
-
-                    }
-                    break;
-
-            }
-
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getPrivateAccess().getPrivateKeyword()); 
+                
 
             }
 
@@ -5656,7 +5600,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProtected"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2468:1: entryRuleProtected returns [String current=null] : iv_ruleProtected= ruleProtected EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2452:1: entryRuleProtected returns [String current=null] : iv_ruleProtected= ruleProtected EOF ;
     public final String entryRuleProtected() throws RecognitionException {
         String current = null;
 
@@ -5664,17 +5608,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2469:2: (iv_ruleProtected= ruleProtected EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2470:2: iv_ruleProtected= ruleProtected EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2453:2: (iv_ruleProtected= ruleProtected EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2454:2: iv_ruleProtected= ruleProtected EOF
             {
              newCompositeNode(grammarAccess.getProtectedRule()); 
-            pushFollow(FOLLOW_ruleProtected_in_entryRuleProtected5347);
+            pushFollow(FOLLOW_ruleProtected_in_entryRuleProtected5332);
             iv_ruleProtected=ruleProtected();
 
             state._fsp--;
 
              current =iv_ruleProtected.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleProtected5358); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleProtected5343); 
 
             }
 
@@ -5692,7 +5636,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtected"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2477:1: ruleProtected returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '#' | kw= 'protected' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2461:1: ruleProtected returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'protected' ;
     public final AntlrDatatypeRuleToken ruleProtected() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5701,51 +5645,14 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2480:28: ( (kw= '#' | kw= 'protected' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2481:1: (kw= '#' | kw= 'protected' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2464:28: (kw= 'protected' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2466:2: kw= 'protected'
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2481:1: (kw= '#' | kw= 'protected' )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            kw=(Token)match(input,71,FOLLOW_71_in_ruleProtected5380); 
 
-            if ( (LA31_0==72) ) {
-                alt31=1;
-            }
-            else if ( (LA31_0==73) ) {
-                alt31=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
-
-                throw nvae;
-            }
-            switch (alt31) {
-                case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2482:2: kw= '#'
-                    {
-                    kw=(Token)match(input,72,FOLLOW_72_in_ruleProtected5396); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getProtectedAccess().getNumberSignKeyword_0()); 
-                        
-
-                    }
-                    break;
-                case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2489:2: kw= 'protected'
-                    {
-                    kw=(Token)match(input,73,FOLLOW_73_in_ruleProtected5415); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getProtectedAccess().getProtectedKeyword_1()); 
-                        
-
-                    }
-                    break;
-
-            }
-
+                    current.merge(kw);
+                    newLeafNode(kw, grammarAccess.getProtectedAccess().getProtectedKeyword()); 
+                
 
             }
 
@@ -5764,7 +5671,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImportCompoundName"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2502:1: entryRuleImportCompoundName returns [String current=null] : iv_ruleImportCompoundName= ruleImportCompoundName EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2479:1: entryRuleImportCompoundName returns [String current=null] : iv_ruleImportCompoundName= ruleImportCompoundName EOF ;
     public final String entryRuleImportCompoundName() throws RecognitionException {
         String current = null;
 
@@ -5772,17 +5679,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2503:2: (iv_ruleImportCompoundName= ruleImportCompoundName EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2504:2: iv_ruleImportCompoundName= ruleImportCompoundName EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2480:2: (iv_ruleImportCompoundName= ruleImportCompoundName EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2481:2: iv_ruleImportCompoundName= ruleImportCompoundName EOF
             {
              newCompositeNode(grammarAccess.getImportCompoundNameRule()); 
-            pushFollow(FOLLOW_ruleImportCompoundName_in_entryRuleImportCompoundName5456);
+            pushFollow(FOLLOW_ruleImportCompoundName_in_entryRuleImportCompoundName5420);
             iv_ruleImportCompoundName=ruleImportCompoundName();
 
             state._fsp--;
 
              current =iv_ruleImportCompoundName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleImportCompoundName5467); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleImportCompoundName5431); 
 
             }
 
@@ -5800,7 +5707,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImportCompoundName"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2511:1: ruleImportCompoundName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CompoundName_0= ruleCompoundName (kw= '.*' )? ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2488:1: ruleImportCompoundName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CompoundName_0= ruleCompoundName (kw= '.*' )? ) ;
     public final AntlrDatatypeRuleToken ruleImportCompoundName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5811,16 +5718,16 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2514:28: ( (this_CompoundName_0= ruleCompoundName (kw= '.*' )? ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2515:1: (this_CompoundName_0= ruleCompoundName (kw= '.*' )? )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2491:28: ( (this_CompoundName_0= ruleCompoundName (kw= '.*' )? ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2492:1: (this_CompoundName_0= ruleCompoundName (kw= '.*' )? )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2515:1: (this_CompoundName_0= ruleCompoundName (kw= '.*' )? )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2516:5: this_CompoundName_0= ruleCompoundName (kw= '.*' )?
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2492:1: (this_CompoundName_0= ruleCompoundName (kw= '.*' )? )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2493:5: this_CompoundName_0= ruleCompoundName (kw= '.*' )?
             {
              
                     newCompositeNode(grammarAccess.getImportCompoundNameAccess().getCompoundNameParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleCompoundName_in_ruleImportCompoundName5514);
+            pushFollow(FOLLOW_ruleCompoundName_in_ruleImportCompoundName5478);
             this_CompoundName_0=ruleCompoundName();
 
             state._fsp--;
@@ -5831,18 +5738,18 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2526:1: (kw= '.*' )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2503:1: (kw= '.*' )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA32_0==74) ) {
-                alt32=1;
+            if ( (LA30_0==72) ) {
+                alt30=1;
             }
-            switch (alt32) {
+            switch (alt30) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2527:2: kw= '.*'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2504:2: kw= '.*'
                     {
-                    kw=(Token)match(input,74,FOLLOW_74_in_ruleImportCompoundName5533); 
+                    kw=(Token)match(input,72,FOLLOW_72_in_ruleImportCompoundName5497); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getImportCompoundNameAccess().getFullStopAsteriskKeyword_1()); 
@@ -5874,7 +5781,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompoundName"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2540:1: entryRuleCompoundName returns [String current=null] : iv_ruleCompoundName= ruleCompoundName EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2517:1: entryRuleCompoundName returns [String current=null] : iv_ruleCompoundName= ruleCompoundName EOF ;
     public final String entryRuleCompoundName() throws RecognitionException {
         String current = null;
 
@@ -5882,17 +5789,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2541:2: (iv_ruleCompoundName= ruleCompoundName EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2542:2: iv_ruleCompoundName= ruleCompoundName EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2518:2: (iv_ruleCompoundName= ruleCompoundName EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2519:2: iv_ruleCompoundName= ruleCompoundName EOF
             {
              newCompositeNode(grammarAccess.getCompoundNameRule()); 
-            pushFollow(FOLLOW_ruleCompoundName_in_entryRuleCompoundName5576);
+            pushFollow(FOLLOW_ruleCompoundName_in_entryRuleCompoundName5540);
             iv_ruleCompoundName=ruleCompoundName();
 
             state._fsp--;
 
              current =iv_ruleCompoundName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCompoundName5587); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCompoundName5551); 
 
             }
 
@@ -5910,7 +5817,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompoundName"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2549:1: ruleCompoundName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2526:1: ruleCompoundName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleCompoundName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5921,40 +5828,40 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2552:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2553:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2529:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2530:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2553:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2553:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2530:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2530:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCompoundName5627); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCompoundName5591); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getCompoundNameAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2560:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop33:
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2537:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop31:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA33_0==75) ) {
-                    alt33=1;
+                if ( (LA31_0==73) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt31) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2561:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2538:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,75,FOLLOW_75_in_ruleCompoundName5646); 
+            	    kw=(Token)match(input,73,FOLLOW_73_in_ruleCompoundName5610); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getCompoundNameAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCompoundName5661); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCompoundName5625); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -5966,7 +5873,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop31;
                 }
             } while (true);
 
@@ -5991,7 +5898,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBOOLEAN"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2581:1: entryRuleBOOLEAN returns [String current=null] : iv_ruleBOOLEAN= ruleBOOLEAN EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2558:1: entryRuleBOOLEAN returns [String current=null] : iv_ruleBOOLEAN= ruleBOOLEAN EOF ;
     public final String entryRuleBOOLEAN() throws RecognitionException {
         String current = null;
 
@@ -5999,17 +5906,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2582:2: (iv_ruleBOOLEAN= ruleBOOLEAN EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2583:2: iv_ruleBOOLEAN= ruleBOOLEAN EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2559:2: (iv_ruleBOOLEAN= ruleBOOLEAN EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2560:2: iv_ruleBOOLEAN= ruleBOOLEAN EOF
             {
              newCompositeNode(grammarAccess.getBOOLEANRule()); 
-            pushFollow(FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN5709);
+            pushFollow(FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN5673);
             iv_ruleBOOLEAN=ruleBOOLEAN();
 
             state._fsp--;
 
              current =iv_ruleBOOLEAN.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOLEAN5720); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOLEAN5684); 
 
             }
 
@@ -6027,7 +5934,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBOOLEAN"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2590:1: ruleBOOLEAN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2567:1: ruleBOOLEAN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleBOOLEAN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6036,30 +5943,30 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2593:28: ( (kw= 'true' | kw= 'false' ) )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2594:1: (kw= 'true' | kw= 'false' )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2570:28: ( (kw= 'true' | kw= 'false' ) )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2571:1: (kw= 'true' | kw= 'false' )
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2594:1: (kw= 'true' | kw= 'false' )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2571:1: (kw= 'true' | kw= 'false' )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA34_0==76) ) {
-                alt34=1;
+            if ( (LA32_0==74) ) {
+                alt32=1;
             }
-            else if ( (LA34_0==77) ) {
-                alt34=2;
+            else if ( (LA32_0==75) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt32) {
                 case 1 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2595:2: kw= 'true'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2572:2: kw= 'true'
                     {
-                    kw=(Token)match(input,76,FOLLOW_76_in_ruleBOOLEAN5758); 
+                    kw=(Token)match(input,74,FOLLOW_74_in_ruleBOOLEAN5722); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBOOLEANAccess().getTrueKeyword_0()); 
@@ -6068,9 +5975,9 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2602:2: kw= 'false'
+                    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2579:2: kw= 'false'
                     {
-                    kw=(Token)match(input,77,FOLLOW_77_in_ruleBOOLEAN5777); 
+                    kw=(Token)match(input,75,FOLLOW_75_in_ruleBOOLEAN5741); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBOOLEANAccess().getFalseKeyword_1()); 
@@ -6099,7 +6006,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleINTEGER"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2615:1: entryRuleINTEGER returns [String current=null] : iv_ruleINTEGER= ruleINTEGER EOF ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2592:1: entryRuleINTEGER returns [String current=null] : iv_ruleINTEGER= ruleINTEGER EOF ;
     public final String entryRuleINTEGER() throws RecognitionException {
         String current = null;
 
@@ -6107,17 +6014,17 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2616:2: (iv_ruleINTEGER= ruleINTEGER EOF )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2617:2: iv_ruleINTEGER= ruleINTEGER EOF
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2593:2: (iv_ruleINTEGER= ruleINTEGER EOF )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2594:2: iv_ruleINTEGER= ruleINTEGER EOF
             {
              newCompositeNode(grammarAccess.getINTEGERRule()); 
-            pushFollow(FOLLOW_ruleINTEGER_in_entryRuleINTEGER5818);
+            pushFollow(FOLLOW_ruleINTEGER_in_entryRuleINTEGER5782);
             iv_ruleINTEGER=ruleINTEGER();
 
             state._fsp--;
 
              current =iv_ruleINTEGER.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleINTEGER5829); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleINTEGER5793); 
 
             }
 
@@ -6135,7 +6042,7 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleINTEGER"
-    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2624:1: ruleINTEGER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT )+ ;
+    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2601:1: ruleINTEGER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT )+ ;
     public final AntlrDatatypeRuleToken ruleINTEGER() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -6144,26 +6051,26 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2627:28: ( (this_INT_0= RULE_INT )+ )
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2628:1: (this_INT_0= RULE_INT )+
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2604:28: ( (this_INT_0= RULE_INT )+ )
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2605:1: (this_INT_0= RULE_INT )+
             {
-            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2628:1: (this_INT_0= RULE_INT )+
-            int cnt35=0;
-            loop35:
+            // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2605:1: (this_INT_0= RULE_INT )+
+            int cnt33=0;
+            loop33:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA35_0==RULE_INT) ) {
-                    alt35=1;
+                if ( (LA33_0==RULE_INT) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt33) {
             	case 1 :
-            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2628:6: this_INT_0= RULE_INT
+            	    // ../br.edu.sr.ifes.leds.LedsCode/src-gen/br/edu/sr/ifes/leds/parser/antlr/internal/InternalLedsCodeV001.g:2605:6: this_INT_0= RULE_INT
             	    {
-            	    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleINTEGER5869); 
+            	    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleINTEGER5833); 
 
             	    		current.merge(this_INT_0);
             	        
@@ -6175,12 +6082,12 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt35 >= 1 ) break loop35;
+            	    if ( cnt33 >= 1 ) break loop33;
                         EarlyExitException eee =
-                            new EarlyExitException(35, input);
+                            new EarlyExitException(33, input);
                         throw eee;
                 }
-                cnt35++;
+                cnt33++;
             } while (true);
 
 
@@ -6315,10 +6222,10 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleModuleBlock2107 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_37_in_ruleModuleBlock2144 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleModuleBlock2161 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleModuleBlock2178 = new BitSet(new long[]{0x000401C000002000L,0x00000000000003C0L});
-    public static final BitSet FOLLOW_ruleServiceBlock_in_ruleModuleBlock2200 = new BitSet(new long[]{0x000401C000002000L,0x00000000000003C0L});
-    public static final BitSet FOLLOW_ruleEntityBlock_in_ruleModuleBlock2227 = new BitSet(new long[]{0x000401C000002000L,0x00000000000003C0L});
-    public static final BitSet FOLLOW_ruleEnumBlock_in_ruleModuleBlock2254 = new BitSet(new long[]{0x000401C000002000L,0x00000000000003C0L});
+    public static final BitSet FOLLOW_12_in_ruleModuleBlock2178 = new BitSet(new long[]{0x000401C000002000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_ruleEnumBlock_in_ruleModuleBlock2200 = new BitSet(new long[]{0x000401C000002000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_ruleEntityBlock_in_ruleModuleBlock2227 = new BitSet(new long[]{0x000401C000002000L,0x00000000000000C0L});
+    public static final BitSet FOLLOW_ruleServiceBlock_in_ruleModuleBlock2254 = new BitSet(new long[]{0x000401C000002000L,0x00000000000000C0L});
     public static final BitSet FOLLOW_13_in_ruleModuleBlock2268 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleServiceBlock_in_entryRuleServiceBlock2304 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleServiceBlock2314 = new BitSet(new long[]{0x0000000000000002L});
@@ -6331,147 +6238,145 @@ public class InternalLedsCodeV001Parser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleServiceMethod2465 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleServiceMethod2507 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_17_in_ruleServiceMethod2524 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleCompoundName_in_ruleServiceMethod2545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntityBlock_in_entryRuleEntityBlock2581 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEntityBlock2591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAccessModifier_in_ruleEntityBlock2637 = new BitSet(new long[]{0x0000018000000000L});
-    public static final BitSet FOLLOW_39_in_ruleEntityBlock2656 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleEntityBlock2682 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityBlock2699 = new BitSet(new long[]{0x0000000008001000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_ruleExtendBlock_in_ruleEntityBlock2725 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleEntityBlock2738 = new BitSet(new long[]{0xFFFA000000002010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleAttribute_in_ruleEntityBlock2759 = new BitSet(new long[]{0xFFFA000000002010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleRepository_in_ruleEntityBlock2781 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleEntityBlock2794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute2830 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAttribute2840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAccessModifier_in_ruleAttribute2886 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleAttribute2908 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute2925 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_41_in_ruleAttribute2949 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_42_in_ruleAttribute2982 = new BitSet(new long[]{0x00000C0000000000L});
-    public static final BitSet FOLLOW_43_in_ruleAttribute2996 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_ruleBOOLEAN_in_ruleAttribute3017 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleAttribute3029 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_45_in_ruleAttribute3050 = new BitSet(new long[]{0x0000280000000000L});
-    public static final BitSet FOLLOW_43_in_ruleAttribute3064 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_ruleBOOLEAN_in_ruleAttribute3085 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleAttribute3097 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_46_in_ruleAttribute3118 = new BitSet(new long[]{0x0000480000000000L});
-    public static final BitSet FOLLOW_43_in_ruleAttribute3132 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3153 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleAttribute3165 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_47_in_ruleAttribute3186 = new BitSet(new long[]{0x0000880000000000L});
-    public static final BitSet FOLLOW_43_in_ruleAttribute3200 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3221 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleAttribute3233 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_48_in_ruleAttribute3254 = new BitSet(new long[]{0x0001080000000000L});
-    public static final BitSet FOLLOW_43_in_ruleAttribute3268 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3289 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleAttribute3301 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3322 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleAttribute3334 = new BitSet(new long[]{0x0001E60000000002L});
-    public static final BitSet FOLLOW_ruleRepository_in_entryRuleRepository3373 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRepository3383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_ruleRepository3420 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRepository3437 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleRepository3454 = new BitSet(new long[]{0x0000000000002010L});
-    public static final BitSet FOLLOW_ruleRepositoryFields_in_ruleRepository3475 = new BitSet(new long[]{0x0000000000002010L});
-    public static final BitSet FOLLOW_13_in_ruleRepository3488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRepositoryFields_in_entryRuleRepositoryFields3524 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRepositoryFields3534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRepositoryFields3576 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_43_in_ruleRepositoryFields3593 = new BitSet(new long[]{0xFFF8100000000010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleMethodParameter_in_ruleRepositoryFields3614 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_ruleRepositoryFields3627 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleRepositoryFields3639 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleRepositoryFields3660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumBlock_in_entryRuleEnumBlock3696 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumBlock3706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleEnumBlock3743 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumBlock3760 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleEnumBlock3777 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumBlock3794 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_28_in_ruleEnumBlock3812 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumBlock3829 = new BitSet(new long[]{0x0000000010002000L});
-    public static final BitSet FOLLOW_13_in_ruleEnumBlock3848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType3885 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataType3896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypeList_in_ruleDataType3943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypeSet_in_ruleDataType3976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompoundName_in_ruleDataType4009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleDataType4033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleDataType4052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleDataType4071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleDataType4090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleDataType4109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleDataType4128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleDataType4147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleDataType4166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleDataType4185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleDataType4204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleDataType4223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleDataType4242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleDataType4261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethodParameter_in_entryRuleMethodParameter4301 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMethodParameter4311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4357 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_28_in_ruleMethodParameter4370 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4391 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_ruleTypeAndAttribute_in_entryRuleTypeAndAttribute4429 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeAndAttribute4439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleTypeAndAttribute4485 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeAndAttribute4502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExtendBlock_in_entryRuleExtendBlock4543 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExtendBlock4553 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExtend_in_ruleExtendBlock4594 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleCompoundName_in_ruleExtendBlock4614 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_28_in_ruleExtendBlock4627 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleCompoundName_in_ruleExtendBlock4648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExtend_in_entryRuleExtend4687 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExtend4698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleExtend4736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_ruleExtend4755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleExtend4774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypeList_in_entryRuleDataTypeList4815 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataTypeList4826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_ruleDataTypeList4864 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleDataTypeList4877 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleDataTypeList4899 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_ruleDataTypeList4917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDataTypeSet_in_entryRuleDataTypeSet4958 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDataTypeSet4969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleDataTypeSet5007 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleDataTypeSet5020 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000003E4L});
-    public static final BitSet FOLLOW_ruleDataType_in_ruleDataTypeSet5042 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_ruleDataTypeSet5060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAccessModifier_in_entryRuleAccessModifier5101 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAccessModifier5112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrivate_in_ruleAccessModifier5159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProtected_in_ruleAccessModifier5192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePrivate_in_entryRulePrivate5238 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePrivate5249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_70_in_rulePrivate5287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_rulePrivate5306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProtected_in_entryRuleProtected5347 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleProtected5358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleProtected5396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_ruleProtected5415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImportCompoundName_in_entryRuleImportCompoundName5456 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleImportCompoundName5467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompoundName_in_ruleImportCompoundName5514 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-    public static final BitSet FOLLOW_74_in_ruleImportCompoundName5533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompoundName_in_entryRuleCompoundName5576 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCompoundName5587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCompoundName5627 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_75_in_ruleCompoundName5646 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCompoundName5661 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN5709 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBOOLEAN5720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleBOOLEAN5758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleBOOLEAN5777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleINTEGER_in_entryRuleINTEGER5818 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleINTEGER5829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleINTEGER5869 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleCompoundName_in_ruleServiceMethod2547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntityBlock_in_entryRuleEntityBlock2583 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEntityBlock2593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAccessModifier_in_ruleEntityBlock2639 = new BitSet(new long[]{0x0000018000000000L});
+    public static final BitSet FOLLOW_39_in_ruleEntityBlock2658 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_40_in_ruleEntityBlock2684 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityBlock2701 = new BitSet(new long[]{0x0000000008001000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_ruleExtendBlock_in_ruleEntityBlock2727 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleEntityBlock2740 = new BitSet(new long[]{0xFFFA000000002010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleAttribute_in_ruleEntityBlock2761 = new BitSet(new long[]{0xFFFA000000002010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleRepository_in_ruleEntityBlock2783 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleEntityBlock2796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttribute_in_entryRuleAttribute2832 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAttribute2842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAccessModifier_in_ruleAttribute2888 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleAttribute2910 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAttribute2927 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_41_in_ruleAttribute2951 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_42_in_ruleAttribute2984 = new BitSet(new long[]{0x00000C0000000000L});
+    public static final BitSet FOLLOW_43_in_ruleAttribute2998 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000C00L});
+    public static final BitSet FOLLOW_ruleBOOLEAN_in_ruleAttribute3019 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleAttribute3031 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_45_in_ruleAttribute3052 = new BitSet(new long[]{0x0000280000000000L});
+    public static final BitSet FOLLOW_43_in_ruleAttribute3066 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000C00L});
+    public static final BitSet FOLLOW_ruleBOOLEAN_in_ruleAttribute3087 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleAttribute3099 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_46_in_ruleAttribute3120 = new BitSet(new long[]{0x0000480000000000L});
+    public static final BitSet FOLLOW_43_in_ruleAttribute3134 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3155 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleAttribute3167 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_47_in_ruleAttribute3188 = new BitSet(new long[]{0x0000880000000000L});
+    public static final BitSet FOLLOW_43_in_ruleAttribute3202 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3223 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleAttribute3235 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_48_in_ruleAttribute3256 = new BitSet(new long[]{0x0001080000000000L});
+    public static final BitSet FOLLOW_43_in_ruleAttribute3270 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3291 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleAttribute3303 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_ruleINTEGER_in_ruleAttribute3324 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleAttribute3336 = new BitSet(new long[]{0x0001E60000000002L});
+    public static final BitSet FOLLOW_ruleRepository_in_entryRuleRepository3375 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRepository3385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_ruleRepository3422 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRepository3439 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleRepository3456 = new BitSet(new long[]{0x0000000000002010L});
+    public static final BitSet FOLLOW_ruleRepositoryFields_in_ruleRepository3477 = new BitSet(new long[]{0x0000000000002010L});
+    public static final BitSet FOLLOW_13_in_ruleRepository3490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRepositoryFields_in_entryRuleRepositoryFields3526 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRepositoryFields3536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRepositoryFields3578 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_43_in_ruleRepositoryFields3595 = new BitSet(new long[]{0xFFF8100000000010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleMethodParameter_in_ruleRepositoryFields3616 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_44_in_ruleRepositoryFields3629 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleRepositoryFields3641 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleRepositoryFields3662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumBlock_in_entryRuleEnumBlock3698 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumBlock3708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_ruleEnumBlock3745 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumBlock3762 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleEnumBlock3779 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumBlock3796 = new BitSet(new long[]{0x0000000010002000L});
+    public static final BitSet FOLLOW_28_in_ruleEnumBlock3814 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumBlock3831 = new BitSet(new long[]{0x0000000010002000L});
+    public static final BitSet FOLLOW_13_in_ruleEnumBlock3850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_entryRuleDataType3887 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataType3898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypeList_in_ruleDataType3945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypeSet_in_ruleDataType3978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompoundName_in_ruleDataType4011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleDataType4035 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleDataType4054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleDataType4073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleDataType4092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleDataType4111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleDataType4130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleDataType4149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleDataType4168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleDataType4187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleDataType4206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleDataType4225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleDataType4244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleDataType4263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethodParameter_in_entryRuleMethodParameter4303 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMethodParameter4313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4359 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_28_in_ruleMethodParameter4372 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleTypeAndAttribute_in_ruleMethodParameter4393 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_ruleTypeAndAttribute_in_entryRuleTypeAndAttribute4431 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeAndAttribute4441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleTypeAndAttribute4487 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTypeAndAttribute4504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExtendBlock_in_entryRuleExtendBlock4545 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExtendBlock4555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExtend_in_ruleExtendBlock4596 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleCompoundName_in_ruleExtendBlock4618 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_28_in_ruleExtendBlock4631 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleCompoundName_in_ruleExtendBlock4654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExtend_in_entryRuleExtend4693 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExtend4704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleExtend4742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_ruleExtend4761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleExtend4780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypeList_in_entryRuleDataTypeList4821 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataTypeList4832 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleDataTypeList4870 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleDataTypeList4883 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleDataTypeList4905 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_ruleDataTypeList4923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDataTypeSet_in_entryRuleDataTypeSet4964 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDataTypeSet4975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleDataTypeSet5013 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleDataTypeSet5026 = new BitSet(new long[]{0xFFF8000000000010L,0x00000000000000E4L});
+    public static final BitSet FOLLOW_ruleDataType_in_ruleDataTypeSet5048 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_ruleDataTypeSet5066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAccessModifier_in_entryRuleAccessModifier5107 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAccessModifier5118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrivate_in_ruleAccessModifier5165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProtected_in_ruleAccessModifier5198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePrivate_in_entryRulePrivate5244 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePrivate5255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_70_in_rulePrivate5292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProtected_in_entryRuleProtected5332 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleProtected5343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleProtected5380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImportCompoundName_in_entryRuleImportCompoundName5420 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleImportCompoundName5431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompoundName_in_ruleImportCompoundName5478 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_72_in_ruleImportCompoundName5497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompoundName_in_entryRuleCompoundName5540 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCompoundName5551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCompoundName5591 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_ruleCompoundName5610 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCompoundName5625 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
+    public static final BitSet FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN5673 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBOOLEAN5684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_ruleBOOLEAN5722 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleBOOLEAN5741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleINTEGER_in_entryRuleINTEGER5782 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleINTEGER5793 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleINTEGER5833 = new BitSet(new long[]{0x0000000000000042L});
 
 }

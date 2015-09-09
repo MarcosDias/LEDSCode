@@ -508,13 +508,13 @@ public interface LedsCodeV001Package extends EPackage
   int MODULE_BLOCK__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Service Block</b></em>' containment reference list.
+   * The feature id for the '<em><b>Enum Block</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_BLOCK__SERVICE_BLOCK = 1;
+  int MODULE_BLOCK__ENUM_BLOCK = 1;
 
   /**
    * The feature id for the '<em><b>Entity Block</b></em>' containment reference list.
@@ -526,13 +526,13 @@ public interface LedsCodeV001Package extends EPackage
   int MODULE_BLOCK__ENTITY_BLOCK = 2;
 
   /**
-   * The feature id for the '<em><b>Enum Block</b></em>' containment reference list.
+   * The feature id for the '<em><b>Service Block</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODULE_BLOCK__ENUM_BLOCK = 3;
+  int MODULE_BLOCK__SERVICE_BLOCK = 3;
 
   /**
    * The number of structural features of the '<em>Module Block</em>' class.
@@ -600,7 +600,7 @@ public interface LedsCodeV001Package extends EPackage
   int SERVICE_METHOD__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Method Acess</b></em>' attribute.
+   * The feature id for the '<em><b>Method Acess</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -829,13 +829,13 @@ public interface LedsCodeV001Package extends EPackage
   int REPOSITORY_FIELDS = 15;
 
   /**
-   * The feature id for the '<em><b>Name Method</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REPOSITORY_FIELDS__NAME_METHOD = 0;
+  int REPOSITORY_FIELDS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Methods Parameters</b></em>' containment reference.
@@ -977,7 +977,7 @@ public interface LedsCodeV001Package extends EPackage
   int EXTEND_BLOCK = 19;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Values</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1426,15 +1426,15 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getModuleBlock_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock <em>Service Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock <em>Enum Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Service Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock()
+   * @return the meta object for the containment reference list '<em>Enum Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock()
    * @see #getModuleBlock()
    * @generated
    */
-  EReference getModuleBlock_ServiceBlock();
+  EReference getModuleBlock_EnumBlock();
 
   /**
    * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEntityBlock <em>Entity Block</em>}'.
@@ -1448,15 +1448,15 @@ public interface LedsCodeV001Package extends EPackage
   EReference getModuleBlock_EntityBlock();
 
   /**
-   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock <em>Enum Block</em>}'.
+   * Returns the meta object for the containment reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock <em>Service Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Enum Block</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock()
+   * @return the meta object for the containment reference list '<em>Service Block</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock()
    * @see #getModuleBlock()
    * @generated
    */
-  EReference getModuleBlock_EnumBlock();
+  EReference getModuleBlock_ServiceBlock();
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock <em>Service Block</em>}'.
@@ -1512,15 +1512,15 @@ public interface LedsCodeV001Package extends EPackage
   EAttribute getServiceMethod_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess <em>Method Acess</em>}'.
+   * Returns the meta object for the reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess <em>Method Acess</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Method Acess</em>'.
+   * @return the meta object for the reference '<em>Method Acess</em>'.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess()
    * @see #getServiceMethod()
    * @generated
    */
-  EAttribute getServiceMethod_MethodAcess();
+  EReference getServiceMethod_MethodAcess();
 
   /**
    * Returns the meta object for class '{@link br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock <em>Entity Block</em>}'.
@@ -1739,15 +1739,15 @@ public interface LedsCodeV001Package extends EPackage
   EClass getRepositoryFields();
 
   /**
-   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getNameMethod <em>Name Method</em>}'.
+   * Returns the meta object for the attribute '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name Method</em>'.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getNameMethod()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getName()
    * @see #getRepositoryFields()
    * @generated
    */
-  EAttribute getRepositoryFields_NameMethod();
+  EAttribute getRepositoryFields_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields#getMethodsParameters <em>Methods Parameters</em>}'.
@@ -1867,15 +1867,15 @@ public interface LedsCodeV001Package extends EPackage
   EClass getExtendBlock();
 
   /**
-   * Returns the meta object for the attribute list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock#getValues <em>Values</em>}'.
+   * Returns the meta object for the reference list '{@link br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @return the meta object for the reference list '<em>Values</em>'.
    * @see br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock#getValues()
    * @see #getExtendBlock()
    * @generated
    */
-  EAttribute getExtendBlock_Values();
+  EReference getExtendBlock_Values();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2241,12 +2241,12 @@ public interface LedsCodeV001Package extends EPackage
     EAttribute MODULE_BLOCK__NAME = eINSTANCE.getModuleBlock_Name();
 
     /**
-     * The meta object literal for the '<em><b>Service Block</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Enum Block</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE_BLOCK__SERVICE_BLOCK = eINSTANCE.getModuleBlock_ServiceBlock();
+    EReference MODULE_BLOCK__ENUM_BLOCK = eINSTANCE.getModuleBlock_EnumBlock();
 
     /**
      * The meta object literal for the '<em><b>Entity Block</b></em>' containment reference list feature.
@@ -2257,12 +2257,12 @@ public interface LedsCodeV001Package extends EPackage
     EReference MODULE_BLOCK__ENTITY_BLOCK = eINSTANCE.getModuleBlock_EntityBlock();
 
     /**
-     * The meta object literal for the '<em><b>Enum Block</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Service Block</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODULE_BLOCK__ENUM_BLOCK = eINSTANCE.getModuleBlock_EnumBlock();
+    EReference MODULE_BLOCK__SERVICE_BLOCK = eINSTANCE.getModuleBlock_ServiceBlock();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ServiceBlockImpl <em>Service Block</em>}' class.
@@ -2309,12 +2309,12 @@ public interface LedsCodeV001Package extends EPackage
     EAttribute SERVICE_METHOD__NAME = eINSTANCE.getServiceMethod_Name();
 
     /**
-     * The meta object literal for the '<em><b>Method Acess</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Method Acess</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SERVICE_METHOD__METHOD_ACESS = eINSTANCE.getServiceMethod_MethodAcess();
+    EReference SERVICE_METHOD__METHOD_ACESS = eINSTANCE.getServiceMethod_MethodAcess();
 
     /**
      * The meta object literal for the '{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.EntityBlockImpl <em>Entity Block</em>}' class.
@@ -2485,12 +2485,12 @@ public interface LedsCodeV001Package extends EPackage
     EClass REPOSITORY_FIELDS = eINSTANCE.getRepositoryFields();
 
     /**
-     * The meta object literal for the '<em><b>Name Method</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute REPOSITORY_FIELDS__NAME_METHOD = eINSTANCE.getRepositoryFields_NameMethod();
+    EAttribute REPOSITORY_FIELDS__NAME = eINSTANCE.getRepositoryFields_Name();
 
     /**
      * The meta object literal for the '<em><b>Methods Parameters</b></em>' containment reference feature.
@@ -2589,12 +2589,12 @@ public interface LedsCodeV001Package extends EPackage
     EClass EXTEND_BLOCK = eINSTANCE.getExtendBlock();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Values</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXTEND_BLOCK__VALUES = eINSTANCE.getExtendBlock_Values();
+    EReference EXTEND_BLOCK__VALUES = eINSTANCE.getExtendBlock_Values();
 
   }
 

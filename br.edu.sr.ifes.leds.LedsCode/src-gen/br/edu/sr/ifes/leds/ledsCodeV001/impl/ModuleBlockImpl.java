@@ -32,9 +32,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl#getServiceBlock <em>Service Block</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl#getEntityBlock <em>Entity Block</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl#getEnumBlock <em>Enum Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl#getEntityBlock <em>Entity Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.ModuleBlockImpl#getServiceBlock <em>Service Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,14 +63,14 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getServiceBlock() <em>Service Block</em>}' containment reference list.
+   * The cached value of the '{@link #getEnumBlock() <em>Enum Block</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getServiceBlock()
+   * @see #getEnumBlock()
    * @generated
    * @ordered
    */
-  protected EList<ServiceBlock> serviceBlock;
+  protected EList<EnumBlock> enumBlock;
 
   /**
    * The cached value of the '{@link #getEntityBlock() <em>Entity Block</em>}' containment reference list.
@@ -83,14 +83,14 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
   protected EList<EntityBlock> entityBlock;
 
   /**
-   * The cached value of the '{@link #getEnumBlock() <em>Enum Block</em>}' containment reference list.
+   * The cached value of the '{@link #getServiceBlock() <em>Service Block</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEnumBlock()
+   * @see #getServiceBlock()
    * @generated
    * @ordered
    */
-  protected EList<EnumBlock> enumBlock;
+  protected EList<ServiceBlock> serviceBlock;
 
   /**
    * <!-- begin-user-doc -->
@@ -141,13 +141,13 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ServiceBlock> getServiceBlock()
+  public EList<EnumBlock> getEnumBlock()
   {
-    if (serviceBlock == null)
+    if (enumBlock == null)
     {
-      serviceBlock = new EObjectContainmentEList<ServiceBlock>(ServiceBlock.class, this, LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK);
+      enumBlock = new EObjectContainmentEList<EnumBlock>(EnumBlock.class, this, LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK);
     }
-    return serviceBlock;
+    return enumBlock;
   }
 
   /**
@@ -169,13 +169,13 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EnumBlock> getEnumBlock()
+  public EList<ServiceBlock> getServiceBlock()
   {
-    if (enumBlock == null)
+    if (serviceBlock == null)
     {
-      enumBlock = new EObjectContainmentEList<EnumBlock>(EnumBlock.class, this, LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK);
+      serviceBlock = new EObjectContainmentEList<ServiceBlock>(ServiceBlock.class, this, LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK);
     }
-    return enumBlock;
+    return serviceBlock;
   }
 
   /**
@@ -188,12 +188,12 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
-        return ((InternalEList<?>)getServiceBlock()).basicRemove(otherEnd, msgs);
-      case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
-        return ((InternalEList<?>)getEntityBlock()).basicRemove(otherEnd, msgs);
       case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
         return ((InternalEList<?>)getEnumBlock()).basicRemove(otherEnd, msgs);
+      case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
+        return ((InternalEList<?>)getEntityBlock()).basicRemove(otherEnd, msgs);
+      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
+        return ((InternalEList<?>)getServiceBlock()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -210,12 +210,12 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
     {
       case LedsCodeV001Package.MODULE_BLOCK__NAME:
         return getName();
-      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
-        return getServiceBlock();
-      case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
-        return getEntityBlock();
       case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
         return getEnumBlock();
+      case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
+        return getEntityBlock();
+      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
+        return getServiceBlock();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -234,17 +234,17 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
       case LedsCodeV001Package.MODULE_BLOCK__NAME:
         setName((String)newValue);
         return;
-      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
-        getServiceBlock().clear();
-        getServiceBlock().addAll((Collection<? extends ServiceBlock>)newValue);
+      case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
+        getEnumBlock().clear();
+        getEnumBlock().addAll((Collection<? extends EnumBlock>)newValue);
         return;
       case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
         getEntityBlock().clear();
         getEntityBlock().addAll((Collection<? extends EntityBlock>)newValue);
         return;
-      case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
-        getEnumBlock().clear();
-        getEnumBlock().addAll((Collection<? extends EnumBlock>)newValue);
+      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
+        getServiceBlock().clear();
+        getServiceBlock().addAll((Collection<? extends ServiceBlock>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -263,14 +263,14 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
       case LedsCodeV001Package.MODULE_BLOCK__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
-        getServiceBlock().clear();
+      case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
+        getEnumBlock().clear();
         return;
       case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
         getEntityBlock().clear();
         return;
-      case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
-        getEnumBlock().clear();
+      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
+        getServiceBlock().clear();
         return;
     }
     super.eUnset(featureID);
@@ -288,12 +288,12 @@ public class ModuleBlockImpl extends MinimalEObjectImpl.Container implements Mod
     {
       case LedsCodeV001Package.MODULE_BLOCK__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
-        return serviceBlock != null && !serviceBlock.isEmpty();
-      case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
-        return entityBlock != null && !entityBlock.isEmpty();
       case LedsCodeV001Package.MODULE_BLOCK__ENUM_BLOCK:
         return enumBlock != null && !enumBlock.isEmpty();
+      case LedsCodeV001Package.MODULE_BLOCK__ENTITY_BLOCK:
+        return entityBlock != null && !entityBlock.isEmpty();
+      case LedsCodeV001Package.MODULE_BLOCK__SERVICE_BLOCK:
+        return serviceBlock != null && !serviceBlock.isEmpty();
     }
     return super.eIsSet(featureID);
   }

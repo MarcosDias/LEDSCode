@@ -1,11 +1,48 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
+import br.edu.sr.ifes.leds.metamodel.util.FindModule;
+import com.google.common.base.Objects;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import model.domainLayer.ClassEnum;
 import model.domainLayer.Entity;
+import model.domainLayer.Module;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
 
 @SuppressWarnings("all")
 public class FindEntity {
+  private FindModule findModule;
+  
+  public Entity findFullPathEntity(final Set<Entity> listEntity, final String full) {
+    try {
+      Entity _xblockexpression = null;
+      {
+        String[] _split = full.split("\\.");
+        List<String> splitedReverseName = ListExtensions.<String>reverse(((List<String>)Conversions.doWrapArray(_split)));
+        String _head = IterableExtensions.<String>head(splitedReverseName);
+        Entity resultEntntity = this.inMetaModel(listEntity, ((String) _head));
+        boolean _equals = Objects.equal(resultEntntity, null);
+        if (_equals) {
+          throw new Exception(("Could not find the entity " + full));
+        }
+        Module _parent = resultEntntity.getParent();
+        Iterable<String> _tail = IterableExtensions.<String>tail(splitedReverseName);
+        List<String> _asList = Arrays.<String>asList(((String[])Conversions.unwrapArray(_tail, String.class)));
+        this.findModule.findInverseFullPathModule(_parent, _asList, full);
+        _xblockexpression = resultEntntity;
+      }
+      return _xblockexpression;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
   /**
    * Método que busca uma entidade em um metamodelo,caso encontrado,
    * ele é retornado
@@ -29,8 +66,19 @@ public class FindEntity {
    * @param nameEntity Nome da entidade que deseja ser buscada
    * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
    */
-  public Entity inMetaModel(final LinkedHashSet<Entity> listEntityMetaModel, final String nameEntity) {
+  public Entity inMetaModel(final Set<Entity> listEntityMetaModel, final String nameEntity) {
     return this.findEntityInList(listEntityMetaModel, nameEntity);
+  }
+  
+  public ClassEnum inEnums(final Set<ClassEnum> cEnums, final String name) {
+    for (final ClassEnum ennum : cEnums) {
+      String _name = ennum.getName();
+      boolean _equals = name.equals(_name);
+      if (_equals) {
+        return ennum;
+      }
+    }
+    return null;
   }
   
   /**
@@ -41,18 +89,19 @@ public class FindEntity {
    * @param nameEntity Nome da entidade que deseja ser buscada
    * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
    */
-  private Entity findEntityInList(final LinkedHashSet<Entity> listEntityMetaModel, final String nameEntity) {
-    Object _xblockexpression = null;
-    {
-      for (final Entity entityMetaModel : listEntityMetaModel) {
-        String _name = entityMetaModel.getName();
-        boolean _equals = _name.equals(nameEntity);
-        if (_equals) {
-          return entityMetaModel;
-        }
+  private Entity findEntityInList(final Set<Entity> listEntityMetaModel, final String nameEntity) {
+    for (final Entity entityMetaModel : listEntityMetaModel) {
+      String _name = entityMetaModel.getName();
+      boolean _equals = _name.equals(nameEntity);
+      if (_equals) {
+        return entityMetaModel;
       }
-      _xblockexpression = null;
     }
-    return ((Entity)_xblockexpression);
+    return null;
+  }
+  
+  public FindEntity() {
+    FindModule _findModule = new FindModule();
+    this.findModule = _findModule;
   }
 }

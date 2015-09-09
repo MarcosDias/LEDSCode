@@ -216,7 +216,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (values+=CompoundName values+=CompoundName?)
+	 *     (values+=[EntityBlock|CompoundName] values+=[EntityBlock|CompoundName]?)
 	 */
 	protected void sequence_ExtendBlock(EObject context, ExtendBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -299,7 +299,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID (serviceBlock+=ServiceBlock | entityBlock+=EntityBlock | enumBlock+=EnumBlock)*)
+	 *     (name=ID (enumBlock+=EnumBlock | entityBlock+=EntityBlock | serviceBlock+=ServiceBlock)*)
 	 */
 	protected void sequence_ModuleBlock(EObject context, ModuleBlock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -336,7 +336,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (nameMethod=ID methodsParameters=MethodParameter? returnType=DataType)
+	 *     (name=ID methodsParameters=MethodParameter? returnType=DataType)
 	 */
 	protected void sequence_RepositoryFields(EObject context, RepositoryFields semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -363,7 +363,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
-	 *     (name=ID methodAcess=CompoundName)
+	 *     (name=ID methodAcess=[RepositoryFields|CompoundName])
 	 */
 	protected void sequence_ServiceMethod(EObject context, ServiceMethod semanticObject) {
 		if(errorAcceptor != null) {
@@ -375,7 +375,7 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getServiceMethodAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getServiceMethodAccess().getMethodAcessCompoundNameParserRuleCall_2_0(), semanticObject.getMethodAcess());
+		feeder.accept(grammarAccess.getServiceMethodAccess().getMethodAcessRepositoryFieldsCompoundNameParserRuleCall_2_0_1(), semanticObject.getMethodAcess());
 		feeder.finish();
 	}
 	

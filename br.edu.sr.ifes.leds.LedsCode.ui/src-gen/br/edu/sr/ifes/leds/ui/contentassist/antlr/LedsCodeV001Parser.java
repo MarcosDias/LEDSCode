@@ -43,8 +43,6 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 					put(grammarAccess.getExtendAccess().getAlternatives(), "rule__Extend__Alternatives");
 					put(grammarAccess.getAccessModifierAccess().getAlternatives(), "rule__AccessModifier__Alternatives");
-					put(grammarAccess.getPrivateAccess().getAlternatives(), "rule__Private__Alternatives");
-					put(grammarAccess.getProtectedAccess().getAlternatives(), "rule__Protected__Alternatives");
 					put(grammarAccess.getBOOLEANAccess().getAlternatives(), "rule__BOOLEAN__Alternatives");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
 					put(grammarAccess.getInterfaceBlockAccess().getGroup(), "rule__InterfaceBlock__Group__0");
@@ -109,9 +107,9 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getDomainBlockAccess().getNameAssignment_1(), "rule__DomainBlock__NameAssignment_1");
 					put(grammarAccess.getDomainBlockAccess().getModuleAssignment_3(), "rule__DomainBlock__ModuleAssignment_3");
 					put(grammarAccess.getModuleBlockAccess().getNameAssignment_1(), "rule__ModuleBlock__NameAssignment_1");
-					put(grammarAccess.getModuleBlockAccess().getServiceBlockAssignment_3_0(), "rule__ModuleBlock__ServiceBlockAssignment_3_0");
+					put(grammarAccess.getModuleBlockAccess().getEnumBlockAssignment_3_0(), "rule__ModuleBlock__EnumBlockAssignment_3_0");
 					put(grammarAccess.getModuleBlockAccess().getEntityBlockAssignment_3_1(), "rule__ModuleBlock__EntityBlockAssignment_3_1");
-					put(grammarAccess.getModuleBlockAccess().getEnumBlockAssignment_3_2(), "rule__ModuleBlock__EnumBlockAssignment_3_2");
+					put(grammarAccess.getModuleBlockAccess().getServiceBlockAssignment_3_2(), "rule__ModuleBlock__ServiceBlockAssignment_3_2");
 					put(grammarAccess.getServiceBlockAccess().getNameAssignment_1(), "rule__ServiceBlock__NameAssignment_1");
 					put(grammarAccess.getServiceBlockAccess().getServiceFieldsAssignment_3(), "rule__ServiceBlock__ServiceFieldsAssignment_3");
 					put(grammarAccess.getServiceMethodAccess().getNameAssignment_0(), "rule__ServiceMethod__NameAssignment_0");
@@ -134,7 +132,7 @@ public class LedsCodeV001Parser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeAccess().getMaxAssignment_3_5_4(), "rule__Attribute__MaxAssignment_3_5_4");
 					put(grammarAccess.getRepositoryAccess().getNameAssignment_1(), "rule__Repository__NameAssignment_1");
 					put(grammarAccess.getRepositoryAccess().getMethodsAssignment_3(), "rule__Repository__MethodsAssignment_3");
-					put(grammarAccess.getRepositoryFieldsAccess().getNameMethodAssignment_0(), "rule__RepositoryFields__NameMethodAssignment_0");
+					put(grammarAccess.getRepositoryFieldsAccess().getNameAssignment_0(), "rule__RepositoryFields__NameAssignment_0");
 					put(grammarAccess.getRepositoryFieldsAccess().getMethodsParametersAssignment_2(), "rule__RepositoryFields__MethodsParametersAssignment_2");
 					put(grammarAccess.getRepositoryFieldsAccess().getReturnTypeAssignment_5(), "rule__RepositoryFields__ReturnTypeAssignment_5");
 					put(grammarAccess.getEnumBlockAccess().getNameAssignment_1(), "rule__EnumBlock__NameAssignment_1");

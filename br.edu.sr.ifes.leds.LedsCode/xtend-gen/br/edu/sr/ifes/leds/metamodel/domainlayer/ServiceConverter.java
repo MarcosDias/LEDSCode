@@ -1,16 +1,17 @@
 package br.edu.sr.ifes.leds.metamodel.domainlayer;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
+import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
 import br.edu.sr.ifes.leds.metamodel.util.FindRepositoryMethod;
+import br.edu.sr.ifes.leds.metamodel.util.FindService;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import model.domainLayer.Entity;
-import model.domainLayer.InternalServiceMethod;
 import model.domainLayer.Method;
 import model.domainLayer.Module;
-import model.domainLayer.Repository;
 import model.domainLayer.Service;
 import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
@@ -20,6 +21,12 @@ public class ServiceConverter {
   private FindEntity findEntity;
   
   private FindRepositoryMethod findRepositoryMethod;
+  
+  private FindService findService;
+  
+  private Project projectLang;
+  
+  private model.mainLayer.Project projectMetaModel;
   
   public LinkedHashSet<Service> convert(final EList<ServiceBlock> listServiceLang, final Module moduleMetaModel, final TableObjects tableObjects) {
     LinkedHashSet<Service> _xblockexpression = null;
@@ -33,7 +40,7 @@ public class ServiceConverter {
           serviceMetaModel.setName(_name);
           EList<ServiceMethod> _serviceFields = serviceLang.getServiceFields();
           LinkedHashSet<Entity> _entities = moduleMetaModel.getEntities();
-          LinkedHashSet<model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, _entities);
+          LinkedHashSet<model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, _entities, tableObjects);
           serviceMetaModel.setMethods(_convertServiceMethod);
           listServiceMetaModel.add(serviceMetaModel);
           Set<Service> _services = tableObjects.getServices();
@@ -45,17 +52,14 @@ public class ServiceConverter {
     return _xblockexpression;
   }
   
-  public LinkedHashSet<model.domainLayer.ServiceMethod> convertServiceMethod(final EList<ServiceMethod> listServiceLang, final LinkedHashSet<Entity> listEntityMetaModel) {
+  public LinkedHashSet<model.domainLayer.ServiceMethod> convertServiceMethod(final EList<ServiceMethod> listServiceLang, final LinkedHashSet<Entity> listEntityMetaModel, final TableObjects tableObjects) {
     LinkedHashSet<model.domainLayer.ServiceMethod> _xblockexpression = null;
     {
       LinkedHashSet<model.domainLayer.ServiceMethod> listServiceMethodsMetaModel = new LinkedHashSet<model.domainLayer.ServiceMethod>();
       for (final ServiceMethod serviceMethodLang : listServiceLang) {
         {
-          String _methodAcess = serviceMethodLang.getMethodAcess();
-          InternalServiceMethod servicemethodMetaModel = this.compileService(_methodAcess, listEntityMetaModel);
-          String _name = serviceMethodLang.getName();
-          servicemethodMetaModel.setName(_name);
-          listServiceMethodsMetaModel.add(servicemethodMetaModel);
+          model.domainLayer.ServiceMethod serviceMethodMetaModel = this.compileService(serviceMethodLang, listEntityMetaModel, tableObjects);
+          listServiceMethodsMetaModel.add(serviceMethodMetaModel);
         }
       }
       _xblockexpression = listServiceMethodsMetaModel;
@@ -63,29 +67,29 @@ public class ServiceConverter {
     return _xblockexpression;
   }
   
-  public InternalServiceMethod compileService(final String methodAcessLang, final LinkedHashSet<Entity> listEntityMetaModel) {
-    InternalServiceMethod _xblockexpression = null;
+  public model.domainLayer.ServiceMethod compileService(final ServiceMethod serviceMethodLang, final LinkedHashSet<Entity> listEntityMetaModel, final TableObjects tableObjects) {
+    model.domainLayer.ServiceMethod _xblockexpression = null;
     {
-      String[] splitMethodAcessLang = methodAcessLang.split("\\.");
-      InternalServiceMethod serviceMethodMetaModel = new InternalServiceMethod();
-      String _get = splitMethodAcessLang[0];
-      Entity _inMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, _get);
-      serviceMethodMetaModel.setEntity(_inMetaModel);
-      Entity _entity = serviceMethodMetaModel.getEntity();
-      Repository _repository = _entity.getRepository();
-      LinkedHashSet<Method> _methods = _repository.getMethods();
-      String _get_1 = splitMethodAcessLang[2];
-      Method repositoryMethod = this.findRepositoryMethod.inRepository(_methods, _get_1);
-      serviceMethodMetaModel.setMethod(repositoryMethod);
+      model.domainLayer.ServiceMethod serviceMethodMetaModel = new model.domainLayer.ServiceMethod();
+      String _name = serviceMethodLang.getName();
+      serviceMethodMetaModel.setName(_name);
+      Set<Entity> _entities = tableObjects.getEntities();
+      RepositoryFields _methodAcess = serviceMethodLang.getMethodAcess();
+      Method _inMetaModel = this.findService.inMetaModel(_entities, _methodAcess);
+      serviceMethodMetaModel.setMethodService(_inMetaModel);
       _xblockexpression = serviceMethodMetaModel;
     }
     return _xblockexpression;
   }
   
-  public ServiceConverter() {
+  public ServiceConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
     FindEntity _findEntity = new FindEntity();
     this.findEntity = _findEntity;
     FindRepositoryMethod _findRepositoryMethod = new FindRepositoryMethod();
     this.findRepositoryMethod = _findRepositoryMethod;
+    FindService _findService = new FindService();
+    this.findService = _findService;
+    this.projectLang = projectLang;
+    this.projectMetaModel = projectMetaModel;
   }
 }

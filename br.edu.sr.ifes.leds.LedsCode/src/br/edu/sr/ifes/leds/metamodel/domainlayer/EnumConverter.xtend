@@ -5,8 +5,13 @@ import java.util.LinkedHashSet
 import model.domainLayer.ClassEnum
 import org.eclipse.emf.common.util.EList
 import model.mainLayer.TableObjects
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 class EnumConverter {
+	
+	Project projectLang
+	
+	model.mainLayer.Project projectMetaModel
 	
 	def convert(EList<EnumBlock> listEnumLang, TableObjects tableObjects) {
 		var listEnumMetaModel = new LinkedHashSet<ClassEnum>
@@ -21,4 +26,9 @@ class EnumConverter {
 		listEnumMetaModel
 	}
 	
+	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+	
+		this.projectLang = projectLang
+		this.projectMetaModel = projectMetaModel
+	}
 }

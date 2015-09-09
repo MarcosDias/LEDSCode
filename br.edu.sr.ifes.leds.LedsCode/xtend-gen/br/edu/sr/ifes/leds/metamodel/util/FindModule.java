@@ -1,11 +1,20 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
-import java.util.LinkedHashSet;
+import br.edu.sr.ifes.leds.metamodel.util.FindDomain;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import model.domainLayer.Domain;
 import model.domainLayer.Module;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class FindModule {
-  public Module inMetaModel(final LinkedHashSet<Module> modules, final String nameModule) {
+  private FindDomain findDomain;
+  
+  public Module inMetaModel(final Set<Module> modules, final String nameModule) {
     Object _xblockexpression = null;
     {
       for (final Module mod : modules) {
@@ -18,5 +27,32 @@ public class FindModule {
       _xblockexpression = null;
     }
     return ((Module)_xblockexpression);
+  }
+  
+  public void findInverseFullPathModule(final Module module, final List<String> incompleteNameEntity, final String full) {
+    try {
+      String _name = module.getName();
+      String _get = incompleteNameEntity.get(0);
+      boolean _equals = _name.equals(_get);
+      boolean _not = (!_equals);
+      if (_not) {
+        throw new Exception(("Could not find the entity " + full));
+      }
+      int _size = incompleteNameEntity.size();
+      boolean _greaterThan = (_size > 1);
+      if (_greaterThan) {
+        Domain _parent = module.getParent();
+        Iterable<String> _tail = IterableExtensions.<String>tail(incompleteNameEntity);
+        List<String> _asList = Arrays.<String>asList(((String[])Conversions.unwrapArray(_tail, String.class)));
+        this.findDomain.findInverseFullPathDomain(_parent, _asList, full);
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public FindModule() {
+    FindDomain _findDomain = new FindDomain();
+    this.findDomain = _findDomain;
   }
 }

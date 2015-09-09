@@ -71,7 +71,7 @@ public class ApplicationTest extends AbstractTestClass {
   public void testQtdApplicationDomain() {
     LinkedHashSet<SpecificApplicationDomain> _structure = this.singleAppMetalModel.getStructure();
     int _size = _structure.size();
-    Assert.assertEquals(2, _size);
+    Assert.assertEquals(1, _size);
   }
   
   @Test
@@ -89,6 +89,6 @@ public class ApplicationTest extends AbstractTestClass {
     LinkedHashSet<SpecificApplicationDomain> _structure_1 = this.singleAppMetalModel.getStructure();
     SpecificApplicationDomain _get_2 = ((SpecificApplicationDomain[])Conversions.unwrapArray(_structure_1, SpecificApplicationDomain.class))[0];
     SpecificApplicationModule _son = _get_2.getSon();
-    Assert.assertNotNull(_son);
+    Assert.assertNull(_son);
   }
 }

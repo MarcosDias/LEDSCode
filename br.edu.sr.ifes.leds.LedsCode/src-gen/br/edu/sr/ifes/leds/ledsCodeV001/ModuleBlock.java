@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock <em>Service Block</em>}</li>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEntityBlock <em>Entity Block</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEnumBlock <em>Enum Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getEntityBlock <em>Entity Block</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock#getServiceBlock <em>Service Block</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,20 +54,20 @@ public interface ModuleBlock extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Service Block</b></em>' containment reference list.
-   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock}.
+   * Returns the value of the '<em><b>Enum Block</b></em>' containment reference list.
+   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Service Block</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Enum Block</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Service Block</em>' containment reference list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_ServiceBlock()
+   * @return the value of the '<em>Enum Block</em>' containment reference list.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_EnumBlock()
    * @model containment="true"
    * @generated
    */
-  EList<ServiceBlock> getServiceBlock();
+  EList<EnumBlock> getEnumBlock();
 
   /**
    * Returns the value of the '<em><b>Entity Block</b></em>' containment reference list.
@@ -86,19 +86,19 @@ public interface ModuleBlock extends EObject
   EList<EntityBlock> getEntityBlock();
 
   /**
-   * Returns the value of the '<em><b>Enum Block</b></em>' containment reference list.
-   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock}.
+   * Returns the value of the '<em><b>Service Block</b></em>' containment reference list.
+   * The list contents are of type {@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Enum Block</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Service Block</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Enum Block</em>' containment reference list.
-   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_EnumBlock()
+   * @return the value of the '<em>Service Block</em>' containment reference list.
+   * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getModuleBlock_ServiceBlock()
    * @model containment="true"
    * @generated
    */
-  EList<EnumBlock> getEnumBlock();
+  EList<ServiceBlock> getServiceBlock();
 
 } // ModuleBlock

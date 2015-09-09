@@ -24,7 +24,7 @@ public class InterfaceTest extends AbstractTestClass {
   @Test
   public void testInterfaceName() {
     String _name = this.iface.getName();
-    Assert.assertEquals("InterfaceLibrary", _name);
+    Assert.assertEquals("ifaceSincap", _name);
   }
   
   @Test
@@ -41,8 +41,8 @@ public class InterfaceTest extends AbstractTestClass {
     String _type = ifaceField.getType();
     Assert.assertEquals("HtmlView", _type);
     String _name = ifaceField.getName();
-    Assert.assertEquals("Interface1", _name);
+    Assert.assertEquals("interfaceWeb", _name);
     String _nameApp = ifaceField.getNameApp();
-    Assert.assertEquals("LibraryPersonApp", _nameApp);
+    Assert.assertEquals("appSincap", _nameApp);
   }
 }

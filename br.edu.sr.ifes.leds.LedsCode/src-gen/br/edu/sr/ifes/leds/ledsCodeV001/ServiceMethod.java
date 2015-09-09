@@ -50,29 +50,29 @@ public interface ServiceMethod extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Method Acess</b></em>' attribute.
+   * Returns the value of the '<em><b>Method Acess</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Method Acess</em>' attribute isn't clear,
+   * If the meaning of the '<em>Method Acess</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Method Acess</em>' attribute.
-   * @see #setMethodAcess(String)
+   * @return the value of the '<em>Method Acess</em>' reference.
+   * @see #setMethodAcess(RepositoryFields)
    * @see br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package#getServiceMethod_MethodAcess()
    * @model
    * @generated
    */
-  String getMethodAcess();
+  RepositoryFields getMethodAcess();
 
   /**
-   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess <em>Method Acess</em>}' attribute.
+   * Sets the value of the '{@link br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod#getMethodAcess <em>Method Acess</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Method Acess</em>' attribute.
+   * @param value the new value of the '<em>Method Acess</em>' reference.
    * @see #getMethodAcess()
    * @generated
    */
-  void setMethodAcess(String value);
+  void setMethodAcess(RepositoryFields value);
 
 } // ServiceMethod

@@ -6,13 +6,10 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 public class ApplicationFactory {
   public static CharSequence applicationBlock() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("application LibraryPersonApp{");
+    _builder.append("application appSincap{");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("composedBy Domain1.Module.*");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("composedBy Domain2.*");
+    _builder.append("composedBy domSincap.*");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

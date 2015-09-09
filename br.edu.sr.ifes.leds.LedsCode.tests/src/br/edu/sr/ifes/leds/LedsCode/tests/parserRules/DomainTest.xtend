@@ -5,6 +5,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.Attribute
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
@@ -14,16 +15,18 @@ import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 
 class DomainTest extends AbstractTestClass{
 	
 	EList<DomainBlock> domain
 	DomainBlock singleDom
 	ModuleBlock singleModule
+	ModuleBlock otherModule
 	ServiceBlock singleService
 	ServiceMethod fieldSingleService
+	ServiceMethod otherSingleService
 	EntityBlock singleEntity
+	EntityBlock otherSingleEntity
 	Attribute singleAttr
 	Repository repository	
 	RepositoryFields fieldRepository	
@@ -35,43 +38,46 @@ class DomainTest extends AbstractTestClass{
 		domain = projectLang.domainBlock
 		singleDom = domain.get(0)
 		singleModule = singleDom.module.get(0)
+		otherModule = singleDom.module.get(1)
 		singleService = singleModule.serviceBlock.get(0)
 		fieldSingleService = singleService.serviceFields.get(0)
+		otherSingleService = singleService.serviceFields.get(1)
 		singleEntity = singleModule.entityBlock.get(0)
-		singleAttr = singleEntity.attributes.get(0)
-		repository = singleEntity.repository
+		otherSingleEntity = singleModule.entityBlock.get(1)
+		singleAttr = otherSingleEntity.attributes.get(0)
+		repository = otherSingleEntity.repository
 		fieldRepository = repository.methods.get(0)
-		singleEnum = singleModule.enumBlock.get(0)
+		singleEnum = otherModule.enumBlock.get(0)
 	}
 	
 	@Test
 	def testQtdDomain(){
-		assertEquals(2, domain.size)
+		assertEquals(1, domain.size)
 	}
 	
   	@Test
   	def testDomainName(){	
-		assertEquals("Domain1", singleDom.name)
+		assertEquals("domSincap", singleDom.name)
   	}
   	
   	@Test
   	def testQtdModule(){
-  		assertEquals(1, singleDom.module.size)
+  		assertEquals(2, singleDom.module.size)
   	}
   	
   	@Test
   	def testModuleName(){
-  		assertEquals("Module", singleModule.name)
+  		assertEquals("controleInterno", singleModule.name)
   	}
   	
   	@Test
   	def testQtdServices(){
-  		assertEquals(2, singleModule.serviceBlock.size)
+  		assertEquals(1, singleModule.serviceBlock.size)
   	}
   	
   	@Test
   	def testServiceName(){
-  		assertEquals("LibraryService", singleService.name)
+  		assertEquals("aplProcessoNotificacao", singleService.name)
   	}
   	
   	@Test
@@ -81,109 +87,127 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testNameServiceField(){
-		assertEquals("findLibraryByName", fieldSingleService.name)
-		assertEquals("Media.MediaRepository.findMediaByCharacter", fieldSingleService.methodAcess)
+  		var superRepository = fieldSingleService.methodAcess.eContainer as Repository
+  		var superEntity = superRepository.eContainer as EntityBlock
+		assertEquals("FindByName", fieldSingleService.name)
+		assertTrue("Funcionario.funcionarioRepository.findByName".contains(fieldSingleService.methodAcess.name))
+		assertTrue("Funcionario.funcionarioRepository.findByName".contains(superRepository.name))
+		assertTrue("Funcionario.funcionarioRepository.findByName".contains(superEntity.name))
+  	}
+  	
+  	@Test
+  	def testOtherNameServiceField(){
+  		var superRepository = otherSingleService.methodAcess.eContainer as Repository
+  		var superEntity = superRepository.eContainer as EntityBlock
+  		var superModule = superEntity.eContainer as ModuleBlock
+		assertEquals("FindNotificadorProcessoNotificacao", otherSingleService.name)
+		assertTrue("controleNotificacao.ProcessoNotificacao.processoNotificacaoRepository.findByNotificadorName".contains(otherSingleService.methodAcess.name))
+		assertTrue("controleNotificacao.ProcessoNotificacao.processoNotificacaoRepository.findByNotificadorName".contains(superRepository.name))
+		assertTrue("controleNotificacao.ProcessoNotificacao.processoNotificacaoRepository.findByNotificadorName".contains(superEntity.name))
+		assertTrue("controleNotificacao.ProcessoNotificacao.processoNotificacaoRepository.findByNotificadorName".contains(superModule.name))
   	}
   	
   	@Test
   	def testQtdEntity(){
-  		assertEquals(4, singleModule.entityBlock.size)
+  		assertEquals(10, singleModule.entityBlock.size)
   	}
   	
-  	@Test
+	@Test
   	def testAssinaturaEntity(){
-  		assertEquals("Media", singleEntity.name)
+  		assertEquals("Pessoa", singleEntity.name)
   		assertTrue(singleEntity.isIsAbstract)
   		assertNull(singleEntity.acessModifier)
   	}
   	
   	@Test
   	def testQtdInheritanceClass(){
-  		assertEquals(2, singleEntity.classExtends.values.size)
+  		assertEquals(1, otherSingleEntity.classExtends.values.size)
   	}
   	
   	@Test
   	def testInheritanceClass(){
-  		for(superClass : singleEntity.classExtends.values){
-  			assertTrue(superClass.contains("SuperClass"))
-  		}
+		var superClass = otherSingleEntity.classExtends.values
+		assertEquals("Pessoa", superClass.get(0).name)
   	}
   	
   	@Test
   	def testQtdAttributes(){
-  		assertEquals(3, singleEntity.attributes.size)
+  		assertEquals(5, otherSingleEntity.attributes.size)
   	}
   	
   	@Test
   	def testAttributes(){
 		assertTrue("private -".contains(singleAttr.acessModifier))
 		assertEquals("String", singleAttr.type)
-		assertEquals("titleb", singleAttr.name)
+		assertEquals("cpf", singleAttr.name)
   	}
   	
 
   	@Test
   	def testConstraintsFirtsAttr(){
-  		// entity Media
-  	  	var first = singleEntity.attributes.get(0)
+  		// entity Funcionario
+  	  	var first = otherSingleEntity.attributes.get(0)
   	  	assertTrue(first.pk)
-  	  	assertEquals(50, first.max)
+  	  	assertEquals(15, first.max)
+  	  	assertEquals(15, first.min)
   	}
   	
   	@Test
   	def testConstraintsSecundAttr(){
-  		// entity Media
-  	  	var secund = singleEntity.attributes.get(1)
-  	  	assertEquals('false', secund.nullable)
+  		// entity Funcionario
+  	  	var secund = otherSingleEntity.attributes.get(1)
+  	  	assertEquals(11, secund.max)
+  	  	
   	}
   	
   	@Test
   	def testcConstraintsThirdAttr(){
-  		// entity Media
-  	  	var third = singleEntity.attributes.get(2)
+  		// entity Funcionario
+  	  	var third = otherSingleEntity.attributes.get(2)
   	  	assertEquals('true', third.unique)
-  	  	assertEquals(10, third.min)
-  	  	assertEquals(25, third.max)    	  	
+  	  	assertEquals('true', third.nullable)
+  	  	
   	}
   	
   	@Test
   	def testRepositoryEntityName(){
-  		assertEquals("MediaRepository", repository.name)
+  		assertEquals("funcionarioRepository", repository.name)
   	}
   	
   	@Test
   	def testQtdRepositoryFields(){
-  		assertEquals(2, repository.methods.size)
+  		assertEquals(1, repository.methods.size)
   	}
   	
   	@Test
   	def testRepositoryFields(){
   		val methodParameter = fieldRepository.methodsParameters.typeAndAttr.get(0)
   		
-  		assertEquals("findMediaByCharacter", fieldRepository.nameMethod)
-  		assertEquals("List<Media>", fieldRepository.returnType)
+  		assertEquals("findByName", fieldRepository.name)
+  		assertEquals("Funcionario", fieldRepository.returnType)
   		assertEquals("String", methodParameter.type)
-  		assertEquals("characterName", methodParameter.name)
+  		assertEquals("name", methodParameter.name)
   	}
   	
   	@Test
   	def testQtdEnums(){
-  		assertEquals(2, singleModule.enumBlock.size)
+  		assertEquals(0, singleModule.enumBlock.size)
+  		assertEquals(2, otherModule.enumBlock.size)
   	}
   	
   	@Test
   	def testEnumName(){
-  		assertEquals("Gender", singleEnum.name)
+  		assertEquals("EstadoCivil", singleEnum.name)
   	}
   	
   	@Test
   	def testQtdValuesEnums(){
-  		assertEquals(2, singleEnum.values.size)
+  		assertEquals(3, singleEnum.values.size)
   	}
   	
   	@Test
   	def testValuesEnum(){
   		val valueEnum = singleEnum.values.get(0)
-		assertEquals("FEMALE", valueEnum)  		
+		assertEquals("Casado", valueEnum)  		
   	}
-}
+}	

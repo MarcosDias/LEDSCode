@@ -1,6 +1,7 @@
 package br.edu.sr.ifes.leds.metamodel.domainlayer;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import model.domainLayer.ClassEnum;
@@ -9,6 +10,10 @@ import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class EnumConverter {
+  private Project projectLang;
+  
+  private model.mainLayer.Project projectMetaModel;
+  
   public LinkedHashSet<ClassEnum> convert(final EList<EnumBlock> listEnumLang, final TableObjects tableObjects) {
     LinkedHashSet<ClassEnum> _xblockexpression = null;
     {
@@ -29,5 +34,10 @@ public class EnumConverter {
       _xblockexpression = listEnumMetaModel;
     }
     return _xblockexpression;
+  }
+  
+  public EnumConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+    this.projectLang = projectLang;
+    this.projectMetaModel = projectMetaModel;
   }
 }

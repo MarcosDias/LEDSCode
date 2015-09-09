@@ -1065,17 +1065,17 @@ ruleModuleBlock returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModuleBlockAccess().getServiceBlockServiceBlockParserRuleCall_3_0_0()); 
+	        newCompositeNode(grammarAccess.getModuleBlockAccess().getEnumBlockEnumBlockParserRuleCall_3_0_0()); 
 	    }
-		lv_serviceBlock_3_0=ruleServiceBlock		{
+		lv_enumBlock_3_0=ruleEnumBlock		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModuleBlockRule());
 	        }
        		add(
        			$current, 
-       			"serviceBlock",
-        		lv_serviceBlock_3_0, 
-        		"ServiceBlock");
+       			"enumBlock",
+        		lv_enumBlock_3_0, 
+        		"EnumBlock");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1103,17 +1103,17 @@ ruleModuleBlock returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getModuleBlockAccess().getEnumBlockEnumBlockParserRuleCall_3_2_0()); 
+	        newCompositeNode(grammarAccess.getModuleBlockAccess().getServiceBlockServiceBlockParserRuleCall_3_2_0()); 
 	    }
-		lv_enumBlock_5_0=ruleEnumBlock		{
+		lv_serviceBlock_5_0=ruleServiceBlock		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getModuleBlockRule());
 	        }
        		add(
        			$current, 
-       			"enumBlock",
-        		lv_enumBlock_5_0, 
-        		"EnumBlock");
+       			"serviceBlock",
+        		lv_serviceBlock_5_0, 
+        		"ServiceBlock");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1236,18 +1236,15 @@ ruleServiceMethod returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getServiceMethodAccess().getMethodAcessCompoundNameParserRuleCall_2_0()); 
-	    }
-		lv_methodAcess_2_0=ruleCompoundName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getServiceMethodRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getServiceMethodRule());
 	        }
-       		set(
-       			$current, 
-       			"methodAcess",
-        		lv_methodAcess_2_0, 
-        		"CompoundName");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getServiceMethodAccess().getMethodAcessRepositoryFieldsCrossReference_2_0()); 
+	    }
+		ruleCompoundName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1749,9 +1746,9 @@ ruleRepositoryFields returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_nameMethod_0_0=RULE_ID
+		lv_name_0_0=RULE_ID
 		{
-			newLeafNode(lv_nameMethod_0_0, grammarAccess.getRepositoryFieldsAccess().getNameMethodIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getRepositoryFieldsAccess().getNameIDTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1759,8 +1756,8 @@ ruleRepositoryFields returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"nameMethod",
-        		lv_nameMethod_0_0, 
+       			"name",
+        		lv_name_0_0, 
         		"ID");
 	    }
 
@@ -2200,18 +2197,15 @@ ruleExtend
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesCompoundNameParserRuleCall_1_0()); 
-	    }
-		lv_values_1_0=ruleCompoundName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExtendBlockRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExtendBlockRule());
 	        }
-       		add(
-       			$current, 
-       			"values",
-        		lv_values_1_0, 
-        		"CompoundName");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesEntityBlockCrossReference_1_0()); 
+	    }
+		ruleCompoundName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2222,18 +2216,15 @@ ruleExtend
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesCompoundNameParserRuleCall_2_1_0()); 
-	    }
-		lv_values_3_0=ruleCompoundName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExtendBlockRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExtendBlockRule());
 	        }
-       		add(
-       			$current, 
-       			"values",
-        		lv_values_3_0, 
-        		"CompoundName");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getExtendBlockAccess().getValuesEntityBlockCrossReference_2_1_0()); 
+	    }
+		ruleCompoundName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2444,20 +2435,13 @@ rulePrivate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-	kw='-' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getPrivateAccess().getHyphenMinusKeyword_0()); 
-    }
 
-    |
 	kw='private' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getPrivateAccess().getPrivateKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getPrivateAccess().getPrivateKeyword()); 
     }
-)
+
     ;
 
 
@@ -2478,20 +2462,13 @@ ruleProtected returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-	kw='#' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getProtectedAccess().getNumberSignKeyword_0()); 
-    }
 
-    |
 	kw='protected' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getProtectedAccess().getProtectedKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getProtectedAccess().getProtectedKeyword()); 
     }
-)
+
     ;
 
 

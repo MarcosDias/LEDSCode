@@ -4,6 +4,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter;
@@ -25,6 +26,10 @@ public class DomainConverter {
   private EntityConverter entityConverter;
   
   private ServiceConverter serviceConverter;
+  
+  private Project projectLang;
+  
+  private model.mainLayer.Project projectMetaModel;
   
   /**
    * Metodo que converte uma lista de objetos de dominio provenientes de uma linguagem
@@ -74,12 +79,12 @@ public class DomainConverter {
           moduleMetaModel.setParent(domainMetaModel);
           String _name = moduleLang.getName();
           moduleMetaModel.setName(_name);
-          EList<EntityBlock> _entityBlock = moduleLang.getEntityBlock();
-          LinkedHashSet<Entity> _convert = this.entityConverter.convert(_entityBlock, moduleMetaModel, tableObjects);
-          moduleMetaModel.setEntities(_convert);
           EList<EnumBlock> _enumBlock = moduleLang.getEnumBlock();
-          LinkedHashSet<ClassEnum> _convert_1 = this.enumConverter.convert(_enumBlock, tableObjects);
-          moduleMetaModel.setEnums(_convert_1);
+          LinkedHashSet<ClassEnum> _convert = this.enumConverter.convert(_enumBlock, tableObjects);
+          moduleMetaModel.setEnums(_convert);
+          EList<EntityBlock> _entityBlock = moduleLang.getEntityBlock();
+          LinkedHashSet<Entity> _convert_1 = this.entityConverter.convert(_entityBlock, moduleMetaModel, tableObjects);
+          moduleMetaModel.setEntities(_convert_1);
           EList<ServiceBlock> _serviceBlock = moduleLang.getServiceBlock();
           LinkedHashSet<Service> _convert_2 = this.serviceConverter.convert(_serviceBlock, moduleMetaModel, tableObjects);
           moduleMetaModel.setServices(_convert_2);
@@ -93,12 +98,14 @@ public class DomainConverter {
     return _xblockexpression;
   }
   
-  public DomainConverter() {
-    EntityConverter _entityConverter = new EntityConverter();
+  public DomainConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+    EntityConverter _entityConverter = new EntityConverter(projectLang, projectMetaModel);
     this.entityConverter = _entityConverter;
-    EnumConverter _enumConverter = new EnumConverter();
+    EnumConverter _enumConverter = new EnumConverter(projectLang, projectMetaModel);
     this.enumConverter = _enumConverter;
-    ServiceConverter _serviceConverter = new ServiceConverter();
+    ServiceConverter _serviceConverter = new ServiceConverter(projectLang, projectMetaModel);
     this.serviceConverter = _serviceConverter;
+    this.projectLang = projectLang;
+    this.projectMetaModel = projectMetaModel;
   }
 }

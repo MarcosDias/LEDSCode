@@ -648,7 +648,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModuleBlock_ServiceBlock()
+  public EReference getModuleBlock_EnumBlock()
   {
     return (EReference)moduleBlockEClass.getEStructuralFeatures().get(1);
   }
@@ -668,7 +668,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModuleBlock_EnumBlock()
+  public EReference getModuleBlock_ServiceBlock()
   {
     return (EReference)moduleBlockEClass.getEStructuralFeatures().get(3);
   }
@@ -728,9 +728,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getServiceMethod_MethodAcess()
+  public EReference getServiceMethod_MethodAcess()
   {
-    return (EAttribute)serviceMethodEClass.getEStructuralFeatures().get(1);
+    return (EReference)serviceMethodEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -938,7 +938,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRepositoryFields_NameMethod()
+  public EAttribute getRepositoryFields_Name()
   {
     return (EAttribute)repositoryFieldsEClass.getEStructuralFeatures().get(0);
   }
@@ -1058,9 +1058,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExtendBlock_Values()
+  public EReference getExtendBlock_Values()
   {
-    return (EAttribute)extendBlockEClass.getEStructuralFeatures().get(0);
+    return (EReference)extendBlockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1142,9 +1142,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     moduleBlockEClass = createEClass(MODULE_BLOCK);
     createEAttribute(moduleBlockEClass, MODULE_BLOCK__NAME);
-    createEReference(moduleBlockEClass, MODULE_BLOCK__SERVICE_BLOCK);
-    createEReference(moduleBlockEClass, MODULE_BLOCK__ENTITY_BLOCK);
     createEReference(moduleBlockEClass, MODULE_BLOCK__ENUM_BLOCK);
+    createEReference(moduleBlockEClass, MODULE_BLOCK__ENTITY_BLOCK);
+    createEReference(moduleBlockEClass, MODULE_BLOCK__SERVICE_BLOCK);
 
     serviceBlockEClass = createEClass(SERVICE_BLOCK);
     createEAttribute(serviceBlockEClass, SERVICE_BLOCK__NAME);
@@ -1152,7 +1152,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     serviceMethodEClass = createEClass(SERVICE_METHOD);
     createEAttribute(serviceMethodEClass, SERVICE_METHOD__NAME);
-    createEAttribute(serviceMethodEClass, SERVICE_METHOD__METHOD_ACESS);
+    createEReference(serviceMethodEClass, SERVICE_METHOD__METHOD_ACESS);
 
     entityBlockEClass = createEClass(ENTITY_BLOCK);
     createEAttribute(entityBlockEClass, ENTITY_BLOCK__ACESS_MODIFIER);
@@ -1177,7 +1177,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEReference(repositoryEClass, REPOSITORY__METHODS);
 
     repositoryFieldsEClass = createEClass(REPOSITORY_FIELDS);
-    createEAttribute(repositoryFieldsEClass, REPOSITORY_FIELDS__NAME_METHOD);
+    createEAttribute(repositoryFieldsEClass, REPOSITORY_FIELDS__NAME);
     createEReference(repositoryFieldsEClass, REPOSITORY_FIELDS__METHODS_PARAMETERS);
     createEAttribute(repositoryFieldsEClass, REPOSITORY_FIELDS__RETURN_TYPE);
 
@@ -1193,7 +1193,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     createEAttribute(typeAndAttributeEClass, TYPE_AND_ATTRIBUTE__NAME);
 
     extendBlockEClass = createEClass(EXTEND_BLOCK);
-    createEAttribute(extendBlockEClass, EXTEND_BLOCK__VALUES);
+    createEReference(extendBlockEClass, EXTEND_BLOCK__VALUES);
   }
 
   /**
@@ -1276,9 +1276,9 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     initEClass(moduleBlockEClass, ModuleBlock.class, "ModuleBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModuleBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModuleBlock_ServiceBlock(), this.getServiceBlock(), null, "serviceBlock", null, 0, -1, ModuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModuleBlock_EntityBlock(), this.getEntityBlock(), null, "entityBlock", null, 0, -1, ModuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModuleBlock_EnumBlock(), this.getEnumBlock(), null, "enumBlock", null, 0, -1, ModuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModuleBlock_EntityBlock(), this.getEntityBlock(), null, "entityBlock", null, 0, -1, ModuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModuleBlock_ServiceBlock(), this.getServiceBlock(), null, "serviceBlock", null, 0, -1, ModuleBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(serviceBlockEClass, ServiceBlock.class, "ServiceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getServiceBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1286,7 +1286,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
 
     initEClass(serviceMethodEClass, ServiceMethod.class, "ServiceMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getServiceMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getServiceMethod_MethodAcess(), ecorePackage.getEString(), "methodAcess", null, 0, 1, ServiceMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getServiceMethod_MethodAcess(), this.getRepositoryFields(), null, "methodAcess", null, 0, 1, ServiceMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityBlockEClass, EntityBlock.class, "EntityBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntityBlock_AcessModifier(), ecorePackage.getEString(), "acessModifier", null, 0, 1, EntityBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1311,7 +1311,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEReference(getRepository_Methods(), this.getRepositoryFields(), null, "methods", null, 0, -1, Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(repositoryFieldsEClass, RepositoryFields.class, "RepositoryFields", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRepositoryFields_NameMethod(), ecorePackage.getEString(), "nameMethod", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRepositoryFields_Name(), ecorePackage.getEString(), "name", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRepositoryFields_MethodsParameters(), this.getMethodParameter(), null, "methodsParameters", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRepositoryFields_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, RepositoryFields.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1327,7 +1327,7 @@ public class LedsCodeV001PackageImpl extends EPackageImpl implements LedsCodeV00
     initEAttribute(getTypeAndAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeAndAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(extendBlockEClass, ExtendBlock.class, "ExtendBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExtendBlock_Values(), ecorePackage.getEString(), "values", null, 0, -1, ExtendBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExtendBlock_Values(), this.getEntityBlock(), null, "values", null, 0, -1, ExtendBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

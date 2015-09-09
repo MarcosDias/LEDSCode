@@ -1,6 +1,7 @@
 package br.edu.sr.ifes.leds.metamodel;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindDomain;
 import br.edu.sr.ifes.leds.metamodel.util.FindModule;
 import java.util.ArrayList;
@@ -16,6 +17,10 @@ import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class AppConverter {
+  private Project projectLang;
+  
+  private model.mainLayer.Project projectMetaModel;
+  
   public LinkedHashSet<Application> conveter(final EList<ApplicationBlock> listAppLang, final LinkedHashSet<Domain> listDomainMetaModel) {
     LinkedHashSet<Application> _xblockexpression = null;
     {
@@ -47,23 +52,6 @@ public class AppConverter {
           ArrayList<String> _arrayList = new ArrayList<String>(_asList);
           SpecificApplicationDomain singleStrutureMetaModel = this.convertSpecificationDomainApp(_arrayList, listDomainsMetaModel);
           listAppStructureMetaModel.add(singleStrutureMetaModel);
-        }
-      }
-      _xblockexpression = listAppStructureMetaModel;
-    }
-    return _xblockexpression;
-  }
-  
-  public LinkedHashSet<SpecificApplicationDomain> convertStructureAppasdasdasd(final EList<String> listAppDomainLang, final LinkedHashSet<Domain> listDomainsMetaModel) {
-    LinkedHashSet<SpecificApplicationDomain> _xblockexpression = null;
-    {
-      LinkedHashSet<SpecificApplicationDomain> listAppStructureMetaModel = new LinkedHashSet<SpecificApplicationDomain>();
-      for (final String appDomainLang : listAppDomainLang) {
-        {
-          String[] strutureAppLang = appDomainLang.split(".");
-          List<String> _asList = Arrays.<String>asList(strutureAppLang);
-          SpecificApplicationDomain structureApp = this.convertSpecificationDomainApp(_asList, listDomainsMetaModel);
-          listAppStructureMetaModel.add(structureApp);
         }
       }
       _xblockexpression = listAppStructureMetaModel;
@@ -105,5 +93,10 @@ public class AppConverter {
       _xblockexpression = strutureModuleAppMetaModel;
     }
     return _xblockexpression;
+  }
+  
+  public AppConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+    this.projectLang = projectLang;
+    this.projectMetaModel = projectMetaModel;
   }
 }

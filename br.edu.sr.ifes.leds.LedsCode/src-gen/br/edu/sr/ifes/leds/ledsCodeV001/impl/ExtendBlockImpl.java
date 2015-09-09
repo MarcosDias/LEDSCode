@@ -2,6 +2,7 @@
  */
 package br.edu.sr.ifes.leds.ledsCodeV001.impl;
 
+import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ExtendBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.LedsCodeV001Package;
 
@@ -13,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,14 +32,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ExtendBlockImpl extends MinimalEObjectImpl.Container implements ExtendBlock
 {
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValues()
    * @generated
    * @ordered
    */
-  protected EList<String> values;
+  protected EList<EntityBlock> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,11 +67,11 @@ public class ExtendBlockImpl extends MinimalEObjectImpl.Container implements Ext
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getValues()
+  public EList<EntityBlock> getValues()
   {
     if (values == null)
     {
-      values = new EDataTypeEList<String>(String.class, this, LedsCodeV001Package.EXTEND_BLOCK__VALUES);
+      values = new EObjectResolvingEList<EntityBlock>(EntityBlock.class, this, LedsCodeV001Package.EXTEND_BLOCK__VALUES);
     }
     return values;
   }
@@ -104,7 +105,7 @@ public class ExtendBlockImpl extends MinimalEObjectImpl.Container implements Ext
     {
       case LedsCodeV001Package.EXTEND_BLOCK__VALUES:
         getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+        getValues().addAll((Collection<? extends EntityBlock>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,23 +142,6 @@ public class ExtendBlockImpl extends MinimalEObjectImpl.Container implements Ext
         return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (values: ");
-    result.append(values);
-    result.append(')');
-    return result.toString();
   }
 
 } //ExtendBlockImpl

@@ -12,8 +12,12 @@ import model.applicationLayer.SpecificApplicationModule
 import model.domainLayer.Domain
 import org.eclipse.emf.common.util.EList
 import java.util.ArrayList
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 class AppConverter {
+	
+	Project projectLang
+	model.mainLayer.Project projectMetaModel
 	
 	def conveter(EList<ApplicationBlock> listAppLang, LinkedHashSet<Domain> listDomainMetaModel) {
 		var listAppMetaModel = new LinkedHashSet<Application>
@@ -38,20 +42,6 @@ class AppConverter {
 			
 			listAppStructureMetaModel.add(singleStrutureMetaModel)
 		}
-		
-		listAppStructureMetaModel
-	}
-	
-	def convertStructureAppasdasdasd(EList<String> listAppDomainLang, LinkedHashSet<Domain> listDomainsMetaModel) {
-		var listAppStructureMetaModel = new LinkedHashSet<SpecificApplicationDomain>
-		for(appDomainLang: listAppDomainLang){
-			var strutureAppLang = appDomainLang.split('.')
-			
-			var structureApp = convertSpecificationDomainApp(
-				Arrays.asList(strutureAppLang), listDomainsMetaModel
-			)
-			listAppStructureMetaModel.add(structureApp)
-		} 
 		
 		listAppStructureMetaModel
 	}
@@ -82,4 +72,8 @@ class AppConverter {
 		strutureModuleAppMetaModel
 	}
 	
+	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+		this.projectLang = projectLang
+		this.projectMetaModel = projectMetaModel
+	}
 }

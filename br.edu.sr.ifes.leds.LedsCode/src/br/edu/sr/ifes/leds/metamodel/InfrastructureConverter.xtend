@@ -9,10 +9,13 @@ import model.infrastructureLayer.LanguageFramework
 import model.infrastructureLayer.DatabaseFramework
 import model.infrastructureLayer.DataBase
 import model.infrastructureLayer.Environment
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 class InfrastructureConverter {
 	
 	Infrastructure infraMetaModel
+	Project projectLang
+	model.mainLayer.Project projectMetaModel
 	
 	def convert(InfrastructureBlock infraLang){
 	 	infraMetaModel.basePackage = infraLang.basePackage
@@ -58,7 +61,10 @@ class InfrastructureConverter {
 		langMetaModel
 	}
 	
-	new(){
-		infraMetaModel = new Infrastructure()
+	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+		this.projectLang = projectLang
+		this.projectMetaModel = projectMetaModel
+		this.infraMetaModel = new Infrastructure()	
 	}
+	
 }

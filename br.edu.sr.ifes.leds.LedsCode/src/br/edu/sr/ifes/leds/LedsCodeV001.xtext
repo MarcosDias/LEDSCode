@@ -73,9 +73,9 @@ DomainBlock:
 ModuleBlock:
 	'module' name=ID '{'
 		(
-			serviceBlock+=ServiceBlock|
+			enumBlock+=EnumBlock|
 			entityBlock+=EntityBlock|
-			enumBlock+=EnumBlock
+			serviceBlock+=ServiceBlock
 		)*
 	'}'
 ;
@@ -86,13 +86,13 @@ ServiceBlock:
 	'}'
 ;
 
-ServiceMethod:
-	name=ID '=>' methodAcess=CompoundName
+ServiceMethod: 
+	name=ID '=>' methodAcess=[RepositoryFields|CompoundName]
 ;
 
 EntityBlock:
 	acessModifier=(AccessModifier)? (isAbstract?='abstract')? 'entity' 
-	name=ID classExtends=ExtendBlock? '{'
+	name=ID (classExtends=ExtendBlock)? '{'
 		(attributes+=Attribute)*
 		
 		repository=Repository?
@@ -122,7 +122,7 @@ Repository:
 ;
 
 RepositoryFields:
-	nameMethod=ID '('methodsParameters=MethodParameter?')' ':' returnType=DataType
+	name=ID '('methodsParameters=MethodParameter?')' ':' returnType=DataType
 ;
 
 EnumBlock:
@@ -137,15 +137,14 @@ DataType:
 ;
 MethodParameter: typeAndAttr+=TypeAndAttribute (',' typeAndAttr+=TypeAndAttribute)*;
 TypeAndAttribute: type=DataType name=ID;
-ExtendBlock: Extend values+=CompoundName (',' values+=CompoundName)?;
+ExtendBlock: Extend values+=[EntityBlock|CompoundName] (',' values+=[EntityBlock|CompoundName])?;
 Extend: ':'|'extends'|'ext';
 DataTypeList: 'List''<'DataType'>';
 DataTypeSet: 'Set''<'DataType'>';
 AccessModifier: (Private|Protected);
-Private:'-'|'private';
-Protected:'#'|'protected';
+Private:'private';
+Protected:'protected';
 ImportCompoundName: CompoundName('.*'?);
 CompoundName: ID('.'ID)*;
 BOOLEAN: 'true'|'false';
 INTEGER returns ecore::EIntegerObject: (INT)+;
-//CompoundName2: ((domain=[DomainBlock]'.')?module=[ModuleBlock]'.')?name=[EntityBlock];

@@ -63,12 +63,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModuleBlock">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceBlock" upperBound="-1"
-        eType="#//ServiceBlock" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityBlock" upperBound="-1"
-        eType="#//EntityBlock" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enumBlock" upperBound="-1"
         eType="#//EnumBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityBlock" upperBound="-1"
+        eType="#//EntityBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceBlock" upperBound="-1"
+        eType="#//ServiceBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceBlock">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -77,7 +77,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceMethod">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="methodAcess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodAcess" eType="#//RepositoryFields"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityBlock">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="acessModifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -106,7 +106,7 @@
         eType="#//RepositoryFields" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepositoryFields">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methodsParameters" eType="#//MethodParameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -125,7 +125,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExtendBlock">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" unique="false"
+        upperBound="-1" eType="#//EntityBlock"/>
   </eClassifiers>
 </ecore:EPackage>

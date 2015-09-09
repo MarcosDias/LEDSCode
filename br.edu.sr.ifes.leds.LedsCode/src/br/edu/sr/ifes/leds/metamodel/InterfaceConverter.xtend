@@ -8,10 +8,13 @@ import model.applicationLayer.Application
 import model.interfaceLayer.Interface
 import model.interfaceLayer.Type
 import org.eclipse.emf.common.util.EList
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 class InterfaceConverter {
 	
 	FindApplication findApplication
+	Project projectLang
+	model.mainLayer.Project projectMetaModel
 	
 	def conveter(InterfaceBlock ifaceLang, LinkedHashSet<Application> listAppMetaModel) {
 		var ifaceMetaModel = new Interface
@@ -34,7 +37,10 @@ class InterfaceConverter {
 		listIfaceAppMetaModel
 	}
 	
-	new(){
-		findApplication = new FindApplication
+	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+		this.findApplication = new FindApplication
+		this.projectLang = projectLang
+		this.projectMetaModel = projectMetaModel
 	}
+	
 }

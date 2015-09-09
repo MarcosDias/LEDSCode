@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl#getNameMethod <em>Name Method</em>}</li>
+ *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl#getMethodsParameters <em>Methods Parameters</em>}</li>
  *   <li>{@link br.edu.sr.ifes.leds.ledsCodeV001.impl.RepositoryFieldsImpl#getReturnType <em>Return Type</em>}</li>
  * </ul>
@@ -33,24 +33,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implements RepositoryFields
 {
   /**
-   * The default value of the '{@link #getNameMethod() <em>Name Method</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameMethod()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_METHOD_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNameMethod() <em>Name Method</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameMethod()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String nameMethod = NAME_METHOD_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getMethodsParameters() <em>Methods Parameters</em>}' containment reference.
@@ -108,9 +108,9 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNameMethod()
+  public String getName()
   {
-    return nameMethod;
+    return name;
   }
 
   /**
@@ -118,12 +118,12 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNameMethod(String newNameMethod)
+  public void setName(String newName)
   {
-    String oldNameMethod = nameMethod;
-    nameMethod = newNameMethod;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.REPOSITORY_FIELDS__NAME_METHOD, oldNameMethod, nameMethod));
+      eNotify(new ENotificationImpl(this, Notification.SET, LedsCodeV001Package.REPOSITORY_FIELDS__NAME, oldName, name));
   }
 
   /**
@@ -223,8 +223,8 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME_METHOD:
-        return getNameMethod();
+      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME:
+        return getName();
       case LedsCodeV001Package.REPOSITORY_FIELDS__METHODS_PARAMETERS:
         return getMethodsParameters();
       case LedsCodeV001Package.REPOSITORY_FIELDS__RETURN_TYPE:
@@ -243,8 +243,8 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME_METHOD:
-        setNameMethod((String)newValue);
+      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME:
+        setName((String)newValue);
         return;
       case LedsCodeV001Package.REPOSITORY_FIELDS__METHODS_PARAMETERS:
         setMethodsParameters((MethodParameter)newValue);
@@ -266,8 +266,8 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME_METHOD:
-        setNameMethod(NAME_METHOD_EDEFAULT);
+      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case LedsCodeV001Package.REPOSITORY_FIELDS__METHODS_PARAMETERS:
         setMethodsParameters((MethodParameter)null);
@@ -289,8 +289,8 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME_METHOD:
-        return NAME_METHOD_EDEFAULT == null ? nameMethod != null : !NAME_METHOD_EDEFAULT.equals(nameMethod);
+      case LedsCodeV001Package.REPOSITORY_FIELDS__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LedsCodeV001Package.REPOSITORY_FIELDS__METHODS_PARAMETERS:
         return methodsParameters != null;
       case LedsCodeV001Package.REPOSITORY_FIELDS__RETURN_TYPE:
@@ -310,8 +310,8 @@ public class RepositoryFieldsImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nameMethod: ");
-    result.append(nameMethod);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", returnType: ");
     result.append(returnType);
     result.append(')');

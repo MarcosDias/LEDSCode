@@ -1,34 +1,35 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.metaModel
 
 import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
+import br.edu.sr.ifes.leds.generator.ProjectConverter
+import br.edu.sr.ifes.leds.ledsCodeV001.Attribute
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.Repository
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
+import java.util.Set
+import model.domainLayer.ClassEnum
+import model.domainLayer.Domain
+import model.domainLayer.Entity
+import model.domainLayer.Method
+import model.domainLayer.Module
+import model.domainLayer.Service
 import org.eclipse.emf.common.util.EList
 import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.ledsCodeV001.Attribute
-import br.edu.sr.ifes.leds.generator.ProjectConverter
-import java.util.Set
-import model.domainLayer.Domain
-import model.domainLayer.Entity
-import model.domainLayer.Method
-import model.domainLayer.ClassEnum
-import model.domainLayer.Service
-import model.domainLayer.InternalServiceMethod
-import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 
 class DomainTest extends AbstractTestClass{
 	
 	EList<DomainBlock> domainLang
 	DomainBlock singleDomLang
 	ModuleBlock singleModuleLang
+	ModuleBlock otherSingleModuleLang
 	ServiceBlock singleServiceLang
 	ServiceMethod fieldSingleServiceLang
 	EntityBlock singleEntityLang
@@ -39,14 +40,15 @@ class DomainTest extends AbstractTestClass{
 	
 	Set<Domain> domainMetaModel
 	Domain singleDomMetaModel
-	model.domainLayer.Module singleModuleMetaModel
+	Module singleModuleMetaModel
+	Module othersingleModuleMetaModel
 	Entity singleEntityMetaModel
 	model.domainLayer.Attribute singleAttrMetaModel
 	model.domainLayer.Repository repositoryMetaModel
 	Method fieldRepositoryMetaModel
 	ClassEnum singleEnumMetaModel
 	Service singleServiceMetaModel
-	InternalServiceMethod fieldSingleServiceMetaModel
+	model.domainLayer.ServiceMethod fieldSingleServiceMetaModel
 	
 	@Before
 	def void setUp(){
@@ -54,26 +56,28 @@ class DomainTest extends AbstractTestClass{
 		domainLang = projectLang.domainBlock
 		singleDomLang = domainLang.get(0)
 		singleModuleLang = singleDomLang.module.get(0)
-		singleServiceLang = singleModuleLang.serviceBlock.get(0)
-		fieldSingleServiceLang = singleServiceLang.serviceFields.get(0)
-		singleEntityLang = singleModuleLang.entityBlock.get(0)
+		otherSingleModuleLang = singleDomLang.module.get(1)
+		singleEnumLang = otherSingleModuleLang.enumBlock.get(0)
+		singleEntityLang = singleModuleLang.entityBlock.get(1)
 		singleAttrLang = singleEntityLang.attributes.get(0)
 		repositoryLang = singleEntityLang.repository
 		fieldRepositoryLang = repositoryLang.methods.get(0)
-		singleEnumLang = singleModuleLang.enumBlock.get(0)
+		singleServiceLang = singleModuleLang.serviceBlock.get(0)
+		fieldSingleServiceLang = singleServiceLang.serviceFields.get(0)
 		
 		tableObjects = new ProjectConverter().convert(projectLang);
 		projectMetaModel = tableObjects.project
 		domainMetaModel = projectMetaModel.domains
 		singleDomMetaModel = domainMetaModel.get(0)
 		singleModuleMetaModel = singleDomMetaModel.modules.get(0)
-		singleServiceMetaModel = singleModuleMetaModel.services.get(0)
-		fieldSingleServiceMetaModel = singleServiceMetaModel.methods.get(0) as model.domainLayer.InternalServiceMethod
-		singleEntityMetaModel = singleModuleMetaModel.entities.get(0)
+		othersingleModuleMetaModel = singleDomMetaModel.modules.get(1)
+		singleEnumMetaModel = othersingleModuleMetaModel.enums.get(0)
+		singleEntityMetaModel = singleModuleMetaModel.entities.get(1)
 		singleAttrMetaModel = singleEntityMetaModel.attributes.get(0)
 		repositoryMetaModel = singleEntityMetaModel.repository
 		fieldRepositoryMetaModel = repositoryMetaModel.methods.get(0)
-		singleEnumMetaModel = singleModuleMetaModel.enums.get(0)
+		singleServiceMetaModel = singleModuleMetaModel.services.get(0)
+		fieldSingleServiceMetaModel = singleServiceMetaModel.methods.get(0)
 	}
 	
 	@Test
@@ -107,29 +111,27 @@ class DomainTest extends AbstractTestClass{
   	}
   	
   	@Test
-  	def testQtdServices(){
-  		assertEquals(singleModuleLang.serviceBlock.size, singleModuleMetaModel.services.size)
+  	def testQtdEnums(){
+  		assertEquals(singleModuleLang.enumBlock.size, singleModuleMetaModel.enums.size)
+  		assertEquals(0, singleModuleMetaModel.enums.size)
+  		assertEquals(2, othersingleModuleMetaModel.enums.size)
   	}
   	
   	@Test
-  	def testServiceName(){
-  		assertEquals(singleServiceLang.name, singleServiceMetaModel.name)
+  	def testEnumName(){
+  		assertEquals(singleEnumLang.name, singleEnumMetaModel.name)
   	}
   	
   	@Test
-  	def testServiceParent(){
-  		assertNotNull(singleServiceMetaModel.parent)
+  	def testQtdValuesEnums(){
+  		assertEquals(singleEnumLang.values.size, singleEnumMetaModel.values.size)
   	}
   	
   	@Test
-  	def testQtdServicesFields(){
-  		assertEquals(singleServiceLang.serviceFields.size, singleServiceMetaModel.methods.size)
-  	}
-  	
-  	@Test
-  	def testNameServiceField(){
-		assertEquals(fieldSingleServiceLang.name, fieldSingleServiceMetaModel.name)
-		assertEquals(fieldSingleServiceLang.methodAcess, fieldSingleServiceMetaModel.methodAcess)
+  	def testValuesEnum(){
+  		val valueEnumLang = singleEnumLang.values.get(0)
+  		val valueEnumMetaModel = singleEnumMetaModel.values.get(0)
+		assertEquals(valueEnumLang, valueEnumMetaModel)  		
   	}
   	
   	@Test
@@ -159,7 +161,7 @@ class DomainTest extends AbstractTestClass{
   	@Test
   	def testInheritanceClass(){
   		for(superClass : singleEntityMetaModel.classExtends){
-  			assertTrue(superClass.name.contains("SuperClass"))
+  			assertTrue(superClass.name.contains("Pessoa"))
   		}
   	}
   	
@@ -171,7 +173,7 @@ class DomainTest extends AbstractTestClass{
   	@Test
   	def testAttributes(){
 		assertTrue(singleAttrLang.acessModifier.equalsIgnoreCase(
-				singleAttrMetaModel.accessModifier.toString
+				singleAttrMetaModel.accessModifier.toString()
 			)
 		)
 		assertEquals(singleAttrLang.type.toString, singleAttrMetaModel.genericType)
@@ -180,35 +182,31 @@ class DomainTest extends AbstractTestClass{
   	
   	@Test
   	def testConstraintsFirtsAttr(){
-  		// entity Media
   	  	var firstLang = singleEntityLang.attributes.get(0)
   	  	var firstMetaModel = singleEntityMetaModel.attributes.get(0)
   	  	assertEquals(firstLang.pk, firstMetaModel.constraints.pk)
   	  	assertEquals(firstLang.max, firstMetaModel.constraints.max)
+  	  	assertEquals(firstLang.min, firstMetaModel.constraints.min)
   	  	//and
   	  	assertTrue(firstMetaModel.constraints.pk)
-  	  	assertNull(firstMetaModel.constraints.min)
   	  	assertFalse(firstMetaModel.constraints.nullable)
   	  	assertFalse(firstMetaModel.constraints.unique)
   	}
   	
   	@Test
   	def testConstraintsSecundAttr(){
-  		// entity Media
   	  	var secundLang = singleEntityLang.attributes.get(1)
   	  	var secundMetaModel = singleEntityMetaModel.attributes.get(1)
-  	  	assertEquals(secundLang.nullable, secundMetaModel.constraints.nullable.toString())
+  	  	assertEquals(secundLang.max, secundMetaModel.constraints.max)
   	  	//and
   	  	assertFalse(secundMetaModel.constraints.pk)
   	  	assertNull(secundMetaModel.constraints.min)
-  	  	assertNull(secundMetaModel.constraints.max)
   	  	assertFalse(secundMetaModel.constraints.nullable)
   	  	assertFalse(secundMetaModel.constraints.unique)
   	}
   	
   	@Test
   	def testcConstraintsThirdAttr(){
-  		// entity Media
   	  	var thirdLang = singleEntityLang.attributes.get(2)
   	  	var thirdMetaModel = singleEntityMetaModel.attributes.get(2)
   	  	assertEquals(thirdLang.unique, thirdMetaModel.constraints.unique.toString())
@@ -216,7 +214,7 @@ class DomainTest extends AbstractTestClass{
   	  	assertEquals(thirdLang.max, thirdMetaModel.constraints.max)
   	  	//and
   	  	assertFalse(thirdMetaModel.constraints.pk)
-  	  	assertFalse(thirdMetaModel.constraints.nullable)
+  	  	assertTrue(thirdMetaModel.constraints.nullable)
   	  	assertTrue(thirdMetaModel.constraints.unique)
   	}
   	
@@ -235,31 +233,36 @@ class DomainTest extends AbstractTestClass{
   		val methodParameterLang = fieldRepositoryLang.methodsParameters.typeAndAttr.get(0)
   		val methodParameterMetaModel = fieldRepositoryMetaModel.parameters.get(0)
   		
-  		assertEquals(fieldRepositoryLang.nameMethod, fieldRepositoryMetaModel.name)
+  		assertEquals(fieldRepositoryLang.name, fieldRepositoryMetaModel.name)
+  		assertNotNull(fieldRepositoryMetaModel.parent)
   		assertEquals(fieldRepositoryLang.returnType, fieldRepositoryMetaModel.returnMethod.genericType())
   		assertEquals(methodParameterLang.type, methodParameterMetaModel.genericType)
   		assertEquals(methodParameterLang.name, methodParameterMetaModel.name)
   	}
   	
   	@Test
-  	def testQtdEnums(){
-  		assertEquals(singleModuleLang.enumBlock.size, singleModuleMetaModel.enums.size)
+  	def testQtdServices(){
+  		assertEquals(singleModuleLang.serviceBlock.size, singleModuleMetaModel.services.size)
   	}
   	
   	@Test
-  	def testEnumName(){
-  		assertEquals(singleEnumLang.name, singleEnumMetaModel.name)
+  	def testServiceName(){
+  		assertEquals(singleServiceLang.name, singleServiceMetaModel.name)
   	}
   	
   	@Test
-  	def testQtdValuesEnums(){
-  		assertEquals(singleEnumLang.values.size, singleEnumMetaModel.values.size)
+  	def testServiceParent(){
+  		assertNotNull(singleServiceMetaModel.parent)
   	}
   	
   	@Test
-  	def testValuesEnum(){
-  		val valueEnumLang = singleEnumLang.values.get(0)
-  		val valueEnumMetaModel = singleEnumMetaModel.values.get(0)
-		assertEquals(valueEnumLang, valueEnumMetaModel)  		
+  	def testQtdServicesFields(){
+  		assertEquals(singleServiceLang.serviceFields.size, singleServiceMetaModel.methods.size)
+  	}
+  	
+  	@Test
+  	def testServiceField(){
+		assertEquals(fieldSingleServiceLang.name, fieldSingleServiceMetaModel.name)
+		assertEquals(fieldSingleServiceLang.methodAcess.name, fieldSingleServiceMetaModel.methodService.name)
   	}
 }

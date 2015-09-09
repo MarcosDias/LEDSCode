@@ -14,10 +14,10 @@ class ProjectConverter {
 		var tableObjects = new TableObjects
 		var projectMetaModel = new model.mainLayer.Project
 		
-		var infraConverter = new InfrastructureConverter
-		var ifaceConverter = new InterfaceConverter
-		var domainConverter = new DomainConverter
-		var appConverter = new AppConverter
+		var infraConverter = new InfrastructureConverter(projectLang, projectMetaModel)
+		var ifaceConverter = new InterfaceConverter(projectLang, projectMetaModel)
+		var domainConverter = new DomainConverter(projectLang, projectMetaModel)
+		var appConverter = new AppConverter(projectLang, projectMetaModel)
 		
 		projectMetaModel.name = projectLang.name
 		projectMetaModel.created = Calendar.instance
@@ -26,8 +26,8 @@ class ProjectConverter {
 		convertInfrastructure(projectMetaModel, infraConverter, projectLang, tableObjects)
 		convertApplication(projectMetaModel, appConverter, projectLang, tableObjects)
 		convertInterface(projectMetaModel, ifaceConverter, projectLang, tableObjects)
-		tableObjects.project = projectMetaModel
 		
+		tableObjects.project = projectMetaModel		
 		tableObjects
 	}
 	
