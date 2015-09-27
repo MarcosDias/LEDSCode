@@ -23,6 +23,7 @@ import model.domainLayer.PrimaryDateTypeEnum;
 import model.domainLayer.Repository;
 import model.domainLayer.ReturnType;
 import model.domainLayer.SuperAttribute;
+import model.domainLayer.SuperClass;
 import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
@@ -352,15 +353,8 @@ public class EntityConverter {
     PrimaryDateTypeEnum primitiveType = ((PrimaryDateTypeEnum) _fromString);
     boolean _equals = Objects.equal(primitiveType, null);
     if (_equals) {
-      boolean _contains = type.contains(".");
-      if (_contains) {
-        Set<Entity> _entities = tableObjects.getEntities();
-        Entity _findFullPathEntity = this.findEntity.findFullPathEntity(_entities, type);
-        genericTypeMetaModel.setDatetype(_findFullPathEntity);
-      } else {
-        Entity _inMetaModel = this.findEntity.inMetaModel(listEntityMetaModel, type);
-        genericTypeMetaModel.setDatetype(_inMetaModel);
-      }
+      SuperClass _findFullPath = this.findEntity.findFullPath(tableObjects, type);
+      genericTypeMetaModel.setDatetype(_findFullPath);
     } else {
       PrimaryDateType _primaryDateType = new PrimaryDateType(primitiveType);
       genericTypeMetaModel.setDatetype(_primaryDateType);

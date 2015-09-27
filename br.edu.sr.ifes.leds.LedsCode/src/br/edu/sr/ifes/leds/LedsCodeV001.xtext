@@ -133,7 +133,7 @@ EnumBlock:
 
 DataType:
 	(DataTypeList|DataTypeSet|CompoundName|'String'|'int'|'Integer'|'long'|'Long'|'boolean'|'Boolean'|'Datetime'|
-  	'double'|'Double'|'float'|'Float'|'Object')
+  	'double'|'Double'|'float'|'Float')
 ;
 MethodParameter: typeAndAttr+=TypeAndAttribute (',' typeAndAttr+=TypeAndAttribute)*;
 TypeAndAttribute: type=DataType name=ID;

@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList
 import model.mainLayer.TableObjects
 import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
-import org.eclipse.xtext.common.types.access.impl.IndexedJvmTypeAccess.ShadowedTypeException
 
 class DomainConverter {
 	
@@ -58,7 +57,7 @@ class DomainConverter {
 			var moduleMetaModel = new model.domainLayer.Module
 			moduleMetaModel.parent = domainMetaModel
 			moduleMetaModel.name = moduleLang.name
-			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock, tableObjects)
+			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock, tableObjects, moduleMetaModel)
 			moduleMetaModel.entities = entityConverter.convert(moduleLang.entityBlock, moduleMetaModel, tableObjects)
 			moduleMetaModel.services = serviceConverter.convert(moduleLang.serviceBlock, moduleMetaModel, tableObjects)
 			

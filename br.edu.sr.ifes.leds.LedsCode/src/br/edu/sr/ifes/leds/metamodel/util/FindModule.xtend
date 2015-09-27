@@ -12,7 +12,7 @@ class FindModule {
 		for(mod: modules){
 			if(mod.name.equals(nameModule)) return mod
 		}
-		null
+		throw new Exception("Could not find the module " + nameModule)
 	}
 	
 	def void findInverseFullPathModule(Module module, List<String> incompleteNameEntity, String full){

@@ -6,6 +6,8 @@ import java.util.LinkedHashSet
 import java.util.Set
 import model.domainLayer.ClassEnum
 import model.domainLayer.Entity
+import model.domainLayer.SuperClass
+import model.mainLayer.TableObjects
 
 class FindEntity {	
 	
@@ -22,6 +24,20 @@ class FindEntity {
 		this.findModule.findInverseFullPathModule(resultEntntity.parent, Arrays.asList(splitedReverseName.tail), full)
 		
 		resultEntntity
+	}
+	
+	def SuperClass findFullPath(TableObjects tableObjects, String fullName){
+		var nameResult = fullName
+		fullName.contains('.'){
+			var splitedReverseName = fullName.split('\\.').reverse
+			nameResult =  splitedReverseName.head as String
+		}
+		
+		try{
+		 	this.inMetaModel(tableObjects.entities, nameResult) as SuperClass
+	 	} catch(Exception e) {
+	 		this.inEnums(tableObjects.enums, nameResult) as SuperClass
+	 	}
 	}
 	
 	/**
@@ -56,7 +72,7 @@ class FindEntity {
 				return ennum
 			}
 		}
-		return null
+		throw new Exception("Could not find the enum " + name)
 	}
 	
 	
@@ -73,7 +89,7 @@ class FindEntity {
 			if(entityMetaModel.name.equals(nameEntity)) 
 				return entityMetaModel
 		}
-		return null
+		throw new Exception("Could not find the entity " + nameEntity)
 	}
 	
 	new(){

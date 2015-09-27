@@ -3,13 +3,22 @@
  */
 package br.edu.sr.ifes.leds.generator;
 
+import br.edu.sr.ifes.leds.generator.ProjectConverter;
+import br.edu.sr.ifes.leds.ledsCodeV001.Project;
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import ctrl.SpringRooCtrl;
+import model.mainLayer.TableObjects;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -24,10 +33,14 @@ public class LedsCodeV001Generator implements IGenerator {
   
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-    try {
-      throw new Exception("Entity nao encotrada");
-    } catch (Throwable _e) {
-      throw Exceptions.sneakyThrow(_e);
-    }
+    ProjectConverter conversor = new ProjectConverter();
+    SpringRooCtrl springRooConversor = new SpringRooCtrl();
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    Iterable<Project> _filter = Iterables.<Project>filter(_iterable, Project.class);
+    Project projectLang = IterableExtensions.<Project>head(_filter);
+    TableObjects metaModelo = conversor.convert(projectLang);
+    String scriptProject = springRooConversor.createProject(metaModelo);
+    InputOutput.<String>println(scriptProject);
   }
 }

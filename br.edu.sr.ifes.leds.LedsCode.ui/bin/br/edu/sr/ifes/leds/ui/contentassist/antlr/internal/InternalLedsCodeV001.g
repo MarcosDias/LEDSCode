@@ -1155,14 +1155,6 @@ rule__DataType__Alternatives
 { after(grammarAccess.getDataTypeAccess().getFloatKeyword_14()); }
 )
 
-    |(
-{ before(grammarAccess.getDataTypeAccess().getObjectKeyword_15()); }
-
-	'Object' 
-
-{ after(grammarAccess.getDataTypeAccess().getObjectKeyword_15()); }
-)
-
 ;
 finally {
 	restoreStackSize(stackSize);

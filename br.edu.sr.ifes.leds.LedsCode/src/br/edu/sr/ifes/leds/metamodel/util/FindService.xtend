@@ -11,7 +11,7 @@ class FindService {
 			var field = this.inRepository(entity.repository, fields.name)
 			if (field != null) return field
 		}
-		throw new Exception(fields.name + 'method of service not found')
+		throw new Exception("Could not find the method of service " + fields.name)
 	}
 	
 	def inRepository(Repository repository, String name) {

@@ -1170,15 +1170,14 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDoubleKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
 		private final Keyword cFloatKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
 		private final Keyword cFloatKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cObjectKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
 		
 		//DataType:
 		//	DataTypeList | DataTypeSet | CompoundName | "String" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" |
-		//	"Datetime" | "double" | "Double" | "float" | "Float" | "Object";
+		//	"Datetime" | "double" | "Double" | "float" | "Float";
 		@Override public ParserRule getRule() { return rule; }
 
 		//DataTypeList | DataTypeSet | CompoundName | "String" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" |
-		//"Datetime" | "double" | "Double" | "float" | "Float" | "Object"
+		//"Datetime" | "double" | "Double" | "float" | "Float"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//DataTypeList
@@ -1225,9 +1224,6 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Float"
 		public Keyword getFloatKeyword_14() { return cFloatKeyword_14; }
-
-		//"Object"
-		public Keyword getObjectKeyword_15() { return cObjectKeyword_15; }
 	}
 
 	public class MethodParameterElements extends AbstractParserRuleElementFinder {
@@ -1829,7 +1825,7 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 
 	//DataType:
 	//	DataTypeList | DataTypeSet | CompoundName | "String" | "int" | "Integer" | "long" | "Long" | "boolean" | "Boolean" |
-	//	"Datetime" | "double" | "Double" | "float" | "Float" | "Object";
+	//	"Datetime" | "double" | "Double" | "float" | "Float";
 	public DataTypeElements getDataTypeAccess() {
 		return pDataType;
 	}

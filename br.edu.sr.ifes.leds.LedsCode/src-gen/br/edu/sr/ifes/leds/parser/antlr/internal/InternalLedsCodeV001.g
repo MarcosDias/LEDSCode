@@ -2041,13 +2041,6 @@ ruleDataType returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getDataTypeAccess().getFloatKeyword_14()); 
     }
-
-    |
-	kw='Object' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDataTypeAccess().getObjectKeyword_15()); 
-    }
 )
     ;
 

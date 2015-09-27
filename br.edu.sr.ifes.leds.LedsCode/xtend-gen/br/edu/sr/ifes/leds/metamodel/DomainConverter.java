@@ -80,7 +80,7 @@ public class DomainConverter {
           String _name = moduleLang.getName();
           moduleMetaModel.setName(_name);
           EList<EnumBlock> _enumBlock = moduleLang.getEnumBlock();
-          LinkedHashSet<ClassEnum> _convert = this.enumConverter.convert(_enumBlock, tableObjects);
+          LinkedHashSet<ClassEnum> _convert = this.enumConverter.convert(_enumBlock, tableObjects, moduleMetaModel);
           moduleMetaModel.setEnums(_convert);
           EList<EntityBlock> _entityBlock = moduleLang.getEntityBlock();
           LinkedHashSet<Entity> _convert_1 = this.entityConverter.convert(_entityBlock, moduleMetaModel, tableObjects);

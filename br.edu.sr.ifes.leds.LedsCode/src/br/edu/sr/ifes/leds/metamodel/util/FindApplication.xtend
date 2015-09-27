@@ -11,7 +11,7 @@ class FindApplication {
 				return appMetaModel
 			}
 		}
-		return null
+		throw new Exception("Could not find the application " + name);
 	}
 	
 }

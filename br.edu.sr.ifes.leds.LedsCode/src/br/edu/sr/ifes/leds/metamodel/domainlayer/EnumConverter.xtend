@@ -1,11 +1,13 @@
 package br.edu.sr.ifes.leds.metamodel.domainlayer
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import br.edu.sr.ifes.leds.metamodel.util.FindModule
 import java.util.LinkedHashSet
 import model.domainLayer.ClassEnum
-import org.eclipse.emf.common.util.EList
+import model.domainLayer.Module
 import model.mainLayer.TableObjects
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import org.eclipse.emf.common.util.EList
 
 class EnumConverter {
 	
@@ -13,11 +15,14 @@ class EnumConverter {
 	
 	model.mainLayer.Project projectMetaModel
 	
-	def convert(EList<EnumBlock> listEnumLang, TableObjects tableObjects) {
+	FindModule findModule
+	
+	def convert(EList<EnumBlock> listEnumLang, TableObjects tableObjects, Module moduleMetaModel) {
 		var listEnumMetaModel = new LinkedHashSet<ClassEnum>
 		for(enumLang: listEnumLang){
 			var enumMetaModel = new ClassEnum
 			enumMetaModel.name = enumLang.name
+			enumMetaModel.parent = moduleMetaModel
 			enumMetaModel.values = new LinkedHashSet(enumLang.values)
 			
 			listEnumMetaModel.add(enumMetaModel)
@@ -27,7 +32,7 @@ class EnumConverter {
 	}
 	
 	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
-	
+		findModule = new FindModule
 		this.projectLang = projectLang
 		this.projectMetaModel = projectMetaModel
 	}

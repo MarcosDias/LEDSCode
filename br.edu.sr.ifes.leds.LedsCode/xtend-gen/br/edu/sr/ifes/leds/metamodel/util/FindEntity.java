@@ -10,6 +10,8 @@ import java.util.Set;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Entity;
 import model.domainLayer.Module;
+import model.domainLayer.SuperClass;
+import model.mainLayer.TableObjects;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -43,6 +45,37 @@ public class FindEntity {
     }
   }
   
+  public SuperClass findFullPath(final TableObjects tableObjects, final String fullName) {
+    SuperClass _xblockexpression = null;
+    {
+      String nameResult = fullName;
+      fullName.contains(".");
+      {
+        String[] _split = fullName.split("\\.");
+        List<String> splitedReverseName = ListExtensions.<String>reverse(((List<String>)Conversions.doWrapArray(_split)));
+        String _head = IterableExtensions.<String>head(splitedReverseName);
+        nameResult = ((String) _head);
+      }
+      SuperClass _xtrycatchfinallyexpression = null;
+      try {
+        Set<Entity> _entities = tableObjects.getEntities();
+        Entity _inMetaModel = this.inMetaModel(_entities, nameResult);
+        _xtrycatchfinallyexpression = ((SuperClass) _inMetaModel);
+      } catch (final Throwable _t) {
+        if (_t instanceof Exception) {
+          final Exception e = (Exception)_t;
+          Set<ClassEnum> _enums = tableObjects.getEnums();
+          ClassEnum _inEnums = this.inEnums(_enums, nameResult);
+          _xtrycatchfinallyexpression = ((SuperClass) _inEnums);
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+      _xblockexpression = _xtrycatchfinallyexpression;
+    }
+    return _xblockexpression;
+  }
+  
   /**
    * Método que busca uma entidade em um metamodelo,caso encontrado,
    * ele é retornado
@@ -71,14 +104,18 @@ public class FindEntity {
   }
   
   public ClassEnum inEnums(final Set<ClassEnum> cEnums, final String name) {
-    for (final ClassEnum ennum : cEnums) {
-      String _name = ennum.getName();
-      boolean _equals = name.equals(_name);
-      if (_equals) {
-        return ennum;
+    try {
+      for (final ClassEnum ennum : cEnums) {
+        String _name = ennum.getName();
+        boolean _equals = name.equals(_name);
+        if (_equals) {
+          return ennum;
+        }
       }
+      throw new Exception(("Could not find the enum " + name));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    return null;
   }
   
   /**
@@ -90,14 +127,18 @@ public class FindEntity {
    * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
    */
   private Entity findEntityInList(final Set<Entity> listEntityMetaModel, final String nameEntity) {
-    for (final Entity entityMetaModel : listEntityMetaModel) {
-      String _name = entityMetaModel.getName();
-      boolean _equals = _name.equals(nameEntity);
-      if (_equals) {
-        return entityMetaModel;
+    try {
+      for (final Entity entityMetaModel : listEntityMetaModel) {
+        String _name = entityMetaModel.getName();
+        boolean _equals = _name.equals(nameEntity);
+        if (_equals) {
+          return entityMetaModel;
+        }
       }
+      throw new Exception(("Could not find the entity " + nameEntity));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    return null;
   }
   
   public FindEntity() {

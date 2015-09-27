@@ -22,7 +22,6 @@ import model.domainLayer.ReturnType
 import model.domainLayer.SuperAttribute
 import model.mainLayer.TableObjects
 import org.eclipse.emf.common.util.EList
-import br.edu.sr.ifes.leds.metamodel.util.FindDomain
 
 class EntityConverter {
 	FindEntity findEntity
@@ -277,11 +276,7 @@ class EntityConverter {
 		var primitiveType = PrimaryDateTypeEnum.fromString(type) as PrimaryDateTypeEnum
 		
 		if(primitiveType == null){
-			if(type.contains('.')) {
-				genericTypeMetaModel.datetype = findEntity.findFullPathEntity(tableObjects.entities, type)
-			} else{
-				genericTypeMetaModel.datetype = findEntity.inMetaModel(listEntityMetaModel, type)
-			}
+			genericTypeMetaModel.datetype = findEntity.findFullPath(tableObjects, type)
 		}
 		else{
 			genericTypeMetaModel.datetype = new PrimaryDateType(primitiveType)

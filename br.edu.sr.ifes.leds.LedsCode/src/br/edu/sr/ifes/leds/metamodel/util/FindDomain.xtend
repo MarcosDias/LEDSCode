@@ -9,12 +9,12 @@ class FindDomain {
 		for(dom: domains){
 			if(dom.name.equals(nameDomain)) return dom
 		}
-		return null
+		throw new Exception("Could not find the domain " + nameDomain)
 	}
 	
 	def void findInverseFullPathDomain(Domain domain, List<String> incompleteNameEntity, String full) {
 		if(domain.name.equals(incompleteNameEntity.get(0))){
-			throw new Exception("Could not find the entity " + full)
+			throw new Exception("Could not find the domain " + full)
 		}
 	}
 }

@@ -3,12 +3,12 @@ package br.edu.sr.ifes.leds.metamodel.util;
 import com.google.common.base.Objects;
 import java.util.LinkedHashSet;
 import model.domainLayer.Method;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class FindRepositoryMethod {
   public Method inRepository(final LinkedHashSet<Method> listRepositoryMethods, final String name) {
-    Object _xblockexpression = null;
-    {
+    try {
       for (final Method repositoryMethod : listRepositoryMethods) {
         String _name = repositoryMethod.getName();
         boolean _equals = Objects.equal(_name, name);
@@ -16,8 +16,9 @@ public class FindRepositoryMethod {
           return repositoryMethod;
         }
       }
-      _xblockexpression = null;
+      throw new Exception(("Could not find the repository " + name));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    return ((Method)_xblockexpression);
   }
 }

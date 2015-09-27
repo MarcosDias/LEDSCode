@@ -15,8 +15,7 @@ public class FindModule {
   private FindDomain findDomain;
   
   public Module inMetaModel(final Set<Module> modules, final String nameModule) {
-    Object _xblockexpression = null;
-    {
+    try {
       for (final Module mod : modules) {
         String _name = mod.getName();
         boolean _equals = _name.equals(nameModule);
@@ -24,9 +23,10 @@ public class FindModule {
           return mod;
         }
       }
-      _xblockexpression = null;
+      throw new Exception(("Could not find the module " + nameModule));
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
-    return ((Module)_xblockexpression);
   }
   
   public void findInverseFullPathModule(final Module module, final List<String> incompleteNameEntity, final String full) {

@@ -1,7 +1,6 @@
 package br.edu.sr.ifes.leds.metamodel.domainlayer
 
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
-import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity

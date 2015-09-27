@@ -11,6 +11,6 @@ class FindRepositoryMethod {
 				return repositoryMethod
 			}
 		}
-		null
+		throw new Exception("Could not find the repository " + name)
 	}	
 }

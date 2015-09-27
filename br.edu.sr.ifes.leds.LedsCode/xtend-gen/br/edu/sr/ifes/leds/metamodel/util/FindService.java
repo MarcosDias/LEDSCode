@@ -25,7 +25,7 @@ public class FindService {
         }
       }
       String _name = fields.getName();
-      String _plus = (_name + "method of service not found");
+      String _plus = ("Could not find the method of service " + _name);
       throw new Exception(_plus);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
