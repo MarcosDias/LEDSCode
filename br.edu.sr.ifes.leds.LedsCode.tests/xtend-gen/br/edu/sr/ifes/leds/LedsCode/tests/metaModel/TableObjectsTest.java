@@ -3,7 +3,7 @@ package br.edu.sr.ifes.leds.LedsCode.tests.metaModel;
 import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass;
 import br.edu.sr.ifes.leds.generator.ProjectConverter;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
-import java.util.Set;
+import java.util.List;
 import model.applicationLayer.Application;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Domain;
@@ -23,17 +23,17 @@ public class TableObjectsTest extends AbstractTestClass {
   
   private Infrastructure infrastructure;
   
-  private Set<Domain> domains;
+  private List<Domain> domains;
   
-  private Set<Application> apps;
+  private List<Application> apps;
   
-  private Set<Module> modules;
+  private List<Module> modules;
   
-  private Set<Entity> entity;
+  private List<Entity> entity;
   
-  private Set<Service> services;
+  private List<Service> services;
   
-  private Set<ClassEnum> enums;
+  private List<ClassEnum> enums;
   
   @Before
   public void setUp() {
@@ -48,17 +48,17 @@ public class TableObjectsTest extends AbstractTestClass {
     this.iface = _iface;
     Infrastructure _infrastructure = this.tableObjects.getInfrastructure();
     this.infrastructure = _infrastructure;
-    Set<Domain> _domains = this.tableObjects.getDomains();
+    List<Domain> _domains = this.tableObjects.getDomains();
     this.domains = _domains;
-    Set<Application> _apps = this.tableObjects.getApps();
+    List<Application> _apps = this.tableObjects.getApps();
     this.apps = _apps;
-    Set<Module> _modules = this.tableObjects.getModules();
+    List<Module> _modules = this.tableObjects.getModules();
     this.modules = _modules;
-    Set<Entity> _entities = this.tableObjects.getEntities();
+    List<Entity> _entities = this.tableObjects.getEntities();
     this.entity = _entities;
-    Set<Service> _services = this.tableObjects.getServices();
+    List<Service> _services = this.tableObjects.getServices();
     this.services = _services;
-    Set<ClassEnum> _enums = this.tableObjects.getEnums();
+    List<ClassEnum> _enums = this.tableObjects.getEnums();
     this.enums = _enums;
   }
   

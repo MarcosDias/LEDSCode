@@ -1,11 +1,10 @@
 package br.edu.sr.ifes.leds.metamodel.util
 
 import java.util.List
-import java.util.Set
 import model.domainLayer.Domain
 
 class FindDomain {
-	def inMetaModel(Set<Domain> domains, String nameDomain) {
+	def inMetaModel(List<Domain> domains, String nameDomain) {
 		for(dom: domains){
 			if(dom.name.equals(nameDomain)) return dom
 		}

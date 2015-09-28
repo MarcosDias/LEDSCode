@@ -3,7 +3,6 @@ package br.edu.sr.ifes.leds.metamodel.util;
 import br.edu.sr.ifes.leds.metamodel.util.FindDomain;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import model.domainLayer.Domain;
 import model.domainLayer.Module;
 import org.eclipse.xtext.xbase.lib.Conversions;
@@ -14,7 +13,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class FindModule {
   private FindDomain findDomain;
   
-  public Module inMetaModel(final Set<Module> modules, final String nameModule) {
+  public Module inMetaModel(final List<Module> modules, final String nameModule) {
     try {
       for (final Module mod : modules) {
         String _name = mod.getName();

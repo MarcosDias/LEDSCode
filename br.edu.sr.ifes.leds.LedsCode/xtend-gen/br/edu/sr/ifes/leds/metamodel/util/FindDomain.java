@@ -1,13 +1,12 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
 import java.util.List;
-import java.util.Set;
 import model.domainLayer.Domain;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class FindDomain {
-  public Domain inMetaModel(final Set<Domain> domains, final String nameDomain) {
+  public Domain inMetaModel(final List<Domain> domains, final String nameDomain) {
     try {
       for (final Domain dom : domains) {
         String _name = dom.getName();

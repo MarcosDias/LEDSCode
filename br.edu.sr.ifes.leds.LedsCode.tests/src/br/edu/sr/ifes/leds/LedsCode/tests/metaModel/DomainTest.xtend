@@ -11,7 +11,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.Repository
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
-import java.util.Set
+import java.util.List
 import model.domainLayer.ClassEnum
 import model.domainLayer.Domain
 import model.domainLayer.Entity
@@ -38,7 +38,7 @@ class DomainTest extends AbstractTestClass{
 	RepositoryFields fieldRepositoryLang	
 	EnumBlock singleEnumLang
 	
-	Set<Domain> domainMetaModel
+	List<Domain> domainMetaModel
 	Domain singleDomMetaModel
 	Module singleModuleMetaModel
 	Module othersingleModuleMetaModel

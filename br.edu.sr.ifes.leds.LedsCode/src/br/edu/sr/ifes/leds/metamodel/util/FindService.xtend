@@ -1,12 +1,12 @@
 package br.edu.sr.ifes.leds.metamodel.util
 
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
-import java.util.Set
+import java.util.List
 import model.domainLayer.Entity
 import model.domainLayer.Repository
 
 class FindService {
-	def inMetaModel(Set<Entity> entities, RepositoryFields fields) {
+	def inMetaModel(List<Entity> entities, RepositoryFields fields) {
 		for(entity: entities){
 			var field = this.inRepository(entity.repository, fields.name)
 			if (field != null) return field

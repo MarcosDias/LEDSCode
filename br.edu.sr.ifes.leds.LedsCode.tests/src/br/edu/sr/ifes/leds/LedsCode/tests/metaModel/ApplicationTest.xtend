@@ -1,17 +1,17 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.metaModel
 
 import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
+import br.edu.sr.ifes.leds.generator.ProjectConverter
 import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock
 import java.util.ArrayList
 import java.util.Arrays
-import java.util.LinkedHashSet
+import java.util.List
 import model.applicationLayer.Application
 import org.eclipse.emf.common.util.EList
 import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.generator.ProjectConverter
 
 class ApplicationTest extends AbstractTestClass{
 	
@@ -19,7 +19,7 @@ class ApplicationTest extends AbstractTestClass{
 	ApplicationBlock singleAppLang
 	String singleAppDomainLang
 	
-	LinkedHashSet<Application> appMetaModel
+	List<Application> appMetaModel
 	
 	Application singleAppMetalModel
 	

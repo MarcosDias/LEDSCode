@@ -2,13 +2,12 @@ package br.edu.sr.ifes.leds.metamodel.util
 
 import java.util.Arrays
 import java.util.List
-import java.util.Set
 import model.domainLayer.Module
 
 class FindModule {
 	FindDomain findDomain
 	
-	def inMetaModel(Set<Module> modules, String nameModule) {
+	def inMetaModel(List<Module> modules, String nameModule) {
 		for(mod: modules){
 			if(mod.name.equals(nameModule)) return mod
 		}

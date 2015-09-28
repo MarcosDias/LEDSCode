@@ -1,15 +1,16 @@
 package br.edu.sr.ifes.leds.metamodel
 
 import br.edu.sr.ifes.leds.ledsCodeV001.DomainBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter
 import br.edu.sr.ifes.leds.metamodel.domainlayer.ServiceConverter
-import java.util.LinkedHashSet
+import java.util.ArrayList
 import model.domainLayer.Domain
-import org.eclipse.emf.common.util.EList
+import model.domainLayer.Module
 import model.mainLayer.TableObjects
-import br.edu.sr.ifes.leds.ledsCodeV001.ModuleBlock
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import org.eclipse.emf.common.util.EList
 
 class DomainConverter {
 	
@@ -30,7 +31,7 @@ class DomainConverter {
 	 * @return HashSet<Domain> Set de dominio do metamodelo
 	 */
 	def converter(EList<DomainBlock> listDomainLang, TableObjects tableObjects) {
-		val setDomainMetaModel = new LinkedHashSet<Domain>
+		val setDomainMetaModel = new ArrayList<Domain>
 		for(domainLang: listDomainLang){
 			val domainMetaModel = new Domain
 			domainMetaModel.name = domainLang.name
@@ -48,13 +49,13 @@ class DomainConverter {
 	 * 
 	 * @paran listModulesLang Lista de modulos que serao traduzidos
 	 * @param domainMetaModel Dominio que esta sendo processado
-	 * @return LinkedHashSet<model.domainLayer.Module> Set de modulo de metamodelo
+	 * @return List<model.domainLayer.Module> Set de modulo de metamodelo
 	 */
 	def convertModule(EList<ModuleBlock> listModulesLang, Domain domainMetaModel, TableObjects tableObjects) {
-		val setModulesMetaModule = new LinkedHashSet<model.domainLayer.Module>
+		val setModulesMetaModule = new ArrayList<Module>
 		
 		for (moduleLang: listModulesLang){
-			var moduleMetaModel = new model.domainLayer.Module
+			var moduleMetaModel = new Module
 			moduleMetaModel.parent = domainMetaModel
 			moduleMetaModel.name = moduleLang.name
 			moduleMetaModel.enums = enumConverter.convert(moduleLang.enumBlock, tableObjects, moduleMetaModel)

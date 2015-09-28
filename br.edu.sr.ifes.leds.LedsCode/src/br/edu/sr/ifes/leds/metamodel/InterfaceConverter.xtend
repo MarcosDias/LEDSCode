@@ -2,13 +2,14 @@ package br.edu.sr.ifes.leds.metamodel
 
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock
+import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import br.edu.sr.ifes.leds.metamodel.util.FindApplication
-import java.util.LinkedHashSet
+import java.util.ArrayList
+import java.util.List
 import model.applicationLayer.Application
 import model.interfaceLayer.Interface
 import model.interfaceLayer.Type
 import org.eclipse.emf.common.util.EList
-import br.edu.sr.ifes.leds.ledsCodeV001.Project
 
 class InterfaceConverter {
 	
@@ -16,7 +17,7 @@ class InterfaceConverter {
 	Project projectLang
 	model.mainLayer.Project projectMetaModel
 	
-	def conveter(InterfaceBlock ifaceLang, LinkedHashSet<Application> listAppMetaModel) {
+	def conveter(InterfaceBlock ifaceLang, List<Application> listAppMetaModel) {
 		var ifaceMetaModel = new Interface
 		ifaceMetaModel.name = ifaceLang.name
 		ifaceMetaModel.interfaceApplication = convertInterfaceApp(ifaceLang.interfaceApplication, listAppMetaModel)
@@ -24,8 +25,8 @@ class InterfaceConverter {
 		ifaceMetaModel
 	}
 	
-	def convertInterfaceApp(EList<InterfaceApplication> listIfaceAppLang, LinkedHashSet<Application> listAppMetaModel) {
-		var listIfaceAppMetaModel = new LinkedHashSet<model.interfaceLayer.InterfaceApplication>
+	def convertInterfaceApp(EList<InterfaceApplication> listIfaceAppLang, List<Application> listAppMetaModel) {
+		var listIfaceAppMetaModel = new ArrayList<model.interfaceLayer.InterfaceApplication>
 		for(ifaceAppLang : listIfaceAppLang){
 			var ifaceAppMetaModel = new model.interfaceLayer.InterfaceApplication
 			ifaceAppMetaModel.name = ifaceAppLang.name

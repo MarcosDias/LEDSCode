@@ -5,8 +5,8 @@ import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity
-import java.util.LinkedHashSet
-import java.util.Set
+import java.util.ArrayList
+import java.util.List
 import model.domainLayer.AccessModifier
 import model.domainLayer.Attribute
 import model.domainLayer.CollectionType
@@ -57,18 +57,18 @@ class EntityConverter {
 	 * 
 	 * @param listEntityLang List de entidades da linguagem
 	 * @param moduleMetaModel Modulo que está sendo processado no momento
-	 * @return LinkedHashSet<Entity> Lista de entidade do metamodelo
+	 * @return ArrayList<Entity> Lista de entidade do metamodelo
 	 */
 	def buildIncompleteEntities(EList<EntityBlock> listEntityLang, Module moduleMetaModel, TableObjects tableObjects) {
-		var listEntityMetaModel = new LinkedHashSet<Entity>
+		var listEntityMetaModel = new ArrayList<Entity>
 		for(entityLang: listEntityLang){
 			var entityMetaModel = new Entity
 			entityMetaModel.parent = moduleMetaModel
 			entityMetaModel.name = entityLang.name
 			entityMetaModel.abstrato = entityLang.isIsAbstract
 			entityMetaModel.accessModifier = AccessModifier.fromString(entityLang.acessModifier)
-			entityMetaModel.attributes = new LinkedHashSet<Attribute>
-			entityMetaModel.classExtends = new LinkedHashSet<Entity>
+			entityMetaModel.attributes = new ArrayList<Attribute>
+			entityMetaModel.classExtends = new ArrayList<Entity>
 			entityMetaModel.repository = new Repository
 			
 			listEntityMetaModel.add(entityMetaModel)
@@ -87,7 +87,7 @@ class EntityConverter {
 	 * @param listEntityMetaModel Lista de Entidades provenientes do MetaModelo
 	 * @paran listEntityLang Lista de Entidades provenientes do linguagem
 	 */
-	def convertClassExtendsEntities(Set<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang) {
+	def convertClassExtendsEntities(List<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang) {
 		for(entityLang: listEntityLang){
 			if(entityLang.classExtends != null ){
 				buildClassExtendsEntities(listEntityMetaModel, entityLang)
@@ -102,7 +102,7 @@ class EntityConverter {
 	 * @param listEntityMetaModel Lista de entidades do MetaModelo que será processada
 	 * @param entityLang entidade da linguagem que que serah processada
 	 */
-	private def buildClassExtendsEntities(Set<Entity> listEntityMetaModel, EntityBlock entityLang) {
+	private def buildClassExtendsEntities(List<Entity> listEntityMetaModel, EntityBlock entityLang) {
 		var entityMetaModel = findEntity.inMetaModel(listEntityMetaModel, entityLang.name)
 		for(extendLang: entityLang.classExtends.values){
 			var extendsMetaModel = findEntity.inMetaModel(listEntityMetaModel, extendLang.name)
@@ -116,9 +116,9 @@ class EntityConverter {
 	 * 
 	 * @param listEntityMetaModel Lista de Entidades provenientes do MetaModelo
 	 * convertidos
-	 * @return LinkedHashSet<Entity> Set de entidade do metamodelo
+	 * @return ArrayList<Entity> Set de entidade do metamodelo
 	 */
-	def convertRepository(LinkedHashSet<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang, TableObjects tableObjects) {
+	def convertRepository(List<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang, TableObjects tableObjects) {
 		for(entityLang: listEntityLang){
 			var entityMetaModel = findEntity.inMetaModel(listEntityMetaModel, entityLang)
 			var repositoryMetaModel = new Repository()
@@ -140,15 +140,15 @@ class EntityConverter {
 	 * @param listEntityLang Lista de entidades que terao seus repositorios
 	 * convertidos
 	 * @param listRepositoryMethodsLang Lista de metodos de um repositorio de uma linguagem
-	 * @return LinkedHashSet<Method> Lista de metodos de um repositorio já em no 
+	 * @return List<Method> Lista de metodos de um repositorio já em no 
 	 * formato do MetaModelo 
 	 */
-	def convertRepositoriyMethods(LinkedHashSet<Entity> listEntityMetaModel, 
+	def convertRepositoriyMethods(List<Entity> listEntityMetaModel, 
 		EList<RepositoryFields> listRepositoryMethodsLang, 
 		Repository repositoryMetaModel, 
 		TableObjects tableObjects
 	) {
-		var listRepositoryMethodsMetaModelo = new LinkedHashSet<Method>
+		var listRepositoryMethodsMetaModelo = new ArrayList<Method>
 		for(repositoryMethodslang: listRepositoryMethodsLang){
 			var repositoryMethodMetaModel = new Method
 			repositoryMethodMetaModel.name = repositoryMethodslang.name
@@ -170,10 +170,10 @@ class EntityConverter {
 	 * 
 	 * @param listEntityMetaModel Lista de Entidades provenientes do MetaModelo
 	 * @param parameteresLang Lista de paramentros que seram convertidos
-	 * @return LinkedHashSet<Parameter> Lista de parametros do metamodelo
+	 * @return List<Parameter> Lista de parametros do metamodelo
 	 */
-	def convertparameters(LinkedHashSet<Entity> listEntityMetaModel, MethodParameter parameteresLang, TableObjects tableObjects) {
-		var parameteresMetaModel = new LinkedHashSet<Parameter>
+	def convertparameters(List<Entity> listEntityMetaModel, MethodParameter parameteresLang, TableObjects tableObjects) {
+		var parameteresMetaModel = new ArrayList<Parameter>
 		if(parameteresLang != null){
 			for(paramLang: parameteresLang.typeAndAttr){
 				var paramMetaModel = new Parameter
@@ -197,7 +197,7 @@ class EntityConverter {
 	 * podendo ser um `Attribute`, `ReturnType` ou um `Parameter`
 	 * @return SuperAttribute Objecto Convertido e com o tipo correto
 	 */
-	def SuperAttribute convertGenericType(LinkedHashSet<Entity> listEntityMetaModel, String typeObject, SuperAttribute genericTypeMetaModel, TableObjects tableObjects) {
+	def SuperAttribute convertGenericType(List<Entity> listEntityMetaModel, String typeObject, SuperAttribute genericTypeMetaModel, TableObjects tableObjects) {
 		if(typeObject.contains("Set<") || typeObject.contains("List<")){
 			var splitType = typeObject.split("<")
 			var collectionType = splitType.get(0)
@@ -222,10 +222,10 @@ class EntityConverter {
 	 * processados
 	 * @param listEntityLang Lista de entidades da linguagem para suporte
 	 */
-	def convertAttributes(LinkedHashSet<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang, TableObjects tableObjects) {
+	def convertAttributes(List<Entity> listEntityMetaModel, EList<EntityBlock> listEntityLang, TableObjects tableObjects) {
 		for(entityLang: listEntityLang){
 			var entityMetaModel = findEntity.inMetaModel(listEntityMetaModel, entityLang)
-			entityMetaModel.attributes = new LinkedHashSet<Attribute>
+			entityMetaModel.attributes = new ArrayList<Attribute>
 			
 			for(attrLang: entityLang.attributes){
 				var attrMetaModel = new Attribute
@@ -270,7 +270,7 @@ class EntityConverter {
 	def processAttrType(
 			String type, 
 			SuperAttribute genericTypeMetaModel, 
-			LinkedHashSet<Entity> listEntityMetaModel,
+			List<Entity> listEntityMetaModel,
 			TableObjects tableObjects) {
 		
 		var primitiveType = PrimaryDateTypeEnum.fromString(type) as PrimaryDateTypeEnum

@@ -1,13 +1,13 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
 import com.google.common.base.Objects;
-import java.util.LinkedHashSet;
+import java.util.List;
 import model.applicationLayer.Application;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
 public class FindApplication {
-  public Application inList(final String name, final LinkedHashSet<Application> listAppMetaModel) {
+  public Application inList(final String name, final List<Application> listAppMetaModel) {
     try {
       for (final Application appMetaModel : listAppMetaModel) {
         String _name = appMetaModel.getName();

@@ -4,7 +4,8 @@ import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindApplication;
-import java.util.LinkedHashSet;
+import java.util.ArrayList;
+import java.util.List;
 import model.applicationLayer.Application;
 import model.interfaceLayer.Interface;
 import model.interfaceLayer.Type;
@@ -18,24 +19,24 @@ public class InterfaceConverter {
   
   private model.mainLayer.Project projectMetaModel;
   
-  public Interface conveter(final InterfaceBlock ifaceLang, final LinkedHashSet<Application> listAppMetaModel) {
+  public Interface conveter(final InterfaceBlock ifaceLang, final List<Application> listAppMetaModel) {
     Interface _xblockexpression = null;
     {
       Interface ifaceMetaModel = new Interface();
       String _name = ifaceLang.getName();
       ifaceMetaModel.setName(_name);
       EList<InterfaceApplication> _interfaceApplication = ifaceLang.getInterfaceApplication();
-      LinkedHashSet<model.interfaceLayer.InterfaceApplication> _convertInterfaceApp = this.convertInterfaceApp(_interfaceApplication, listAppMetaModel);
+      ArrayList<model.interfaceLayer.InterfaceApplication> _convertInterfaceApp = this.convertInterfaceApp(_interfaceApplication, listAppMetaModel);
       ifaceMetaModel.setInterfaceApplication(_convertInterfaceApp);
       _xblockexpression = ifaceMetaModel;
     }
     return _xblockexpression;
   }
   
-  public LinkedHashSet<model.interfaceLayer.InterfaceApplication> convertInterfaceApp(final EList<InterfaceApplication> listIfaceAppLang, final LinkedHashSet<Application> listAppMetaModel) {
-    LinkedHashSet<model.interfaceLayer.InterfaceApplication> _xblockexpression = null;
+  public ArrayList<model.interfaceLayer.InterfaceApplication> convertInterfaceApp(final EList<InterfaceApplication> listIfaceAppLang, final List<Application> listAppMetaModel) {
+    ArrayList<model.interfaceLayer.InterfaceApplication> _xblockexpression = null;
     {
-      LinkedHashSet<model.interfaceLayer.InterfaceApplication> listIfaceAppMetaModel = new LinkedHashSet<model.interfaceLayer.InterfaceApplication>();
+      ArrayList<model.interfaceLayer.InterfaceApplication> listIfaceAppMetaModel = new ArrayList<model.interfaceLayer.InterfaceApplication>();
       for (final InterfaceApplication ifaceAppLang : listIfaceAppLang) {
         {
           model.interfaceLayer.InterfaceApplication ifaceAppMetaModel = new model.interfaceLayer.InterfaceApplication();

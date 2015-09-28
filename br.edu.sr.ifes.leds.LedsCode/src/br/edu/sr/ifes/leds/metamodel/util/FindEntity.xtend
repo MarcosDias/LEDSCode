@@ -2,8 +2,7 @@ package br.edu.sr.ifes.leds.metamodel.util
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
 import java.util.Arrays
-import java.util.LinkedHashSet
-import java.util.Set
+import java.util.List
 import model.domainLayer.ClassEnum
 import model.domainLayer.Entity
 import model.domainLayer.SuperClass
@@ -13,7 +12,7 @@ class FindEntity {
 	
 	FindModule findModule
 	
-	def Entity findFullPathEntity(Set<Entity> listEntity, String full){
+	def Entity findFullPathEntity(List<Entity> listEntity, String full){
 		var splitedReverseName = full.split('\\.').reverse
 		var resultEntntity = this.inMetaModel(listEntity, splitedReverseName.head as String)
 		
@@ -49,7 +48,7 @@ class FindEntity {
 	 * @param entityLang Objeto entidade de uma linguagem que serah buscado em um metamodelo
 	 * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
 	 */
-	def inMetaModel(LinkedHashSet<Entity> listEntityMetaModel, EntityBlock entityLang) {
+	def inMetaModel(List<Entity> listEntityMetaModel, EntityBlock entityLang) {
 		findEntityInList(listEntityMetaModel, entityLang.name)
 	}
 	
@@ -62,11 +61,11 @@ class FindEntity {
 	 * @param nameEntity Nome da entidade que deseja ser buscada
 	 * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
 	 */
-	def inMetaModel(Set<Entity> listEntityMetaModel, String nameEntity) {
+	def inMetaModel(List<Entity> listEntityMetaModel, String nameEntity) {
 		findEntityInList(listEntityMetaModel, nameEntity)
 	}
 	
-	def inEnums(Set<ClassEnum> cEnums, String name) {
+	def inEnums(List<ClassEnum> cEnums, String name) {
 		for(ennum: cEnums){
 			if(name.equals(ennum.name)){
 				return ennum
@@ -84,7 +83,7 @@ class FindEntity {
 	 * @param nameEntity Nome da entidade que deseja ser buscada
 	 * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
 	 */
-	private def findEntityInList(Set<Entity> listEntityMetaModel, String nameEntity){
+	private def findEntityInList(List<Entity> listEntityMetaModel, String nameEntity){
 		for(entityMetaModel: listEntityMetaModel){
 			if(entityMetaModel.name.equals(nameEntity)) 
 				return entityMetaModel

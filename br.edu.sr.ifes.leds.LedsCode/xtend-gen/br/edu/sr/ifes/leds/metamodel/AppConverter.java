@@ -6,7 +6,6 @@ import br.edu.sr.ifes.leds.metamodel.util.FindDomain;
 import br.edu.sr.ifes.leds.metamodel.util.FindModule;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.List;
 import model.applicationLayer.Application;
 import model.applicationLayer.SpecificApplicationDomain;
@@ -21,17 +20,17 @@ public class AppConverter {
   
   private model.mainLayer.Project projectMetaModel;
   
-  public LinkedHashSet<Application> conveter(final EList<ApplicationBlock> listAppLang, final LinkedHashSet<Domain> listDomainMetaModel) {
-    LinkedHashSet<Application> _xblockexpression = null;
+  public ArrayList<Application> conveter(final EList<ApplicationBlock> listAppLang, final List<Domain> listDomainMetaModel) {
+    ArrayList<Application> _xblockexpression = null;
     {
-      LinkedHashSet<Application> listAppMetaModel = new LinkedHashSet<Application>();
+      ArrayList<Application> listAppMetaModel = new ArrayList<Application>();
       for (final ApplicationBlock appLang : listAppLang) {
         {
           Application appMetaModel = new Application();
           String _name = appLang.getName();
           appMetaModel.setName(_name);
           EList<String> _applicationDomain = appLang.getApplicationDomain();
-          LinkedHashSet<SpecificApplicationDomain> _convertStructureApp = this.convertStructureApp(_applicationDomain, listDomainMetaModel);
+          ArrayList<SpecificApplicationDomain> _convertStructureApp = this.convertStructureApp(_applicationDomain, listDomainMetaModel);
           appMetaModel.setStructure(_convertStructureApp);
           listAppMetaModel.add(appMetaModel);
         }
@@ -41,10 +40,10 @@ public class AppConverter {
     return _xblockexpression;
   }
   
-  public LinkedHashSet<SpecificApplicationDomain> convertStructureApp(final EList<String> listAppDomainLang, final LinkedHashSet<Domain> listDomainsMetaModel) {
-    LinkedHashSet<SpecificApplicationDomain> _xblockexpression = null;
+  public ArrayList<SpecificApplicationDomain> convertStructureApp(final EList<String> listAppDomainLang, final List<Domain> listDomainsMetaModel) {
+    ArrayList<SpecificApplicationDomain> _xblockexpression = null;
     {
-      LinkedHashSet<SpecificApplicationDomain> listAppStructureMetaModel = new LinkedHashSet<SpecificApplicationDomain>();
+      ArrayList<SpecificApplicationDomain> listAppStructureMetaModel = new ArrayList<SpecificApplicationDomain>();
       for (final String singleStrutureApp : listAppDomainLang) {
         {
           String[] strutureAppLang = singleStrutureApp.split("\\.");
@@ -59,7 +58,7 @@ public class AppConverter {
     return _xblockexpression;
   }
   
-  public SpecificApplicationDomain convertSpecificationDomainApp(final List<String> strutureAppLang, final LinkedHashSet<Domain> domains) {
+  public SpecificApplicationDomain convertSpecificationDomainApp(final List<String> strutureAppLang, final List<Domain> domains) {
     SpecificApplicationDomain _xblockexpression = null;
     {
       SpecificApplicationDomain strutureDomainAppMetaModel = new SpecificApplicationDomain();
@@ -86,7 +85,7 @@ public class AppConverter {
       }
       SpecificApplicationModule strutureModuleAppMetaModel = new SpecificApplicationModule();
       FindModule findModule = new FindModule();
-      LinkedHashSet<Module> _modules = domain.getModules();
+      List<Module> _modules = domain.getModules();
       String _get = strutureAppLang.get(0);
       Module _inMetaModel = findModule.inMetaModel(_modules, _get);
       strutureModuleAppMetaModel.setModule(_inMetaModel);

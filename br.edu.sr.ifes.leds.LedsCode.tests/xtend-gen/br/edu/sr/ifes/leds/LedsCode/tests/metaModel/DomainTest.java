@@ -15,8 +15,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
 import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.List;
 import model.domainLayer.AccessModifier;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Constraints;
@@ -29,7 +28,6 @@ import model.domainLayer.ReturnType;
 import model.domainLayer.Service;
 import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,7 +56,7 @@ public class DomainTest extends AbstractTestClass {
   
   private EnumBlock singleEnumLang;
   
-  private Set<Domain> domainMetaModel;
+  private List<Domain> domainMetaModel;
   
   private Domain singleDomMetaModel;
   
@@ -119,35 +117,35 @@ public class DomainTest extends AbstractTestClass {
     this.tableObjects = _convert;
     model.mainLayer.Project _project = this.tableObjects.getProject();
     this.projectMetaModel = _project;
-    LinkedHashSet<Domain> _domains = this.projectMetaModel.getDomains();
+    List<Domain> _domains = this.projectMetaModel.getDomains();
     this.domainMetaModel = _domains;
-    Domain _get_9 = ((Domain[])Conversions.unwrapArray(this.domainMetaModel, Domain.class))[0];
+    Domain _get_9 = this.domainMetaModel.get(0);
     this.singleDomMetaModel = _get_9;
-    LinkedHashSet<Module> _modules = this.singleDomMetaModel.getModules();
-    Module _get_10 = ((Module[])Conversions.unwrapArray(_modules, Module.class))[0];
+    List<Module> _modules = this.singleDomMetaModel.getModules();
+    Module _get_10 = _modules.get(0);
     this.singleModuleMetaModel = _get_10;
-    LinkedHashSet<Module> _modules_1 = this.singleDomMetaModel.getModules();
-    Module _get_11 = ((Module[])Conversions.unwrapArray(_modules_1, Module.class))[1];
+    List<Module> _modules_1 = this.singleDomMetaModel.getModules();
+    Module _get_11 = _modules_1.get(1);
     this.othersingleModuleMetaModel = _get_11;
-    LinkedHashSet<ClassEnum> _enums = this.othersingleModuleMetaModel.getEnums();
-    ClassEnum _get_12 = ((ClassEnum[])Conversions.unwrapArray(_enums, ClassEnum.class))[0];
+    List<ClassEnum> _enums = this.othersingleModuleMetaModel.getEnums();
+    ClassEnum _get_12 = _enums.get(0);
     this.singleEnumMetaModel = _get_12;
-    LinkedHashSet<Entity> _entities = this.singleModuleMetaModel.getEntities();
-    Entity _get_13 = ((Entity[])Conversions.unwrapArray(_entities, Entity.class))[1];
+    List<Entity> _entities = this.singleModuleMetaModel.getEntities();
+    Entity _get_13 = _entities.get(1);
     this.singleEntityMetaModel = _get_13;
-    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
-    model.domainLayer.Attribute _get_14 = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[0];
+    List<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute _get_14 = _attributes_1.get(0);
     this.singleAttrMetaModel = _get_14;
     model.domainLayer.Repository _repository_1 = this.singleEntityMetaModel.getRepository();
     this.repositoryMetaModel = _repository_1;
-    LinkedHashSet<Method> _methods_1 = this.repositoryMetaModel.getMethods();
-    Method _get_15 = ((Method[])Conversions.unwrapArray(_methods_1, Method.class))[0];
+    List<Method> _methods_1 = this.repositoryMetaModel.getMethods();
+    Method _get_15 = _methods_1.get(0);
     this.fieldRepositoryMetaModel = _get_15;
-    LinkedHashSet<Service> _services = this.singleModuleMetaModel.getServices();
-    Service _get_16 = ((Service[])Conversions.unwrapArray(_services, Service.class))[0];
+    List<Service> _services = this.singleModuleMetaModel.getServices();
+    Service _get_16 = _services.get(0);
     this.singleServiceMetaModel = _get_16;
-    LinkedHashSet<model.domainLayer.ServiceMethod> _methods_2 = this.singleServiceMetaModel.getMethods();
-    model.domainLayer.ServiceMethod _get_17 = ((model.domainLayer.ServiceMethod[])Conversions.unwrapArray(_methods_2, model.domainLayer.ServiceMethod.class))[0];
+    List<model.domainLayer.ServiceMethod> _methods_2 = this.singleServiceMetaModel.getMethods();
+    model.domainLayer.ServiceMethod _get_17 = _methods_2.get(0);
     this.fieldSingleServiceMetaModel = _get_17;
   }
   
@@ -176,7 +174,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdModule() {
     EList<ModuleBlock> _module = this.singleDomLang.getModule();
     int _size = _module.size();
-    LinkedHashSet<Module> _modules = this.singleDomMetaModel.getModules();
+    List<Module> _modules = this.singleDomMetaModel.getModules();
     int _size_1 = _modules.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -198,13 +196,13 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdEnums() {
     EList<EnumBlock> _enumBlock = this.singleModuleLang.getEnumBlock();
     int _size = _enumBlock.size();
-    LinkedHashSet<ClassEnum> _enums = this.singleModuleMetaModel.getEnums();
+    List<ClassEnum> _enums = this.singleModuleMetaModel.getEnums();
     int _size_1 = _enums.size();
     Assert.assertEquals(_size, _size_1);
-    LinkedHashSet<ClassEnum> _enums_1 = this.singleModuleMetaModel.getEnums();
+    List<ClassEnum> _enums_1 = this.singleModuleMetaModel.getEnums();
     int _size_2 = _enums_1.size();
     Assert.assertEquals(0, _size_2);
-    LinkedHashSet<ClassEnum> _enums_2 = this.othersingleModuleMetaModel.getEnums();
+    List<ClassEnum> _enums_2 = this.othersingleModuleMetaModel.getEnums();
     int _size_3 = _enums_2.size();
     Assert.assertEquals(2, _size_3);
   }
@@ -220,7 +218,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdValuesEnums() {
     EList<String> _values = this.singleEnumLang.getValues();
     int _size = _values.size();
-    LinkedHashSet<String> _values_1 = this.singleEnumMetaModel.getValues();
+    List<String> _values_1 = this.singleEnumMetaModel.getValues();
     int _size_1 = _values_1.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -229,8 +227,8 @@ public class DomainTest extends AbstractTestClass {
   public void testValuesEnum() {
     EList<String> _values = this.singleEnumLang.getValues();
     final String valueEnumLang = _values.get(0);
-    LinkedHashSet<String> _values_1 = this.singleEnumMetaModel.getValues();
-    final String valueEnumMetaModel = ((String[])Conversions.unwrapArray(_values_1, String.class))[0];
+    List<String> _values_1 = this.singleEnumMetaModel.getValues();
+    final String valueEnumMetaModel = _values_1.get(0);
     Assert.assertEquals(valueEnumLang, valueEnumMetaModel);
   }
   
@@ -238,7 +236,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdEntity() {
     EList<EntityBlock> _entityBlock = this.singleModuleLang.getEntityBlock();
     int _size = _entityBlock.size();
-    LinkedHashSet<Entity> _entities = this.singleModuleMetaModel.getEntities();
+    List<Entity> _entities = this.singleModuleMetaModel.getEntities();
     int _size_1 = _entities.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -271,14 +269,14 @@ public class DomainTest extends AbstractTestClass {
     ExtendBlock _classExtends = this.singleEntityLang.getClassExtends();
     EList<EntityBlock> _values = _classExtends.getValues();
     int _size = _values.size();
-    LinkedHashSet<Entity> _classExtends_1 = this.singleEntityMetaModel.getClassExtends();
+    List<Entity> _classExtends_1 = this.singleEntityMetaModel.getClassExtends();
     int _size_1 = _classExtends_1.size();
     Assert.assertEquals(_size, _size_1);
   }
   
   @Test
   public void testInheritanceClass() {
-    LinkedHashSet<Entity> _classExtends = this.singleEntityMetaModel.getClassExtends();
+    List<Entity> _classExtends = this.singleEntityMetaModel.getClassExtends();
     for (final Entity superClass : _classExtends) {
       String _name = superClass.getName();
       boolean _contains = _name.contains("Pessoa");
@@ -290,7 +288,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdAttributes() {
     EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
     int _size = _attributes.size();
-    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    List<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
     int _size_1 = _attributes_1.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -315,8 +313,8 @@ public class DomainTest extends AbstractTestClass {
   public void testConstraintsFirtsAttr() {
     EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
     Attribute firstLang = _attributes.get(0);
-    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
-    model.domainLayer.Attribute firstMetaModel = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[0];
+    List<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute firstMetaModel = _attributes_1.get(0);
     boolean _isPk = firstLang.isPk();
     Constraints _constraints = firstMetaModel.getConstraints();
     boolean _isPk_1 = _constraints.isPk();
@@ -344,8 +342,8 @@ public class DomainTest extends AbstractTestClass {
   public void testConstraintsSecundAttr() {
     EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
     Attribute secundLang = _attributes.get(1);
-    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
-    model.domainLayer.Attribute secundMetaModel = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[1];
+    List<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute secundMetaModel = _attributes_1.get(1);
     Integer _max = secundLang.getMax();
     Constraints _constraints = secundMetaModel.getConstraints();
     Integer _max_1 = _constraints.getMax();
@@ -368,8 +366,8 @@ public class DomainTest extends AbstractTestClass {
   public void testcConstraintsThirdAttr() {
     EList<Attribute> _attributes = this.singleEntityLang.getAttributes();
     Attribute thirdLang = _attributes.get(2);
-    LinkedHashSet<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
-    model.domainLayer.Attribute thirdMetaModel = ((model.domainLayer.Attribute[])Conversions.unwrapArray(_attributes_1, model.domainLayer.Attribute.class))[2];
+    List<model.domainLayer.Attribute> _attributes_1 = this.singleEntityMetaModel.getAttributes();
+    model.domainLayer.Attribute thirdMetaModel = _attributes_1.get(2);
     String _unique = thirdLang.getUnique();
     Constraints _constraints = thirdMetaModel.getConstraints();
     boolean _isUnique = _constraints.isUnique();
@@ -405,7 +403,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdRepositoryFields() {
     EList<RepositoryFields> _methods = this.repositoryLang.getMethods();
     int _size = _methods.size();
-    LinkedHashSet<Method> _methods_1 = this.repositoryMetaModel.getMethods();
+    List<Method> _methods_1 = this.repositoryMetaModel.getMethods();
     int _size_1 = _methods_1.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -415,8 +413,8 @@ public class DomainTest extends AbstractTestClass {
     MethodParameter _methodsParameters = this.fieldRepositoryLang.getMethodsParameters();
     EList<TypeAndAttribute> _typeAndAttr = _methodsParameters.getTypeAndAttr();
     final TypeAndAttribute methodParameterLang = _typeAndAttr.get(0);
-    LinkedHashSet<Parameter> _parameters = this.fieldRepositoryMetaModel.getParameters();
-    final Parameter methodParameterMetaModel = ((Parameter[])Conversions.unwrapArray(_parameters, Parameter.class))[0];
+    List<Parameter> _parameters = this.fieldRepositoryMetaModel.getParameters();
+    final Parameter methodParameterMetaModel = _parameters.get(0);
     String _name = this.fieldRepositoryLang.getName();
     String _name_1 = this.fieldRepositoryMetaModel.getName();
     Assert.assertEquals(_name, _name_1);
@@ -438,7 +436,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdServices() {
     EList<ServiceBlock> _serviceBlock = this.singleModuleLang.getServiceBlock();
     int _size = _serviceBlock.size();
-    LinkedHashSet<Service> _services = this.singleModuleMetaModel.getServices();
+    List<Service> _services = this.singleModuleMetaModel.getServices();
     int _size_1 = _services.size();
     Assert.assertEquals(_size, _size_1);
   }
@@ -460,7 +458,7 @@ public class DomainTest extends AbstractTestClass {
   public void testQtdServicesFields() {
     EList<ServiceMethod> _serviceFields = this.singleServiceLang.getServiceFields();
     int _size = _serviceFields.size();
-    LinkedHashSet<model.domainLayer.ServiceMethod> _methods = this.singleServiceMetaModel.getMethods();
+    List<model.domainLayer.ServiceMethod> _methods = this.singleServiceMetaModel.getMethods();
     int _size_1 = _methods.size();
     Assert.assertEquals(_size, _size_1);
   }

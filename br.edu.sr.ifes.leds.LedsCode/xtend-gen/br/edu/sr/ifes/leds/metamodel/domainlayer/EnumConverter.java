@@ -3,8 +3,8 @@ package br.edu.sr.ifes.leds.metamodel.domainlayer;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindModule;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Module;
 import model.mainLayer.TableObjects;
@@ -18,10 +18,10 @@ public class EnumConverter {
   
   private FindModule findModule;
   
-  public LinkedHashSet<ClassEnum> convert(final EList<EnumBlock> listEnumLang, final TableObjects tableObjects, final Module moduleMetaModel) {
-    LinkedHashSet<ClassEnum> _xblockexpression = null;
+  public ArrayList<ClassEnum> convert(final EList<EnumBlock> listEnumLang, final TableObjects tableObjects, final Module moduleMetaModel) {
+    ArrayList<ClassEnum> _xblockexpression = null;
     {
-      LinkedHashSet<ClassEnum> listEnumMetaModel = new LinkedHashSet<ClassEnum>();
+      ArrayList<ClassEnum> listEnumMetaModel = new ArrayList<ClassEnum>();
       for (final EnumBlock enumLang : listEnumLang) {
         {
           ClassEnum enumMetaModel = new ClassEnum();
@@ -29,10 +29,10 @@ public class EnumConverter {
           enumMetaModel.setName(_name);
           enumMetaModel.setParent(moduleMetaModel);
           EList<String> _values = enumLang.getValues();
-          LinkedHashSet<String> _linkedHashSet = new LinkedHashSet<String>(_values);
-          enumMetaModel.setValues(_linkedHashSet);
+          ArrayList<String> _arrayList = new ArrayList<String>(_values);
+          enumMetaModel.setValues(_arrayList);
           listEnumMetaModel.add(enumMetaModel);
-          Set<ClassEnum> _enums = tableObjects.getEnums();
+          List<ClassEnum> _enums = tableObjects.getEnums();
           _enums.add(enumMetaModel);
         }
       }

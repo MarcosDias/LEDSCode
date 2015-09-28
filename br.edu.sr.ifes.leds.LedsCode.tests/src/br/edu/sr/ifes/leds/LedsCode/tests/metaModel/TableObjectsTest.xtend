@@ -1,31 +1,31 @@
 package br.edu.sr.ifes.leds.LedsCode.tests.metaModel
 
+import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
 import br.edu.sr.ifes.leds.generator.ProjectConverter
+import java.util.List
+import model.applicationLayer.Application
+import model.domainLayer.ClassEnum
+import model.domainLayer.Domain
+import model.domainLayer.Entity
+import model.domainLayer.Module
+import model.domainLayer.Service
+import model.infrastructureLayer.Infrastructure
+import model.interfaceLayer.Interface
 import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.*
-import br.edu.sr.ifes.leds.LedsCode.tests.AbstractTestClass
-import model.interfaceLayer.Interface
-import model.infrastructureLayer.Infrastructure
-import java.util.Set
-import model.domainLayer.Domain
-import model.applicationLayer.Application
-import model.domainLayer.Module
-import model.domainLayer.Entity
-import model.domainLayer.Service
-import model.domainLayer.ClassEnum
 
 class TableObjectsTest extends AbstractTestClass{
 	
 	Interface iface
 	Infrastructure infrastructure
-	Set<Domain> domains
-	Set<Application> apps
-	Set<Module> modules
-	Set<Entity> entity
-	Set<Service> services
-	Set<ClassEnum> enums
+	List<Domain> domains
+	List<Application> apps
+	List<Module> modules
+	List<Entity> entity
+	List<Service> services
+	List<ClassEnum> enums
 	
 	@Before
   	def void setUp(){

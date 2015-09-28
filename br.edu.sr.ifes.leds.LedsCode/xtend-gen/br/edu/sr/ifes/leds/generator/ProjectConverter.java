@@ -9,8 +9,9 @@ import br.edu.sr.ifes.leds.metamodel.AppConverter;
 import br.edu.sr.ifes.leds.metamodel.DomainConverter;
 import br.edu.sr.ifes.leds.metamodel.InfrastructureConverter;
 import br.edu.sr.ifes.leds.metamodel.InterfaceConverter;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.LinkedHashSet;
+import java.util.List;
 import model.applicationLayer.Application;
 import model.domainLayer.Domain;
 import model.infrastructureLayer.Infrastructure;
@@ -45,7 +46,7 @@ public class ProjectConverter {
   
   public void convertInterface(final model.mainLayer.Project projectMetaModel, final InterfaceConverter ifaceConverter, final Project projectLang, final TableObjects tableObjects) {
     InterfaceBlock _interfaceBlock = projectLang.getInterfaceBlock();
-    LinkedHashSet<Application> _applications = projectMetaModel.getApplications();
+    List<Application> _applications = projectMetaModel.getApplications();
     Interface _conveter = ifaceConverter.conveter(_interfaceBlock, _applications);
     projectMetaModel.setIface(_conveter);
     Interface _iface = projectMetaModel.getIface();
@@ -54,10 +55,10 @@ public class ProjectConverter {
   
   public void convertApplication(final model.mainLayer.Project projectMetaModel, final AppConverter appConverter, final Project projectLang, final TableObjects tableObjects) {
     EList<ApplicationBlock> _applicationBlock = projectLang.getApplicationBlock();
-    LinkedHashSet<Domain> _domains = projectMetaModel.getDomains();
-    LinkedHashSet<Application> _conveter = appConverter.conveter(_applicationBlock, _domains);
+    List<Domain> _domains = projectMetaModel.getDomains();
+    ArrayList<Application> _conveter = appConverter.conveter(_applicationBlock, _domains);
     projectMetaModel.setApplications(_conveter);
-    LinkedHashSet<Application> _applications = projectMetaModel.getApplications();
+    List<Application> _applications = projectMetaModel.getApplications();
     tableObjects.setApps(_applications);
   }
   
@@ -71,9 +72,9 @@ public class ProjectConverter {
   
   public void convertDomains(final model.mainLayer.Project projectMetaModel, final DomainConverter domainConverter, final Project projectLang, final TableObjects tableObjects) {
     EList<DomainBlock> _domainBlock = projectLang.getDomainBlock();
-    LinkedHashSet<Domain> _converter = domainConverter.converter(_domainBlock, tableObjects);
+    ArrayList<Domain> _converter = domainConverter.converter(_domainBlock, tableObjects);
     projectMetaModel.setDomains(_converter);
-    LinkedHashSet<Domain> _domains = projectMetaModel.getDomains();
+    List<Domain> _domains = projectMetaModel.getDomains();
     tableObjects.setDomains(_domains);
   }
 }

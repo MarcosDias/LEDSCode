@@ -4,9 +4,7 @@ import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock;
 import br.edu.sr.ifes.leds.metamodel.util.FindModule;
 import com.google.common.base.Objects;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Entity;
 import model.domainLayer.Module;
@@ -21,7 +19,7 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
 public class FindEntity {
   private FindModule findModule;
   
-  public Entity findFullPathEntity(final Set<Entity> listEntity, final String full) {
+  public Entity findFullPathEntity(final List<Entity> listEntity, final String full) {
     try {
       Entity _xblockexpression = null;
       {
@@ -58,13 +56,13 @@ public class FindEntity {
       }
       SuperClass _xtrycatchfinallyexpression = null;
       try {
-        Set<Entity> _entities = tableObjects.getEntities();
+        List<Entity> _entities = tableObjects.getEntities();
         Entity _inMetaModel = this.inMetaModel(_entities, nameResult);
         _xtrycatchfinallyexpression = ((SuperClass) _inMetaModel);
       } catch (final Throwable _t) {
         if (_t instanceof Exception) {
           final Exception e = (Exception)_t;
-          Set<ClassEnum> _enums = tableObjects.getEnums();
+          List<ClassEnum> _enums = tableObjects.getEnums();
           ClassEnum _inEnums = this.inEnums(_enums, nameResult);
           _xtrycatchfinallyexpression = ((SuperClass) _inEnums);
         } else {
@@ -85,7 +83,7 @@ public class FindEntity {
    * @param entityLang Objeto entidade de uma linguagem que serah buscado em um metamodelo
    * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
    */
-  public Entity inMetaModel(final LinkedHashSet<Entity> listEntityMetaModel, final EntityBlock entityLang) {
+  public Entity inMetaModel(final List<Entity> listEntityMetaModel, final EntityBlock entityLang) {
     String _name = entityLang.getName();
     return this.findEntityInList(listEntityMetaModel, _name);
   }
@@ -99,11 +97,11 @@ public class FindEntity {
    * @param nameEntity Nome da entidade que deseja ser buscada
    * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
    */
-  public Entity inMetaModel(final Set<Entity> listEntityMetaModel, final String nameEntity) {
+  public Entity inMetaModel(final List<Entity> listEntityMetaModel, final String nameEntity) {
     return this.findEntityInList(listEntityMetaModel, nameEntity);
   }
   
-  public ClassEnum inEnums(final Set<ClassEnum> cEnums, final String name) {
+  public ClassEnum inEnums(final List<ClassEnum> cEnums, final String name) {
     try {
       for (final ClassEnum ennum : cEnums) {
         String _name = ennum.getName();
@@ -126,7 +124,7 @@ public class FindEntity {
    * @param nameEntity Nome da entidade que deseja ser buscada
    * @return Entity Caso entrontrado retorna a entidade de um metamodelo, caso contrario, retorna null
    */
-  private Entity findEntityInList(final Set<Entity> listEntityMetaModel, final String nameEntity) {
+  private Entity findEntityInList(final List<Entity> listEntityMetaModel, final String nameEntity) {
     try {
       for (final Entity entityMetaModel : listEntityMetaModel) {
         String _name = entityMetaModel.getName();

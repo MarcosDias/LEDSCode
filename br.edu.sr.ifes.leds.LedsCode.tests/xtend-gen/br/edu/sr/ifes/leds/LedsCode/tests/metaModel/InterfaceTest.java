@@ -5,13 +5,12 @@ import br.edu.sr.ifes.leds.generator.ProjectConverter;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
-import java.util.LinkedHashSet;
+import java.util.List;
 import model.applicationLayer.Application;
 import model.interfaceLayer.Interface;
 import model.interfaceLayer.Type;
 import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,8 +41,8 @@ public class InterfaceTest extends AbstractTestClass {
     this.projectMetaModel = _project;
     Interface _iface = this.projectMetaModel.getIface();
     this.ifaceMetaModel = _iface;
-    LinkedHashSet<model.interfaceLayer.InterfaceApplication> _interfaceApplication_1 = this.ifaceMetaModel.getInterfaceApplication();
-    model.interfaceLayer.InterfaceApplication _get_1 = ((model.interfaceLayer.InterfaceApplication[])Conversions.unwrapArray(_interfaceApplication_1, model.interfaceLayer.InterfaceApplication.class))[0];
+    List<model.interfaceLayer.InterfaceApplication> _interfaceApplication_1 = this.ifaceMetaModel.getInterfaceApplication();
+    model.interfaceLayer.InterfaceApplication _get_1 = _interfaceApplication_1.get(0);
     this.ifaceFieldMetaModel = _get_1;
   }
   
@@ -58,7 +57,7 @@ public class InterfaceTest extends AbstractTestClass {
   public void testQtdInterfaceField() {
     EList<InterfaceApplication> _interfaceApplication = this.ifaceLang.getInterfaceApplication();
     int _size = _interfaceApplication.size();
-    LinkedHashSet<model.interfaceLayer.InterfaceApplication> _interfaceApplication_1 = this.ifaceMetaModel.getInterfaceApplication();
+    List<model.interfaceLayer.InterfaceApplication> _interfaceApplication_1 = this.ifaceMetaModel.getInterfaceApplication();
     int _size_1 = _interfaceApplication_1.size();
     Assert.assertEquals(_size, _size_1);
   }

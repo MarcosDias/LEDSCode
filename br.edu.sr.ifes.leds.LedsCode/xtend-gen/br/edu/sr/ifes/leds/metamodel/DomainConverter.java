@@ -9,8 +9,8 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.ServiceConverter;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import model.domainLayer.ClassEnum;
 import model.domainLayer.Domain;
 import model.domainLayer.Entity;
@@ -40,17 +40,17 @@ public class DomainConverter {
    * da linguagem para objetos do metamodelo
    * @return HashSet<Domain> Set de dominio do metamodelo
    */
-  public LinkedHashSet<Domain> converter(final EList<DomainBlock> listDomainLang, final TableObjects tableObjects) {
-    LinkedHashSet<Domain> _xblockexpression = null;
+  public ArrayList<Domain> converter(final EList<DomainBlock> listDomainLang, final TableObjects tableObjects) {
+    ArrayList<Domain> _xblockexpression = null;
     {
-      final LinkedHashSet<Domain> setDomainMetaModel = new LinkedHashSet<Domain>();
+      final ArrayList<Domain> setDomainMetaModel = new ArrayList<Domain>();
       for (final DomainBlock domainLang : listDomainLang) {
         {
           final Domain domainMetaModel = new Domain();
           String _name = domainLang.getName();
           domainMetaModel.setName(_name);
           EList<ModuleBlock> _module = domainLang.getModule();
-          LinkedHashSet<Module> _convertModule = this.convertModule(_module, domainMetaModel, tableObjects);
+          ArrayList<Module> _convertModule = this.convertModule(_module, domainMetaModel, tableObjects);
           domainMetaModel.setModules(_convertModule);
           setDomainMetaModel.add(domainMetaModel);
         }
@@ -67,12 +67,12 @@ public class DomainConverter {
    * 
    * @paran listModulesLang Lista de modulos que serao traduzidos
    * @param domainMetaModel Dominio que esta sendo processado
-   * @return LinkedHashSet<model.domainLayer.Module> Set de modulo de metamodelo
+   * @return List<model.domainLayer.Module> Set de modulo de metamodelo
    */
-  public LinkedHashSet<Module> convertModule(final EList<ModuleBlock> listModulesLang, final Domain domainMetaModel, final TableObjects tableObjects) {
-    LinkedHashSet<Module> _xblockexpression = null;
+  public ArrayList<Module> convertModule(final EList<ModuleBlock> listModulesLang, final Domain domainMetaModel, final TableObjects tableObjects) {
+    ArrayList<Module> _xblockexpression = null;
     {
-      final LinkedHashSet<Module> setModulesMetaModule = new LinkedHashSet<Module>();
+      final ArrayList<Module> setModulesMetaModule = new ArrayList<Module>();
       for (final ModuleBlock moduleLang : listModulesLang) {
         {
           Module moduleMetaModel = new Module();
@@ -80,16 +80,16 @@ public class DomainConverter {
           String _name = moduleLang.getName();
           moduleMetaModel.setName(_name);
           EList<EnumBlock> _enumBlock = moduleLang.getEnumBlock();
-          LinkedHashSet<ClassEnum> _convert = this.enumConverter.convert(_enumBlock, tableObjects, moduleMetaModel);
+          ArrayList<ClassEnum> _convert = this.enumConverter.convert(_enumBlock, tableObjects, moduleMetaModel);
           moduleMetaModel.setEnums(_convert);
           EList<EntityBlock> _entityBlock = moduleLang.getEntityBlock();
-          LinkedHashSet<Entity> _convert_1 = this.entityConverter.convert(_entityBlock, moduleMetaModel, tableObjects);
+          ArrayList<Entity> _convert_1 = this.entityConverter.convert(_entityBlock, moduleMetaModel, tableObjects);
           moduleMetaModel.setEntities(_convert_1);
           EList<ServiceBlock> _serviceBlock = moduleLang.getServiceBlock();
-          LinkedHashSet<Service> _convert_2 = this.serviceConverter.convert(_serviceBlock, moduleMetaModel, tableObjects);
+          ArrayList<Service> _convert_2 = this.serviceConverter.convert(_serviceBlock, moduleMetaModel, tableObjects);
           moduleMetaModel.setServices(_convert_2);
           setModulesMetaModule.add(moduleMetaModel);
-          Set<Module> _modules = tableObjects.getModules();
+          List<Module> _modules = tableObjects.getModules();
           _modules.add(moduleMetaModel);
         }
       }

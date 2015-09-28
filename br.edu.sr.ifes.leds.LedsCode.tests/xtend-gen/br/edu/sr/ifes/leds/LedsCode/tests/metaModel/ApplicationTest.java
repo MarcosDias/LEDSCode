@@ -6,7 +6,6 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.List;
 import model.applicationLayer.Application;
 import model.applicationLayer.SpecificApplicationDomain;
@@ -14,7 +13,6 @@ import model.applicationLayer.SpecificApplicationModule;
 import model.domainLayer.Domain;
 import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.xbase.lib.Conversions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +25,7 @@ public class ApplicationTest extends AbstractTestClass {
   
   private String singleAppDomainLang;
   
-  private LinkedHashSet<Application> appMetaModel;
+  private List<Application> appMetaModel;
   
   private Application singleAppMetalModel;
   
@@ -47,9 +45,9 @@ public class ApplicationTest extends AbstractTestClass {
     this.tableObjects = _convert;
     model.mainLayer.Project _project = this.tableObjects.getProject();
     this.projectMetaModel = _project;
-    LinkedHashSet<Application> _applications = this.projectMetaModel.getApplications();
+    List<Application> _applications = this.projectMetaModel.getApplications();
     this.appMetaModel = _applications;
-    Application _get_2 = ((Application[])Conversions.unwrapArray(this.appMetaModel, Application.class))[0];
+    Application _get_2 = this.appMetaModel.get(0);
     this.singleAppMetalModel = _get_2;
   }
   
@@ -69,7 +67,7 @@ public class ApplicationTest extends AbstractTestClass {
   
   @Test
   public void testQtdApplicationDomain() {
-    LinkedHashSet<SpecificApplicationDomain> _structure = this.singleAppMetalModel.getStructure();
+    List<SpecificApplicationDomain> _structure = this.singleAppMetalModel.getStructure();
     int _size = _structure.size();
     Assert.assertEquals(1, _size);
   }
@@ -81,13 +79,13 @@ public class ApplicationTest extends AbstractTestClass {
     ArrayList<String> strutureAppLang = new ArrayList<String>(_asList);
     String _get = strutureAppLang.get(0);
     String _string = _get.toString();
-    LinkedHashSet<SpecificApplicationDomain> _structure = this.singleAppMetalModel.getStructure();
-    SpecificApplicationDomain _get_1 = ((SpecificApplicationDomain[])Conversions.unwrapArray(_structure, SpecificApplicationDomain.class))[0];
+    List<SpecificApplicationDomain> _structure = this.singleAppMetalModel.getStructure();
+    SpecificApplicationDomain _get_1 = _structure.get(0);
     Domain _domain = _get_1.getDomain();
     String _name = _domain.getName();
     Assert.assertEquals(_string, _name);
-    LinkedHashSet<SpecificApplicationDomain> _structure_1 = this.singleAppMetalModel.getStructure();
-    SpecificApplicationDomain _get_2 = ((SpecificApplicationDomain[])Conversions.unwrapArray(_structure_1, SpecificApplicationDomain.class))[0];
+    List<SpecificApplicationDomain> _structure_1 = this.singleAppMetalModel.getStructure();
+    SpecificApplicationDomain _get_2 = _structure_1.get(0);
     SpecificApplicationModule _son = _get_2.getSon();
     Assert.assertNull(_son);
   }
