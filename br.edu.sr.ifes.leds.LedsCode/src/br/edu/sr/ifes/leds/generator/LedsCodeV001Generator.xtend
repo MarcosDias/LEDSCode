@@ -27,8 +27,6 @@ class LedsCodeV001Generator implements IGenerator {
 		var projectLang = resource.allContents.toIterable.filter(Project).head
 		var metaModelo = conversor.convert(projectLang)
 		var scriptProject = springRooConversor.createProject(metaModelo)
-		println(scriptProject)
-		
-		//fsa.generateFile(springRooConversor.name+'-'+metaModelo.name+'.roo', scriptProject)
+		fsa.generateFile("Spring_Roo"+'-'+metaModelo.project.name+'.roo', scriptProject)
 	}
 }

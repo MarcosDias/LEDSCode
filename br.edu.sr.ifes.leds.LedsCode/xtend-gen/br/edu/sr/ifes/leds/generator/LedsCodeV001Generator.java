@@ -16,7 +16,6 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
@@ -41,6 +40,10 @@ public class LedsCodeV001Generator implements IGenerator {
     Project projectLang = IterableExtensions.<Project>head(_filter);
     TableObjects metaModelo = conversor.convert(projectLang);
     String scriptProject = springRooConversor.createProject(metaModelo);
-    InputOutput.<String>println(scriptProject);
+    model.mainLayer.Project _project = metaModelo.getProject();
+    String _name = _project.getName();
+    String _plus = (("Spring_Roo" + "-") + _name);
+    String _plus_1 = (_plus + ".roo");
+    fsa.generateFile(_plus_1, scriptProject);
   }
 }
