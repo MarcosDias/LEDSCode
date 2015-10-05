@@ -147,36 +147,14 @@ public class LedsCodeV001SemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     (
 	 *         versionValue=STRING 
 	 *         nameValue=STRING 
-	 *         userValue=STRING 
-	 *         passValue=STRING 
-	 *         hostValue=STRING 
-	 *         envValue=STRING
+	 *         userValue=STRING? 
+	 *         passValue=STRING? 
+	 *         hostValue=STRING? 
+	 *         envValue=STRING?
 	 *     )
 	 */
 	protected void sequence_Database(EObject context, Database semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__VERSION_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__VERSION_VALUE));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__NAME_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__NAME_VALUE));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__USER_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__USER_VALUE));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__PASS_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__PASS_VALUE));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__HOST_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__HOST_VALUE));
-			if(transientValues.isValueTransient(semanticObject, LedsCodeV001Package.Literals.DATABASE__ENV_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LedsCodeV001Package.Literals.DATABASE__ENV_VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDatabaseAccess().getVersionValueSTRINGTerminalRuleCall_2_0(), semanticObject.getVersionValue());
-		feeder.accept(grammarAccess.getDatabaseAccess().getNameValueSTRINGTerminalRuleCall_6_0(), semanticObject.getNameValue());
-		feeder.accept(grammarAccess.getDatabaseAccess().getUserValueSTRINGTerminalRuleCall_10_0(), semanticObject.getUserValue());
-		feeder.accept(grammarAccess.getDatabaseAccess().getPassValueSTRINGTerminalRuleCall_14_0(), semanticObject.getPassValue());
-		feeder.accept(grammarAccess.getDatabaseAccess().getHostValueSTRINGTerminalRuleCall_18_0(), semanticObject.getHostValue());
-		feeder.accept(grammarAccess.getDatabaseAccess().getEnvValueSTRINGTerminalRuleCall_22_0(), semanticObject.getEnvValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
