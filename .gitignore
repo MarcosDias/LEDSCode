@@ -4,10 +4,7 @@
 .mtj.tmp/
 
 # Package Files #
-br.edu.sr.ifes.leds.LedsCode/*.jar
-br.edu.sr.ifes.leds.LedsCode.sdk/*.jar
-br.edu.sr.ifes.leds.LedsCode.tests/*.jar
-br.edu.sr.ifes.leds.LedsCode.ui/*.jar
+*.jar
 *.war
 *.ear
 
