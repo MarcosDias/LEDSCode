@@ -46,10 +46,10 @@ InfrastructureBlock:
 Database:
 	'@version' ':' versionValue=STRING ',' 
 	'@name' ':' nameValue=STRING ',' 
-	('@user' ':' userValue=STRING ',')?
-	('@pass' ':' passValue=STRING ',')?
-	('@host' ':' hostValue=STRING ',')?
-	('@env' ':' envValue=STRING ',')?
+	'@user' ':' userValue=STRING ','
+	'@pass' ':' passValue=STRING ','
+	'@host' ':' hostValue=STRING ','
+	'@env' ':' envValue=STRING
 ;
 
 NameVersion:

@@ -359,38 +359,33 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameValueAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cNameValueSTRINGTerminalRuleCall_6_0 = (RuleCall)cNameValueAssignment_6.eContents().get(0);
 		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cUserKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
-		private final Assignment cUserValueAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
-		private final RuleCall cUserValueSTRINGTerminalRuleCall_8_2_0 = (RuleCall)cUserValueAssignment_8_2.eContents().get(0);
-		private final Keyword cCommaKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cPassKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Keyword cColonKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Assignment cPassValueAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
-		private final RuleCall cPassValueSTRINGTerminalRuleCall_9_2_0 = (RuleCall)cPassValueAssignment_9_2.eContents().get(0);
-		private final Keyword cCommaKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
-		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
-		private final Keyword cHostKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Keyword cColonKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
-		private final Assignment cHostValueAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
-		private final RuleCall cHostValueSTRINGTerminalRuleCall_10_2_0 = (RuleCall)cHostValueAssignment_10_2.eContents().get(0);
-		private final Keyword cCommaKeyword_10_3 = (Keyword)cGroup_10.eContents().get(3);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Keyword cEnvKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
-		private final Keyword cColonKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Assignment cEnvValueAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
-		private final RuleCall cEnvValueSTRINGTerminalRuleCall_11_2_0 = (RuleCall)cEnvValueAssignment_11_2.eContents().get(0);
-		private final Keyword cCommaKeyword_11_3 = (Keyword)cGroup_11.eContents().get(3);
+		private final Keyword cUserKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cColonKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cUserValueAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cUserValueSTRINGTerminalRuleCall_10_0 = (RuleCall)cUserValueAssignment_10.eContents().get(0);
+		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cPassKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cColonKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cPassValueAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cPassValueSTRINGTerminalRuleCall_14_0 = (RuleCall)cPassValueAssignment_14.eContents().get(0);
+		private final Keyword cCommaKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cHostKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cColonKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cHostValueAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cHostValueSTRINGTerminalRuleCall_18_0 = (RuleCall)cHostValueAssignment_18.eContents().get(0);
+		private final Keyword cCommaKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cEnvKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Keyword cColonKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Assignment cEnvValueAssignment_22 = (Assignment)cGroup.eContents().get(22);
+		private final RuleCall cEnvValueSTRINGTerminalRuleCall_22_0 = (RuleCall)cEnvValueAssignment_22.eContents().get(0);
 		
 		//Database:
-		//	"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," ("@user" ":" userValue=STRING ",")? ("@pass"
-		//	":" passValue=STRING ",")? ("@host" ":" hostValue=STRING ",")? ("@env" ":" envValue=STRING ",")?;
+		//	"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," "@user" ":" userValue=STRING "," "@pass" ":"
+		//	passValue=STRING "," "@host" ":" hostValue=STRING "," "@env" ":" envValue=STRING;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," ("@user" ":" userValue=STRING ",")? ("@pass" ":"
-		//passValue=STRING ",")? ("@host" ":" hostValue=STRING ",")? ("@env" ":" envValue=STRING ",")?
+		//"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," "@user" ":" userValue=STRING "," "@pass" ":"
+		//passValue=STRING "," "@host" ":" hostValue=STRING "," "@env" ":" envValue=STRING
 		public Group getGroup() { return cGroup; }
 
 		//"@version"
@@ -423,77 +418,62 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
 
-		//("@user" ":" userValue=STRING ",")?
-		public Group getGroup_8() { return cGroup_8; }
-
 		//"@user"
-		public Keyword getUserKeyword_8_0() { return cUserKeyword_8_0; }
+		public Keyword getUserKeyword_8() { return cUserKeyword_8; }
 
 		//":"
-		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
+		public Keyword getColonKeyword_9() { return cColonKeyword_9; }
 
 		//userValue=STRING
-		public Assignment getUserValueAssignment_8_2() { return cUserValueAssignment_8_2; }
+		public Assignment getUserValueAssignment_10() { return cUserValueAssignment_10; }
 
 		//STRING
-		public RuleCall getUserValueSTRINGTerminalRuleCall_8_2_0() { return cUserValueSTRINGTerminalRuleCall_8_2_0; }
+		public RuleCall getUserValueSTRINGTerminalRuleCall_10_0() { return cUserValueSTRINGTerminalRuleCall_10_0; }
 
 		//","
-		public Keyword getCommaKeyword_8_3() { return cCommaKeyword_8_3; }
-
-		//("@pass" ":" passValue=STRING ",")?
-		public Group getGroup_9() { return cGroup_9; }
+		public Keyword getCommaKeyword_11() { return cCommaKeyword_11; }
 
 		//"@pass"
-		public Keyword getPassKeyword_9_0() { return cPassKeyword_9_0; }
+		public Keyword getPassKeyword_12() { return cPassKeyword_12; }
 
 		//":"
-		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
+		public Keyword getColonKeyword_13() { return cColonKeyword_13; }
 
 		//passValue=STRING
-		public Assignment getPassValueAssignment_9_2() { return cPassValueAssignment_9_2; }
+		public Assignment getPassValueAssignment_14() { return cPassValueAssignment_14; }
 
 		//STRING
-		public RuleCall getPassValueSTRINGTerminalRuleCall_9_2_0() { return cPassValueSTRINGTerminalRuleCall_9_2_0; }
+		public RuleCall getPassValueSTRINGTerminalRuleCall_14_0() { return cPassValueSTRINGTerminalRuleCall_14_0; }
 
 		//","
-		public Keyword getCommaKeyword_9_3() { return cCommaKeyword_9_3; }
-
-		//("@host" ":" hostValue=STRING ",")?
-		public Group getGroup_10() { return cGroup_10; }
+		public Keyword getCommaKeyword_15() { return cCommaKeyword_15; }
 
 		//"@host"
-		public Keyword getHostKeyword_10_0() { return cHostKeyword_10_0; }
+		public Keyword getHostKeyword_16() { return cHostKeyword_16; }
 
 		//":"
-		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
+		public Keyword getColonKeyword_17() { return cColonKeyword_17; }
 
 		//hostValue=STRING
-		public Assignment getHostValueAssignment_10_2() { return cHostValueAssignment_10_2; }
+		public Assignment getHostValueAssignment_18() { return cHostValueAssignment_18; }
 
 		//STRING
-		public RuleCall getHostValueSTRINGTerminalRuleCall_10_2_0() { return cHostValueSTRINGTerminalRuleCall_10_2_0; }
+		public RuleCall getHostValueSTRINGTerminalRuleCall_18_0() { return cHostValueSTRINGTerminalRuleCall_18_0; }
 
 		//","
-		public Keyword getCommaKeyword_10_3() { return cCommaKeyword_10_3; }
-
-		//("@env" ":" envValue=STRING ",")?
-		public Group getGroup_11() { return cGroup_11; }
+		public Keyword getCommaKeyword_19() { return cCommaKeyword_19; }
 
 		//"@env"
-		public Keyword getEnvKeyword_11_0() { return cEnvKeyword_11_0; }
+		public Keyword getEnvKeyword_20() { return cEnvKeyword_20; }
 
 		//":"
-		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
+		public Keyword getColonKeyword_21() { return cColonKeyword_21; }
 
 		//envValue=STRING
-		public Assignment getEnvValueAssignment_11_2() { return cEnvValueAssignment_11_2; }
+		public Assignment getEnvValueAssignment_22() { return cEnvValueAssignment_22; }
 
 		//STRING
-		public RuleCall getEnvValueSTRINGTerminalRuleCall_11_2_0() { return cEnvValueSTRINGTerminalRuleCall_11_2_0; }
-
-		//","
-		public Keyword getCommaKeyword_11_3() { return cCommaKeyword_11_3; }
+		public RuleCall getEnvValueSTRINGTerminalRuleCall_22_0() { return cEnvValueSTRINGTerminalRuleCall_22_0; }
 	}
 
 	public class NameVersionElements extends AbstractParserRuleElementFinder {
@@ -1720,8 +1700,8 @@ public class LedsCodeV001GrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Database:
-	//	"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," ("@user" ":" userValue=STRING ",")? ("@pass"
-	//	":" passValue=STRING ",")? ("@host" ":" hostValue=STRING ",")? ("@env" ":" envValue=STRING ",")?;
+	//	"@version" ":" versionValue=STRING "," "@name" ":" nameValue=STRING "," "@user" ":" userValue=STRING "," "@pass" ":"
+	//	passValue=STRING "," "@host" ":" hostValue=STRING "," "@env" ":" envValue=STRING;
 	public DatabaseElements getDatabaseAccess() {
 		return pDatabase;
 	}

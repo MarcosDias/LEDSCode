@@ -680,19 +680,19 @@ ruleDatabase returns [EObject current=null]
     {
     	newLeafNode(otherlv_7, grammarAccess.getDatabaseAccess().getCommaKeyword_7());
     }
-(	otherlv_8='@user' 
+	otherlv_8='@user' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getDatabaseAccess().getUserKeyword_8_0());
+    	newLeafNode(otherlv_8, grammarAccess.getDatabaseAccess().getUserKeyword_8());
     }
 	otherlv_9=':' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getDatabaseAccess().getColonKeyword_8_1());
+    	newLeafNode(otherlv_9, grammarAccess.getDatabaseAccess().getColonKeyword_9());
     }
 (
 (
 		lv_userValue_10_0=RULE_STRING
 		{
-			newLeafNode(lv_userValue_10_0, grammarAccess.getDatabaseAccess().getUserValueSTRINGTerminalRuleCall_8_2_0()); 
+			newLeafNode(lv_userValue_10_0, grammarAccess.getDatabaseAccess().getUserValueSTRINGTerminalRuleCall_10_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -708,21 +708,21 @@ ruleDatabase returns [EObject current=null]
 )
 )	otherlv_11=',' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getDatabaseAccess().getCommaKeyword_8_3());
+    	newLeafNode(otherlv_11, grammarAccess.getDatabaseAccess().getCommaKeyword_11());
     }
-)?(	otherlv_12='@pass' 
+	otherlv_12='@pass' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getDatabaseAccess().getPassKeyword_9_0());
+    	newLeafNode(otherlv_12, grammarAccess.getDatabaseAccess().getPassKeyword_12());
     }
 	otherlv_13=':' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getDatabaseAccess().getColonKeyword_9_1());
+    	newLeafNode(otherlv_13, grammarAccess.getDatabaseAccess().getColonKeyword_13());
     }
 (
 (
 		lv_passValue_14_0=RULE_STRING
 		{
-			newLeafNode(lv_passValue_14_0, grammarAccess.getDatabaseAccess().getPassValueSTRINGTerminalRuleCall_9_2_0()); 
+			newLeafNode(lv_passValue_14_0, grammarAccess.getDatabaseAccess().getPassValueSTRINGTerminalRuleCall_14_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -738,21 +738,21 @@ ruleDatabase returns [EObject current=null]
 )
 )	otherlv_15=',' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getDatabaseAccess().getCommaKeyword_9_3());
+    	newLeafNode(otherlv_15, grammarAccess.getDatabaseAccess().getCommaKeyword_15());
     }
-)?(	otherlv_16='@host' 
+	otherlv_16='@host' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getDatabaseAccess().getHostKeyword_10_0());
+    	newLeafNode(otherlv_16, grammarAccess.getDatabaseAccess().getHostKeyword_16());
     }
 	otherlv_17=':' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getDatabaseAccess().getColonKeyword_10_1());
+    	newLeafNode(otherlv_17, grammarAccess.getDatabaseAccess().getColonKeyword_17());
     }
 (
 (
 		lv_hostValue_18_0=RULE_STRING
 		{
-			newLeafNode(lv_hostValue_18_0, grammarAccess.getDatabaseAccess().getHostValueSTRINGTerminalRuleCall_10_2_0()); 
+			newLeafNode(lv_hostValue_18_0, grammarAccess.getDatabaseAccess().getHostValueSTRINGTerminalRuleCall_18_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -768,21 +768,21 @@ ruleDatabase returns [EObject current=null]
 )
 )	otherlv_19=',' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getDatabaseAccess().getCommaKeyword_10_3());
+    	newLeafNode(otherlv_19, grammarAccess.getDatabaseAccess().getCommaKeyword_19());
     }
-)?(	otherlv_20='@env' 
+	otherlv_20='@env' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getDatabaseAccess().getEnvKeyword_11_0());
+    	newLeafNode(otherlv_20, grammarAccess.getDatabaseAccess().getEnvKeyword_20());
     }
 	otherlv_21=':' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getDatabaseAccess().getColonKeyword_11_1());
+    	newLeafNode(otherlv_21, grammarAccess.getDatabaseAccess().getColonKeyword_21());
     }
 (
 (
 		lv_envValue_22_0=RULE_STRING
 		{
-			newLeafNode(lv_envValue_22_0, grammarAccess.getDatabaseAccess().getEnvValueSTRINGTerminalRuleCall_11_2_0()); 
+			newLeafNode(lv_envValue_22_0, grammarAccess.getDatabaseAccess().getEnvValueSTRINGTerminalRuleCall_22_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -796,11 +796,7 @@ ruleDatabase returns [EObject current=null]
 	    }
 
 )
-)	otherlv_23=',' 
-    {
-    	newLeafNode(otherlv_23, grammarAccess.getDatabaseAccess().getCommaKeyword_11_3());
-    }
-)?)
+))
 ;
 
 
