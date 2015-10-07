@@ -5,7 +5,6 @@ import br.edu.sr.ifes.leds.generator.ProjectConverter;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import ctrl.SpringRooCtrl;
 import model.mainLayer.TableObjects;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,8 +22,6 @@ public class SpringRooCtrlTest extends AbstractTestClass {
     this.tableObjects = _convert;
     SpringRooCtrl _springRooCtrl = new SpringRooCtrl();
     this.roo = _springRooCtrl;
-    String _createProject = this.roo.createProject(this.tableObjects);
-    InputOutput.<String>println(_createProject);
   }
   
   @Test

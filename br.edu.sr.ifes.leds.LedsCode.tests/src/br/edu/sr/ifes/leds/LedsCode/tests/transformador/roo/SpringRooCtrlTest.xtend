@@ -16,7 +16,6 @@ public class SpringRooCtrlTest extends AbstractTestClass{
   		projectLang = parseProject()
   		tableObjects = new ProjectConverter().convert(projectLang);
 		roo = new SpringRooCtrl
-		println(roo.createProject(tableObjects))
   	}
   	
   	@Test

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="/home/marcosdias/Workspace/facul/tcc/modulos/transformadorSptringRoo/target/transformadorSpringRoo-0.0.1-SNAPSHOT.jar" sourcepath="/transformadorSpringRoo"/>
+	<classpathentry kind="lib" path="/home/marcosdias/Workspace/facul/tcc/modulos/transformadorSptringRoo/target/transformadorSpringRoo-0.0.1-SNAPSHOT.jar" sourcepath="/transformadorSpringRoo"/>
 	<classpathentry exported="true" kind="lib" path="/home/marcosdias/Workspace/facul/tcc/modulos/metamodel/target/metamodel-1.0-SNAPSHOT.jar" sourcepath="/metamodel"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
