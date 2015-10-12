@@ -5,11 +5,11 @@ package br.edu.sr.ifes.leds.generator
 
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import com.google.inject.Inject
-import ctrl.SpringRooCtrl
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.naming.IQualifiedNameProvider
+import ctrl.SpringRooCtrl
 
 /**
  * Generates code from your model files on save.
