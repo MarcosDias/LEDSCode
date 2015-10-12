@@ -7,13 +7,13 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod;
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
 import br.edu.sr.ifes.leds.metamodel.util.FindRepositoryMethod;
 import br.edu.sr.ifes.leds.metamodel.util.FindService;
+import br.edu.sr.ifes.leds.model.domainLayer.Entity;
+import br.edu.sr.ifes.leds.model.domainLayer.Method;
+import br.edu.sr.ifes.leds.model.domainLayer.Module;
+import br.edu.sr.ifes.leds.model.domainLayer.Service;
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects;
 import java.util.ArrayList;
 import java.util.List;
-import model.domainLayer.Entity;
-import model.domainLayer.Method;
-import model.domainLayer.Module;
-import model.domainLayer.Service;
-import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -26,7 +26,7 @@ public class ServiceConverter {
   
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   public ArrayList<Service> convert(final EList<ServiceBlock> listServiceLang, final Module moduleMetaModel, final TableObjects tableObjects) {
     ArrayList<Service> _xblockexpression = null;
@@ -40,7 +40,7 @@ public class ServiceConverter {
           serviceMetaModel.setName(_name);
           EList<ServiceMethod> _serviceFields = serviceLang.getServiceFields();
           List<Entity> _entities = moduleMetaModel.getEntities();
-          ArrayList<model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, _entities, tableObjects);
+          ArrayList<br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod> _convertServiceMethod = this.convertServiceMethod(_serviceFields, _entities, tableObjects);
           serviceMetaModel.setMethods(_convertServiceMethod);
           listServiceMetaModel.add(serviceMetaModel);
           List<Service> _services = tableObjects.getServices();
@@ -52,13 +52,13 @@ public class ServiceConverter {
     return _xblockexpression;
   }
   
-  public ArrayList<model.domainLayer.ServiceMethod> convertServiceMethod(final EList<ServiceMethod> listServiceLang, final List<Entity> listEntityMetaModel, final TableObjects tableObjects) {
-    ArrayList<model.domainLayer.ServiceMethod> _xblockexpression = null;
+  public ArrayList<br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod> convertServiceMethod(final EList<ServiceMethod> listServiceLang, final List<Entity> listEntityMetaModel, final TableObjects tableObjects) {
+    ArrayList<br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod> _xblockexpression = null;
     {
-      ArrayList<model.domainLayer.ServiceMethod> listServiceMethodsMetaModel = new ArrayList<model.domainLayer.ServiceMethod>();
+      ArrayList<br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod> listServiceMethodsMetaModel = new ArrayList<br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod>();
       for (final ServiceMethod serviceMethodLang : listServiceLang) {
         {
-          model.domainLayer.ServiceMethod serviceMethodMetaModel = this.compileService(serviceMethodLang, listEntityMetaModel, tableObjects);
+          br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod serviceMethodMetaModel = this.compileService(serviceMethodLang, listEntityMetaModel, tableObjects);
           listServiceMethodsMetaModel.add(serviceMethodMetaModel);
         }
       }
@@ -67,10 +67,10 @@ public class ServiceConverter {
     return _xblockexpression;
   }
   
-  public model.domainLayer.ServiceMethod compileService(final ServiceMethod serviceMethodLang, final List<Entity> listEntityMetaModel, final TableObjects tableObjects) {
-    model.domainLayer.ServiceMethod _xblockexpression = null;
+  public br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod compileService(final ServiceMethod serviceMethodLang, final List<Entity> listEntityMetaModel, final TableObjects tableObjects) {
+    br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod _xblockexpression = null;
     {
-      model.domainLayer.ServiceMethod serviceMethodMetaModel = new model.domainLayer.ServiceMethod();
+      br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod serviceMethodMetaModel = new br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod();
       String _name = serviceMethodLang.getName();
       serviceMethodMetaModel.setName(_name);
       List<Entity> _entities = tableObjects.getEntities();
@@ -82,7 +82,7 @@ public class ServiceConverter {
     return _xblockexpression;
   }
   
-  public ServiceConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public ServiceConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     FindEntity _findEntity = new FindEntity();
     this.findEntity = _findEntity;
     FindRepositoryMethod _findRepositoryMethod = new FindRepositoryMethod();

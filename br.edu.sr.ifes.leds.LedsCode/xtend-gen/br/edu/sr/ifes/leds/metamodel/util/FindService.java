@@ -1,11 +1,11 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
+import br.edu.sr.ifes.leds.model.domainLayer.Entity;
+import br.edu.sr.ifes.leds.model.domainLayer.Method;
+import br.edu.sr.ifes.leds.model.domainLayer.Repository;
 import com.google.common.base.Objects;
 import java.util.List;
-import model.domainLayer.Entity;
-import model.domainLayer.Method;
-import model.domainLayer.Repository;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")

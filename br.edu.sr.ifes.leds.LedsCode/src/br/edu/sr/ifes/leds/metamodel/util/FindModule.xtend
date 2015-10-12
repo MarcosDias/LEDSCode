@@ -1,8 +1,8 @@
 package br.edu.sr.ifes.leds.metamodel.util
 
+import br.edu.sr.ifes.leds.model.domainLayer.Module
 import java.util.Arrays
 import java.util.List
-import model.domainLayer.Module
 
 class FindModule {
 	FindDomain findDomain

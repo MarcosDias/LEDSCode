@@ -4,11 +4,11 @@ import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceApplication;
 import br.edu.sr.ifes.leds.ledsCodeV001.InterfaceBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindApplication;
+import br.edu.sr.ifes.leds.model.applicationLayer.Application;
+import br.edu.sr.ifes.leds.model.interfaceLayer.Interface;
+import br.edu.sr.ifes.leds.model.interfaceLayer.Type;
 import java.util.ArrayList;
 import java.util.List;
-import model.applicationLayer.Application;
-import model.interfaceLayer.Interface;
-import model.interfaceLayer.Type;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -17,7 +17,7 @@ public class InterfaceConverter {
   
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   public Interface conveter(final InterfaceBlock ifaceLang, final List<Application> listAppMetaModel) {
     Interface _xblockexpression = null;
@@ -26,20 +26,20 @@ public class InterfaceConverter {
       String _name = ifaceLang.getName();
       ifaceMetaModel.setName(_name);
       EList<InterfaceApplication> _interfaceApplication = ifaceLang.getInterfaceApplication();
-      ArrayList<model.interfaceLayer.InterfaceApplication> _convertInterfaceApp = this.convertInterfaceApp(_interfaceApplication, listAppMetaModel);
+      ArrayList<br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication> _convertInterfaceApp = this.convertInterfaceApp(_interfaceApplication, listAppMetaModel);
       ifaceMetaModel.setInterfaceApplication(_convertInterfaceApp);
       _xblockexpression = ifaceMetaModel;
     }
     return _xblockexpression;
   }
   
-  public ArrayList<model.interfaceLayer.InterfaceApplication> convertInterfaceApp(final EList<InterfaceApplication> listIfaceAppLang, final List<Application> listAppMetaModel) {
-    ArrayList<model.interfaceLayer.InterfaceApplication> _xblockexpression = null;
+  public ArrayList<br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication> convertInterfaceApp(final EList<InterfaceApplication> listIfaceAppLang, final List<Application> listAppMetaModel) {
+    ArrayList<br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication> _xblockexpression = null;
     {
-      ArrayList<model.interfaceLayer.InterfaceApplication> listIfaceAppMetaModel = new ArrayList<model.interfaceLayer.InterfaceApplication>();
+      ArrayList<br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication> listIfaceAppMetaModel = new ArrayList<br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication>();
       for (final InterfaceApplication ifaceAppLang : listIfaceAppLang) {
         {
-          model.interfaceLayer.InterfaceApplication ifaceAppMetaModel = new model.interfaceLayer.InterfaceApplication();
+          br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication ifaceAppMetaModel = new br.edu.sr.ifes.leds.model.interfaceLayer.InterfaceApplication();
           String _name = ifaceAppLang.getName();
           ifaceAppMetaModel.setName(_name);
           String _type = ifaceAppLang.getType();
@@ -56,7 +56,7 @@ public class InterfaceConverter {
     return _xblockexpression;
   }
   
-  public InterfaceConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public InterfaceConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     FindApplication _findApplication = new FindApplication();
     this.findApplication = _findApplication;
     this.projectLang = projectLang;

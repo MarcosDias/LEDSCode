@@ -1,8 +1,8 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
+import br.edu.sr.ifes.leds.model.domainLayer.Method;
 import com.google.common.base.Objects;
 import java.util.LinkedHashSet;
-import model.domainLayer.Method;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")

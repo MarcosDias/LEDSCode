@@ -9,14 +9,14 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ServiceBlock;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter;
 import br.edu.sr.ifes.leds.metamodel.domainlayer.ServiceConverter;
+import br.edu.sr.ifes.leds.model.domainLayer.ClassEnum;
+import br.edu.sr.ifes.leds.model.domainLayer.Domain;
+import br.edu.sr.ifes.leds.model.domainLayer.Entity;
+import br.edu.sr.ifes.leds.model.domainLayer.Module;
+import br.edu.sr.ifes.leds.model.domainLayer.Service;
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects;
 import java.util.ArrayList;
 import java.util.List;
-import model.domainLayer.ClassEnum;
-import model.domainLayer.Domain;
-import model.domainLayer.Entity;
-import model.domainLayer.Module;
-import model.domainLayer.Service;
-import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -29,7 +29,7 @@ public class DomainConverter {
   
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   /**
    * Metodo que converte uma lista de objetos de dominio provenientes de uma linguagem
@@ -98,7 +98,7 @@ public class DomainConverter {
     return _xblockexpression;
   }
   
-  public DomainConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public DomainConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     EntityConverter _entityConverter = new EntityConverter(projectLang, projectMetaModel);
     this.entityConverter = _entityConverter;
     EnumConverter _enumConverter = new EnumConverter(projectLang, projectMetaModel);

@@ -5,22 +5,22 @@ import br.edu.sr.ifes.leds.ledsCodeV001.MethodParameter
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity
+import br.edu.sr.ifes.leds.model.domainLayer.AccessModifier
+import br.edu.sr.ifes.leds.model.domainLayer.Attribute
+import br.edu.sr.ifes.leds.model.domainLayer.CollectionType
+import br.edu.sr.ifes.leds.model.domainLayer.Constraints
+import br.edu.sr.ifes.leds.model.domainLayer.Entity
+import br.edu.sr.ifes.leds.model.domainLayer.Method
+import br.edu.sr.ifes.leds.model.domainLayer.Module
+import br.edu.sr.ifes.leds.model.domainLayer.Parameter
+import br.edu.sr.ifes.leds.model.domainLayer.PrimaryDateType
+import br.edu.sr.ifes.leds.model.domainLayer.PrimaryDateTypeEnum
+import br.edu.sr.ifes.leds.model.domainLayer.Repository
+import br.edu.sr.ifes.leds.model.domainLayer.ReturnType
+import br.edu.sr.ifes.leds.model.domainLayer.SuperAttribute
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects
 import java.util.ArrayList
 import java.util.List
-import model.domainLayer.AccessModifier
-import model.domainLayer.Attribute
-import model.domainLayer.CollectionType
-import model.domainLayer.Constraints
-import model.domainLayer.Entity
-import model.domainLayer.Method
-import model.domainLayer.Module
-import model.domainLayer.Parameter
-import model.domainLayer.PrimaryDateType
-import model.domainLayer.PrimaryDateTypeEnum
-import model.domainLayer.Repository
-import model.domainLayer.ReturnType
-import model.domainLayer.SuperAttribute
-import model.mainLayer.TableObjects
 import org.eclipse.emf.common.util.EList
 
 class EntityConverter {
@@ -28,7 +28,7 @@ class EntityConverter {
 	
 	Project projectLang
 	
-	model.mainLayer.Project projectMetaModel
+	br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel
 	
 	/**
 	 * Metodo que converte uma lista de entidades provenientes de uma linguagem
@@ -283,7 +283,7 @@ class EntityConverter {
 		}
 	}
 	
-	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+	new(Project projectLang, br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
 		findEntity = new FindEntity
 		
 		this.projectLang = projectLang

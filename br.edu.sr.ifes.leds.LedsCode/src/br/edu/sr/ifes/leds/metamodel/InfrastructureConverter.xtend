@@ -3,19 +3,19 @@ package br.edu.sr.ifes.leds.metamodel
 import br.edu.sr.ifes.leds.ledsCodeV001.Database
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion
-import model.infrastructureLayer.Infrastructure
-import model.infrastructureLayer.Language
-import model.infrastructureLayer.LanguageFramework
-import model.infrastructureLayer.DatabaseFramework
-import model.infrastructureLayer.DataBase
-import model.infrastructureLayer.Environment
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
+import br.edu.sr.ifes.leds.model.infrastructureLayer.DataBase
+import br.edu.sr.ifes.leds.model.infrastructureLayer.DatabaseFramework
+import br.edu.sr.ifes.leds.model.infrastructureLayer.Environment
+import br.edu.sr.ifes.leds.model.infrastructureLayer.Infrastructure
+import br.edu.sr.ifes.leds.model.infrastructureLayer.Language
+import br.edu.sr.ifes.leds.model.infrastructureLayer.LanguageFramework
 
 class InfrastructureConverter {
 	
 	Infrastructure infraMetaModel
 	Project projectLang
-	model.mainLayer.Project projectMetaModel
+	br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel
 	
 	def convert(InfrastructureBlock infraLang){
 	 	infraMetaModel.basePackage = infraLang.basePackage
@@ -61,7 +61,7 @@ class InfrastructureConverter {
 		langMetaModel
 	}
 	
-	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+	new(Project projectLang, br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
 		this.projectLang = projectLang
 		this.projectMetaModel = projectMetaModel
 		this.infraMetaModel = new Infrastructure()	

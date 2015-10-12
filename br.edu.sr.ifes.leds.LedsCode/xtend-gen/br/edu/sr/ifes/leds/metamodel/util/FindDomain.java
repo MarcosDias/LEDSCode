@@ -1,7 +1,7 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
+import br.edu.sr.ifes.leds.model.domainLayer.Domain;
 import java.util.List;
-import model.domainLayer.Domain;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")

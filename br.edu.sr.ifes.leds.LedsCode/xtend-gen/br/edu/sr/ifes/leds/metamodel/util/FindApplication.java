@@ -1,8 +1,8 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
+import br.edu.sr.ifes.leds.model.applicationLayer.Application;
 import com.google.common.base.Objects;
 import java.util.List;
-import model.applicationLayer.Application;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")

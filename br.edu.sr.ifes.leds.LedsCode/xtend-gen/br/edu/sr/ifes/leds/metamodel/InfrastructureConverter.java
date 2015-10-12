@@ -4,12 +4,12 @@ import br.edu.sr.ifes.leds.ledsCodeV001.Database;
 import br.edu.sr.ifes.leds.ledsCodeV001.InfrastructureBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.NameVersion;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
-import model.infrastructureLayer.DataBase;
-import model.infrastructureLayer.DatabaseFramework;
-import model.infrastructureLayer.Environment;
-import model.infrastructureLayer.Infrastructure;
-import model.infrastructureLayer.Language;
-import model.infrastructureLayer.LanguageFramework;
+import br.edu.sr.ifes.leds.model.infrastructureLayer.DataBase;
+import br.edu.sr.ifes.leds.model.infrastructureLayer.DatabaseFramework;
+import br.edu.sr.ifes.leds.model.infrastructureLayer.Environment;
+import br.edu.sr.ifes.leds.model.infrastructureLayer.Infrastructure;
+import br.edu.sr.ifes.leds.model.infrastructureLayer.Language;
+import br.edu.sr.ifes.leds.model.infrastructureLayer.LanguageFramework;
 
 @SuppressWarnings("all")
 public class InfrastructureConverter {
@@ -17,7 +17,7 @@ public class InfrastructureConverter {
   
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   public Infrastructure convert(final InfrastructureBlock infraLang) {
     Infrastructure _xblockexpression = null;
@@ -104,7 +104,7 @@ public class InfrastructureConverter {
     return _xblockexpression;
   }
   
-  public InfrastructureConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public InfrastructureConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     this.projectLang = projectLang;
     this.projectMetaModel = projectMetaModel;
     Infrastructure _infrastructure = new Infrastructure();

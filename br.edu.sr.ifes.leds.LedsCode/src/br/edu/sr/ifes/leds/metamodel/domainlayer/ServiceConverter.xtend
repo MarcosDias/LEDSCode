@@ -6,12 +6,12 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ServiceMethod
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity
 import br.edu.sr.ifes.leds.metamodel.util.FindRepositoryMethod
 import br.edu.sr.ifes.leds.metamodel.util.FindService
+import br.edu.sr.ifes.leds.model.domainLayer.Entity
+import br.edu.sr.ifes.leds.model.domainLayer.Module
+import br.edu.sr.ifes.leds.model.domainLayer.Service
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects
 import java.util.ArrayList
 import java.util.List
-import model.domainLayer.Entity
-import model.domainLayer.Module
-import model.domainLayer.Service
-import model.mainLayer.TableObjects
 import org.eclipse.emf.common.util.EList
 
 class ServiceConverter {
@@ -21,7 +21,7 @@ class ServiceConverter {
 	FindService findService
 	
 	Project projectLang
-	model.mainLayer.Project projectMetaModel
+	br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel
 		
 	def convert(EList<ServiceBlock> listServiceLang, Module moduleMetaModel, TableObjects tableObjects) {
 		var listServiceMetaModel = new ArrayList<Service>
@@ -39,7 +39,7 @@ class ServiceConverter {
 	}
 	
 	def convertServiceMethod(EList<ServiceMethod> listServiceLang, List<Entity> listEntityMetaModel, TableObjects tableObjects) {
-		var listServiceMethodsMetaModel = new ArrayList<model.domainLayer.ServiceMethod>
+		var listServiceMethodsMetaModel = new ArrayList<br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod>
 		for(serviceMethodLang: listServiceLang){
 			var serviceMethodMetaModel = compileService(serviceMethodLang, listEntityMetaModel, tableObjects)
 			listServiceMethodsMetaModel.add(serviceMethodMetaModel)
@@ -48,14 +48,14 @@ class ServiceConverter {
 	}
 	
 	def compileService(ServiceMethod serviceMethodLang, List<Entity> listEntityMetaModel, TableObjects tableObjects) {
-		var serviceMethodMetaModel = new model.domainLayer.ServiceMethod
+		var serviceMethodMetaModel = new br.edu.sr.ifes.leds.model.domainLayer.ServiceMethod
 		serviceMethodMetaModel.name = serviceMethodLang.name
 		serviceMethodMetaModel.methodService = findService.inMetaModel(tableObjects.entities, serviceMethodLang.methodAcess)
 		
 		serviceMethodMetaModel
 	}
 	
-	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+	new(Project projectLang, br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
 		findEntity = new FindEntity
 		findRepositoryMethod = new FindRepositoryMethod
 		findService = new FindService

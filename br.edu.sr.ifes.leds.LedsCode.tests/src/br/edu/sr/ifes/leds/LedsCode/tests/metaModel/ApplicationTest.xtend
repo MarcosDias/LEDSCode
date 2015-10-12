@@ -6,7 +6,6 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock
 import java.util.ArrayList
 import java.util.Arrays
 import java.util.List
-import model.applicationLayer.Application
 import org.eclipse.emf.common.util.EList
 import org.junit.Before
 import org.junit.Test

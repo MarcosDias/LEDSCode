@@ -4,21 +4,21 @@ import br.edu.sr.ifes.leds.ledsCodeV001.ApplicationBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindDomain;
 import br.edu.sr.ifes.leds.metamodel.util.FindModule;
+import br.edu.sr.ifes.leds.model.applicationLayer.Application;
+import br.edu.sr.ifes.leds.model.applicationLayer.SpecificApplicationDomain;
+import br.edu.sr.ifes.leds.model.applicationLayer.SpecificApplicationModule;
+import br.edu.sr.ifes.leds.model.domainLayer.Domain;
+import br.edu.sr.ifes.leds.model.domainLayer.Module;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import model.applicationLayer.Application;
-import model.applicationLayer.SpecificApplicationDomain;
-import model.applicationLayer.SpecificApplicationModule;
-import model.domainLayer.Domain;
-import model.domainLayer.Module;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class AppConverter {
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   public ArrayList<Application> conveter(final EList<ApplicationBlock> listAppLang, final List<Domain> listDomainMetaModel) {
     ArrayList<Application> _xblockexpression = null;
@@ -94,7 +94,7 @@ public class AppConverter {
     return _xblockexpression;
   }
   
-  public AppConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public AppConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     this.projectLang = projectLang;
     this.projectMetaModel = projectMetaModel;
   }

@@ -7,24 +7,24 @@ import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.ledsCodeV001.RepositoryFields;
 import br.edu.sr.ifes.leds.ledsCodeV001.TypeAndAttribute;
 import br.edu.sr.ifes.leds.metamodel.util.FindEntity;
+import br.edu.sr.ifes.leds.model.domainLayer.AccessModifier;
+import br.edu.sr.ifes.leds.model.domainLayer.Attribute;
+import br.edu.sr.ifes.leds.model.domainLayer.CollectionType;
+import br.edu.sr.ifes.leds.model.domainLayer.Constraints;
+import br.edu.sr.ifes.leds.model.domainLayer.Entity;
+import br.edu.sr.ifes.leds.model.domainLayer.Method;
+import br.edu.sr.ifes.leds.model.domainLayer.Module;
+import br.edu.sr.ifes.leds.model.domainLayer.Parameter;
+import br.edu.sr.ifes.leds.model.domainLayer.PrimaryDateType;
+import br.edu.sr.ifes.leds.model.domainLayer.PrimaryDateTypeEnum;
+import br.edu.sr.ifes.leds.model.domainLayer.Repository;
+import br.edu.sr.ifes.leds.model.domainLayer.ReturnType;
+import br.edu.sr.ifes.leds.model.domainLayer.SuperAttribute;
+import br.edu.sr.ifes.leds.model.domainLayer.SuperClass;
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects;
 import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
-import model.domainLayer.AccessModifier;
-import model.domainLayer.Attribute;
-import model.domainLayer.CollectionType;
-import model.domainLayer.Constraints;
-import model.domainLayer.Entity;
-import model.domainLayer.Method;
-import model.domainLayer.Module;
-import model.domainLayer.Parameter;
-import model.domainLayer.PrimaryDateType;
-import model.domainLayer.PrimaryDateTypeEnum;
-import model.domainLayer.Repository;
-import model.domainLayer.ReturnType;
-import model.domainLayer.SuperAttribute;
-import model.domainLayer.SuperClass;
-import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
@@ -33,7 +33,7 @@ public class EntityConverter {
   
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   /**
    * Metodo que converte uma lista de entidades provenientes de uma linguagem
@@ -361,7 +361,7 @@ public class EntityConverter {
     }
   }
   
-  public EntityConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public EntityConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     FindEntity _findEntity = new FindEntity();
     this.findEntity = _findEntity;
     this.projectLang = projectLang;

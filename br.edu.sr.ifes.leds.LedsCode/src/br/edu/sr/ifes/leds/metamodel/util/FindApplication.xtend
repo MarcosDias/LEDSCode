@@ -1,7 +1,7 @@
 package br.edu.sr.ifes.leds.metamodel.util
 
+import br.edu.sr.ifes.leds.model.applicationLayer.Application
 import java.util.List
-import model.applicationLayer.Application
 
 class FindApplication {
 	

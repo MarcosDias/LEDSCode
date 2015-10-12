@@ -1,12 +1,12 @@
 package br.edu.sr.ifes.leds.metamodel.util
 
 import br.edu.sr.ifes.leds.ledsCodeV001.EntityBlock
+import br.edu.sr.ifes.leds.model.domainLayer.ClassEnum
+import br.edu.sr.ifes.leds.model.domainLayer.Entity
+import br.edu.sr.ifes.leds.model.domainLayer.SuperClass
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects
 import java.util.Arrays
 import java.util.List
-import model.domainLayer.ClassEnum
-import model.domainLayer.Entity
-import model.domainLayer.SuperClass
-import model.mainLayer.TableObjects
 
 class FindEntity {	
 	

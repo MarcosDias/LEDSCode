@@ -6,10 +6,10 @@ import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EntityConverter
 import br.edu.sr.ifes.leds.metamodel.domainlayer.EnumConverter
 import br.edu.sr.ifes.leds.metamodel.domainlayer.ServiceConverter
+import br.edu.sr.ifes.leds.model.domainLayer.Domain
+import br.edu.sr.ifes.leds.model.domainLayer.Module
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects
 import java.util.ArrayList
-import model.domainLayer.Domain
-import model.domainLayer.Module
-import model.mainLayer.TableObjects
 import org.eclipse.emf.common.util.EList
 
 class DomainConverter {
@@ -19,7 +19,7 @@ class DomainConverter {
 	ServiceConverter serviceConverter
 	
 	Project projectLang
-	model.mainLayer.Project projectMetaModel
+	br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel
 	
 	/**
 	 * Metodo que converte uma lista de objetos de dominio provenientes de uma linguagem
@@ -69,7 +69,7 @@ class DomainConverter {
 		setModulesMetaModule
 	}
 	
-	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+	new(Project projectLang, br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
 		this.entityConverter = new EntityConverter(projectLang, projectMetaModel)
 		this.enumConverter = new EnumConverter(projectLang, projectMetaModel)
 		this.serviceConverter = new ServiceConverter(projectLang, projectMetaModel)

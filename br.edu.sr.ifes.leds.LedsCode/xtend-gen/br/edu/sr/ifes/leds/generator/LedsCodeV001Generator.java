@@ -5,10 +5,10 @@ package br.edu.sr.ifes.leds.generator;
 
 import br.edu.sr.ifes.leds.generator.ProjectConverter;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects;
+import br.edu.sr.ifes.leds.springroo.ctrl.SpringRooCtrl;
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
-import ctrl.SpringRooCtrl;
-import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -40,7 +40,7 @@ public class LedsCodeV001Generator implements IGenerator {
     Project projectLang = IterableExtensions.<Project>head(_filter);
     TableObjects metaModelo = conversor.convert(projectLang);
     String scriptProject = springRooConversor.createProject(metaModelo);
-    model.mainLayer.Project _project = metaModelo.getProject();
+    br.edu.sr.ifes.leds.model.mainLayer.Project _project = metaModelo.getProject();
     String _name = _project.getName();
     String _plus = (("Spring_Roo" + "-") + _name);
     String _plus_1 = (_plus + ".roo");

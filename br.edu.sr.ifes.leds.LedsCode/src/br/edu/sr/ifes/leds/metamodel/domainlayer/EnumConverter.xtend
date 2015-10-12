@@ -3,17 +3,17 @@ package br.edu.sr.ifes.leds.metamodel.domainlayer
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock
 import br.edu.sr.ifes.leds.ledsCodeV001.Project
 import br.edu.sr.ifes.leds.metamodel.util.FindModule
+import br.edu.sr.ifes.leds.model.domainLayer.ClassEnum
+import br.edu.sr.ifes.leds.model.domainLayer.Module
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects
 import java.util.ArrayList
-import model.domainLayer.ClassEnum
-import model.domainLayer.Module
-import model.mainLayer.TableObjects
 import org.eclipse.emf.common.util.EList
 
 class EnumConverter {
 	
 	Project projectLang
 	
-	model.mainLayer.Project projectMetaModel
+	br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel
 	
 	FindModule findModule
 	
@@ -31,7 +31,7 @@ class EnumConverter {
 		listEnumMetaModel
 	}
 	
-	new(Project projectLang, model.mainLayer.Project projectMetaModel) {
+	new(Project projectLang, br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
 		findModule = new FindModule
 		this.projectLang = projectLang
 		this.projectMetaModel = projectMetaModel

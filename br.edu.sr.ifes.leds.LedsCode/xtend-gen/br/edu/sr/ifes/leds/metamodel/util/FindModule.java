@@ -1,10 +1,10 @@
 package br.edu.sr.ifes.leds.metamodel.util;
 
 import br.edu.sr.ifes.leds.metamodel.util.FindDomain;
+import br.edu.sr.ifes.leds.model.domainLayer.Domain;
+import br.edu.sr.ifes.leds.model.domainLayer.Module;
 import java.util.Arrays;
 import java.util.List;
-import model.domainLayer.Domain;
-import model.domainLayer.Module;
 import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;

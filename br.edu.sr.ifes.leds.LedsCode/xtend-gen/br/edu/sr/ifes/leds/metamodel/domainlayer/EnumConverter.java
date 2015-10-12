@@ -3,18 +3,18 @@ package br.edu.sr.ifes.leds.metamodel.domainlayer;
 import br.edu.sr.ifes.leds.ledsCodeV001.EnumBlock;
 import br.edu.sr.ifes.leds.ledsCodeV001.Project;
 import br.edu.sr.ifes.leds.metamodel.util.FindModule;
+import br.edu.sr.ifes.leds.model.domainLayer.ClassEnum;
+import br.edu.sr.ifes.leds.model.domainLayer.Module;
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects;
 import java.util.ArrayList;
 import java.util.List;
-import model.domainLayer.ClassEnum;
-import model.domainLayer.Module;
-import model.mainLayer.TableObjects;
 import org.eclipse.emf.common.util.EList;
 
 @SuppressWarnings("all")
 public class EnumConverter {
   private Project projectLang;
   
-  private model.mainLayer.Project projectMetaModel;
+  private br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel;
   
   private FindModule findModule;
   
@@ -41,7 +41,7 @@ public class EnumConverter {
     return _xblockexpression;
   }
   
-  public EnumConverter(final Project projectLang, final model.mainLayer.Project projectMetaModel) {
+  public EnumConverter(final Project projectLang, final br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel) {
     FindModule _findModule = new FindModule();
     this.findModule = _findModule;
     this.projectLang = projectLang;

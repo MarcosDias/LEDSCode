@@ -5,14 +5,14 @@ import br.edu.sr.ifes.leds.metamodel.AppConverter
 import br.edu.sr.ifes.leds.metamodel.DomainConverter
 import br.edu.sr.ifes.leds.metamodel.InfrastructureConverter
 import br.edu.sr.ifes.leds.metamodel.InterfaceConverter
-import model.mainLayer.TableObjects
+import br.edu.sr.ifes.leds.model.mainLayer.TableObjects
 import java.util.Calendar
 
 class ProjectConverter {
 	
 	def convert(Project projectLang){
 		var tableObjects = new TableObjects
-		var projectMetaModel = new model.mainLayer.Project
+		var projectMetaModel = new br.edu.sr.ifes.leds.model.mainLayer.Project
 		
 		var infraConverter = new InfrastructureConverter(projectLang, projectMetaModel)
 		var ifaceConverter = new InterfaceConverter(projectLang, projectMetaModel)
@@ -31,27 +31,27 @@ class ProjectConverter {
 		tableObjects
 	}
 	
-	def convertInterface(model.mainLayer.Project projectMetaModel, InterfaceConverter ifaceConverter, Project projectLang, TableObjects tableObjects) {
+	def convertInterface(br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel, InterfaceConverter ifaceConverter, Project projectLang, TableObjects tableObjects) {
 		projectMetaModel.iface = ifaceConverter.conveter(
 			projectLang.interfaceBlock, projectMetaModel.applications
 		)
 		tableObjects.iface = projectMetaModel.iface
 	}
 	
-	def convertApplication(model.mainLayer.Project projectMetaModel, AppConverter appConverter, Project projectLang, TableObjects tableObjects) {
+	def convertApplication(br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel, AppConverter appConverter, Project projectLang, TableObjects tableObjects) {
 		projectMetaModel.applications = appConverter.conveter(
 			projectLang.applicationBlock, projectMetaModel.domains
 		)
 		tableObjects.apps = projectMetaModel.applications
 	}
 	
-	def convertInfrastructure(model.mainLayer.Project projectMetaModel, InfrastructureConverter infraConverter, Project projectLang, TableObjects tableObjects
+	def convertInfrastructure(br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel, InfrastructureConverter infraConverter, Project projectLang, TableObjects tableObjects
 	) {
 		projectMetaModel.infrastructure = infraConverter.convert(projectLang.infrastructureBlock)
 		tableObjects.infrastructure = projectMetaModel.infrastructure
 	}
 	
-	def convertDomains(model.mainLayer.Project projectMetaModel, DomainConverter domainConverter, Project projectLang, TableObjects tableObjects) {
+	def convertDomains(br.edu.sr.ifes.leds.model.mainLayer.Project projectMetaModel, DomainConverter domainConverter, Project projectLang, TableObjects tableObjects) {
 		projectMetaModel.domains = domainConverter.converter(projectLang.domainBlock, tableObjects)
 		tableObjects.domains = projectMetaModel.domains;
 	}
