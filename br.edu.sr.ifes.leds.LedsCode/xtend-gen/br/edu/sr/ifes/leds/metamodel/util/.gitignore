@@ -4,3 +4,15 @@
 /.FindDomain.java._trace
 /.FindModule.java._trace
 /.FindService.java._trace
+/.FindApplication.xtendbin
+/.FindDomain.xtendbin
+/.FindEntity.xtendbin
+/.FindModule.xtendbin
+/.FindRepositoryMethod.xtendbin
+/.FindService.xtendbin
+/FindApplication.java
+/FindDomain.java
+/FindEntity.java
+/FindModule.java
+/FindRepositoryMethod.java
+/FindService.java
